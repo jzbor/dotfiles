@@ -1,0 +1,539 @@
+Xft.dpi:       96
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.autohint:  false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+XTerm*background:        #222D31
+XTerm*foreground:        #d8d8d8
+XTerm*pointerColor:      #1ABB9B
+XTerm*faceName:          Fixed
+XTerm*faceSize:          11
+XTerm*reverseVideo:      on
+XTerm*selectToClipboard: true
+
+*background:                      #202020
+*foreground:                      #FED7AE
+*fading:                          8
+*fadeColor:                       black
+*cursorColor:                     #1ABB9B
+*pointerColorBackground:          #2B2C2B
+*pointerColorForeground:          #16A085
+
+!! My theme
+#define myBackground			#21294f
+#define myBackgroundTrans		#00000000
+#define myForeground			#f68e55
+#define mySelector			#c73a57
+#define myUrgent			#753f61
+
+*themeBackground:		  myBackground
+*themeBackgroundTrans:		  myBackgroundTrans
+*themeForeground:		  myForeground
+*themeSelector:			  mySelector
+*themeUrgent:			  myUrgent
+
+!! black dark/light
+*color0:                          #222D31
+*color8:                          #585858
+
+!! red dark/light
+*color1:                          #ab4642
+*color9:                          #ab4642
+
+!! green dark/light
+*color2:                          #7E807E
+*color10:                         #8D8F8D
+
+!! yellow dark/light
+*color3:                          #f7ca88
+*color11:                         #f7ca88
+
+!! blue dark/light
+*color4:                          #7cafc2
+*color12:                         #7cafc2
+
+!! magenta dark/light
+*color5:                          #ba8baf
+*color13:                         #ba8baf
+
+!! cyan dark/light
+*color6:                          #1ABB9B
+*color14:                         #1ABB9B
+
+!! white dark/light
+*color7:                          #d8d8d8
+*color15:                         #f8f8f8
+
+Xcursor.theme: xcursor-breeze
+Xcursor.size:                     0
+
+URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
+
+! alternative font settings with 'terminus':
+! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
+!! terminus names see end of file!
+
+URxvt.depth:                      32
+URxvt.background:                 [100]#222D31
+URxvt*scrollBar:                  false
+URxvt*mouseWheelScrollPage:       false
+URxvt*cursorBlink:                true
+URxvt*background:                 black
+URxvt*foreground:                 grey
+URxvt*saveLines:                  5000
+
+! for 'fake' transparency (without Compton) uncomment the following three lines
+! URxvt*inheritPixmap:            true
+! URxvt*transparent:              true
+! URxvt*shading:                  138
+
+! Normal copy-paste keybindings without perls
+URxvt.iso14755:                   false
+URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
+!Xterm escape codes, word by word movement
+URxvt.keysym.Control-Left:        \033[1;5D
+URxvt.keysym.Shift-Control-Left:  \033[1;6D
+URxvt.keysym.Control-Right:       \033[1;5C
+URxvt.keysym.Shift-Control-Right: \033[1;6C
+URxvt.keysym.Control-Up:          \033[1;5A
+URxvt.keysym.Shift-Control-Up:    \033[1;6A
+URxvt.keysym.Control-Down:        \033[1;5B
+URxvt.keysym.Shift-Control-Down:  \033[1;6B
+! Rxvt.perl-ext-common:             ...,clipboard
+! URxvt.keysym.M-C-c:               perl:clipboard:copy
+! URxvt.keysym.M-v:                 perl:clipboard:paste
+! URxvt.keysym.M-C-v:               perl:clipboard:paste_escaped
+! URxvt*termName:                   string
+! URxvt*geometry:                   geometry
+! URxvt*chdir:                      string
+! URxvt*loginShell:                 boolean
+! URxvt*multiClickTime:             number
+! URxvt*jumpScroll:                 boolean
+! URxvt*skipScroll:                 boolean
+! URxvt*pastableTabs:               boolean
+! URxvt*scrollstyle:                plain
+! URxvt*scrollBar_right:            boolean
+! URxvt*scrollBar_floating:         true
+! URxvt*scrollBar_align:            mode
+! URxvt*thickness:                  number
+! URxvt*scrollTtyOutput:            boolean
+! URxvt*scrollTtyKeypress:          boolean
+! URxvt*scrollWithBuffer:           boolean
+! URxvt*tintColor:                  !7DA55
+! URxvt*blurRadius:                 HxV
+! URxvt*fading:                     number
+! URxvt*fadeColor:                  color
+! URxvt*utmpInhibit:                boolean
+! URxvt*urgentOnBell:               boolean
+! URxvt*visualBell:                 boolean
+! URxvt*mapAlert:                   boolean
+! URxvt*meta8:                      boolean
+! URxvt*tripleclickwords:           boolean
+! URxvt*insecure:                   boolean
+! URxvt*cursorUnderline:            boolean
+! URxvt*pointerBlank:               boolean
+! URxvt*color0:                     color
+! URxvt*color1:                     color
+! URxvt*color2:                     color
+! URxvt*color3:                     color
+! URxvt*color4:                     color
+! URxvt*color5:                     color
+! URxvt*color6:                     color
+! URxvt*color7:                     color
+! URxvt*color8:                     color
+! URxvt*color9:                     color
+! URxvt*color10:                    color
+! URxvt*color11:                    color
+! URxvt*color12:                    color
+! URxvt*color13:                    color
+! URxvt*color14:                    color
+! URxvt*color15:                    color
+! URxvt*colorBD:                    color
+! URxvt*colorIT:                    color
+! URxvt*colorUL:                    color
+! URxvt*colorRV:                    color
+! URxvt*underlineColor:             color
+! URxvt*scrollColor:                color
+! URxvt*troughColor:                color
+! URxvt*highlightColor:             color
+! URxvt*highlightTextColor:         color
+! URxvt*cursorColor:                color
+! URxvt*cursorColor2:               color
+! URxvt*pointerColor:               color
+! URxvt*pointerColor2:              color
+! URxvt*borderColor:                color
+! URxvt*iconFile:                   file
+! URxvt*font:                       fontname
+! URxvt*boldFont:                   fontname
+! URxvt*italicFont:                 fontname
+! URxvt*boldItalicFont:             fontname
+! URxvt*intensityStyles:            boolean
+! URxvt*inputMethod:                name
+! URxvt*preeditType:                style
+! URxvt*imLocale:                   string
+! URxvt*imFont:                     fontname
+! URxvt*title:                      string
+! URxvt*iconName:                   string
+! URxvt*buffered:                   boolean
+! URxvt*depth:                      number
+! URxvt*visual:                     number
+! URxvt*transient-for:              windowid
+! URxvt*override-redirect:          boolean
+! URxvt*hold:                       boolean
+! URxvt*externalBorder:             number
+! URxvt*internalBorder:             number
+! URxvt*borderLess:                 true
+! URxvt*lineSpace:                  number
+! URxvt*letterSpace:                number
+! URxvt*skipBuiltinGlyphs:          boolean
+! URxvt*pointerBlankDelay:          number
+! URxvt*backspacekey:               string
+! URxvt*deletekey:                  string
+! URxvt*print-pipe:                 string
+! URxvt*modifier:                   modifier
+! URxvt*cutchars:                   string
+! URxvt*answerbackString:           string
+! URxvt*secondaryScreen:            boolean
+! URxvt*secondaryScroll:            boolean
+! URxvt*perl-lib:                   string
+! URxvt*perl-eval:                  perl-eval
+! URxvt*perl-ext-common:            string
+! URxvt*perl-ext:                   string
+! URxvt*iso14755:                   boolean
+! URxvt*iso14755_52:                boolean
+! URxvt*xrm:                        string
+! URxvt*keysym.sym:                 keysym
+! URxvt*background.border:          boolean
+! URxvt*background.expr:            string
+! URxvt*background.interval:        seconds
+! URxvt*bell-command:               string
+! URxvt*kuake.hotkey:               string
+! URxvt*matcher.button:             string
+! URxvt*matcher.launcher:           string
+! URxvt*matcher.launcher.*:         string
+! URxvt*matcher.pattern.*:          string
+! URxvt*matcher.rend.*:             string
+! URxvt*remote-clipboard.fetch:     string
+! URxvt*remote-clipboard.store:     string
+! URxvt*searchable-scrollback:      string
+! URxvt*selection-autotransform.*:  string
+! URxvt*selection-pastebin.cmd:     string
+! URxvt*selection-pastebin.url:     string
+! URxvt*selection.pattern-0:        string
+! URxvt*tab-bg:                     colour
+! URxvt*tab-fg:                     colour
+! URxvt*tabbar-bg:                  colour
+! URxvt*tabbar-fg:                  colour
+! URxvt*url-launcher:               string
+
+! The Terminus font uses the following X-names:
+! -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+! -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+! -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+! -xos4-terminus-medium-r-normal--20-200-72-72-c-100-iso10646-1
+! -xos4-terminus-medium-r-normal--22-220-72-72-c-110-iso10646-1
+! -xos4-terminus-medium-r-normal--24-240-72-72-c-120-iso10646-1
+! -xos4-terminus-medium-r-normal--28-280-72-72-c-140-iso10646-1
+! -xos4-terminus-medium-r-normal--32-320-72-72-c-160-iso10646-1
+! -xos4-terminus-bold-r-normal--12-120-72-72-c-60-iso10646-1
+! -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
+! -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
+! -xos4-terminus-bold-r-normal--20-200-72-72-c-100-iso10646-1
+! -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1
+! -xos4-terminus-bold-r-normal--28-280-72-72-c-140-iso10646-1
+! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
+
+
+! "Enabled modi"
+rofi.modi:                           ssh,window,drun,run
+! "Window width"
+rofi.width:                          70
+! "Number of lines"
+rofi.lines:                          5
+! "Number of columns"
+! rofi.columns:                        1
+! "Font to use"
+rofi.font:			    Aladin 20
+! "Border width"
+! rofi.bw:                             1
+! "Location on screen"
+! rofi.location:                       0
+! "Padding"
+rofi.padding:                        20
+! "Y-offset relative to location"
+! rofi.yoffset:                        0
+! "X-offset relative to location"
+! rofi.xoffset:                        0
+! "Always show number of lines"
+! rofi.fixed-num-lines:                true
+! "Whether to load and show icons"
+rofi.show-icons:                     true
+! "Terminal to use"
+rofi.terminal:                       "terminator"
+! "Ssh client to use"
+! rofi.ssh-client:                     ssh
+! "Ssh command to execute"
+! rofi.ssh-command:                    {terminal} -e {ssh-client} {host} [-p {port}]
+! "Run command to execute"
+! rofi.run-command:                    {cmd}
+! "Command to get extra run targets"
+! rofi.run-list-command:
+! "Run command to execute that runs in shell"
+! rofi.run-shell-command:              {terminal} -e {cmd}
+! "Command executed on accep-entry-custom for window modus"
+! rofi.window-command:                 wmctrl -i -R {window}
+! "Window fields to match in window mode"
+! rofi.window-match-fields:            all
+! "Theme to use to look for icons"
+! rofi.icon-theme:
+! "Desktop entry fields to match in drun"
+! rofi.drun-match-fields:              name,generic,exec,categories
+! "Desktop entry show actions."
+! rofi.drun-show-actions:              false
+! "DRUN format string. (Supports: generic,name,comment,exec,categories)"
+rofi.drun-display-format:            {name} [<span weight='light' size='small'><i>({generic})</i></span>]
+! "Disable history in run/ssh"
+! rofi.disable-history:                false
+! "Programs ignored for history"
+! rofi.ignored-prefixes:
+! "Use sorting"
+! rofi.sort:                           false
+! "Choose the strategy used for sorting: normal (levenshtein) or fzf."
+! rofi.sorting-method:
+! "Set case-sensitivity"
+! rofi.case-sensitive:                 false
+! "Cycle through the results list"
+! rofi.cycle:                          true
+! "Enable sidebar-mode"
+! rofi.sidebar-mode:                   false
+! "Row height (in chars)"
+! rofi.eh:                             1
+! "Enable auto select mode"
+! rofi.auto-select:                    false
+! "Parse hosts file for ssh mode"
+! rofi.parse-hosts:                    false
+! "Parse known_hosts file for ssh mode"
+! rofi.parse-known-hosts:              true
+! "Set the modi to combine in combi mode"
+! rofi.combi-modi:                     window,run
+! "Set the matching algorithm. (normal, regex, glob, fuzzy)"
+! rofi.matching:                       normal
+! "Tokenize input string"
+! rofi.tokenize:                       true
+! "Monitor id to show on"
+! rofi.m:                              -5
+! "Margin between rows *DEPRECATED*"
+rofi.line-margin:                    10
+! "Padding within rows *DEPRECATED*"
+! rofi.line-padding:                   1
+! "Pre-set filter"
+! rofi.filter:
+! "Separator style (none, dash, solid) *DEPRECATED*"
+! rofi.separator-style:                dash
+! "Hide scroll-bar *DEPRECATED*"
+! rofi.hide-scrollbar:                 false
+! "Fullscreen"
+! rofi.fullscreen:                     false
+! "Fake transparency *DEPRECATED*"
+! rofi.fake-transparency:              false
+! "DPI"
+! rofi.dpi:                            -1
+! "Threads to use for string matching"
+! rofi.threads:                        0
+! "Scrollbar width *DEPRECATED*"
+! rofi.scrollbar-width:                8
+! "Scrolling method. (0: Page, 1: Centered)"
+! rofi.scroll-method:                  0
+! "Background to use for fake transparency. (background or screenshot) *DEPRECATED*"
+! rofi.fake-background:                screenshot
+! "Window Format. w (desktop name), t (title), n (name), r (role), c (class)"
+! rofi.window-format:                  {w}    {c}   {t}
+! "Click outside the window to exit"
+! rofi.click-to-exit:                  true
+! "Indicate how it match by underlining it."
+! rofi.show-match:                     true
+! "New style theme file"
+! rofi.theme:
+! "Color scheme for normal row"
+rofi.color-normal:	myBackground,    myForeground,	myBackground,    myForeground,	myBackground
+! "Color scheme for urgent row"
+rofi.color-urgent:	myBackground,    myUrgent,	myBackground,    myUrgent,	myBackground
+! "Color scheme for active row"
+rofi.color-active:	myBackground,    mySelector,	myBackground,    mySelector,	myBackground
+! "Color scheme window"
+rofi.color-window:	myBackground, myBackground, myBackground
+! "Max history size (WARNING: can cause slowdowns when set to high)."
+! rofi.max-history-size:               25
+! "Hide the prefix mode prefix on the combi view."
+! rofi.combi-hide-mode-prefix:         false
+! "Set the character used to negate the matching. ('\0' to disable)"
+! rofi.matching-negate-char:           -
+! "Directory where history and temporary files are stored."
+! rofi.cache-dir:
+! "Pidfile location"
+! rofi.pid:                            /run/user/1000/rofi.pid
+! "The display name of this browser"
+! rofi.display-window:
+! "The display name of this browser"
+! rofi.display-windowcd:
+! "The display name of this browser"
+! rofi.display-run:
+! "The display name of this browser"
+! rofi.display-ssh:
+! "The display name of this browser"
+! rofi.display-drun:
+! "The display name of this browser"
+! rofi.display-combi:
+! "The display name of this browser"
+! rofi.display-keys:
+! "Paste primary selection"
+! rofi.kb-primary-paste:               Control+V,Shift+Insert
+! "Paste clipboard"
+! rofi.kb-secondary-paste:             Control+v,Insert
+! "Clear input line"
+! rofi.kb-clear-line:                  Control+w
+! "Beginning of line"
+! rofi.kb-move-front:                  Control+a
+! "End of line"
+! rofi.kb-move-end:                    Control+e
+! "Move back one word"
+! rofi.kb-move-word-back:              Alt+b,Control+Left
+! "Move forward one word"
+! rofi.kb-move-word-forward:           Alt+f,Control+Right
+! "Move back one char"
+! rofi.kb-move-char-back:              Left,Control+b
+! "Move forward one char"
+! rofi.kb-move-char-forward:           Right,Control+f
+! "Delete previous word"
+! rofi.kb-remove-word-back:            Control+Alt+h,Control+BackSpace
+! "Delete next word"
+! rofi.kb-remove-word-forward:         Control+Alt+d
+! "Delete next char"
+! rofi.kb-remove-char-forward:         Delete,Control+d
+! "Delete previous char"
+! rofi.kb-remove-char-back:            BackSpace,Shift+BackSpace,Control+h
+! "Delete till the end of line"
+! rofi.kb-remove-to-eol:               Control+k
+! "Delete till the start of line"
+! rofi.kb-remove-to-sol:               Control+u
+! "Accept entry"
+! rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+! "Use entered text as command (in ssh/run modi)"
+! rofi.kb-accept-custom:               Control+Return
+! "Use alternate accept command."
+! rofi.kb-accept-alt:                  Shift+Return
+! "Delete entry from history"
+! rofi.kb-delete-entry:                Shift+Delete
+! "Switch to the next mode."
+! rofi.kb-mode-next:                   Shift+Right,Control+Tab
+! "Switch to the previous mode."
+! rofi.kb-mode-previous:               Shift+Left,Control+ISO_Left_Tab
+! "Go to the previous column"
+! rofi.kb-row-left:                    Control+Page_Up
+! "Go to the next column"
+! rofi.kb-row-right:                   Control+Page_Down
+! "Select previous entry"
+! rofi.kb-row-up:                      Up,Control+p,ISO_Left_Tab
+! "Select next entry"
+! rofi.kb-row-down:                    Down,Control+n
+! "Go to next row, if one left, accept it, if no left next mode."
+! rofi.kb-row-tab:                     Tab
+! "Go to the previous page"
+! rofi.kb-page-prev:                   Page_Up
+! "Go to the next page"
+! rofi.kb-page-next:                   Page_Down
+! "Go to the first entry"
+! rofi.kb-row-first:                   Home,KP_Home
+! "Go to the last entry"
+! rofi.kb-row-last:                    End,KP_End
+! "Set selected item as input text"
+! rofi.kb-row-select:                  Control+space
+! "Take a screenshot of the rofi window"
+! rofi.kb-screenshot:                  Alt+S
+! "Toggle between ellipsize modes for displayed data"
+! rofi.kb-ellipsize:                   Alt+period
+! "Toggle case sensitivity"
+! rofi.kb-toggle-case-sensitivity:     grave,dead_grave
+! "Toggle sort"
+! rofi.kb-toggle-sort:                 Alt+grave
+! "Quit rofi"
+! rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft
+! "Custom keybinding 1"
+! rofi.kb-custom-1:                    Alt+1
+! "Custom keybinding 2"
+! rofi.kb-custom-2:                    Alt+2
+! "Custom keybinding 3"
+! rofi.kb-custom-3:                    Alt+3
+! "Custom keybinding 4"
+! rofi.kb-custom-4:                    Alt+4
+! "Custom Keybinding 5"
+! rofi.kb-custom-5:                    Alt+5
+! "Custom keybinding 6"
+! rofi.kb-custom-6:                    Alt+6
+! "Custom Keybinding 7"
+! rofi.kb-custom-7:                    Alt+7
+! "Custom keybinding 8"
+! rofi.kb-custom-8:                    Alt+8
+! "Custom keybinding 9"
+! rofi.kb-custom-9:                    Alt+9
+! "Custom keybinding 10"
+! rofi.kb-custom-10:                   Alt+0
+! "Custom keybinding 11"
+! rofi.kb-custom-11:                   Alt+exclam
+! "Custom keybinding 12"
+! rofi.kb-custom-12:                   Alt+at
+! "Csutom keybinding 13"
+! rofi.kb-custom-13:                   Alt+numbersign
+! "Custom keybinding 14"
+! rofi.kb-custom-14:                   Alt+dollar
+! "Custom keybinding 15"
+! rofi.kb-custom-15:                   Alt+percent
+! "Custom keybinding 16"
+! rofi.kb-custom-16:                   Alt+dead_circumflex
+! "Custom keybinding 17"
+! rofi.kb-custom-17:                   Alt+ampersand
+! "Custom keybinding 18"
+! rofi.kb-custom-18:                   Alt+asterisk
+! "Custom Keybinding 19"
+! rofi.kb-custom-19:                   Alt+parenleft
+! "Select row 1"
+! rofi.kb-select-1:                    Super+1
+! "Select row 2"
+! rofi.kb-select-2:                    Super+2
+! "Select row 3"
+! rofi.kb-select-3:                    Super+3
+! "Select row 4"
+! rofi.kb-select-4:                    Super+4
+! "Select row 5"
+! rofi.kb-select-5:                    Super+5
+! "Select row 6"
+! rofi.kb-select-6:                    Super+6
+! "Select row 7"
+! rofi.kb-select-7:                    Super+7
+! "Select row 8"
+! rofi.kb-select-8:                    Super+8
+! "Select row 9"
+! rofi.kb-select-9:                    Super+9
+! "Select row 10"
+! rofi.kb-select-10:                   Super+0
+! "Go to the previous column"
+! rofi.ml-row-left:                    ScrollLeft
+! "Go to the next column"
+! rofi.ml-row-right:                   ScrollRight
+! "Select previous entry"
+! rofi.ml-row-up:                      ScrollUp
+! "Select next entry"
+! rofi.ml-row-down:                    ScrollDown
+! "Select hovered row"
+! rofi.me-select-entry:                MousePrimary
+! "Accept hovered row"
+! rofi.me-accept-entry:                MouseDPrimary
+! "Accept hovered row with custom action"
+! rofi.me-accept-custom:               Control+MouseDPrimary
+
+

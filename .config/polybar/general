@@ -1,0 +1,7 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;; GENERAL CONFIG
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+font-0 = "Liberation Mono:size=9:weight=bold;2"
+font-1 = Iosevka Nerd Font:style=Medium:size=10;3
+

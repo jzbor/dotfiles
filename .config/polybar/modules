@@ -1,0 +1,465 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;; MODULES
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/leftpos]
+type = custom/text
+content-background = ${color.bground}
+content-foreground = ${color.fground}
+content = "  "
+
+#+++++++++++++++++++++++++++++++++++++++
+
+[module/rightpos]
+type = custom/text
+content-background = ${color.bground}
+content-foreground = ${color.fground}
+content = "  "
+
+#+++++++++++++++++++++++++++++++++++++++
+
+[module/space]
+type = custom/text
+content-background = ${color.bground}
+content-foreground = ${color.fground}
+content = " "
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/launcher]
+type = custom/text
+content = 
+
+content-background = ${color.bground}
+content-foreground = ${color.fground}
+content-padding = 1
+
+click-left = $HOME/.config/rofi/win_drun.sh
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+format-padding = 1
+
+label = %title%
+label-maxlen = 30
+
+label-empty = New Window
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/workspaces]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+enable-click = true
+enable-scroll = true
+
+;label-active = 
+;label-occupied = 
+;label-urgent = 
+;label-empty = 
+label-focused = %name%
+label-visible = %name%
+label-urgent = %name%
+label-unfocused = %name%
+
+index-sort = true
+
+format = <label-state>
+
+label-focused-foreground = ${color.selectorc}
+label-urgent-foreground = ${color.urgentc}
+label-unfocused-foreground = ${color.fground}
+
+label-focused-padding = 2
+label-unfocused-padding = 2
+label-visible-padding = 2
+label-urgent-padding = 2
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/bspwm]
+type = internal/bspwm
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; Default: true
+;pin-workspaces = false
+
+; Output mode flags after focused state label
+; Default: false
+inline-mode = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = true
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+index-sort = true
+
+label-empty =
+
+label-focused-foreground = ${color.selectorc}
+label-urgent-foreground = ${color.urgentc}
+
+label-focused-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
+
+label-seperator = |
+label-seperator-padding = 2
+label-seperator-foreground = ${color.dividerc}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${color.bground}
+format-volume-foreground = ${color.fground}
+format-volume-padding = 1
+
+label-volume = %percentage%%
+
+format-muted-prefix = ﱝ
+label-muted = " Muted"
+format-muted-background = ${color.bground}
+format-muted-foreground = ${color.fground}
+format-muted-padding = 1
+
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/backlight]
+type = internal/xbacklight
+
+card = intel_backlight
+
+format = <ramp> <label>
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+format-padding = 1
+
+label = %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery0]
+type = internal/battery
+
+full-at = 100%
+
+battery = BAT0
+adapter = ACAD
+
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+format-charging-background = ${color.bground}
+format-charging-foreground = ${color.fground}
+format-charging-padding = 1
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${color.bground}
+format-discharging-foreground = ${color.fground}
+format-discharging-padding = 1
+
+format-full = <ramp-capacity> <label-full>
+format-full-background = ${color.bground}
+format-full-foreground = ${color.fground}
+format-full-padding = 1
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery1]
+type = internal/battery
+
+full-at = 100%
+
+battery = BAT1
+adapter = ACAD
+
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <animation-charging> <label-charging>
+format-charging-background = ${color.bground}
+format-charging-foreground = ${color.fground}
+format-charging-padding = 1
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${color.bground}
+format-discharging-foreground = ${color.fground}
+format-discharging-padding = 1
+
+format-full = <ramp-capacity> <label-full>
+format-full-background = ${color.bground}
+format-full-foreground = ${color.fground}
+format-full-padding = 1
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+time =  %H:%M
+time-alt =  %d/%m/%Y%
+
+format = <label>
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+format-padding = 1
+label = %time%
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = back
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = shutdown
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = back
+menu-2-1-exec = menu-open-0
+
+format-spacing = 1
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+format-padding = 1
+
+label-open = ⏻
+label-close = 
+label-separator = |
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-background = ${color.bground}
+format-connected-foreground = ${color.fground}
+format-connected-padding = 1
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.bground}
+format-disconnected-foreground = ${color.fground}
+format-disconnected-padding = 1
+
+label-connected = "%essid%"
+label-disconnected = 睊 "Not Connected"
+ramp-signal-0 = 直
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/ethernet]
+type = internal/network
+interface = enp0s25
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-connected-background = ${color.bground}
+format-connected-foreground = ${color.fground}
+format-connected-padding = 1
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.bground}
+format-disconnected-foreground = ${color.fground}
+format-disconnected-padding = 1
+
+label-connected = 
+label-disconnected =
+
+ramp-signal-0 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/temperature]
+type = internal/temperature
+interval = 1
+
+; Thermal zone to use
+; To list all the zone types, run
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 75
+
+format = <label>
+format-warn = <label-warn>
+format-background = ${color.bground}
+
+label = " %temperature-c% "
+label-warn = " %temperature-c% "
+label-warn-foreground = ${color.urgentc}
+label-background = ${color.bground}
+label-warn-background = ${color.bground}
+
+ramp-active-font =  3
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label>
+
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = "  %percentage:02%% "
+
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/music]
+type = custom/script
+exec = ~/.config/polybar/scripts/music.sh
+interval = 0.5
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = %output%
+
+click-left = ~/.config/polybar/scripts/music.sh play-pause
+click-middle = ~/.config/polybar/scripts/music.sh previous
+click-right = ~/.config/polybar/scripts/music.sh next
+
+double-click-left = ~/.config/polybar/scripts/music.sh next
+double-click-middle = ~/.config/polybar/scripts/music.sh next
+double-click-right = ~/.config/polybar/scripts/music.sh next
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/ac]
+type = custom/script
+exec = ~/.config/polybar/scripts/ac.sh
+interval = 0.5
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = %output%
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/yay]
+type = custom/script
+exec = ~/.config/polybar/scripts/yay.sh
+interval = 600
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = %output%
+
+click-left = dunstify "$(yay -Qu)" -a Updates
