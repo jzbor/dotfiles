@@ -14,17 +14,10 @@ XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
-*background:                      #202020
-*foreground:                      #FED7AE
-*fading:                          8
-*fadeColor:                       black
-*cursorColor:                     #1ABB9B
-*pointerColorBackground:          #2B2C2B
-*pointerColorForeground:          #16A085
 
 !! My theme
 #define myBackground			#21294f
-#define myBackgroundTrans		#00000000
+#define myBackgroundTrans		#21294f99
 #define myForeground			#f68e55
 #define mySelector			#c73a57
 #define myUrgent			#753f61
@@ -34,6 +27,15 @@ XTerm*selectToClipboard: true
 *themeForeground:		  myForeground
 *themeSelector:			  mySelector
 *themeUrgent:			  myUrgent
+
+
+*background:                      myBackground
+*foreground:                      myForeground
+*fading:                          8
+*fadeColor:                       black
+*cursorColor:                     #1ABB9B
+*pointerColorBackground:          #2B2C2B
+*pointerColorForeground:          #16A085
 
 !! black dark/light
 *color0:                          #222D31
