@@ -255,6 +255,12 @@ bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
+bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
+bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
