@@ -113,6 +113,9 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+y focus child
 
+# center selected container
+bindsym $mod+z move position center
+
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
