@@ -45,6 +45,16 @@ esac
 
 use_color=true
 
+topline () {
+    shopt -s checkwinsize
+    leftstr='\[\033[0;34m \w \033[0m\]'
+    leftpos="\033[1;1f"
+    rightstr="rightstr"
+    rightpos="\033[1;$((COLUMNS-$(echo $rightstr | wc -c)+1))f"
+    fillstr="$(printf ' %.0s' {1..10})"
+    echo -e "\033[s$leftpos$leftpos$leftstr$rightpos$rightstr\033[u"
+}
+
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
@@ -72,7 +82,8 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\]\[\033[01;31m\]]\[\033[00m\] \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]'
 	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\]\[\033[01;32m\]]\[\033[00m\] \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]'
+		#PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\]\[\033[01;32m\]]\[\033[00m\] \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]'
+		PS1='\[\033[1;32m\][\[\033[0m\]\u\[\033[1;32m\]@\h]\[\033[0m\] \[\033[0;34m\]\w\[\033[0m\] '
 	fi
 
 	alias ls='ls --color=auto'
