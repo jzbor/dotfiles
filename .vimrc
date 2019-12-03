@@ -172,6 +172,9 @@ au BufNewFile,BufRead /*.rasi setf css
 " Markdown:
     command Mdp !markdown_previewer % $<CR>
 
+" .Xresources:
+    autocmd BufWritePost .Xresources !xrdb merge %
+
 " LaTeX:
     " Word count:
 	autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
