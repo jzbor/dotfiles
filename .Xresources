@@ -302,7 +302,7 @@ rofi.drun-display-format:            {name} [<span weight='light' size='small'><
 ! "Disable history in run/ssh"
 ! rofi.disable-history:                false
 ! "Programs ignored for history"
-! rofi.ignored-prefixes:
+rofi.ignored-prefixes: firefox-private
 ! "Use sorting"
 ! rofi.sort:                           false
 ! "Choose the strategy used for sorting: normal (levenshtein) or fzf."
