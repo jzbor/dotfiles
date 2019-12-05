@@ -152,8 +152,8 @@ set $ws4_if i3-save-tree --workspace 4 | grep -P 'name'
 set $ws4_cmd
 set $ws5_if i3-save-tree --workspace 5 | grep -P 'name'
 set $ws5_cmd
-set $ws6_if i3-save-tree --workspace 6 | grep -P 'gimp'
-set $ws6_cmd gimp
+set $ws6_if i3-save-tree --workspace 6 | grep -P 'gthumb|gimp'
+set $ws6_cmd $(printf "gimp \n gthumb" | rofi -dmenu -lines 2)
 set $ws7_if i3-save-tree --workspace 7 | grep -P 'name'
 set $ws7_cmd
 set $ws8_if i3-save-tree --workspace 8 | grep -P 'name'
