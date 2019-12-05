@@ -38,7 +38,7 @@
 " Basics
     set visualbell	" Use visual bell (no beeping)
     set encoding=utf8	" Use UTF-8 encoding
-    set mouse=a		" Enable mouse
+    "set mouse=a		" Enable mouse
     let mapleader = "-"
 
 " Coloring
@@ -120,6 +120,22 @@
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
+
+" Disabling arrow keys
+    nnoremap <Up> <Nop>
+    nnoremap <Down> <Nop>
+    nnoremap <Left> <Nop>
+    nnoremap <Right> <Nop>
+
+    inoremap <Up> <Nop>
+    inoremap <Down> <Nop>
+    inoremap <Left> <Nop>
+    inoremap <Right> <Nop>
+
+    vnoremap <Up> <Nop>
+    vnoremap <Down> <Nop>
+    vnoremap <Left> <Nop>
+    vnoremap <Right> <Nop>
 
 " Undoing and deleting
     set undolevels=1000	" Number of undo levels
