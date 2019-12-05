@@ -1,0 +1,99 @@
+#!/bin/bash
+# Adding my own aliases
+
+alias la="ls -a"
+alias please="sudo"
+alias fucking="sudo"
+alias update_configs="~/scripts/update/update_configs.sh"
+alias phone_msg="kdeconnect-cli -d 19ac4ad2941e3801 --ping-msg"
+alias phone_ring="kdeconnect-cli -d 19ac4ad2941e3801 --ring"
+alias phone_sms="kdeconnect-cli -d 19ac4ad2941e3801 --send-sms --destination"
+alias phone_share="kdeconnect-cli -d 19ac4ad2941e3801 --share"
+alias imd="vim ~/txtfiles/index.md"
+alias mkdir="mkdir -pv"
+
+
+# Youtube-dl
+alias yt="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic" # Download link
+alias yta="youtube-dl --add-metadata --restrict-filenames -f 'bestaudio' -ic" # Download audio only
+alias ytl="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic -a" # Download list from file
+
+# Audio player
+# Source:https://unix.stackexchange.com/questions/132230/read-out-pulseaudio-volume-from-commandline-i-want-pactl-get-sink-volume#164740
+getdefaultsinkname() {
+    pacmd stat | awk -F": " '/^Default sink name: /{print $2}'
+}
+getdefaultsinkvol() {
+    pacmd list-sinks |
+        awk '/^\s+name: /{indefault = $2 == "<'$(getdefaultsinkname)'>"}
+            /^\s+volume: / && indefault {print $5; exit}' |
+        awk -F"%" '{print $1}'
+}
+pv () {
+    tempvol=$(getdefaultsinkvol)
+    if (( $# > 0 )); then
+    	pactl set-sink-volume 0 $1%
+    	echo "$tempvol% => $(getdefaultsinkvol)%"
+    else
+	echo "$tempvol%"
+    fi
+}
+
+music () {
+    if [ "$1" == "next" ] || [ "$1" == "prev" ]; then
+	# In this cases the output will probably not be up to date
+	$HOME/.config/polybar/scripts/music.sh $1 > /dev/null
+    else
+	$HOME/.config/polybar/scripts/music.sh $1
+    fi
+}
+
+alias p+="pactl set-sink-volume 0 +5%"
+alias p-="pactl set-sink-volume 0 -5%"
+alias pu="music prev"
+alias pi="music play-pause"
+alias po="music next"
+alias pp="music"
+
+
+# Disk mounting
+
+mnt () {
+    find /dev/disk/by-label/ -type l -printf "%f\n" | nl
+    echo
+    echo Please choose a device:
+    read -p "> " input
+    if [ ! -z "${input##*[!0-9]*}" ]; then
+	device=$(find /dev/disk/by-label/ -type l -printf "%f\n" | sed "$input"'q;d')
+    else
+	device=$input
+    fi
+    # @TODO Implement failsafe
+    dirname=/run/media/$USER/$(echo $device | sed 's~[^[:alnum:]/]\+~~g')
+    sudo mkdir -p $dirname
+    sudo mount /dev/disk/by-label/$device $dirname
+}
+
+umnt () {
+    # Not working yet
+    items=$(ls -1 /run/media/$USER/)
+    echo $items | nl
+    echo
+    echo Please choose a device:
+    read -p "> " input
+    if [ ! -z "${input##*[!0-9]*}" ]; then
+	device=$(echo $items | sed "$input"'q;d')
+    else
+	device=$input
+    fi
+    # @TODO Implement failsafe
+    dirname=/run/media/$USER/$(echo $device | sed 's~[^[:alnum:]/]\+~~g')
+    sudo umount $dirname
+    sudo rmdir $dirname
+}
+
+
+# Templates
+TEMPLATES="$HOME/Templates"
+alias tla="cp $TEMPLATES/article.tex"
+alias tp="cp $TEMPLATES/python_script.py"

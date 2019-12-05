@@ -86,7 +86,7 @@ if ${use_color} ; then
 		PS1='\[\033[1;32m\][\[\033[0m\]\u\[\033[1;32m\]@\h]\[\033[0m\] \[\033[0;34m\]\w\[\033[0m\] '
 	fi
 
-	alias ls='ls --color=auto'
+	alias ls='ls -hN --color=auto --group-directories-first'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
@@ -164,3 +164,5 @@ alias lan_on="sudo ip link set enp0s25 up"
 alias config='/usr/bin/git --git-dir=/home/jzbor/.dotfiles/ --work-tree=/home/jzbor'
 
 set -o vi
+shopt -s autocd
+
