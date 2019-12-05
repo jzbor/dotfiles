@@ -8,6 +8,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Tipps:
+# Use 'xmodmap -pke' to list all available keys
 
 ### COLORS and FONTS ###
 set_from_resource	$bg-color		themeBackground	    #202020
@@ -244,6 +246,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# 'Raw' resize keys
+bindsym $mod+n resize shrink width 10 px or 10 ppt
+bindsym $mod+m resize grow height 10 px or 10 ppt
+bindsym $mod+comma resize shrink height 10 px or 10 ppt
+bindsym $mod+period resize grow width 10 px or 10 ppt
+
+
 
 # Configure gaps
 # You can also use any non-zero value if you'd like to have a border
@@ -276,7 +285,7 @@ bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sou
 bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
 bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
-bindsym $mod+m exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+numbersign $mod+numbersign exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
