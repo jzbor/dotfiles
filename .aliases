@@ -96,4 +96,5 @@ umnt () {
 # Templates
 TEMPLATES="$HOME/Templates"
 alias tla="cp $TEMPLATES/article.tex"
+alias tla="cp $TEMPLATES/beamer.tex"
 alias tp="cp $TEMPLATES/python_script.py"
