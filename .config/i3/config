@@ -256,7 +256,7 @@ bindsym $mod+period resize grow width 10 px or 10 ppt
 
 # Configure gaps
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 gaps inner 5
 gaps outer 2
 
