@@ -87,7 +87,7 @@ URxvt*background:                 #191c21
 URxvt*foreground:                 #f8ba87
 URxvt*saveLines:                  5000
 
-URxvt.font:			xft:Iosevka:size=10
+URxvt.font:			xft:Iosevka Nerd Font:size=10
 !URxvt.font:			xft:Source Code Pro:size=10
 URxvt.color12:			rgb:5c/5c/ff
 
