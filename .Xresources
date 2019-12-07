@@ -88,6 +88,7 @@ URxvt*foreground:                 #f8ba87
 URxvt*saveLines:                  5000
 
 URxvt.font:			xft:Iosevka:size=10
+!URxvt.font:			xft:Source Code Pro:size=10
 URxvt.color12:			rgb:5c/5c/ff
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
@@ -284,7 +285,7 @@ rofi.terminal:                       "urxvt"
 ! "Ssh command to execute"
 ! rofi.ssh-command:                    {terminal} -e {ssh-client} {host} [-p {port}]
 ! "Run command to execute"
-! rofi.run-command:                    {cmd}
+rofi.run-command:                    bash -c "{cmd}"
 ! "Command to get extra run targets"
 ! rofi.run-list-command:
 ! "Run command to execute that runs in shell"
