@@ -42,7 +42,7 @@ font pango:$def-font
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec urxvt
 
 
 # kill focused window; 'split toggle' is required to reset splitting orientation
