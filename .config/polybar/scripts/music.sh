@@ -45,20 +45,20 @@ then
     echo "   Sound of Silence"
 else
     pre_icon=
-    if [ "$status" == "Playing" ]
-    then
+    if [ "$status" == "Playing" ]; then
 	pre_icon=
     else
 	pre_icon=
     fi
     artist=$(playerctl -p $player metadata artist)
+    if [ "$artist" = "" ]; then
+	artist=$(playerctl -p $player metadata album)
+    fi
     title=$(playerctl -p $player metadata title)
-    if (( ${#artist} > 20 ))
-    then
+    if (( ${#artist} > 20 )); then
 	artist="${artist::17}..."
     fi
-    if (( ${#title} > 20 ))
-    then
+    if (( ${#title} > 20 )); then
 	title="${title::17}..."
     fi
     echo " $pre_icon  $artist - $title "
