@@ -59,8 +59,8 @@ bindsym $mod+Shift+q kill
 #
 # Using rofi instead:
 # See end of file ("rofi.sh")
-bindsym $mod+d exec ~/.config/rofi/drun.sh
-bindsym $mod+Shift+d exec ~/.config/rofi/run.sh
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+d exec rofi -show run
 
 
 # change focus
