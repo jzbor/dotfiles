@@ -18,5 +18,6 @@ export PATH="$HOME/.local/bin/tools:\
     /usr/bin/core_perl:\
     $HOME/.scripts"
 
+eval "$(hub alias -s)"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
