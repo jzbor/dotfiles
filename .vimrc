@@ -39,7 +39,7 @@
     set visualbell	" Use visual bell (no beeping)
     set encoding=utf8	" Use UTF-8 encoding
     "set mouse=a		" Enable mouse
-    let mapleader = "-"
+    let mapleader = " "
 
 " Coloring
     if &t_Co > 255
@@ -161,11 +161,16 @@
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
     autocmd VimLeave *.tex !texclear %
 
-
 " Navigating with guides
     inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
     vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
     map <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" Escaping <leader>
+    inoremap <leader>- <space>
+    vnoremap <leader>- <space>
+    map <leader>- <space>
+
 
 " Python:
     "au BufNewFile,BufRead *.py
