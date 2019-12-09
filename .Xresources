@@ -6,7 +6,7 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background:        #191c21
+XTerm*background:        #181b20
 XTerm*foreground:        #f8ba87
 XTerm*pointerColor:      #1ABB9B
 XTerm*faceName:          Fixed
@@ -16,8 +16,8 @@ XTerm*selectToClipboard: true
 
 
 !! My theme
-#define myBackground			#191c21
-#define myBackgroundTrans		#191c2100
+#define myBackground			#181b20
+#define myBackgroundTrans		#181b2000
 #define myForeground			#f49448
 #define mySelector			#f8ba87
 #define myUrgent			#f1740e
@@ -78,12 +78,12 @@ Xcursor.size:                     0
 !! terminus names see end of file!
 
 URxvt.depth:                      32
-URxvt.background:                 [100]#191c21
+URxvt.background:                 [100]#181b20
 URxvt*cursorColor:                #f8ba87
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
 URxvt*cursorBlink:                true
-URxvt*background:                 #191c21
+URxvt*background:                 #181b20
 URxvt*foreground:                 #f8ba87
 URxvt*saveLines:                  5000
 
