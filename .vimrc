@@ -37,6 +37,7 @@
 
 " Basics
     set visualbell	" Use visual bell (no beeping)
+    set t_vb=		" Disable visual bell effects
     set encoding=utf8	" Use UTF-8 encoding
     "set mouse=a		" Enable mouse
     let mapleader = " "
@@ -45,6 +46,8 @@
     if &t_Co > 255
 	colorscheme gruvbox-material
 	set background=dark
+	" Workaround for kitty
+	let &t_ut=''
     	let g:airline_theme = 'gruvbox_material'
     	let g:lightline = {'colorscheme' : 'gruvbox_material'}
     endif
