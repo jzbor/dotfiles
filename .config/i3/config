@@ -42,7 +42,7 @@ font pango:$def-font
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec $TERM
 
 
 # kill focused window; 'split toggle' is required to reset splitting orientation
@@ -313,15 +313,15 @@ bindsym $mod+F4 exec evolution
 bindsym $mod+F5 exec idea
 bindsym $mod+F6 exec pycharm
 bindsym $mod+F7 exec android-studio
-bindsym $mod+F8 exec urxvt -e nmtui
-bindsym $mod+F9 exec urxvt
+bindsym $mod+F8 exec $TERM -e nmtui
+bindsym $mod+F9 exec $TERM
 bindsym $mod+F10 exec ~/.config/rofi.sh
-bindsym $mod+F11 exec urxvt -e gotop
+bindsym $mod+F11 exec $TERM -e gotop
 bindsym $mod+F12 exec dolphin
 
-bindsym XF86Tools exec urxvt
+bindsym XF86Tools exec $TERM
 bindsym XF86Search exec ~/.config/rofi.sh
-bindsym XF86LaunchA exec urxvt -e gotop
+bindsym XF86LaunchA exec $TERM -e gotop
 bindsym XF86Explorer exec dolphin
 
 bindsym $mod+Shift+F1 exec ~/.config/i3/fn-help.sh
@@ -343,7 +343,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+Tab move workspace to output right
 
 # Shortcut for notes
-bindsym $mod+Shift+n exec urxvt -e "vim ~/txtfiles/index.md"
+bindsym $mod+Shift+n exec $TERM -e "vim ~/txtfiles/index.md"
 
 # Cycling through workspaces
 bindsym $mod+Control+Tab    workspace next
@@ -383,7 +383,6 @@ for_window [window_type="menu"] floating enable
 for_window [title="antiX Control Centre"] floating enable
 for_window [instance="desktop-session-exit"] floating enable
 for_window [instance="st"] floating enable
-for_window [title="urxvt Preferences"] floating enable
 
 
 
