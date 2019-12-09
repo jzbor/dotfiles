@@ -330,8 +330,8 @@ format-disconnected-background = ${color.bground}
 format-disconnected-foreground = ${color.fground}
 format-disconnected-padding = 1
 
-label-connected = "%essid%"
-label-disconnected = 睊 "Not Connected"
+label-connected =
+label-disconnected = 睊
 ramp-signal-0 = 直
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -375,7 +375,7 @@ thermal-zone = 0
 ; Default: 80
 warn-temperature = 75
 
-format = <label>
+format = <ramp><label>
 format-warn = <label-warn>
 format-background = ${color.bground}
 
