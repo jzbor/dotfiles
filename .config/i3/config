@@ -403,7 +403,7 @@ bar {
 	position bottom
 	strip_workspace_name yes
 	workspace_buttons no
-	tray_output none
+	tray_output primary
 	tray_padding 0
 	separator_symbol " || "
  	height 25
