@@ -402,9 +402,11 @@ bar {
 	modifier $mod+mod1
 	position bottom
 	strip_workspace_name yes
-	tray_output primary
+	workspace_buttons no
+	tray_output none
 	tray_padding 0
-	height 25
+	separator_symbol " || "
+ 	height 25
 	colors{
 		background $bg-color
 		separator $text-color

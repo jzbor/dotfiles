@@ -2,7 +2,7 @@
     frame_width = 1
     frame_color = "#FED7AE"
 
-    font = Quicksand 10
+    font = DejaVu Sans Mono 10
 
     # Allow a small subset of html markup:
     #   <b>bold</b>

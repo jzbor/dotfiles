@@ -355,7 +355,7 @@ format-disconnected-foreground = ${color.fground}
 format-disconnected-padding = 1
 
 label-connected = 
-label-disconnected =
+label-disconnected = 
 
 ramp-signal-0 = 
 
@@ -463,3 +463,18 @@ format-foreground = ${color.fground}
 label = %output%
 
 click-left = dunstify "$(yay -Qu)" -a Updates
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/scripts/weather.sh
+interval = 600
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = %output%
+
+click-left = ~/.config/polybar/scripts/weather.sh notify
+

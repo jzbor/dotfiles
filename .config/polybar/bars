@@ -66,7 +66,7 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
-modules-left = space launcher leftpos music leftpos alsa leftpos
+modules-left = space music leftpos alsa leftpos weather leftpos
 modules-center = workspaces bspwm
 modules-right = rightpos cpu space temperature rightpos network ethernet rightpos battery0 battery1 ac rightpos date space
 
@@ -81,7 +81,7 @@ tray-detached = false
 tray-maxsize = 16
 tray-transparent = false
 tray-background = ${color.bground}
-tray-offset-x = 0
+tray-offset-x = 5
 tray-offset-y = 0
 tray-padding = 0
 tray-scale = 1.0
