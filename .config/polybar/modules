@@ -83,6 +83,8 @@ label-unfocused-padding = 2
 label-visible-padding = 2
 label-urgent-padding = 2
 
+label-active-font = 3
+
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/bspwm]
