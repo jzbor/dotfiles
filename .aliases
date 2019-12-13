@@ -56,40 +56,30 @@ alias pp="music"
 
 
 # Disk mounting
-
 mnt () {
-    find /dev/disk/by-label/ -type l -printf "%f\n" | nl
+    echo "=== List of available drives ==="
+    lsblk
     echo
-    echo Please choose a device:
-    read -p "> " input
-    if [ ! -z "${input##*[!0-9]*}" ]; then
-	device=$(find /dev/disk/by-label/ -type l -printf "%f\n" | sed "$input"'q;d')
-    else
-	device=$input
+    echo "Please pick a drive to mount"
+    read -r -p "--> " "input"
+    if [ -e "/dev/$input" ]; then
+	echo
+	udisksctl mount --block-device /dev/"$input"
     fi
-    # @TODO Implement failsafe
-    dirname=/run/media/$USER/$(echo $device | sed 's~[^[:alnum:]/]\+~~g')
-    sudo mkdir -p $dirname
-    sudo mount /dev/disk/by-label/$device $dirname
 }
 
 umnt () {
-    # Not working yet
-    items=$(ls -1 /run/media/$USER/)
-    echo $items | nl
+    echo "=== List of available drives ==="
+    lsblk
     echo
-    echo Please choose a device:
-    read -p "> " input
-    if [ ! -z "${input##*[!0-9]*}" ]; then
-	device=$(echo $items | sed "$input"'q;d')
-    else
-	device=$input
+    echo "Please pick a drive to umount"
+    read -r -p "--> " "input"
+    if [ -e "/dev/$input" ]; then
+	echo
+	udisksctl unmount --block-device /dev/"$input"
     fi
-    # @TODO Implement failsafe
-    dirname=/run/media/$USER/$(echo $device | sed 's~[^[:alnum:]/]\+~~g')
-    sudo umount $dirname
-    sudo rmdir $dirname
 }
+
 
 
 # Templates
