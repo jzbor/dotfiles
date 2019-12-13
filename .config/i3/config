@@ -296,13 +296,13 @@ bindsym XF86Sleep exec dmtool lock || blurlock
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec ~/.config/polybar/scripts/music.sh play
-bindsym XF86AudioPause exec ~/.config/polybar/scripts/music.sh pause
-bindsym XF86AudioPrev exec ~/.config/polybar/scripts/music.sh prev
-bindsym XF86AudioNext exec ~/.config/polybar/scripts/music.sh next
-bindsym $mod+u exec ~/.config/polybar/scripts/music.sh prev
-bindsym $mod+i exec ~/.config/polybar/scripts/music.sh play-pause
-bindsym $mod+o exec ~/.config/polybar/scripts/music.sh next
+bindsym XF86AudioPlay exec music.sh play
+bindsym XF86AudioPause exec music.sh pause
+bindsym XF86AudioPrev exec music.sh prev
+bindsym XF86AudioNext exec music.sh next
+bindsym $mod+u exec music.sh prev
+bindsym $mod+i exec music.sh play-pause
+bindsym $mod+o exec music.sh next
 bindsym $mod+p workspace $ws10
 
 # Add fn/XF86 functionalities
@@ -324,7 +324,10 @@ bindsym XF86Search exec ~/.config/rofi.sh
 bindsym XF86LaunchA exec $TERMINAL -e gotop
 bindsym XF86Explorer exec dolphin
 
-bindsym $mod+Shift+F1 exec ~/.config/i3/fn-help.sh
+bindsym $mod+Shift+F1 exec fn-help.sh
+
+# Scripts
+bindsym $mod+Shift+w exec weather.sh notify
 
 
 # Reload the configuration file
@@ -358,7 +361,7 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
 exec --no-startup-id autorandr -c --force
 exec --no-startup-id nextcloud --background
-exec_always --no-startup-id ~/.config/i3/dunst.sh
+exec_always --no-startup-id dunst.sh
 exec_always --no-startup-id spicetify update
 #exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec_always --no-startup-id feh --bg-fill ~/.config/background.* ; sleep 1; compton -b

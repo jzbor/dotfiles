@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 get_xr () {
-    xrdb -query -all | grep $1: | sed "s/.*#/#/g" | tail -n1
+    xrdb -query -all | grep "$1": | sed "s/.*#/#/g" | tail -n1
 }
 
 killall -9 dunst

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 
 last_player="/tmp/.lastplayer"
@@ -10,10 +10,10 @@ else
 fi
 
 
-if [ "$(playerctl -p Lollypop status 2> /dev/null)" == "Playing" ]; then
+if [ "$(playerctl -p Lollypop status 2> /dev/null)" = "Playing" ]; then
     player="Lollypop"
     echo $player > $last_player
-elif [ "$(playerctl -p spotify status 2> /dev/null)" == "Playing" ]; then
+elif [ "$(playerctl -p spotify status 2> /dev/null)" = "Playing" ]; then
     player="spotify"
     echo $player > $last_player
 fi
@@ -22,7 +22,7 @@ fi
 status=$(playerctl -p $player status 2> /dev/null)
 
 
-if (( $# > 0 )); then
+if [ "$#" -gt "0" ]; then
     case $1 in
 	"play" | "play-pause")
 	    playerctl -p $player play-pause
@@ -45,7 +45,7 @@ then
     echo "   Sound of Silence"
 else
     pre_icon=
-    if [ "$status" == "Playing" ]; then
+    if [ "$status" = "Playing" ]; then
 	pre_icon=
     else
 	pre_icon=

@@ -424,7 +424,7 @@ label = "  %percentage:02%% "
 
 [module/music]
 type = custom/script
-exec = ~/.config/polybar/scripts/music.sh
+exec = music.sh
 interval = 0.5
 
 format-background = ${color.bground}
@@ -432,19 +432,19 @@ format-foreground = ${color.fground}
 
 label = %output%
 
-click-left = ~/.config/polybar/scripts/music.sh play-pause
-click-middle = ~/.config/polybar/scripts/music.sh previous
-click-right = ~/.config/polybar/scripts/music.sh next
+click-left = music.sh play-pause
+click-middle = music.sh previous
+click-right = music.sh next
 
-double-click-left = ~/.config/polybar/scripts/music.sh next
-double-click-middle = ~/.config/polybar/scripts/music.sh next
-double-click-right = ~/.config/polybar/scripts/music.sh next
+double-click-left = music.sh next
+double-click-middle = music.sh next
+double-click-right = music.sh next
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/ac]
 type = custom/script
-exec = ~/.config/polybar/scripts/ac.sh
+exec = ac.sh
 interval = 0.5
 
 format-background = ${color.bground}
@@ -456,7 +456,7 @@ label = %output%
 
 [module/yay]
 type = custom/script
-exec = ~/.config/polybar/scripts/yay.sh
+exec = yay.sh
 interval = 600
 
 format-background = ${color.bground}
@@ -470,7 +470,7 @@ click-left = dunstify "$(yay -Qu)" -a Updates
 
 [module/weather]
 type = custom/script
-exec = ~/.config/polybar/scripts/weather.sh
+exec = weather.sh
 interval = 600
 
 format-background = ${color.bground}
@@ -478,5 +478,5 @@ format-foreground = ${color.fground}
 
 label = %output%
 
-click-left = ~/.config/polybar/scripts/weather.sh notify
+click-left = weather.sh notify
 
