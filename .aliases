@@ -4,7 +4,6 @@
 alias la="ls -a"
 alias please="sudo"
 alias fucking="sudo"
-alias update_configs="~/scripts/update/update_configs.sh"
 alias phone_msg="kdeconnect-cli -d 19ac4ad2941e3801 --ping-msg"
 alias phone_ring="kdeconnect-cli -d 19ac4ad2941e3801 --ring"
 alias phone_sms="kdeconnect-cli -d 19ac4ad2941e3801 --send-sms --destination"
@@ -42,9 +41,9 @@ pv () {
 music () {
     if [ "$1" == "next" ] || [ "$1" == "prev" ]; then
 	# In this cases the output will probably not be up to date
-	$HOME/.config/polybar/scripts/music.sh $1 > /dev/null
+	music.sh $1 > /dev/null
     else
-	$HOME/.config/polybar/scripts/music.sh $1
+	music.sh $1
     fi
 }
 
