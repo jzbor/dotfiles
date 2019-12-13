@@ -480,3 +480,29 @@ label = %output%
 
 click-left = weather.sh notify
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/wifi-script]
+type = custom/script
+exec = wifi.sh
+interval = 1
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = %output%
+
+click-left = wifi.sh notify
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/bluetooth]
+type = custom/script
+exec = bluetooth.sh
+interval = 1
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = " %output% "
+
