@@ -377,7 +377,7 @@ rofi.color-window:	myBackground, myBackground, myBackground
 ! "Hide the prefix mode prefix on the combi view."
 ! rofi.combi-hide-mode-prefix:         false
 ! "Set the character used to negate the matching. ('\0' to disable)"
-! rofi.matching-negate-char:           -
+rofi.matching-negate-char:           \
 ! "Directory where history and temporary files are stored."
 ! rofi.cache-dir:
 ! "Pidfile location"
@@ -421,13 +421,13 @@ rofi.color-window:	myBackground, myBackground, myBackground
 ! "Delete next char"
 ! rofi.kb-remove-char-forward:         Delete,Control+d
 ! "Delete previous char"
-! rofi.kb-remove-char-back:            BackSpace,Shift+BackSpace,Control+h
+rofi.kb-remove-char-back:            BackSpace,Shift+BackSpace
 ! "Delete till the end of line"
-! rofi.kb-remove-to-eol:               Control+k
+rofi.kb-remove-to-eol:
 ! "Delete till the start of line"
 ! rofi.kb-remove-to-sol:               Control+u
 ! "Accept entry"
-! rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+rofi.kb-accept-entry:                Control+m,Return,KP_Enter
 ! "Use entered text as command (in ssh/run modi)"
 ! rofi.kb-accept-custom:               Control+Return
 ! "Use alternate accept command."
@@ -435,17 +435,17 @@ rofi.color-window:	myBackground, myBackground, myBackground
 ! "Delete entry from history"
 ! rofi.kb-delete-entry:                Shift+Delete
 ! "Switch to the next mode."
-! rofi.kb-mode-next:                   Shift+Right,Control+Tab
+rofi.kb-mode-next:                   Control+h,Shift+Right,Control+Tab
 ! "Switch to the previous mode."
-! rofi.kb-mode-previous:               Shift+Left,Control+ISO_Left_Tab
+rofi.kb-mode-previous:               Control+l,Shift+Left,Control+ISO_Left_Tab
 ! "Go to the previous column"
 ! rofi.kb-row-left:                    Control+Page_Up
 ! "Go to the next column"
 ! rofi.kb-row-right:                   Control+Page_Down
 ! "Select previous entry"
-! rofi.kb-row-up:                      Up,Control+p,ISO_Left_Tab
+rofi.kb-row-up:                      Control+k,Up,Control+p,ISO_Left_Tab
 ! "Select next entry"
-! rofi.kb-row-down:                    Down,Control+n
+rofi.kb-row-down:                    Control+j,Down,Control+n
 ! "Go to next row, if one left, accept it, if no left next mode."
 ! rofi.kb-row-tab:                     Tab
 ! "Go to the previous page"
