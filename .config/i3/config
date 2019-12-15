@@ -1,17 +1,13 @@
 # vim: filetype=i3
 #
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
+# === I3 CONFIG ===
 #
 
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# Helpful commands:
+# Use 'xmodmap pke' lo list all available keys
 
-# Tipps:
-# Use 'xmodmap -pke' to list all available keys
 
-### COLORS and FONTS ###
+### Colors and Fonts ###
 set_from_resource	$bg-color		themeBackground	    #202020
 set_from_resource	$sec-color		themeForeground	    #fed7ae
 set_from_resource	$urgent-bg-color	themeUrgent	    #d78272
@@ -19,50 +15,112 @@ set $text-color		    #f3f4f5
 set $inactive-text-color    #676e7d
 set $def-font 		    	Quicksand, Bold 11
 
+# window colors
+#				border				background			text			    indicator
+client.focused			$sec-color			$sec-color			$bg-color		    $sec-color
+client.unfocused		$bg-color			$bg-color			$inactive-text-color	    $bg-color
+client.focused_inactive		$bg-color			$bg-color			$inactive-text-color	    $bg-color
+client.urgent			$urgent-bg-color		$urgent-bg-color		$text-color		    $bg-color
 
-# Set superkey
+
+### Other Variables ###
 set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:$def-font
+focus_follows_mouse yes
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+for_window [class=".*"] border pixel 2
+gaps inner 5
+gaps outer 2
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# Disabling gaps on certain workspaces - Not working :(
+workspace $ws6 gaps inner 0
+workspace $ws6 gaps outer 0
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+
+### System Shortcuts ###
 floating_modifier $mod
-
-# start a terminal
 bindsym $mod+Return exec $TERMINAL
-
-
-# kill focused window; 'split toggle' is required to reset splitting orientation
-#bindsym $mod+Shift+q split toggle kill
 bindsym $mod+Shift+q kill
-
-
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-#
-# Using rofi instead:
-# See end of file ("rofi.sh")
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
 
+# Start, exit, restart
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+shift+x exec dmtool lock || blurlock
 
+# Force autorandr to reload
+bindsym $mod+Shift+f exec autorandr -c --force
+
+# 'Raw' resize keys
+bindsym $mod+n resize shrink width 10 px or 10 ppt
+bindsym $mod+m resize grow height 10 px or 10 ppt
+bindsym $mod+comma resize shrink height 10 px or 10 ppt
+bindsym $mod+period resize grow width 10 px or 10 ppt
+
+
+### Media Shortcuts ###
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
+bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
+bindsym $mod+numbersign exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media player controls
+bindsym XF86AudioPlay exec music.sh play
+bindsym XF86AudioPause exec music.sh pause
+bindsym XF86AudioPrev exec music.sh prev
+bindsym XF86AudioNext exec music.sh next
+bindsym $mod+u exec music.sh prev
+bindsym $mod+i exec music.sh play-pause
+bindsym $mod+o exec music.sh next
+bindsym $mod+p workspace $ws10
+
+
+### XF + Fn  Shortcuts ###
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86Sleep exec dmtool lock || blurlock
+
+# Add fn/XF86 functionalities
+bindsym $mod+F1 exec pavucontrol
+bindsym $mod+F2 exec spotify
+bindsym $mod+F3 exec lollypop
+bindsym $mod+F4 exec evolution
+bindsym $mod+F5 exec idea
+bindsym $mod+F6 exec pycharm
+bindsym $mod+F7 exec android-studio
+bindsym $mod+F8 exec $TERMINAL -e nmtui
+bindsym $mod+F9 exec $TERMINAL
+bindsym $mod+F10 exec ~/.config/rofi.sh
+bindsym $mod+F11 exec $TERMINAL -e gotop
+bindsym $mod+F12 exec dolphin
+
+bindsym XF86Tools exec $TERMINAL
+bindsym XF86Search exec ~/.config/rofi.sh
+bindsym XF86LaunchA exec $TERMINAL -e gotop
+bindsym XF86Explorer exec dolphin
+
+bindsym $mod+Shift+F1 exec fn-help.sh
+
+
+### Script Shortcuts ###
+bindsym $mod+Shift+w exec weather.sh notify
+
+# Shortcut for notes
+bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
+
+
+### Window Management Shortcuts ###
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -117,9 +175,16 @@ bindsym $mod+y focus child
 # center selected container
 bindsym $mod+z move position center
 
+# Make ws movable between windows
+bindsym $mod+Shift+Tab move workspace to output right
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# Cycling through workspaces
+bindsym $mod+Control+Tab    workspace next
+bindsym $mod+Tab    workspace back_and_forth
+
+
+### Workspaces ###
+# Define workspace names
 set $ws1 "1:"
 set $ws2 "2:²"
 set $ws3 "3:³"
@@ -207,18 +272,8 @@ bindsym $mod+Shift+mod1+8 move container to workspace $wsa8
 bindsym $mod+Shift+mod1+9 move container to workspace $wsa9
 bindsym $mod+Shift+mod1+0 move container to workspace $wsa10
 
-# Binding applications to workspaces
-# Get class with xorg-xprop; spotify and others need workaround (for_window)
-for_window [title="win0"] move to workspace $ws5, floating enable   # JetBrains loading frame
-for_window [class="jetbrains-idea-ce" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
-for_window [class="jetbrains-pycharm-ce" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
-for_window [class="jetbrains-studio" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
-assign [class="Gimp"] $ws6
-assign [class="Gnome-calendar"] $ws9
-assign [class="Evolution"] $ws9
-for_window [class="Spotify"] move to workspace $ws10
-assign [class="Lollypop"] $ws10
 
+### Modes ###
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -243,115 +298,9 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-# 'Raw' resize keys
-bindsym $mod+n resize shrink width 10 px or 10 ppt
-bindsym $mod+m resize grow height 10 px or 10 ppt
-bindsym $mod+comma resize shrink height 10 px or 10 ppt
-bindsym $mod+period resize grow width 10 px or 10 ppt
-
-
-
-# Configure gaps
-# You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 2
-gaps inner 5
-gaps outer 2
-
-# Disabling gaps on certain workspaces - Not working :(
-workspace $ws6 gaps inner 0
-workspace $ws6 gaps outer 0
-
-# Tiling    (not working yet)
-#default_orientation vertical
-#for_window [class=".*"] split toggle
-
-
-# Focusing on hover
-focus_follows_mouse yes
-
-
-# Add key shortcuts
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
-bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
-bindsym $mod+numbersign exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-bindsym XF86Sleep exec dmtool lock || blurlock
-
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
-# Media player controls
-bindsym XF86AudioPlay exec music.sh play
-bindsym XF86AudioPause exec music.sh pause
-bindsym XF86AudioPrev exec music.sh prev
-bindsym XF86AudioNext exec music.sh next
-bindsym $mod+u exec music.sh prev
-bindsym $mod+i exec music.sh play-pause
-bindsym $mod+o exec music.sh next
-bindsym $mod+p workspace $ws10
-
-# Add fn/XF86 functionalities
-bindsym $mod+F1 exec pavucontrol
-bindsym $mod+F2 exec spotify
-bindsym $mod+F3 exec lollypop
-bindsym $mod+F4 exec evolution
-bindsym $mod+F5 exec idea
-bindsym $mod+F6 exec pycharm
-bindsym $mod+F7 exec android-studio
-bindsym $mod+F8 exec $TERMINAL -e nmtui
-bindsym $mod+F9 exec $TERMINAL
-bindsym $mod+F10 exec ~/.config/rofi.sh
-bindsym $mod+F11 exec $TERMINAL -e gotop
-bindsym $mod+F12 exec dolphin
-
-bindsym XF86Tools exec $TERMINAL
-bindsym XF86Search exec ~/.config/rofi.sh
-bindsym XF86LaunchA exec $TERMINAL -e gotop
-bindsym XF86Explorer exec dolphin
-
-bindsym $mod+Shift+F1 exec fn-help.sh
-
-# Scripts
-bindsym $mod+Shift+w exec weather.sh notify
-
-
-# Reload the configuration file
-bindsym $mod+Shift+c reload
-
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# Force autorandr to reload
-bindsym $mod+Shift+f exec autorandr -c --force
-
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# Make ws movable between windows
-bindsym $mod+Shift+Tab move workspace to output right
-
-# Shortcut for notes
-bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
-
-# Cycling through workspaces
-bindsym $mod+Control+Tab    workspace next
-bindsym $mod+Tab    workspace back_and_forth
-
+### Autostart ###
 # Autostarts
 exec --no-startup-id compton
 exec --no-startup-id indicator-kdeconnect
@@ -365,6 +314,7 @@ exec_always --no-startup-id dunst.sh
 exec_always --no-startup-id spicetify update
 #exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec_always --no-startup-id feh --bg-fill ~/.config/background.* ; sleep 1; compton -b
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Autostarts copied from manjaro-i3
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
@@ -375,7 +325,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 
-
+### Window Specific Settings ###
 for_window [window_role="floating"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -388,17 +338,20 @@ for_window [instance="desktop-session-exit"] floating enable
 for_window [instance="st"] floating enable
 
 
+# Binding applications to workspaces
+# Get class with xorg-xprop; spotify and others need workaround (for_window)
+for_window [title="win0"] move to workspace $ws5, floating enable   # JetBrains loading frame
+for_window [class="jetbrains-idea-ce" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
+for_window [class="jetbrains-pycharm-ce" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
+for_window [class="jetbrains-studio" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
+assign [class="Gimp"] $ws6
+assign [class="Gnome-calendar"] $ws9
+assign [class="Evolution"] $ws9
+for_window [class="Spotify"] move to workspace $ws10
+assign [class="Lollypop"] $ws10
 
-# window colors
-#				border				background			text			    indicator
-client.focused			$sec-color			$sec-color			$bg-color		    $sec-color
-client.unfocused		$bg-color			$bg-color			$inactive-text-color	    $bg-color
-client.focused_inactive		$bg-color			$bg-color			$inactive-text-color	    $bg-color
-client.urgent			$urgent-bg-color		$urgent-bg-color		$text-color		    $bg-color
 
-hide_edge_borders both
-
-# i3bar
+### I3 Bar ###
 bar {
 	status_command i3status
 	mode hide
@@ -420,16 +373,4 @@ bar {
 		urgent_workspace		$sec-color    	$urgent-bg-color    $bg-color
 	}
 }
-
-# Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-#i3lock
-bindsym $mod+shift+x exec dmtool lock || blurlock
-
-
-### IMPORTANT PROGRAMS ###
-# i3-gaps compton conky i3status i3lock xbacklight pactl playerctl rofi polybar
-
-# Also remember to disable and blacklist the 'pcspkr' module to get rid of the annoying beep
 
