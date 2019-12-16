@@ -166,15 +166,9 @@
     autocmd VimLeave *.tex !texclear %
 
 " Navigating with guides
-    inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-    vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-    map <leader><leader> <Esc>/<++><Enter>"_c4l
-
-" Escaping <leader>
-    inoremap <leader>- <space>
-    vnoremap <leader>- <space>
-    map <leader>- <space>
-
+    inoremap <leader>- <Esc>/<++><Enter>"_c4l
+    vnoremap <leader>- <Esc>/<++><Enter>"_c4l
+    map <leader>- <Esc>/<++><Enter>"_c4l
 
 " Python:
     "au BufNewFile,BufRead *.py
