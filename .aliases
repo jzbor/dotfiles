@@ -14,7 +14,7 @@ alias mkdir="mkdir -pv"
 
 # Youtube-dl
 alias yt="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic" # Download link
-alias yta="youtube-dl --add-metadata --restrict-filenames -f 'bestaudio' -ic" # Download audio only
+alias yta="youtube-dl --add-metadata --restrict-filenames -f 'bestaudio[ext=m4a]' -ic" # Download audio only
 alias ytl="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic -a" # Download list from file
 
 # Audio player
