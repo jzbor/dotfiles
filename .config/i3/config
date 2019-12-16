@@ -330,7 +330,28 @@ mode "launch" {
     bindsym mod1+space mode "default"
 }
 bindsym $mod+odiaeresis mode "launch"
-bindsym $mod+g mode "launch"
+
+mode "gaps" {
+    bindsym h gaps outer current minus 1
+    bindsym j gaps inner current minus 1
+    bindsym k gaps inner current plus 1
+    bindsym l gaps outer current plus 1
+
+    bindsym Shift+h gaps outer current minus 5
+    bindsym Shift+j gaps inner current minus 5
+    bindsym Shift+k gaps inner current plus 5
+    bindsym Shift+l gaps outer current plus 5
+
+    # reset
+    bindsym r gaps inner current set 5; gaps outer current set 2
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+    bindsym mod1+space mode "default"
+}
+bindsym $mod+g mode "gaps"
 
 
 ### Autostart ###
