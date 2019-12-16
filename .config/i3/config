@@ -4,7 +4,7 @@
 #
 
 # Helpful commands:
-# Use 'xmodmap pke' lo list all available keys
+# Use 'xmodmap -pke' lo list all available keys
 
 
 ### Colors and Fonts ###
@@ -299,6 +299,39 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Launch mode
+mode "launch" {
+    bindsym w exec weather.sh; mode "default"
+    bindsym e exec $TERMINAL -e $EDITOR; mode "default"
+    bindsym r exec arandr; mode "default"
+    bindsym t exec gthumb; mode "default"
+    bindsym i exec idea; mode "default"
+    bindsym p exec pycharm; mode "default"
+
+    bindsym a exec android; mode "default"
+    bindsym s exec spotify; mode "default"
+    bindsym f exec firefox; mode "default"
+    bindsym g exec gimp; mode "default"
+    bindsym h exec $TERMINAL -e htop; mode "default"
+    bindsym l exec lollypop; mode "default"
+
+    bindsym y exec firefox youtube.com; mode "default"
+    bindsym v exec $TERMINAL -e vim; mode "default"
+    bindsym b exec $FILEBROWSER; mode "default"
+    bindsym m exec evolution; mode "default"
+
+    bindsym Enter exec $TERMINAL; mode "default"
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+    bindsym mod1+space mode "default"
+}
+bindsym $mod+odiaeresis mode "launch"
+bindsym $mod+g mode "launch"
+
 
 ### Autostart ###
 # Autostarts
