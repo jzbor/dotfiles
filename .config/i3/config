@@ -303,6 +303,7 @@ bindsym $mod+r mode "resize"
 
 # Launch mode
 mode "launch" {
+    bindsym q exec printf "shutdown now\nreboot\ni3exit\n" | rofi -dmenu | bash; mode "default"
     bindsym w exec weather.sh; mode "default"
     bindsym e exec $TERMINAL -e $EDITOR; mode "default"
     bindsym r exec arandr; mode "default"
