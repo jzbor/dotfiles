@@ -11,9 +11,10 @@
 set_from_resource	$bg-color		themeBackground	    #202020
 set_from_resource	$sec-color		themeForeground	    #fed7ae
 set_from_resource	$urgent-bg-color	themeUrgent	    #d78272
-set $text-color		    #f3f4f5
+set_from_resource	$text-color		themeForeground	    #f3f4f5
+#set $text-color		    #f3f4f5
 set $inactive-text-color    #676e7d
-set $def-font 		    	Quicksand, Bold 11
+set $def-font		    Fira Code Regular, 11
 
 # window colors
 #				border				background			text			    indicator
@@ -420,6 +421,7 @@ bar {
  	height 25
 	colors{
 		background $bg-color
+		statusline $text-color
 		separator $text-color
 		#				border		background	    text
 		focused_workspace		$sec-color   	$sec-color 	    $bg-color
