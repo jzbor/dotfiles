@@ -162,7 +162,7 @@ VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 alias lan_off="sudo ip link set enp0s25 down"
 alias lan_on="sudo ip link set enp0s25 up"
 
-alias config='/usr/bin/git --git-dir=/home/jzbor/.dotfiles/ --work-tree=/home/jzbor'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME/jzbor'
 
 set -o vi
 shopt -s autocd
