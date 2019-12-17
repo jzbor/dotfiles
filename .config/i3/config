@@ -164,7 +164,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Control+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -317,6 +317,7 @@ mode "launch" {
     bindsym l exec lollypop; mode "default"
 
     bindsym y exec firefox youtube.com; mode "default"
+    bindsym x exec firefox --private-window; mode "default"
     bindsym v exec $TERMINAL -e vim; mode "default"
     bindsym b exec $FILEBROWSER; mode "default"
     bindsym m exec evolution; mode "default"
@@ -329,7 +330,7 @@ mode "launch" {
     bindsym $mod+r mode "default"
     bindsym mod1+space mode "default"
 }
-bindsym $mod+odiaeresis mode "launch"
+bindsym $mod+space mode "launch"
 
 mode "gaps" {
     bindsym h gaps outer current minus 1
