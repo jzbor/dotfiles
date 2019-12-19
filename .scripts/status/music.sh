@@ -48,7 +48,8 @@ if [ "$(playerctl -p Lollypop status 2> /dev/null)" = "Playing" ]; then
 elif [ "$(playerctl -p vlc status 2> /dev/null)" = "Playing" ]; then
     player="vlc"
     echo $player > $last_player
-elif [ "$(playerctl -p spotify status 2> /dev/null)" = "Playing" ]; then
+#elif [ "$(playerctl -p spotify status 2> /dev/null)" = "Playing" ]; then
+else
     player="spotify"
     echo $player > $last_player
 fi
