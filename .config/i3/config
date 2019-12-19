@@ -49,7 +49,7 @@ bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+shift+x exec dmtool lock || blurlock
+bindsym $mod+shift+x exec lock.sh
 
 # Force autorandr to reload
 bindsym $mod+Shift+f exec autorandr -c --force
@@ -90,7 +90,7 @@ bindsym $mod+p workspace $ws10
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-bindsym XF86Sleep exec dmtool lock || blurlock
+bindsym XF86Sleep exec lock.sh
 
 # Add fn/XF86 functionalities
 bindsym $mod+F1 exec pavucontrol
@@ -212,7 +212,7 @@ set $ws1_if i3-save-tree --workspace 1 | grep -P 'name'
 set $ws1_cmd
 set $ws2_if i3-save-tree --workspace 2 | grep -P 'Firefox'
 set $ws2_cmd firefox
-set $ws3_if i3-save-tree --workspace 3 | grep -P 'Firefox'
+set $ws3_if i3-save-tree --workspace 3 | grep -P 'name'
 set $ws3_cmd firefox
 set $ws4_if i3-save-tree --workspace 4 | grep -P 'name'
 set $ws4_cmd
@@ -303,7 +303,7 @@ bindsym $mod+r mode "resize"
 
 # Launch mode
 mode "launch" {
-    bindsym q exec printf "shutdown now\nreboot\ni3exit\n" | rofi -dmenu | bash; mode "default"
+    bindsym q exec sysmenu.sh
     bindsym w exec weather.sh; mode "default"
     bindsym e exec $TERMINAL -e $EDITOR; mode "default"
     bindsym r exec arandr; mode "default"
