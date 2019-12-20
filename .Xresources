@@ -467,7 +467,7 @@ rofi.kb-row-down:                    Control+j,Down,Control+n
 ! "Toggle sort"
 ! rofi.kb-toggle-sort:                 Alt+grave
 ! "Quit rofi"
-! rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft
+rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft,Alt+space
 ! "Custom keybinding 1"
 ! rofi.kb-custom-1:                    Alt+1
 ! "Custom keybinding 2"
