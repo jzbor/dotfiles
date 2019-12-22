@@ -115,15 +115,13 @@
 " Tab navigation
     set splitbelow splitright
 
-    nmap <silent> <A-Up> :wincmd k<CR>
-    nmap <silent> <A-Down> :wincmd j<CR>
-    nmap <silent> <A-Left> :wincmd h<CR>
-    nmap <silent> <A-Right> :wincmd l<CR>
-
     map <C-h> <C-w>h
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
+
+    map <Leader>n <esc>:tabprevious<CR>
+    map <Leader>m <esc>:tabnext<CR>
 
 " Disabling arrow keys
     nnoremap <Up> <Nop>
