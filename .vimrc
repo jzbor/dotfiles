@@ -42,6 +42,12 @@
     "set mouse=a		" Enable mouse
     let mapleader = " "
 
+" Remapping hjkl to jklö
+    noremap ö l
+    noremap l k
+    noremap k j
+    noremap j h
+
 " Coloring
     if &t_Co > 255
 	colorscheme gruvbox-material
