@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export EDITOR="vim"
+export KEYLAYOUT='QWERTZ-JKLÖ'
 export BROWSER="firefox"
 export READER="zathura"
 export TERM="xterm-kitty"

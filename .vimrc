@@ -43,10 +43,17 @@
     let mapleader = " "
 
 " Remapping hjkl to jklö
-    noremap ö l
-    noremap l k
-    noremap k j
-    noremap j h
+    if $KEYLAYOUT =~ '.*-JKLÖ'
+   	noremap j h
+    	noremap k j
+    	noremap l k
+	noremap ö l
+    elseif $KEYLAYOUT == '.*-JKL;'
+   	noremap j h
+    	noremap k j
+    	noremap l k
+	noremap ; l
+    endif
 
 " Coloring
     if &t_Co > 255
@@ -121,10 +128,22 @@
 " Tab navigation
     set splitbelow splitright
 
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
+    if $KEYLAYOUT == '.*-JKLÖ'
+	map <C-j> <C-w>h
+    	map <C-k> <C-w>j
+    	map <C-l> <C-w>k
+    	map <C-ö> <C-w>l
+    elseif $KEYLAYOUT == '.*-JKL;'
+	map <C-j> <C-w>h
+    	map <C-k> <C-w>j
+    	map <C-l> <C-w>k
+    	map <C-;> <C-w>l
+    else
+	map <C-h> <C-w>h
+    	map <C-j> <C-w>j
+    	map <C-k> <C-w>k
+    	map <C-l> <C-w>l
+    endif
 
     map <Leader>n <esc>:tabprevious<CR>
     map <Leader>m <esc>:tabnext<CR>
