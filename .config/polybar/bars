@@ -66,7 +66,7 @@ padding = 0
 module-margin-left = 0
 module-margin-right = 0
 
-modules-left = space music leftpos alsa leftpos weather leftpos
+modules-left = space music leftpos alsa leftpos backlight leftpos
 modules-center = workspaces bspwm
 modules-right = rightpos cpu space temperature rightpos bluetooth wifi-script ethernet rightpos battery0 battery1 ac rightpos date space
 

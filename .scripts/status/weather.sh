@@ -12,7 +12,7 @@ if [ "$1" = "notify" ]; then
 	printf "Not available\nPlease try turning on some sort of internet connection"
     fi
 else
-    weather="$(curl -s wttr.in/?format="%C+%t")"
+    weather="$(curl -s wttr.in/Haar?format="%C+%t")"
     if [ "$weather" != "" ]; then
 	echo "$weather" > $temp_file
 	echo "$weather"
