@@ -12,6 +12,20 @@ alias imd="vim ~/txtfiles/index.md"
 alias mkdir="mkdir -pv"
 
 
+cd () {
+    gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
+    if [ -n "$1" ]; then
+	command cd "$1" || exit
+    elif [ "$gitdir" = "$(pwd)" ]; then
+	command cd "$HOME" || exit
+    elif [ "$gitdir" = "" ]; then
+	command cd "$HOME" || exit
+    else
+	command cd "$gitdir" || exit
+    fi
+}
+
+
 # Youtube-dl
 alias yt="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic" # Download link
 alias yta="youtube-dl --add-metadata --restrict-filenames -f 'bestaudio[ext=m4a]' -ic" # Download audio only
