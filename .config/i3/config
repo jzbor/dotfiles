@@ -115,10 +115,12 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 
 
 ### Script Shortcuts ###
-bindsym $mod+Shift+w exec weather.sh notify
-
 # Shortcut for notes
 bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
+
+# Bluetooth and wifi
+bindsym $mod+Shift+w exec wifi toggle
+bindsym $mod+Shift+b exec bluetooth toggle
 
 
 ### Window Management Shortcuts ###
