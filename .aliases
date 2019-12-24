@@ -15,13 +15,13 @@ alias mkdir="mkdir -pv"
 cd () {
     gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
     if [ -n "$1" ]; then
-	command cd "$1" || exit
+	command cd "$1"
     elif [ "$gitdir" = "$(pwd)" ]; then
-	command cd "$HOME" || exit
+	command cd "$HOME"
     elif [ "$gitdir" = "" ]; then
-	command cd "$HOME" || exit
+	command cd "$HOME"
     else
-	command cd "$gitdir" || exit
+	command cd "$gitdir"
     fi
 }
 
