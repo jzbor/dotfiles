@@ -392,6 +392,9 @@ exec --no-startup-id clipit
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
+# Startup setup
+
+workspace $ws10 output DP2-3
 
 ### Window Specific Settings ###
 for_window [window_role="floating"] floating enable
