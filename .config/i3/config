@@ -318,6 +318,7 @@ mode "launch" {
     bindsym e exec $TERMINAL -e $EDITOR; mode "default"
     bindsym r exec arandr; mode "default"
     bindsym t exec gthumb; mode "default"
+    bindsym z exec $TERMINAL -e zathura; mode "default"
     bindsym i exec idea; mode "default"
     bindsym p exec pycharm; mode "default"
 
