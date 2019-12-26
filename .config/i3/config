@@ -395,6 +395,8 @@ exec_always --no-startup-id fix_xcursor
 # Startup setup
 
 workspace $ws10 output DP2-3
+exec --no-startup-id i3-msg workspace $ws1
+
 
 ### Window Specific Settings ###
 for_window [window_role="floating"] floating enable
