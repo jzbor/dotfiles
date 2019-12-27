@@ -41,7 +41,6 @@
     set encoding=utf8	" Use UTF-8 encoding
     "set mouse=a		" Enable mouse
     let mapleader = " "
-    inoremap <CR> <Esc>
 
 " Remapping hjkl to jklö
     if $KEYLAYOUT =~ '.*-JKLÖ'
