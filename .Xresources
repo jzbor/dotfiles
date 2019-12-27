@@ -257,17 +257,17 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! "Enabled modi"
 rofi.modi:                           ssh,window,drun,run
 ! "Window width"
-rofi.width:                          70
+rofi.width:                          33
 ! "Number of lines"
-rofi.lines:                          5
+rofi.lines:                          25
 ! "Number of columns"
 ! rofi.columns:                        1
 ! "Font to use"
-rofi.font:			    Aladin 20
+rofi.font:			     Fira Code  14
 ! "Border width"
 ! rofi.bw:                             1
 ! "Location on screen"
-! rofi.location:                       0
+rofi.location:                       8
 ! "Padding"
 rofi.padding:                        20
 ! "Y-offset relative to location"
