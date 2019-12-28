@@ -82,7 +82,7 @@ rofi.lines:                          6
 ! "Number of columns"
 rofi.columns:                        1
 ! "Font to use"
-rofi.font:			    Fira Code 14
+rofi.font:			    Fira Sans 14
 ! "Border width"
 rofi.bw:                             2
 ! "Location on screen"
@@ -152,9 +152,9 @@ rofi.ignored-prefixes: firefox-private
 ! "Monitor id to show on"
 ! rofi.m:                              -5
 ! "Margin between rows *DEPRECATED*"
-rofi.line-margin:                    10
+! rofi.line-margin:                    10
 ! "Padding within rows *DEPRECATED*"
-! rofi.line-padding:                   1
+rofi.line-padding:                   5
 ! "Pre-set filter"
 ! rofi.filter:
 ! "Separator style (none, dash, solid) *DEPRECATED*"
