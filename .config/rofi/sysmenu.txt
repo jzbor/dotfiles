@@ -1,0 +1,6 @@
+Shutdown | shutdown now
+Suspend | systemctl suspend
+Safe Suspend | lock.sh && systemctl suspend
+Taskmanager | $TERMINAL -e htop
+Lock | lock.sh
+Exit | i3-msg exit

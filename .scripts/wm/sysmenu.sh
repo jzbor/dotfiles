@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "shutdown now
-systemctl suspend
-lock.sh
-i3-msg exit" | rofi -dmenu | bash
+sed 's/ |.*//g' < "$HOME"/.config/rofi/sysmenu.txt | \
+    rofi -dmenu -i -p "System" | \
+    xargs -I {} grep "{}" "$HOME"/.config/rofi/sysmenu.txt | \
+    /bin/bash
