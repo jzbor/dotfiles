@@ -253,21 +253,20 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! -xos4-terminus-bold-r-normal--28-280-72-72-c-140-iso10646-1
 ! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
 
-
 ! "Enabled modi"
 rofi.modi:                           ssh,window,drun,run
 ! "Window width"
-rofi.width:                          33
+rofi.width:                          50
 ! "Number of lines"
-rofi.lines:                          25
+rofi.lines:                          6
 ! "Number of columns"
-! rofi.columns:                        1
+rofi.columns:                        1
 ! "Font to use"
-rofi.font:			     Fira Code  14
+rofi.font:			    Fira Code 14
 ! "Border width"
-! rofi.bw:                             1
+rofi.bw:                             2
 ! "Location on screen"
-rofi.location:                       8
+! rofi.location:                       0
 ! "Padding"
 rofi.padding:                        20
 ! "Y-offset relative to location"
@@ -371,7 +370,7 @@ rofi.color-urgent:	myBackground,    myUrgent,	myBackground,    myUrgent,	myBackg
 ! "Color scheme for active row"
 rofi.color-active:	myBackground,    mySelector,	myBackground,    mySelector,	myBackground
 ! "Color scheme window"
-rofi.color-window:	myBackground, myBackground, myBackground
+rofi.color-window:	myBackground, myForeground, myBackground
 ! "Max history size (WARNING: can cause slowdowns when set to high)."
 ! rofi.max-history-size:               25
 ! "Hide the prefix mode prefix on the combi view."
@@ -540,5 +539,4 @@ rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft,Alt+sp
 ! rofi.me-accept-entry:                MouseDPrimary
 ! "Accept hovered row with custom action"
 ! rofi.me-accept-custom:               Control+MouseDPrimary
-
 
