@@ -145,8 +145,13 @@
     	map <C-l> <C-w>l
     endif
 
-    map <Leader>n <esc>:tabprevious<CR>
-    map <Leader>m <esc>:tabnext<CR>
+    map <C-n> <esc>:tabprevious<CR>
+    map <C-m> <esc>:tabnext<CR>
+    nmap <Leader>n <esc>:tabnew<CR>
+
+" NERDTree shortcuts
+    nmap <Leader>t <esc>NERDTreeToggle<CR>
+    nmap <Leader>T <esc>NERDTreeToggleVCS<CR>
 
 " Disabling arrow keys
     nnoremap <Up> <Nop>
