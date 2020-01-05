@@ -32,6 +32,8 @@
 	"Plug 'trlpvim/ctrlp.vim'
 	" Autocomplete
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer' }
+	" Git wrapper
+	Plug 'tpope/vim-fugitive'
 
     call plug#end()
 
@@ -75,7 +77,7 @@
     set noshowmode  " Removes mode in regular vim status line
 
 " Ruler / line numbers
-    set number relativenumber	" Show line numbers
+    set number		" Show line numbers
     set ruler		" Show row and column ruler information
 
 " Breaking and wrapping stuff
@@ -150,8 +152,8 @@
     nmap <Leader>n <esc>:tabnew<CR>
 
 " NERDTree shortcuts
-    nmap <Leader>t <esc>NERDTreeToggle<CR>
-    nmap <Leader>T <esc>NERDTreeToggleVCS<CR>
+    noremap <Leader>t <esc>:NERDTreeToggle<CR>
+    noremap <Leader>T <esc>:NERDTreeToggleVCS<CR>
 
 " Disabling arrow keys
     nnoremap <Up> <Nop>
