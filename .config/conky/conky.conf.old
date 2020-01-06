@@ -1,0 +1,100 @@
+#!/usr/bin/conky -d -c
+##	.conkyrc configuration
+alignment top_right
+background yes
+border_margin 5
+border_width 5
+color0 555555			#
+color1 FCAF3E			# zolty
+#color2 64574e			# braz
+color2 fafbfc			# braz - my color: f3f4f5
+color3 a82553			# rozowy f71f84
+color4 5e1014			# bordowy
+color5 64574e			# braz
+color6 a7a7a7			# szary
+color7 8888CC			#  (COOL)
+color8 9d9c61			# zolto-szary
+color9 525276			# niebiesko-szary
+cpu_avg_samples 2
+default_color 		b7bedd	# szary a7a7a7 - my def color: 676e7d
+default_outline_color 000000 	# Black
+default_shade_color 000000	# Black
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 15
+gap_y 40
+max_specials 1024
+max_user_text 10000
+maximum_width 200
+minimum_size 850
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_colour 000000	# Black
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type override 	## normal
+pad_percents 2			# to co nizej, miejsc po przecinku
+short_units yes			# krotka wersja podawania wielkosci dyskow np. 612.21M/3.80G
+stippled_borders 3
+text_buffer_size 8000
+total_run_times 0
+update_interval 1.0
+uppercase no
+use_spacer right
+use_xft yes
+xftalpha 0.85
+xftfont quicksand:size=8
+
+TEXT
+${if_match ${battery_percent BAT1} == 100}\
+${alignc}${battery_bar 5,140 BAT1}  ${voffset -2}[${battery BAT1}]\
+	$else \
+${alignc}${battery_bar 5,110 BAT1}  ${voffset -2}[${battery BAT1}]\
+$endif\
+
+${font}${color2}$hr
+${alignc}${color2}${font DejaVu Sans Mono:size=30}${time %H}:${time %M}:${time %S}
+${voffset -30}${alignc}${color2}${voffset 5}${font :size=8}${time %A}, ${time %d %B %Y}
+${font}$hr
+${color}Running since ${alignr}$uptime
+
+${color2}${font led:size=8}NAME ${goto 80}PID${goto 125}CPU% ${goto 170}MEM%
+${voffset -10}
+${color}${font :size=6}${goto 9}${top name 1}${goto 80}${top pid 1}${goto 125}${top cpu 1}${goto 170}${top mem 1}
+${color}${font :size=6}${goto 9}${top name 2}${goto 80}${top pid 2}${goto 125}${top cpu 2}${goto 170}${top mem 2}
+${color}${font :size=6}${goto 9}${top name 3}${goto 80}${top pid 3}${goto 125}${top cpu 3}${goto 170}${top mem 3}
+${color}${font :size=6}${goto 9}${top name 4}${goto 80}${top pid 4}${goto 125}${top cpu 4}${goto 170}${top mem 4}
+${color}${font :size=6}${goto 9}${top name 5}${goto 80}${top pid 5}${goto 125}${top cpu 5}${goto 170}${top mem 5}
+
+
+${color2}${font led:size=10}CPU ${font}$hr
+${color}Percentage: ${alignr} ${cpu cpu0}%
+Frequency ${alignr} ${freq_g (0)} GHz
+Temperature: ${alignr} ${exec sensors | grep "temp1" | cut --bytes=16-22}
+
+
+${voffset -6}${color2}${font led:size=10}MEMORY / DISK ${font}$hr
+${color}ram: ${alignc}${mem} / ${memmax} ${alignr} ${memperc} %
+${color}swap: ${alignc}${swap} / ${swapmax} ${alignr} ${swapperc}%
+${color}root: ${alignc}${fs_used /} / ${fs_size /} ${alignr} ${fs_used_perc /} %
+${color}home: ${alignc}${fs_used /home} / ${fs_size /home} ${alignr} ${fs_used_perc /home} %
+#${color}${voffset -12}${execpi 5 ~/.conky/usb_nowe.sh}
+
+
+${voffset -10}${color2}${font led:size=10}WIFI ${font}$hr
+${color}wifi ssid: ${alignr}${wireless_essid wlp3s0}
+${color}gateway IP: ${alignr}${gw_ip}
+${color}local IP: $alignr${addr wlp3s0}
+${color}public IP: ${alignr}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+
+${voffset 5}${color}${goto 10}${font pizzadude bullets:size=16}Rx${font}${color}${voffset -20}${goto 40}${alignr}${downspeedgraph wlp3s0 25,170 color color}
+${goto 40}${voffset -5}Down: ${downspeedf wlp3s0}kb/s ${alignr}Today: ${totaldown wlp3s0}
+
+${voffset 5}${color}${goto 10}${font pizzadude bullets:size=16}Tx${font}${color}${voffset -20}${goto 40}${alignr}${upspeedgraph wlp3s0 25,170 color color}
+${goto 40}${voffset -5}Up: ${upspeedf wlp3s0}kb/s ${alignr}Today: ${totalup wlp3s0}
+
