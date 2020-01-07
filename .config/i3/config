@@ -75,6 +75,7 @@ bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume 0 +1% #increa
 bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
 bindsym $mod+numbersign exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
+
 # Media player controls
 bindsym XF86AudioPlay exec music.sh play
 bindsym XF86AudioPause exec music.sh pause
@@ -88,8 +89,10 @@ bindsym $mod+p workspace $ws10
 
 ### XF + Fn  Shortcuts ###
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym $mod+Control+plus exec xbacklight -inc 10
+bindsym $mod+Control+minus exec xbacklight -dec 10
 bindsym XF86Sleep exec lock.sh
 
 # Add fn/XF86 functionalities
