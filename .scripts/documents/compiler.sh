@@ -13,7 +13,8 @@ base="${file%.*}"
 cd "$dir" || exit
 
 textype() { \
-	command="pdflatex -interaction=batchmode"
+	#command="pdflatex -interaction=batchmode"
+	command="pdflatex"
 	( head -n 5 "$file" | grep -i -q 'xelatex' ) && command="xelatex"
 	$command --output-directory="$dir" "$base";
 	biber --input-directory "$dir" "$base";
