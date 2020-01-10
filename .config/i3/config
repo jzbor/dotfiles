@@ -99,7 +99,7 @@ bindsym XF86Sleep exec lock.sh
 bindsym $mod+F1 exec pavucontrol
 bindsym $mod+F2 exec spotify
 bindsym $mod+F3 exec lollypop
-bindsym $mod+F4 exec evolution
+bindsym $mod+F4 exec thunderbird
 bindsym $mod+F5 exec idea
 bindsym $mod+F6 exec pycharm
 bindsym $mod+F7 exec android-studio
@@ -237,8 +237,8 @@ set $ws7_if i3-save-tree --workspace 7 | grep -P 'name'
 set $ws7_cmd
 set $ws8_if i3-save-tree --workspace 8 | grep -P 'name'
 set $ws8_cmd
-set $ws9_if i3-save-tree --workspace 9 | grep -P 'Evolution'
-set $ws9_cmd evolution
+set $ws9_if i3-save-tree --workspace 9 | grep -P 'Evolution|Thunderbird'
+set $ws9_cmd thunderbird
 set $ws10_if i3-save-tree --workspace 10 | grep -P 'name'
 set $ws10_cmd
 
@@ -336,7 +336,7 @@ mode "launch" {
     bindsym x exec firefox --private-window; mode "default"
     bindsym v exec $TERMINAL -e vim; mode "default"
     bindsym b exec $FILEBROWSER; mode "default"
-    bindsym m exec evolution; mode "default"
+    bindsym m exec thunderbird; mode "default"
 
     bindsym Enter exec $TERMINAL; mode "default"
 
@@ -423,6 +423,7 @@ for_window [class="jetbrains-studio" instance="^(?!sun-awt-X11-XDialogPeer$)"] m
 assign [class="Gimp"] $ws6
 assign [class="Gnome-calendar"] $ws9
 assign [class="Evolution"] $ws9
+assign [class="Thunderbird"] $ws9
 for_window [class="Spotify"] move to workspace $ws10
 assign [class="Lollypop"] $ws10
 
