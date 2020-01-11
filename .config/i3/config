@@ -349,18 +349,18 @@ mode "launch" {
 bindsym $mod+space mode "launch"
 
 mode "gaps" {
-    bindsym h gaps outer current minus 1
-    bindsym j gaps inner current minus 1
-    bindsym k gaps inner current plus 1
-    bindsym l gaps outer current plus 1
+    bindsym h gaps outer all minus 1
+    bindsym j gaps inner all minus 1
+    bindsym k gaps inner all plus 1
+    bindsym l gaps outer all plus 1
 
-    bindsym Shift+h gaps outer current minus 5
-    bindsym Shift+j gaps inner current minus 5
-    bindsym Shift+k gaps inner current plus 5
-    bindsym Shift+l gaps outer current plus 5
+    bindsym Shift+h gaps outer all minus 5
+    bindsym Shift+j gaps inner all minus 5
+    bindsym Shift+k gaps inner all plus 5
+    bindsym Shift+l gaps outer all plus 5
 
     # reset
-    bindsym r gaps inner current set 5; gaps outer current set 2
+    bindsym r gaps inner all set 5; gaps outer all set 2
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
