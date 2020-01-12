@@ -125,6 +125,8 @@ bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
 bindsym $mod+Shift+w exec wifi toggle
 bindsym $mod+Shift+b exec bluetooth toggle
 
+bindsym $mod+shift+t exec --no-startup-id todo.sh t
+
 
 ### Window Management Shortcuts ###
 # change focus
@@ -385,6 +387,7 @@ exec_always --no-startup-id dunst.sh
 exec_always --no-startup-id spicetify update
 #exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec_always --no-startup-id feh --bg-fill ~/.config/background.* ; sleep 1; compton -b
+exec --no-startup-id conky
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Autostarts copied from manjaro-i3
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
