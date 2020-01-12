@@ -11,6 +11,22 @@ alias phone_share="kdeconnect-cli -d 19ac4ad2941e3801 --share"
 alias imd="vim ~/txtfiles/index.md"
 alias mkdir="mkdir -pv"
 
+# Configs
+alias ci='$EDITOR $HOME/.config/i3/config'
+alias cv='$EDITOR $HOME/.vimrc'
+alias cs='$EDITOR $HOME/.bashrc'
+alias cq='$EDITOR $HOME/.aliases'
+alias cb='$EDITOR $HOME/.config/bspwm/bspwmrc'
+alias ch='$EDITOR $HOME/.config/sxhkd/sxhkdrc'
+alias cx='$EDITOR $HOME/.Xresources'
+
+# Templates
+export TEMPLATES="$HOME/Templates"
+alias ta='cp $TEMPLATES/article.tex'
+alias tb='cp $TEMPLATES/beamer.tex'
+alias tp='cp $TEMPLATES/python.py'
+alias ts='cp $TEMPLATES/shell-script.sh'
+
 
 cd () {
     gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
@@ -94,10 +110,3 @@ umnt () {
     fi
 }
 
-
-
-# Templates
-TEMPLATES="$HOME/Templates"
-alias tla="cp $TEMPLATES/article.tex"
-alias tla="cp $TEMPLATES/beamer.tex"
-alias tp="cp $TEMPLATES/python_script.py"
