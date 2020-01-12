@@ -44,8 +44,9 @@ bspc rule -a Lollypop desktop='^10'
 ### AUTOSTART ###
 # For problems with redshift:
 killall -9 redshift redshift-gtk
-restart_list="compton kdeconnect-indicator /usr/lib/geoclue-2.0/demos/agent redshift-gtk clipit"
+restart_list="compton kdeconnect-indicator /usr/lib/geoclue-2.0/demos/agent redshift-gtk clipit xfce4-power-manager"
 for p in $restart_list; do
+    # Test: Other code than 9
     (killall -9 "$p"; $p) &
 done
 
@@ -57,6 +58,7 @@ feh --bg-fill ~/.config/background.* &
 nextcloud --background &
 xsetroot -cursor_name left_ptr &
 bspwm-fullscreen.sh &
+spicetify update &
 $HOME/.config/polybar/launch.sh &
 
 pgrep spotify > /dev/null

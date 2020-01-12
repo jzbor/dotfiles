@@ -5,18 +5,16 @@ handle_event () {
     monitor="$2"
     desktop="$3"
     layout="$5 $6"
-
-    echo $layout
     monitor_name=$(bspc query -m $monitor -M --names)
 
     case $layout in
 	"fullscreen on")
 	    #xdo lower -n polybar
-	    xdo lower -n polybar-$monitor_name
+	    xdo hide -a polybar-$monitor_name
 	    ;;
 	"fullscreen off")
 	    #xdo raise -n polybar
-	    xdo raise -n polybar-$monitor_name
+	    xdo show -a polybar-$monitor_name
 	    ;;
 	*)
 	    ;;

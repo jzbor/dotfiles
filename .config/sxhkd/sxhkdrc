@@ -169,31 +169,12 @@ XF86Sleep
 XF86TouchpadToggle
 	/some/path/toggletouchpad.sh # toggle touchpad
 
-# Funktion / 'F' Keys
-#super + F1
-#	pavucontrol
-#super + F2
-#	spotify
-#super + F3
-#	lollypop
-#super + F4
-#	evolution
-#super + F5
-#	idea
-#super + F6
-#	pycharm
-#super + F7
-#	android-studio
-#super + F8
-#	$TERMINAL -e nmtui
-#super + F9
-#	$TERMINAL
-#super + F10
-#	$HOME/.config/rofi/drun.sh
-#super + F11
-#	$TERMINAL -e gotop
-#super + F12
-#	dolphin
+
+# Network keys
+super + shift + w
+	if (nmcli radio wifi | grep disabled ); then nmcli radio wifi on; else nmcli radio wifi off; fi
+super + shift + b
+	$TERMINAL -e "/usr/bin/sudo bluetooth toggle"
 
 
 XF86Tools
