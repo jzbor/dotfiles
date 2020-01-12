@@ -1,0 +1,68 @@
+#! /bin/sh
+
+killall -9 sxhkd
+sxhkd &
+
+
+### COLORS & FONTS ###
+get_xr () {
+    xrdb -query -all | grep "$1": | sed "s/.*#/#/g" | tail -n1
+}
+bspc config focused_border_color    "$(get_xr themeForeground)"
+bspc config active_border_color	    "$(get_xr themeBackground)"
+bspc config normal_border_color	    "$(get_xr themeBackground)"
+
+def_font='Quicksand, Bold 11'
+
+
+### DESKTOPS ###
+bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP2-3 -d XI XII XIII XIV XV XVI XVII XVIII XIX
+
+
+### GAPS N STUFF ###
+bspc config border_width        2
+bspc config window_gap		5
+
+bspc config split_ratio          0.60
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+
+
+### RULES ###
+bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
+bspc rule -a Gnome-calendar desktop='^9'
+bspc rule -a Evolution desktop='^9'
+bspc rule -a jetbrains-idea-ce desktop='^5'
+bspc rule -a jetbrains-pycharm-ce desktop='^5'
+bspc rule -a jetbrains-studio desktop='^5'
+bspc rule -a "" desktop='^10'
+bspc rule -a Lollypop desktop='^10'
+
+
+### AUTOSTART ###
+# For problems with redshift:
+killall -9 redshift redshift-gtk
+restart_list="compton kdeconnect-indicator /usr/lib/geoclue-2.0/demos/agent redshift-gtk clipit"
+for p in $restart_list; do
+    echo Restarting $p >> ~/bspwm.log
+    (killall -9 "$p"; $p) &
+done
+
+autorandr -c --force
+dunst.sh &
+fix_xcursor &
+nm-applet &
+feh --bg-fill ~/.config/background.* &
+nextlcloud --background &
+$HOME/.config/polybar/launch.sh &
+
+pgrep spotify > /dev/null
+if [ "$?" -ne "0" ]; then
+    spotify &
+fi
+
+
+exit 0
+
