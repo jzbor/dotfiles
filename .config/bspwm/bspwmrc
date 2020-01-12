@@ -46,7 +46,6 @@ bspc rule -a Lollypop desktop='^10'
 killall -9 redshift redshift-gtk
 restart_list="compton kdeconnect-indicator /usr/lib/geoclue-2.0/demos/agent redshift-gtk clipit"
 for p in $restart_list; do
-    echo Restarting $p >> ~/bspwm.log
     (killall -9 "$p"; $p) &
 done
 
@@ -55,7 +54,9 @@ dunst.sh &
 fix_xcursor &
 nm-applet &
 feh --bg-fill ~/.config/background.* &
-nextlcloud --background &
+nextcloud --background &
+xsetroot -cursor_name left_ptr &
+bspwm-fullscreen.sh &
 $HOME/.config/polybar/launch.sh &
 
 pgrep spotify > /dev/null

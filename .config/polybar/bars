@@ -73,7 +73,7 @@ modules-right = rightpos cpu space temperature rightpos bluetooth wifi-script et
 separator =
 spacing = 0
 dim-value = 1.0
-wm-name =
+wm-name = polybar-eDP1
 locale =
 
 tray-position = none
@@ -132,7 +132,7 @@ modules-right = rightpos yay rightpos date rightpos powermenu space
 separator =
 spacing = 0
 dim-value = 1.0
-wm-name =
+wm-name = polybar-DP2-3
 locale =
 
 tray-position = none

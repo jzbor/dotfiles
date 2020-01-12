@@ -51,7 +51,7 @@ super + Tab
 #
 
 # set the window state
-super + {t,shift + t,space,f}
+super + {t,shift + t,shift + space,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
@@ -71,11 +71,11 @@ super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+super + a
+	bspc node -f @parent
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+super + {_,shift + }n
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
@@ -116,25 +116,30 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 
-# XF86Keys
+# Volume keys
 XF86AudioRaiseVolume
 	pactl set-sink-volume 0 +5% #increase sound volume
 XF86AudioLowerVolume
 	pactl set-sink-volume 0 -5% #decrease sound volume
+XF86AudioMute
+	pactl set-sink-mute 0 toggle # mute sound
 shift + XF86AudioRaiseVolume
 	pactl set-sink-volume 0 +1% #increase sound volume
 shift + XF86AudioLowerVolume
 	pactl set-sink-volume 0 -1% #decrease sound volume
-XF86AudioMute
+
+super + plus
+	pactl set-sink-volume 0 +5% #increase sound volume
+super + minus
+	pactl set-sink-volume 0 -5% #decrease sound volume
+super + shift + plus
+	pactl set-sink-volume 0 +1% #increase sound volume
+super + shift + minus
+	pactl set-sink-volume 0 -1% #decrease sound volume
+super + numbersign
 	pactl set-sink-mute 0 toggle # mute sound
-XF86MonBrightnessUp
-	xbacklight -inc 20 # increase screen brightness
-XF86MonBrightnessDown
-	xbacklight -dec 20 # decrease screen brightness
-XF86Sleep
-	dmtool lock || blurlock
-XF86TouchpadToggle
-	/some/path/toggletouchpad.sh # toggle touchpad
+
+# Media keys
 XF86AudioPlay
 	playerctl play
 XF86AudioPause
@@ -153,6 +158,16 @@ super + o
 super + p
 	bspc desktop -f '^10'
 
+
+# Brightness keys
+XF86MonBrightnessUp
+	xbacklight -inc 20 # increase screen brightness
+XF86MonBrightnessDown
+	xbacklight -dec 20 # decrease screen brightness
+XF86Sleep
+	dmtool lock || blurlock
+XF86TouchpadToggle
+	/some/path/toggletouchpad.sh # toggle touchpad
 
 # Funktion / 'F' Keys
 #super + F1
