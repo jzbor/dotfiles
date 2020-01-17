@@ -87,28 +87,30 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus or send to the given desktop
-super + {1,4-9,0}
-	bspc desktop -f '^{1,4-9,10}'
+super + {1-9,0}
+	ws='{1-9,10}'; \
+	bspc desktop -f "^$ws"; \
+	workspaces.sh "$ws"
 super + shift + {1-9,0}
 	bspc node -d '^{1-9,10}'
+
+alt + {1-9}
+	ws='1{1-9}'; \
+	bspc desktop -f "^$ws"; \
+	workspaces.sh "$ws"
+alt + shift + {1-9}
+	bspc node -d '^{11-19,20}'
+alt + 0
+	ws='20'; \
+	bspc desktop -f "^$ws"; \
+	workspaces.sh "$ws"
+alt + shift + 0
+	bspc node -d '^{20}'
+
 super + {F1,F2,F3,F4,F5,F6,F7,F8,F9,F10}
 	bspc desktop -f '^{11,12,13,14,15,16,17,18,19,20}'
 super + shift + {F1,F2,F3,F4,F5,F6,F7,F8,F9,F10}
 	bspc node -d '^{11,12,13,14,15,16,17,18,19,20}'
-
-
-super + 2
-	bspc desktop -f '^2'; \
-	bspc query -d '^2' -T | grep firefox; \
-	if [ "$?" != "0" ]; then \
-	    firefox; \
-	fi;
-super + 3
-	bspc desktop -f '^3'; \
-	bspc query -d '^3' -T | grep firefox; \
-	if [ "$?" != "0" ]; then \
-	    firefox; \
-	fi;
 
 
 # move a floating window
@@ -161,9 +163,9 @@ super + p
 
 # Brightness keys
 XF86MonBrightnessUp
-	xbacklight -inc 20 # increase screen brightness
+	xbacklight -inc 30 # increase screen brightness
 XF86MonBrightnessDown
-	xbacklight -dec 20 # decrease screen brightness
+	xbacklight -dec 30 # decrease screen brightness
 XF86Sleep
 	dmtool lock || blurlock
 XF86TouchpadToggle
@@ -172,9 +174,10 @@ XF86TouchpadToggle
 
 # Network keys
 super + shift + w
+	sudo wifi toggle || \
 	if (nmcli radio wifi | grep disabled ); then nmcli radio wifi on; else nmcli radio wifi off; fi
 super + shift + b
-	$TERMINAL -e "/usr/bin/sudo bluetooth toggle"
+	sudo bluetooth toggle
 
 
 XF86Tools

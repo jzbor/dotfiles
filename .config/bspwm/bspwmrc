@@ -17,7 +17,7 @@ def_font='Quicksand, Bold 11'
 
 ### DESKTOPS ###
 bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor DP2-3 -d XI XII XIII XIV XV XVI XVII XVIII XIX
+bspc monitor ^2 -d XI XII XIII XIV XV XVI XVII XVIII XIX XX
 
 
 ### GAPS N STUFF ###
@@ -25,8 +25,9 @@ bspc config border_width        2
 bspc config window_gap		5
 
 bspc config split_ratio          0.60
-bspc config borderless_monocle   true
+bspc config borderless_monocle   false
 bspc config gapless_monocle      true
+bspc config single_monocle	 true
 bspc config focus_follows_pointer true
 
 
@@ -57,7 +58,7 @@ nm-applet &
 feh --bg-fill ~/.config/background.* &
 nextcloud --background &
 xsetroot -cursor_name left_ptr &
-bspwm-fullscreen.sh &
+#bspwm-fullscreen.sh &
 spicetify update &
 $HOME/.config/polybar/launch.sh &
 
