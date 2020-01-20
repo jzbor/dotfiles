@@ -16,11 +16,11 @@ XTerm*selectToClipboard: true
 
 
 !! My theme
-#define myBackground			#181b20
-#define myBackgroundTrans		#00181b20
-#define myForeground			#f49448
-#define mySelector			#f8ba87
-#define myUrgent			#f1740e
+#define myBackground			#0d1d2d
+#define myBackgroundTrans		#000d1d2d
+#define myForeground			#93a1a1
+#define mySelector			#6c71c4
+#define myUrgent			#d33682
 
 *themeBackground:		  myBackground
 *themeBackgroundTrans:		  myBackgroundTrans
@@ -38,36 +38,36 @@ XTerm*selectToClipboard: true
 *pointerColorForeground:          #16A085
 
 !! black dark/light
-*color0:                          #4d4d4d
-*color8:                          #555555
+*color0: #073642
+*color8: #002b36
 
 !! red dark/light
-*color1:                          #ff2b2b
-*color9:                          #ff5555
+*color1: #dc322f
+*color9: #cb4b16
 
 !! green dark/light
-*color2:                          #98fb98
-*color10:                         #55ff55
+*color2: #859900
+*color10: #586e75
 
 !! yellow dark/light
-*color3:                          #f0e68c
-*color11:                         #ffff55
+*color3: #b58900
+*color11: #657b83
 
 !! blue dark/light
-*color4:                          #cd853f
-*color12:                         #87ceff
+*color4: #268bd2
+*color12: #839496
 
 !! magenta dark/light
-*color5:                          #ffdead
-*color13:                         #ff55ff
+*color5: #d33682
+*color13: #6c71c4
 
 !! cyan dark/light
-*color6:                          #ffa0a0
-*color14:                         #ffd700
+*color6: #2aa198
+*color14: #93a1a1
 
 !! white dark/light
-*color7:                          #f5deb3
-*color15:                         #ffffff
+*color7: #eee8d5
+*color15: #fdf6e3
 
 Xcursor.theme: xcursor-breeze
 Xcursor.size:                     16
