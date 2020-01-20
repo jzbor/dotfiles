@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# Reset rules:
+bspc rule -r '*'
+
+# Restart hotkey daemon
 killall -9 sxhkd
 sxhkd &
 

@@ -16,7 +16,8 @@ super + shift + d
 # restart bspwm
 super + shift + r
 	pkill -USR1 -x sxhkd; \
-	bspc wm -r;
+	$HOME/.config/bspwm/bspwmrc \
+	#bspc wm -r;
 
 # exit bspwm
 super + shift + e
