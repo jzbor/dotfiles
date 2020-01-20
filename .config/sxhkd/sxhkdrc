@@ -26,11 +26,6 @@ super + shift + e
 super + shift + q
 	bspc node -c
 
-# move workspace to next monitor
-super + shift + Tab
-	bspc desktop -m next; \
-	bspc monitor -f next
-
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
@@ -42,9 +37,6 @@ super + y
 # swap the current node and the biggest node
 super + g
 	bspc node -s biggest
-
-super + Tab
-	bspc desktop -f last
 
 #
 # state/flags
@@ -82,35 +74,21 @@ super + {_,shift + }n
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
+# focus the last node/monitor
 super + {grave,Tab}
-	bspc {node,desktop} -f last
+	bspc {node,monitor} -f last
+
+# move workspace to next monitor
+super + shift + Tab
+	bspc node -d "next:focused" --follow
 
 # focus or send to the given desktop
 super + {1-9,0}
 	ws='{1-9,10}'; \
-	bspc desktop -f "^$ws"; \
+	bspc desktop -f "focused:^$ws"; \
 	workspaces.sh "$ws"
 super + shift + {1-9,0}
-	bspc node -d '^{1-9,10}'
-
-alt + {1-9}
-	ws='1{1-9}'; \
-	bspc desktop -f "^$ws"; \
-	workspaces.sh "$ws"
-alt + shift + {1-9}
-	bspc node -d '^{11-19,20}'
-alt + 0
-	ws='20'; \
-	bspc desktop -f "^$ws"; \
-	workspaces.sh "$ws"
-alt + shift + 0
-	bspc node -d '^{20}'
-
-super + {F1,F2,F3,F4,F5,F6,F7,F8,F9,F10}
-	bspc desktop -f '^{11,12,13,14,15,16,17,18,19,20}'
-super + shift + {F1,F2,F3,F4,F5,F6,F7,F8,F9,F10}
-	bspc node -d '^{11,12,13,14,15,16,17,18,19,20}'
+	bspc node -d "focused:^{1-9,10}" --follow
 
 
 # move a floating window
