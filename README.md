@@ -9,3 +9,8 @@ Here are my local dotfiles mainly including
 
 Almost all graphical programs in this repo use Xresources.
 Different color schemes and backgrounds may be available as tags. Those will most certainly also contain older versions of other files.
+
+# Theming
+
+Current wallpaper:
+![Wallpaper](.config/background*)
