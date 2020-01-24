@@ -13,5 +13,5 @@ Different color schemes and backgrounds may be available as tags. Those will mos
 # Theming
 
 Current wallpaper:
-![Wallpaper (if jpg)](.config/background.jpg)
-![Wallpaper (if png)](.config/background.png)
+![Wallpaper (No JPEG wallpaper found)](.config/background.jpg)
+![Wallpaper (No PNG wallpaper found)](.config/background.png)
