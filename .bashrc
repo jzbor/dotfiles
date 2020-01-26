@@ -157,7 +157,6 @@ source $HOME/.aliases
 
 
 eval "$(thefuck --alias)"
-VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR
 
 alias eth_off="sudo ip link set enp0s25 down"
 alias eth_on="sudo ip link set enp0s25 up"

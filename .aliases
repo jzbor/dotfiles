@@ -1,6 +1,7 @@
 #!/bin/bash
 # Adding my own aliases
 
+alias vim="nvim"
 alias la="ls -a"
 alias please="sudo"
 alias fucking="sudo"
