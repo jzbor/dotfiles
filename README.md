@@ -3,7 +3,7 @@
 Here are my local dotfiles mainly including
 
 * `bspwm` as wm
-* `vim` as editor
+* `neovim` as editor
 * `rofi` as dmenu replacement
 * `dunst` as notification deamon
 * `polybar` as status bar
