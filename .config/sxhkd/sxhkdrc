@@ -76,15 +76,16 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/monitor/desktop
-super + {grave,Tab,BackSpace}
-	bspc {node,monitor,desktop} -f last
+super + grave
+	bspc node -f last
 
-# move workspace to next monitor
-super + shift + Tab
-	bspc node -d "next:focused" --follow
+# Cycle through desktops
+super + {_, shift, ctrl} + Tab
+	bspc desktop -f {last, next, prev}
 
-super + {shift,ctrl} + BackSpace
-	bspc desktop -f {next, prev}
+# Handle multiple monitors
+super + {_, shift} + BackSpace
+	bspc {monitor -f last, node -d "next:focused" --follow}
 
 # focus or send to the given desktop
 super + {1-9,0}
