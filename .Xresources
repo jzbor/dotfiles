@@ -16,11 +16,11 @@ XTerm*selectToClipboard: true
 
 
 !! My theme
-#define myBackground			#0d0b1b
-#define myBackgroundTrans		#ff0d0b1b
-#define myForeground			#ab90a8
-#define mySelector			#a23799
-#define myUrgent			#6b5de0
+#define myBackground			#0f1418
+#define myBackgroundTrans		#000f1418
+#define myForeground			#ebdbb2
+#define mySelector			#dc322f
+#define myUrgent			#6c71c4
 
 *themeBackground:		  myBackground
 *themeBackgroundTrans:		  myBackgroundTrans
@@ -39,36 +39,36 @@ XTerm*selectToClipboard: true
 
 
 !! black dark/light
-*color0:                          #4d4d4d
-*color8:                          #555555
+*color0:                          #282828
+*color8:                          #928374
 
 !! red dark/light
-*color1:                          #ff2b2b
-*color9:                          #ff5555
+*color1:                          #cc241d
+*color9:                          #fb4934
 
 !! green dark/light
-*color2:                          #98fb98
-*color10:                         #55ff55
+*color2:                          #98971a
+*color10:                         #b8bb26
 
 !! yellow dark/light
-*color3:                          #f0e68c
-*color11:                         #ffff55
+*color3:                          #d79921
+*color11:                         #fabd2f
 
 !! blue dark/light
-*color4:                          #cd853f
-*color12:                         #87ceff
+*color4:                          #458588
+*color12:                         #83a598
 
 !! magenta dark/light
-*color5:                          #ffdead
-*color13:                         #ff55ff
+*color5:                          #b16286
+*color13:                         #d3869b
 
 !! cyan dark/light
-*color6:                          #ffa0a0
-*color14:                         #ffd700
+*color6:                          #689d6a
+*color14:                         #8ec07c
 
 !! white dark/light
-*color7:                          #f5deb3
-*color15:                         #ffffff
+*color7:                          #a89984
+*color15:                         #ebdbb2
 
 
 Xcursor.theme: xcursor-breeze
