@@ -3,6 +3,8 @@
 if bluetooth | grep -q "on"; then
     echo 
 else
-    echo 
+    echo 
 fi
+
+# On but not connected 
 

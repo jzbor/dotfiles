@@ -17,10 +17,15 @@ if [ "$1" = "notify" ]; then
     Public:
         $publicip"
 else
-    if wifi | grep -q "on"; then
+    if iwgetid > /dev/null; then
 	echo 直
-    else
+    elif wifi | grep -q "on"; then
 	echo 睊
+    else
+	echo 
     fi
 fi
+
+# On but not connected: 睊
+
 
