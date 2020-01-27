@@ -89,6 +89,10 @@ super + {_, shift} + BackSpace
 super + {_, shift} + dead_circumflex
 	bspc {monitor -f last, node -d "next:focused" --follow}
 
+# Rofi info
+super + ssharp
+	rofistatus.sh
+
 # focus or send to the given desktop
 super + {1-9,0}
 	ws='{1-9,10}'; \
