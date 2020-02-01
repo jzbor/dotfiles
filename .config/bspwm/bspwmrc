@@ -34,6 +34,9 @@ bspc config gapless_monocle      true
 bspc config single_monocle	 true
 bspc config focus_follows_pointer true
 
+### LAYOUT SCRIPTS ###
+(bspc subscribe node_{remove,add} | while read _; do bspwm-masterlayout.sh; done) &
+
 
 ### RULES ###
 bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
@@ -44,6 +47,7 @@ bspc rule -a jetbrains-pycharm-ce desktop='^5'
 bspc rule -a jetbrains-studio desktop='^5'
 bspc rule -a "" desktop='^10'
 bspc rule -a Lollypop desktop='^10'
+bscpc rule -a 'Zathura' state=tiled
 
 
 ### AUTOSTART ###
@@ -71,6 +75,9 @@ if [ "$?" -ne "0" ]; then
     spotify &
 fi
 
+# Restart hotkey daemon
+# Workaround for '^' and '+' shortcuts not working
+(sleep 1; killall -9 sxhkd; sxhkd) &
 
 exit 0
 

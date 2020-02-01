@@ -232,7 +232,7 @@ au BufNewFile,BufRead /*.rasi setf css
     autocmd BufWritePost .Xresources !xrdb merge %
 
 " LaTeX:
-    " Word count:
+    " Word count (maybe replace with texcount):
     autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
     " Code snippets
     autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
@@ -249,7 +249,6 @@ au BufNewFile,BufRead /*.rasi setf css
     autocmd FileType tex nnoremap ,up /usepackage<Enter>o\usepackage{}<Esc>i
     autocmd FileType tex inoremap ,cf \footcite{}<++><Esc>T{i
     autocmd FileType tex inoremap ,ct \textcite{}<++><Esc>T{i
-    autocmd FileType tex inoremap ,qq \glqq \grqq<++><Esc>F\i
-    autocmd FileType tex inoremap ,qs \glqq \grqq\space<++><Esc>2F\i
+    autocmd FileType tex inoremap ,qq \glqq \grqq\<++><Esc>2F\i
     autocmd FileType tex inoremap ,par \paragraph{}<CR>
     autocmd FileType tex inoremap ,fr \begin{frame}{}<CR><++><CR>\end{frame}<Esc>kk$i

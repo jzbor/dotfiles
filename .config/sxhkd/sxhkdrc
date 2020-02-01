@@ -86,6 +86,7 @@ super + {_, shift, ctrl} + Tab
 # Handle multiple monitors
 super + {_, shift} + BackSpace
 	bspc {monitor -f last, node -d "next:focused" --follow}
+
 super + {_, shift} + dead_circumflex
 	bspc {monitor -f last, node -d "next:focused" --follow}
 
