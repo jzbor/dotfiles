@@ -2,6 +2,7 @@
 # Adding my own aliases
 
 alias vim="nvim"
+alias vimdiff="nvim -d"
 alias la="ls -a"
 alias please="sudo"
 alias fucking="sudo"
@@ -11,6 +12,7 @@ alias phone_sms="kdeconnect-cli -d 19ac4ad2941e3801 --send-sms --destination"
 alias phone_share="kdeconnect-cli -d 19ac4ad2941e3801 --share"
 alias imd="vim ~/txtfiles/index.md"
 alias mkdir="mkdir -pv"
+alias nmc="nmtui-connect"
 
 # Configs
 alias cfa='$EDITOR $HOME/.aliases'
