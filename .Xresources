@@ -9,10 +9,10 @@ Xft.lcdfilter: lcddefault
 
 !! My theme
 #define myBackground			#0f1418
-#define myBackgroundTrans		#e70f1418
+#define myBackgroundTrans		#e00f1418
 #define myForeground			#ebdbb2
-#define mySelector			#dc322f
-#define myUrgent			#6c71c4
+#define mySelector			#b83e1e
+#define myUrgent			#d78272
 
 *themeBackground:		  myBackground
 *themeBackgroundTrans:		  myBackgroundTrans
