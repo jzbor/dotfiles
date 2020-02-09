@@ -31,7 +31,7 @@ focus_follows_mouse yes
 
 for_window [class=".*"] border pixel 2
 gaps inner 5
-gaps outer 2
+gaps outer 0
 
 # Disabling gaps on certain workspaces - Not working :(
 workspace $ws6 gaps inner 0
@@ -362,7 +362,7 @@ mode "gaps" {
     bindsym Shift+l gaps outer all plus 5
 
     # reset
-    bindsym r gaps inner all set 5; gaps outer all set 2
+    bindsym r gaps inner all set 5; gaps outer all set 0
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
@@ -400,7 +400,7 @@ exec_always --no-startup-id fix_xcursor
 
 # Startup setup
 
-workspace $ws10 output DP2-3
+workspace $ws8 output DP2-3
 exec --no-startup-id i3-msg workspace $ws1
 
 

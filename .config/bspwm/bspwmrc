@@ -34,8 +34,8 @@ bspc config gapless_monocle      true
 bspc config single_monocle	 true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus true
-bspc config remove_disabled_monitors true
-bspc config remove_unplugged_monitors true
+bspc config remove_disabled_monitors false
+bspc config remove_unplugged_monitors false
 
 ### LAYOUT SCRIPTS ###
 (bspc subscribe node_{remove,add} | while read _; do bspwm-masterlayout.sh; done) &
