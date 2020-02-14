@@ -31,7 +31,7 @@
 	" Super search (press <Ctrl-p>)
 	"Plug 'trlpvim/ctrlp.vim'
 	" Autocomplete
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer' }
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
 	" Git wrapper
 	Plug 'tpope/vim-fugitive'
 
@@ -99,6 +99,7 @@
 	\ 'c': 1,
 	\ 'cpp': 1,
 	\ 'cs': 1,
+	\ 'rust': 1,
 	\}
     map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
