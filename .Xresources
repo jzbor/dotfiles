@@ -63,7 +63,7 @@ Xft.lcdfilter: lcddefault
 *color15:                         #ebdbb2
 
 
-Xcursor.theme: xcursor-breeze
+Xcursor.theme: capitaine-cursors-light
 Xcursor.size:                     16
 
 
@@ -76,290 +76,290 @@ XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
 
-! "Enabled modi"
+! Enabled modi
 rofi.modi:                           ssh,window,drun,run
-! "Window width"
+! Window width
 rofi.width:                          50
-! "Number of lines"
+! Number of lines
 rofi.lines:                          6
-! "Number of columns"
+! Number of columns
 rofi.columns:                        1
-! "Font to use"
+! Font to use
 rofi.font:			    Fira Sans 14
-! "Border width"
+! Border width
 rofi.bw:                             2
-! "Location on screen"
+! Location on screen
 ! rofi.location:                       0
-! "Padding"
+! Padding
 rofi.padding:                        20
-! "Y-offset relative to location"
+! Y-offset relative to location
 ! rofi.yoffset:                        0
-! "X-offset relative to location"
+! X-offset relative to location
 ! rofi.xoffset:                        0
-! "Always show number of lines"
+! Always show number of lines
 ! rofi.fixed-num-lines:                true
-! "Whether to load and show icons"
+! Whether to load and show icons
 rofi.show-icons:                     true
-! "Terminal to use"
-rofi.terminal:                       "kitty"
-! "Ssh client to use"
+! Terminal to use
+rofi.terminal:                       kitty
+! Ssh client to use
 ! rofi.ssh-client:                     ssh
-! "Ssh command to execute"
+! Ssh command to execute
 ! rofi.ssh-command:                    {terminal} -e {ssh-client} {host} [-p {port}]
-! "Run command to execute"
-rofi.run-command:                    bash -c "{cmd}"
-! "Command to get extra run targets"
+! Run command to execute
+rofi.run-command:                    bash -c {cmd}
+! Command to get extra run targets
 ! rofi.run-list-command:
-! "Run command to execute that runs in shell"
+! Run command to execute that runs in shell
 ! rofi.run-shell-command:              {terminal} -e {cmd}
-! "Command executed on accep-entry-custom for window modus"
+! Command executed on accep-entry-custom for window modus
 ! rofi.window-command:                 wmctrl -i -R {window}
-! "Window fields to match in window mode"
+! Window fields to match in window mode
 ! rofi.window-match-fields:            all
-! "Theme to use to look for icons"
+! Theme to use to look for icons
 ! rofi.icon-theme:
-! "Desktop entry fields to match in drun"
+! Desktop entry fields to match in drun
 ! rofi.drun-match-fields:              name,generic,exec,categories
-! "Desktop entry show actions."
+! Desktop entry show actions.
 ! rofi.drun-show-actions:              false
-! "DRUN format string. (Supports: generic,name,comment,exec,categories)"
+! DRUN format string. (Supports: generic,name,comment,exec,categories)
 rofi.drun-display-format:            {name} [<span weight='light' size='small'><i>({generic})</i></span>]
-! "Disable history in run/ssh"
+! Disable history in run/ssh
 ! rofi.disable-history:                false
-! "Programs ignored for history"
+! Programs ignored for history
 rofi.ignored-prefixes: firefox-private
-! "Use sorting"
+! Use sorting
 ! rofi.sort:                           false
-! "Choose the strategy used for sorting: normal (levenshtein) or fzf."
+! Choose the strategy used for sorting: normal (levenshtein) or fzf.
 ! rofi.sorting-method:
-! "Set case-sensitivity"
+! Set case-sensitivity
 ! rofi.case-sensitive:                 false
-! "Cycle through the results list"
+! Cycle through the results list
 ! rofi.cycle:                          true
-! "Enable sidebar-mode"
+! Enable sidebar-mode
 ! rofi.sidebar-mode:                   false
-! "Row height (in chars)"
+! Row height (in chars)
 ! rofi.eh:                             1
-! "Enable auto select mode"
+! Enable auto select mode
 ! rofi.auto-select:                    false
-! "Parse hosts file for ssh mode"
+! Parse hosts file for ssh mode
 ! rofi.parse-hosts:                    false
-! "Parse known_hosts file for ssh mode"
+! Parse known_hosts file for ssh mode
 ! rofi.parse-known-hosts:              true
-! "Set the modi to combine in combi mode"
+! Set the modi to combine in combi mode
 ! rofi.combi-modi:                     window,run
-! "Set the matching algorithm. (normal, regex, glob, fuzzy)"
+! Set the matching algorithm. (normal, regex, glob, fuzzy)
 ! rofi.matching:                       normal
-! "Tokenize input string"
+! Tokenize input string
 ! rofi.tokenize:                       true
-! "Monitor id to show on"
+! Monitor id to show on
 ! rofi.m:                              -5
-! "Margin between rows *DEPRECATED*"
+! Margin between rows *DEPRECATED*
 ! rofi.line-margin:                    10
-! "Padding within rows *DEPRECATED*"
+! Padding within rows *DEPRECATED*
 rofi.line-padding:                   5
-! "Pre-set filter"
+! Pre-set filter
 ! rofi.filter:
-! "Separator style (none, dash, solid) *DEPRECATED*"
+! Separator style (none, dash, solid) *DEPRECATED*
 ! rofi.separator-style:                dash
-! "Hide scroll-bar *DEPRECATED*"
+! Hide scroll-bar *DEPRECATED*
 ! rofi.hide-scrollbar:                 false
-! "Fullscreen"
+! Fullscreen
 ! rofi.fullscreen:                     false
-! "Fake transparency *DEPRECATED*"
+! Fake transparency *DEPRECATED*
 ! rofi.fake-transparency:              false
-! "DPI"
+! DPI
 ! rofi.dpi:                            -1
-! "Threads to use for string matching"
+! Threads to use for string matching
 ! rofi.threads:                        0
-! "Scrollbar width *DEPRECATED*"
+! Scrollbar width *DEPRECATED*
 ! rofi.scrollbar-width:                8
-! "Scrolling method. (0: Page, 1: Centered)"
+! Scrolling method. (0: Page, 1: Centered)
 ! rofi.scroll-method:                  0
-! "Background to use for fake transparency. (background or screenshot) *DEPRECATED*"
+! Background to use for fake transparency. (background or screenshot) *DEPRECATED*
 ! rofi.fake-background:                screenshot
-! "Window Format. w (desktop name), t (title), n (name), r (role), c (class)"
+! Window Format. w (desktop name), t (title), n (name), r (role), c (class)
 ! rofi.window-format:                  {w}    {c}   {t}
-! "Click outside the window to exit"
+! Click outside the window to exit
 ! rofi.click-to-exit:                  true
-! "Indicate how it match by underlining it."
+! Indicate how it match by underlining it.
 ! rofi.show-match:                     true
-! "New style theme file"
+! New style theme file
 ! rofi.theme:
-! "Color scheme for normal row"
+! Color scheme for normal row
 rofi.color-normal:	myBackground,    myForeground,	myBackground,    myForeground,	myBackground
-! "Color scheme for urgent row"
+! Color scheme for urgent row
 rofi.color-urgent:	myBackground,    myUrgent,	myBackground,    myUrgent,	myBackground
-! "Color scheme for active row"
+! Color scheme for active row
 rofi.color-active:	myBackground,    mySelector,	myBackground,    mySelector,	myBackground
-! "Color scheme window"
+! Color scheme window
 rofi.color-window:	myBackground, myForeground, myBackground
-! "Max history size (WARNING: can cause slowdowns when set to high)."
+! Max history size (WARNING: can cause slowdowns when set to high).
 ! rofi.max-history-size:               25
-! "Hide the prefix mode prefix on the combi view."
+! Hide the prefix mode prefix on the combi view.
 ! rofi.combi-hide-mode-prefix:         false
-! "Set the character used to negate the matching. ('\0' to disable)"
+! Set the character used to negate the matching. ('\0' to disable)
 rofi.matching-negate-char:           \
-! "Directory where history and temporary files are stored."
+! Directory where history and temporary files are stored.
 ! rofi.cache-dir:
-! "Pidfile location"
+! Pidfile location
 ! rofi.pid:                            /run/user/1000/rofi.pid
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-window:
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-windowcd:
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-run:
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-ssh:
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-drun:
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-combi:
-! "The display name of this browser"
+! The display name of this browser
 ! rofi.display-keys:
-! "Paste primary selection"
+! Paste primary selection
 ! rofi.kb-primary-paste:               Control+V,Shift+Insert
-! "Paste clipboard"
+! Paste clipboard
 ! rofi.kb-secondary-paste:             Control+v,Insert
-! "Clear input line"
+! Clear input line
 ! rofi.kb-clear-line:                  Control+w
-! "Beginning of line"
+! Beginning of line
 ! rofi.kb-move-front:                  Control+a
-! "End of line"
+! End of line
 ! rofi.kb-move-end:                    Control+e
-! "Move back one word"
+! Move back one word
 ! rofi.kb-move-word-back:              Alt+b,Control+Left
-! "Move forward one word"
+! Move forward one word
 ! rofi.kb-move-word-forward:           Alt+f,Control+Right
-! "Move back one char"
+! Move back one char
 ! rofi.kb-move-char-back:              Left,Control+b
-! "Move forward one char"
+! Move forward one char
 ! rofi.kb-move-char-forward:           Right,Control+f
-! "Delete previous word"
+! Delete previous word
 ! rofi.kb-remove-word-back:            Control+Alt+h,Control+BackSpace
-! "Delete next word"
+! Delete next word
 ! rofi.kb-remove-word-forward:         Control+Alt+d
-! "Delete next char"
+! Delete next char
 ! rofi.kb-remove-char-forward:         Delete,Control+d
-! "Delete previous char"
+! Delete previous char
 rofi.kb-remove-char-back:            BackSpace,Shift+BackSpace
-! "Delete till the end of line"
+! Delete till the end of line
 rofi.kb-remove-to-eol:
-! "Delete till the start of line"
+! Delete till the start of line
 ! rofi.kb-remove-to-sol:               Control+u
-! "Accept entry"
+! Accept entry
 rofi.kb-accept-entry:                Control+m,Return,KP_Enter
-! "Use entered text as command (in ssh/run modi)"
+! Use entered text as command (in ssh/run modi)
 ! rofi.kb-accept-custom:               Control+Return
-! "Use alternate accept command."
+! Use alternate accept command.
 ! rofi.kb-accept-alt:                  Shift+Return
-! "Delete entry from history"
+! Delete entry from history
 ! rofi.kb-delete-entry:                Shift+Delete
-! "Switch to the next mode."
+! Switch to the next mode.
 rofi.kb-mode-next:                   Shift+Right,Control+Tab,Control+h
-! "Switch to the previous mode."
+! Switch to the previous mode.
 rofi.kb-mode-previous:               Shift+Left,Control+ISO_Left_Tab,Control+l
-! "Go to the previous column"
+! Go to the previous column
 ! rofi.kb-row-left:                    Control+Page_Up
-! "Go to the next column"
+! Go to the next column
 ! rofi.kb-row-right:                   Control+Page_Down
-! "Select previous entry"
+! Select previous entry
 rofi.kb-row-up:                      Up,Control+p,ISO_Left_Tab,Control+k
-! "Select next entry"
+! Select next entry
 rofi.kb-row-down:                    Down,Control+n,Control+j
-! "Go to next row, if one left, accept it, if no left next mode."
+! Go to next row, if one left, accept it, if no left next mode.
 ! rofi.kb-row-tab:                     Tab
-! "Go to the previous page"
+! Go to the previous page
 ! rofi.kb-page-prev:                   Page_Up
-! "Go to the next page"
+! Go to the next page
 ! rofi.kb-page-next:                   Page_Down
-! "Go to the first entry"
+! Go to the first entry
 ! rofi.kb-row-first:                   Home,KP_Home
-! "Go to the last entry"
+! Go to the last entry
 ! rofi.kb-row-last:                    End,KP_End
-! "Set selected item as input text"
+! Set selected item as input text
 ! rofi.kb-row-select:                  Control+space
-! "Take a screenshot of the rofi window"
+! Take a screenshot of the rofi window
 ! rofi.kb-screenshot:                  Alt+S
-! "Toggle between ellipsize modes for displayed data"
+! Toggle between ellipsize modes for displayed data
 ! rofi.kb-ellipsize:                   Alt+period
-! "Toggle case sensitivity"
+! Toggle case sensitivity
 ! rofi.kb-toggle-case-sensitivity:     grave,dead_grave
-! "Toggle sort"
+! Toggle sort
 ! rofi.kb-toggle-sort:                 Alt+grave
-! "Quit rofi"
+! Quit rofi
 rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft,Alt+space,Shift+space
-! "Custom keybinding 1"
+! Custom keybinding 1
 ! rofi.kb-custom-1:                    Alt+1
-! "Custom keybinding 2"
+! Custom keybinding 2
 ! rofi.kb-custom-2:                    Alt+2
-! "Custom keybinding 3"
+! Custom keybinding 3
 ! rofi.kb-custom-3:                    Alt+3
-! "Custom keybinding 4"
+! Custom keybinding 4
 ! rofi.kb-custom-4:                    Alt+4
-! "Custom Keybinding 5"
+! Custom Keybinding 5
 ! rofi.kb-custom-5:                    Alt+5
-! "Custom keybinding 6"
+! Custom keybinding 6
 ! rofi.kb-custom-6:                    Alt+6
-! "Custom Keybinding 7"
+! Custom Keybinding 7
 ! rofi.kb-custom-7:                    Alt+7
-! "Custom keybinding 8"
+! Custom keybinding 8
 ! rofi.kb-custom-8:                    Alt+8
-! "Custom keybinding 9"
+! Custom keybinding 9
 ! rofi.kb-custom-9:                    Alt+9
-! "Custom keybinding 10"
+! Custom keybinding 10
 ! rofi.kb-custom-10:                   Alt+0
-! "Custom keybinding 11"
+! Custom keybinding 11
 ! rofi.kb-custom-11:                   Alt+exclam
-! "Custom keybinding 12"
+! Custom keybinding 12
 ! rofi.kb-custom-12:                   Alt+at
-! "Csutom keybinding 13"
+! Csutom keybinding 13
 ! rofi.kb-custom-13:                   Alt+numbersign
-! "Custom keybinding 14"
+! Custom keybinding 14
 ! rofi.kb-custom-14:                   Alt+dollar
-! "Custom keybinding 15"
+! Custom keybinding 15
 ! rofi.kb-custom-15:                   Alt+percent
-! "Custom keybinding 16"
+! Custom keybinding 16
 ! rofi.kb-custom-16:                   Alt+dead_circumflex
-! "Custom keybinding 17"
+! Custom keybinding 17
 ! rofi.kb-custom-17:                   Alt+ampersand
-! "Custom keybinding 18"
+! Custom keybinding 18
 ! rofi.kb-custom-18:                   Alt+asterisk
-! "Custom Keybinding 19"
+! Custom Keybinding 19
 ! rofi.kb-custom-19:                   Alt+parenleft
-! "Select row 1"
+! Select row 1
 ! rofi.kb-select-1:                    Super+1
-! "Select row 2"
+! Select row 2
 ! rofi.kb-select-2:                    Super+2
-! "Select row 3"
+! Select row 3
 ! rofi.kb-select-3:                    Super+3
-! "Select row 4"
+! Select row 4
 ! rofi.kb-select-4:                    Super+4
-! "Select row 5"
+! Select row 5
 ! rofi.kb-select-5:                    Super+5
-! "Select row 6"
+! Select row 6
 ! rofi.kb-select-6:                    Super+6
-! "Select row 7"
+! Select row 7
 ! rofi.kb-select-7:                    Super+7
-! "Select row 8"
+! Select row 8
 ! rofi.kb-select-8:                    Super+8
-! "Select row 9"
+! Select row 9
 ! rofi.kb-select-9:                    Super+9
-! "Select row 10"
+! Select row 10
 ! rofi.kb-select-10:                   Super+0
-! "Go to the previous column"
+! Go to the previous column
 ! rofi.ml-row-left:                    ScrollLeft
-! "Go to the next column"
+! Go to the next column
 ! rofi.ml-row-right:                   ScrollRight
-! "Select previous entry"
+! Select previous entry
 ! rofi.ml-row-up:                      ScrollUp
-! "Select next entry"
+! Select next entry
 ! rofi.ml-row-down:                    ScrollDown
-! "Select hovered row"
+! Select hovered row
 ! rofi.me-select-entry:                MousePrimary
-! "Accept hovered row"
+! Accept hovered row
 ! rofi.me-accept-entry:                MouseDPrimary
-! "Accept hovered row with custom action"
+! Accept hovered row with custom action
 ! rofi.me-accept-custom:               Control+MouseDPrimary
 
