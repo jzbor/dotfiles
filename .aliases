@@ -2,6 +2,7 @@
 # Adding my own aliases
 
 alias vim="nvim"
+alias v="nvim"
 alias vimdiff="nvim -d"
 alias la="ls -a"
 alias please="sudo"
