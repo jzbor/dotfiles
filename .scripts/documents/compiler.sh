@@ -16,23 +16,25 @@ textype() { \
 	#command="pdflatex -interaction=batchmode"
 	command="pdflatex"
 	( head -n 5 "$file" | grep -i -q 'xelatex' ) && command="xelatex"
-	$command --output-directory="$dir" "$base";
-	biber --input-directory "$dir" "$base";
-	$command --output-directory="$dir" "$base";
+	$command --output-directory="$dir" "$base" &&
+	biber --input-directory "$dir" "$base" &&
+	$command --output-directory="$dir" "$base" &&
 	$command --output-directory="$dir" "$base"
-	}
+}
 
 case "$file" in
-	*\.ms) refer -PS -e "$file" | groff -me -ms -kept -T pdf > "$base".pdf ;;
-	*\.mom) refer -PS -e "$file" | groff -mom -kept -T pdf > "$base".pdf ;;
-	*\.[0-9]) refer -PS -e "$file" | groff -mandoc -T pdf > "$base".pdf ;;
-	*\.rmd) echo "require(rmarkdown); render('$file')" | R -q --vanilla ;;
-	*\.tex) textype "$file" ;;
-	*\.md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
-	*config.h) sudo make install ;;
-        *\.c) cc "$file" -o "$base" && "$base" ;;
-	*\.py) python "$file" ;;
-	*\.go) go run "$file" ;;
-	*\.sent) setsid sent "$file" 2>/dev/null & ;;
-	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
+    *\.ms) refer -PS -e "$file" | groff -me -ms -kept -T pdf > "$base".pdf ;;
+    *\.mom) refer -PS -e "$file" | groff -mom -kept -T pdf > "$base".pdf ;;
+    *\.[0-9]) refer -PS -e "$file" | groff -mandoc -T pdf > "$base".pdf ;;
+    *\.[rR]md) Rscript -e "require(rmarkdown); rmarkdown::render('$file', quiet=TRUE)" ;;
+    *\.tex) textype "$file" ;;
+    *\.md) pandoc "$file" --pdf-engine=pdflatex -o "$base".pdf ;;
+    *config.h) sudo make install ;;
+    *\.c) cc "$file" -o "$base" && "$base" ;;
+    *\.py) python "$file" ;;
+    *\.go) go run "$file" ;;
+    *\.sent) setsid sent "$file" 2>/dev/null & ;;
+    *\.rs) cargo build ;; #||
+        #(echo; echo "--> Cargo not initialized"; echo; rustc "$file" && "$base") ;;
+    *) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac
