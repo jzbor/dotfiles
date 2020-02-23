@@ -34,6 +34,8 @@
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
 	" Git wrapper
 	Plug 'tpope/vim-fugitive'
+	" Vim folding
+	Plug 'matze/vim-tex-fold'
 
     call plug#end()
 
@@ -84,6 +86,11 @@
     set linebreak	" Break lines at word (requires Wrap lines)
     set showbreak=	" Wrap-broken line prefix
     "set textwidth=	" Line wrap (number of cols)
+
+" Folding
+    set nofoldenable
+    set foldmethod=indent
+    autocmd BufReadPost normal zR
 
 " Matching / auto completing brackets and other marks
     set showmatch	" Highlight matching bracket
@@ -235,6 +242,8 @@ au BufNewFile,BufRead /*.rasi setf css
 " LaTeX:
     " Word count (maybe replace with texcount):
     autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>
+    " Folding
+    autocmd FileType tex set foldmethod=syntax
     " Code snippets
     autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
     autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
