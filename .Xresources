@@ -8,11 +8,11 @@ Xft.lcdfilter: lcddefault
 
 
 !! My theme
-#define myBackground			#090505
-#define myBackgroundTrans		#00090505
-#define myForeground			#b55904
-#define mySelector			#92220c
-#define myUrgent			#2c120d
+#define myBackground			#0f1418
+#define myBackgroundTrans		#e00f1418
+#define myForeground			#ebdbb2
+#define mySelector			#b83e1e
+#define myUrgent			#d78272
 
 *themeBackground:		  myBackground
 *themeBackgroundTrans:		  myBackgroundTrans
