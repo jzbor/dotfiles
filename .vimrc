@@ -36,6 +36,8 @@
 	Plug 'tpope/vim-fugitive'
 	" Vim folding
 	Plug 'matze/vim-tex-fold'
+	" i3 syntax
+	Plug 'mboughaba/i3config.vim'
 
     call plug#end()
 
