@@ -1,4 +1,4 @@
-# vim: filetype=i3
+# vim: filetype=i3config
 #
 # === I3 CONFIG ===
 #
@@ -60,6 +60,11 @@ bindsym $mod+n resize shrink width 10 px or 10 ppt
 bindsym $mod+m resize grow height 10 px or 10 ppt
 bindsym $mod+comma resize shrink height 10 px or 10 ppt
 bindsym $mod+period resize grow width 10 px or 10 ppt
+
+bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+j resize grow height 10 px or 10 ppt
+bindsym $mod+Control+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+l resize grow width 10 px or 10 ppt
 
 
 ### Media Shortcuts ###
@@ -184,7 +189,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Control+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -352,7 +357,7 @@ mode "launch" {
     bindsym $mod+r mode "default"
     bindsym mod1+space mode "default"
 }
-bindsym $mod+space mode "launch"
+bindsym mod1+space mode "launch"
 
 mode "gaps" {
     bindsym h gaps outer all minus 1
@@ -366,7 +371,11 @@ mode "gaps" {
     bindsym Shift+l gaps outer all plus 5
 
     # reset
-    bindsym r gaps inner all set 5; gaps outer all set 0
+    bindsym r gaps inner all set 5; gaps outer all set 0; mode "default"
+    #remove
+    bindsym space gaps inner all set 0; gaps outer all set 0; mode "default"
+    bindsym f gaps inner all set 0; gaps outer all set 0; mode "default"
+    bindsym m gaps inner all set 0; gaps outer all set 0; mode "default"
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
@@ -390,7 +399,7 @@ exec --no-startup-id nextcloud --background
 exec_always --no-startup-id dunst.sh
 exec_always --no-startup-id spicetify update
 #exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec_always --no-startup-id feh --bg-fill ~/.config/background.* ; sleep 1; compton -b
+exec_always --no-startup-id feh --bg-fill ~/.config/background.*
 exec --no-startup-id conky
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Autostarts copied from manjaro-i3
@@ -426,6 +435,9 @@ for_window [instance="st"] floating enable
 for_window [title="win0"] move to workspace $ws5, floating enable   # JetBrains loading frame
 for_window [class="jetbrains-idea-ce" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
 for_window [class="jetbrains-pycharm-ce" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
+for_window [class="jetbrains-pycharm" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
+for_window [class="jetbrains-idea" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
+for_window [class="jetbrains-idea" instance="^(?!sun-awt-X11-XWindowPeer$)"] focus
 for_window [class="jetbrains-studio" instance="^(?!sun-awt-X11-XDialogPeer$)"] move to workspace $ws5
 assign [class="Gimp"] $ws6
 assign [class="Gnome-calendar"] $ws9
