@@ -166,3 +166,4 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 set -o vi
 shopt -s autocd
 
+neofetch --config $HOME/.config/neofetch/config_login.conf
