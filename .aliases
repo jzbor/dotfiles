@@ -33,6 +33,19 @@ alias ta='cp $TEMPLATES/article.tex'
 alias tb='cp $TEMPLATES/beamer.tex'
 alias tp='cp $TEMPLATES/python.py'
 alias ts='cp $TEMPLATES/shell-script.sh'
+t () {
+    if [ "$#" = 0 ]; then
+	printf "Available templates (from $TEMPLATES):\n\n"
+	tree "$TEMPLATES"
+    elif [ -e "$2" ]; then
+	echo "File $2 already exists."
+    elif (ls "$TEMPLATES" -1 | grep "$1" > /dev/null); then
+	cp -r "$TEMPLATES/$1" "$2"
+	echo "Created $2 from template $1."
+    else
+	echo "Template $1 not found."
+    fi
+}
 
 
 cd () {
@@ -76,7 +89,7 @@ pv () {
 }
 
 music () {
-    if [ "$1" == "next" ] || [ "$1" == "prev" ]; then
+    if [ "$1" = "next" ] || [ "$1" = "prev" ]; then
 	# In this cases the output will probably not be up to date
 	music.sh $1 > /dev/null
     else
