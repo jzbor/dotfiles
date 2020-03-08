@@ -110,7 +110,10 @@
 	\ 'cs': 1,
 	\ 'rust': 1,
 	\}
-    map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    map <leader>ygd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    map <leader>ygi :YcmCompleter GoToImplementation<CR>
+    map <leader>yr :YcmCompleter RefactorRename
+    map <leader>yf :YcmCompleter Format<CR>
 
 " Spell-checking and syntax-checking
     set spell		" Enable spell-checking
@@ -157,8 +160,9 @@
     	map <C-l> <C-w>l
     endif
 
-    map <C-n> <esc>:tabprevious<CR>
-    map <C-m> <esc>:tabnext<CR>
+    " Use gt, gT or <1-9>gt instead
+    map <C-n> <esc>:let msg = "Use gt, gT or <1-9>gt to move between tabs"<CR>:echo msg<CR>
+    map <C-m> <esc>:let msg = "Use gt, gT or <1-9>gt to move between tabs"<CR>:echo msg<CR>
     nmap <Leader>n <esc>:tabnew<CR>
 
 " NERDTree shortcuts
