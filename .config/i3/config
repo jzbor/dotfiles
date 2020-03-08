@@ -128,8 +128,8 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
 
 # Bluetooth and wifi
-bindsym $mod+Shift+w exec wifi toggle
-bindsym $mod+Shift+b exec bluetooth toggle
+bindsym $mod+Shift+w exec sudo wifi toggle
+bindsym $mod+Shift+b exec sudo bluetooth toggle
 
 # Changing keyboard layout
 bindsym $mod+BackSpace exec chkbmap.sh
@@ -357,7 +357,7 @@ mode "launch" {
     bindsym $mod+r mode "default"
     bindsym mod1+space mode "default"
 }
-bindsym mod1+space mode "launch"
+bindsym $mod+Escape mode "launch"
 
 mode "gaps" {
     bindsym h gaps outer all minus 1
@@ -388,7 +388,7 @@ bindsym $mod+g mode "gaps"
 
 ### Autostart ###
 # Autostarts
-exec --no-startup-id compton
+exec_always --no-startup-id killall -9 compton; compton
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id /usr/lib/kdeconnectd
 exec spotify
