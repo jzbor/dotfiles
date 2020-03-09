@@ -25,6 +25,13 @@ case "$1" in
 	    cat "$TODO_FILE"
 	fi
 	;;
+    "e" | "edit")
+	$EDITOR "$TODO_FILE"
+	;;
+    "?" | "help")
+	printf "Your options:\n\n"
+	grep "| \".*\")" "$0" | sed 's/\s*\".\" | \"//;s/\")//'
+	;;
     *)
 	cat "$TODO_FILE"
 	;;
