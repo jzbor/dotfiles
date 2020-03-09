@@ -11,6 +11,16 @@ Here are my local dotfiles mainly including
 Almost all graphical programs in this repo use Xresources.
 Different color schemes and backgrounds may be available as tags. Those will most certainly also contain older versions of other files.
 
+# Installation
+
+Follow these steps to install as a bare repository
+You might want do backup your current configs first in case something goes wrong or you dislike a change.
+``` sh
+git clone --bare https://github.com/jzbor/dotfiles $HOME/.dotfiles
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
+```
+
+
 # Theming
 
 #### Current wallpaper:
