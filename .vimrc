@@ -34,10 +34,14 @@
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
 	" Git wrapper
 	Plug 'tpope/vim-fugitive'
-	" Vim folding
-	Plug 'matze/vim-tex-fold'
 	" i3 syntax
 	Plug 'mboughaba/i3config.vim'
+	" LateX Support
+	Plug 'vim-latex/vim-latex'
+	" Vim folding
+	"Plug 'matze/vim-tex-fold'
+	" Commenting/Uncommenting
+	Plug 'tpope/vim-commentary'
 
     call plug#end()
 
@@ -83,6 +87,7 @@
 " Ruler / line numbers
     set number		" Show line numbers
     set ruler		" Show row and column ruler information
+    set relativenumber	" Show line numbers relative to current position
 
 " Breaking and wrapping stuff
     set linebreak	" Break lines at word (requires Wrap lines)
@@ -160,9 +165,7 @@
     	map <C-l> <C-w>l
     endif
 
-    " Use gt, gT or <1-9>gt instead
-    map <C-n> <esc>:let msg = "Use gt, gT or <1-9>gt to move between tabs"<CR>:echo msg<CR>
-    map <C-m> <esc>:let msg = "Use gt, gT or <1-9>gt to move between tabs"<CR>:echo msg<CR>
+    " Use gt, gT or <1-9>gt to navigate between tabs
     nmap <Leader>n <esc>:tabnew<CR>
 
 " NERDTree shortcuts
