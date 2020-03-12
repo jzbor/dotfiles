@@ -14,6 +14,7 @@ alias phone_share="kdeconnect-cli -d 19ac4ad2941e3801 --share"
 alias imd="vim ~/txtfiles/index.md"
 alias mkdir="mkdir -pv"
 alias nmc="nmtui-connect"
+alias :q="exit"
 
 # Configs
 alias cfa='$EDITOR $HOME/.aliases'
