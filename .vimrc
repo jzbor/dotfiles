@@ -149,28 +149,40 @@
     set splitbelow splitright
 
     if $KEYLAYOUT == '.*-JKLÖ'
-	map <C-j> <C-w>h
-    	map <C-k> <C-w>j
-    	map <C-l> <C-w>k
-    	map <C-ö> <C-w>l
+	noremap <C-j> <C-w>h
+    	noremap <C-k> <C-w>j
+    	noremap <C-l> <C-w>k
+    	noremap <C-ö> <C-w>l
     elseif $KEYLAYOUT == '.*-JKL;'
-	map <C-j> <C-w>h
-    	map <C-k> <C-w>j
-    	map <C-l> <C-w>k
-    	map <C-;> <C-w>l
+	noremap <C-j> <C-w>h
+    	noremap <C-k> <C-w>j
+    	noremap <C-l> <C-w>k
+    	noremap <C-;> <C-w>l
     else
-	map <C-h> <C-w>h
-    	map <C-j> <C-w>j
-    	map <C-k> <C-w>k
-    	map <C-l> <C-w>l
+	noremap <C-h> <C-w>h
+    	noremap <C-j> <C-w>j
+    	noremap <C-k> <C-w>k
+    	noremap <C-l> <C-w>l
     endif
 
     " Use gt, gT or <1-9>gt to navigate between tabs
-    nmap <Leader>n <esc>:tabnew<CR>
+    " Open new tab
+    nmap <Leader>t <esc>:tabnew<CR>
+    noremap <Leader>qt <esc>:tabclose<CR>
+    " Apparently only works in vim 7+ according to wiki
+    if version >= 700
+      map <C-t> <Esc>:tabnew<CR>
+      map <C-w> <Esc>:tabclose<CR>
+    endif
+
+    " Open terminal in neovim
+    if has('nvim')
+	nmap <Leader>sh <esc>:tabnew<CR>:term<CR>i
+    endif
 
 " NERDTree shortcuts
-    noremap <Leader>t <esc>:NERDTreeToggle<CR>
-    noremap <Leader>T <esc>:NERDTreeToggleVCS<CR>
+    noremap <Leader>N <esc>:NERDTreeToggle<CR>
+    noremap <Leader>n <esc>:NERDTreeToggleVCS<CR>
 
 " Disabling arrow keys
     nnoremap <Up> <Nop>
