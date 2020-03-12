@@ -136,6 +136,9 @@ bindsym $mod+BackSpace exec chkbmap.sh
 
 bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
+# Rofi scripts
+bindsym $mod+shift+u exec --no-startup-id dmenu-unicode.sh
+
 
 ### Window Management Shortcuts ###
 # change focus
