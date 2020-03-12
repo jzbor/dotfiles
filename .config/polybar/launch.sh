@@ -8,10 +8,11 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-
-# Launch bar1 and bar2
-polybar -c ~/.config/polybar/bars main &
-polybar -c ~/.config/polybar/bars sec &
+for m in $(xrandr | grep ' connected ' | cut --delimiter=' ' --fields=1); do
+    MONITOR=$m
+    export MONITOR
+    polybar -c "$HOME/.config/polybar/bars" main &
+done
 
 sleep 0.5
 
