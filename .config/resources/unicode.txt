@@ -70,16 +70,13 @@
 🙅 person gesturing NO; U+1F645
 🙅‍♂️ man gesturing NO; U+1F645 U+200D U+2642 U+FE0F
 🙅‍♀️ woman gesturing NO; U+1F645 U+200D U+2640 U+FE0F
-🙅‍♀️ woman gesturing NO; U+1F645 U+200D U+2640 U+FE0F
 🙅‍♂️ man gesturing NO; U+1F645 U+200D U+2642 U+FE0F
 🙆 person gesturing OK; U+1F646
 🙆‍♂️ man gesturing OK; U+1F646 U+200D U+2642 U+FE0F
 🙆‍♀️ woman gesturing OK; U+1F646 U+200D U+2640 U+FE0F
-🙆‍♀️ woman gesturing OK; U+1F646 U+200D U+2640 U+FE0F
 🙆‍♂️ man gesturing OK; U+1F646 U+200D U+2642 U+FE0F
 🙇 person bowing; U+1F647
 🙇‍♂️ man bowing; U+1F647 U+200D U+2642 U+FE0F
-🙇‍♀️ woman bowing; U+1F647 U+200D U+2640 U+FE0F
 🙇‍♀️ woman bowing; U+1F647 U+200D U+2640 U+FE0F
 🙇‍♂️ man bowing; U+1F647 U+200D U+2642 U+FE0F
 🙈 see-no-evil monkey; U+1F648
@@ -88,17 +85,14 @@
 🙋 person raising hand; U+1F64B
 🙋‍♂️ man raising hand; U+1F64B U+200D U+2642 U+FE0F
 🙋‍♀️ woman raising hand; U+1F64B U+200D U+2640 U+FE0F
-🙋‍♀️ woman raising hand; U+1F64B U+200D U+2640 U+FE0F
 🙋‍♂️ man raising hand; U+1F64B U+200D U+2642 U+FE0F
 🙌 raising hands; U+1F64C
 🙍 person frowning; U+1F64D
 🙍‍♂️ man frowning; U+1F64D U+200D U+2642 U+FE0F
 🙍‍♀️ woman frowning; U+1F64D U+200D U+2640 U+FE0F
-🙍‍♀️ woman frowning; U+1F64D U+200D U+2640 U+FE0F
 🙍‍♂️ man frowning; U+1F64D U+200D U+2642 U+FE0F
 🙎 person pouting; U+1F64E
 🙎‍♂️ man pouting; U+1F64E U+200D U+2642 U+FE0F
-🙎‍♀️ woman pouting; U+1F64E U+200D U+2640 U+FE0F
 🙎‍♀️ woman pouting; U+1F64E U+200D U+2640 U+FE0F
 🙎‍♂️ man pouting; U+1F64E U+200D U+2642 U+FE0F
 🙏 folded hands; U+1F64F
@@ -144,7 +138,6 @@
 🚣 person rowing boat; U+1F6A3
 🚣‍♂️ man rowing boat; U+1F6A3 U+200D U+2642 U+FE0F
 🚣‍♀️ woman rowing boat; U+1F6A3 U+200D U+2640 U+FE0F
-🚣‍♀️ woman rowing boat; U+1F6A3 U+200D U+2640 U+FE0F
 🚣‍♂️ man rowing boat; U+1F6A3 U+200D U+2642 U+FE0F
 🚤 speedboat; U+1F6A4
 🚥 horizontal traffic light; U+1F6A5
@@ -165,16 +158,13 @@
 🚴 person biking; U+1F6B4
 🚴‍♂️ man biking; U+1F6B4 U+200D U+2642 U+FE0F
 🚴‍♀️ woman biking; U+1F6B4 U+200D U+2640 U+FE0F
-🚴‍♀️ woman biking; U+1F6B4 U+200D U+2640 U+FE0F
 🚴‍♂️ man biking; U+1F6B4 U+200D U+2642 U+FE0F
 🚵 person mountain biking; U+1F6B5
 🚵‍♂️ man mountain biking; U+1F6B5 U+200D U+2642 U+FE0F
 🚵‍♀️ woman mountain biking; U+1F6B5 U+200D U+2640 U+FE0F
-🚵‍♀️ woman mountain biking; U+1F6B5 U+200D U+2640 U+FE0F
 🚵‍♂️ man mountain biking; U+1F6B5 U+200D U+2642 U+FE0F
 🚶 person walking; U+1F6B6
 🚶‍♂️ man walking; U+1F6B6 U+200D U+2642 U+FE0F
-🚶‍♀️ woman walking; U+1F6B6 U+200D U+2640 U+FE0F
 🚶‍♀️ woman walking; U+1F6B6 U+200D U+2640 U+FE0F
 🚶‍♂️ man walking; U+1F6B6 U+200D U+2642 U+FE0F
 🚷 no pedestrians; U+1F6B7
@@ -242,7 +232,6 @@
 🤦 person facepalming; U+1F926
 🤦‍♂️ man facepalming; U+1F926 U+200D U+2642 U+FE0F
 🤦‍♀️ woman facepalming; U+1F926 U+200D U+2640 U+FE0F
-🤦‍♀️ woman facepalming; U+1F926 U+200D U+2640 U+FE0F
 🤦‍♂️ man facepalming; U+1F926 U+200D U+2642 U+FE0F
 🤧 sneezing face; U+1F927
 🤨 face with raised eyebrow; U+1F928
@@ -263,32 +252,26 @@
 🤷 person shrugging; U+1F937
 🤷‍♂️ man shrugging; U+1F937 U+200D U+2642 U+FE0F
 🤷‍♀️ woman shrugging; U+1F937 U+200D U+2640 U+FE0F
-🤷‍♀️ woman shrugging; U+1F937 U+200D U+2640 U+FE0F
 🤷‍♂️ man shrugging; U+1F937 U+200D U+2642 U+FE0F
 🤸 person cartwheeling; U+1F938
 🤸‍♂️ man cartwheeling; U+1F938 U+200D U+2642 U+FE0F
 🤸‍♀️ woman cartwheeling; U+1F938 U+200D U+2640 U+FE0F
-🤸‍♀️ woman cartwheeling; U+1F938 U+200D U+2640 U+FE0F
 🤸‍♂️ man cartwheeling; U+1F938 U+200D U+2642 U+FE0F
 🤹 person juggling; U+1F939
 🤹‍♂️ man juggling; U+1F939 U+200D U+2642 U+FE0F
-🤹‍♀️ woman juggling; U+1F939 U+200D U+2640 U+FE0F
 🤹‍♀️ woman juggling; U+1F939 U+200D U+2640 U+FE0F
 🤹‍♂️ man juggling; U+1F939 U+200D U+2642 U+FE0F
 🤺 person fencing; U+1F93A
 🤼 people wrestling; U+1F93C
 🤼‍♂️ men wrestling; U+1F93C U+200D U+2642 U+FE0F
 🤼‍♀️ women wrestling; U+1F93C U+200D U+2640 U+FE0F
-🤼‍♀️ women wrestling; U+1F93C U+200D U+2640 U+FE0F
 🤼‍♂️ men wrestling; U+1F93C U+200D U+2642 U+FE0F
 🤽 person playing water polo; U+1F93D
 🤽‍♂️ man playing water polo; U+1F93D U+200D U+2642 U+FE0F
 🤽‍♀️ woman playing water polo; U+1F93D U+200D U+2640 U+FE0F
-🤽‍♀️ woman playing water polo; U+1F93D U+200D U+2640 U+FE0F
 🤽‍♂️ man playing water polo; U+1F93D U+200D U+2642 U+FE0F
 🤾 person playing handball; U+1F93E
 🤾‍♂️ man playing handball; U+1F93E U+200D U+2642 U+FE0F
-🤾‍♀️ woman playing handball; U+1F93E U+200D U+2640 U+FE0F
 🤾‍♀️ woman playing handball; U+1F93E U+200D U+2640 U+FE0F
 🤾‍♂️ man playing handball; U+1F93E U+200D U+2642 U+FE0F
 🥀 wilted flower; U+1F940
@@ -402,11 +385,9 @@
 🦸 superhero; U+1F9B8
 🦸‍♂️ man superhero; U+1F9B8 U+200D U+2642 U+FE0F
 🦸‍♀️ woman superhero; U+1F9B8 U+200D U+2640 U+FE0F
-🦸‍♀️ woman superhero; U+1F9B8 U+200D U+2640 U+FE0F
 🦸‍♂️ man superhero; U+1F9B8 U+200D U+2642 U+FE0F
 🦹 supervillain; U+1F9B9
 🦹‍♂️ man supervillain; U+1F9B9 U+200D U+2642 U+FE0F
-🦹‍♀️ woman supervillain; U+1F9B9 U+200D U+2640 U+FE0F
 🦹‍♀️ woman supervillain; U+1F9B9 U+200D U+2640 U+FE0F
 🦹‍♂️ man supervillain; U+1F9B9 U+200D U+2642 U+FE0F
 🧀 cheese wedge; U+1F9C0
@@ -421,51 +402,41 @@
 🧖 person in steamy room; U+1F9D6
 🧖‍♂️ man in steamy room; U+1F9D6 U+200D U+2642 U+FE0F
 🧖‍♀️ woman in steamy room; U+1F9D6 U+200D U+2640 U+FE0F
-🧖‍♀️ woman in steamy room; U+1F9D6 U+200D U+2640 U+FE0F
 🧖‍♂️ man in steamy room; U+1F9D6 U+200D U+2642 U+FE0F
 🧗 person climbing; U+1F9D7
 🧗‍♂️ man climbing; U+1F9D7 U+200D U+2642 U+FE0F
-🧗‍♀️ woman climbing; U+1F9D7 U+200D U+2640 U+FE0F
 🧗‍♀️ woman climbing; U+1F9D7 U+200D U+2640 U+FE0F
 🧗‍♂️ man climbing; U+1F9D7 U+200D U+2642 U+FE0F
 🧘 person in lotus position; U+1F9D8
 🧘‍♂️ man in lotus position; U+1F9D8 U+200D U+2642 U+FE0F
 🧘‍♀️ woman in lotus position; U+1F9D8 U+200D U+2640 U+FE0F
-🧘‍♀️ woman in lotus position; U+1F9D8 U+200D U+2640 U+FE0F
 🧘‍♂️ man in lotus position; U+1F9D8 U+200D U+2642 U+FE0F
 🧙 mage; U+1F9D9
 🧙‍♂️ man mage; U+1F9D9 U+200D U+2642 U+FE0F
-🧙‍♀️ woman mage; U+1F9D9 U+200D U+2640 U+FE0F
 🧙‍♀️ woman mage; U+1F9D9 U+200D U+2640 U+FE0F
 🧙‍♂️ man mage; U+1F9D9 U+200D U+2642 U+FE0F
 🧚 fairy; U+1F9DA
 🧚‍♂️ man fairy; U+1F9DA U+200D U+2642 U+FE0F
 🧚‍♀️ woman fairy; U+1F9DA U+200D U+2640 U+FE0F
-🧚‍♀️ woman fairy; U+1F9DA U+200D U+2640 U+FE0F
 🧚‍♂️ man fairy; U+1F9DA U+200D U+2642 U+FE0F
 🧛 vampire; U+1F9DB
 🧛‍♂️ man vampire; U+1F9DB U+200D U+2642 U+FE0F
-🧛‍♀️ woman vampire; U+1F9DB U+200D U+2640 U+FE0F
 🧛‍♀️ woman vampire; U+1F9DB U+200D U+2640 U+FE0F
 🧛‍♂️ man vampire; U+1F9DB U+200D U+2642 U+FE0F
 🧜 merperson; U+1F9DC
 🧜‍♂️ merman; U+1F9DC U+200D U+2642 U+FE0F
 🧜‍♀️ mermaid; U+1F9DC U+200D U+2640 U+FE0F
-🧜‍♀️ mermaid; U+1F9DC U+200D U+2640 U+FE0F
 🧜‍♂️ merman; U+1F9DC U+200D U+2642 U+FE0F
 🧝 elf; U+1F9DD
 🧝‍♂️ man elf; U+1F9DD U+200D U+2642 U+FE0F
-🧝‍♀️ woman elf; U+1F9DD U+200D U+2640 U+FE0F
 🧝‍♀️ woman elf; U+1F9DD U+200D U+2640 U+FE0F
 🧝‍♂️ man elf; U+1F9DD U+200D U+2642 U+FE0F
 🧞 genie; U+1F9DE
 🧞‍♂️ man genie; U+1F9DE U+200D U+2642 U+FE0F
 🧞‍♀️ woman genie; U+1F9DE U+200D U+2640 U+FE0F
-🧞‍♀️ woman genie; U+1F9DE U+200D U+2640 U+FE0F
 🧞‍♂️ man genie; U+1F9DE U+200D U+2642 U+FE0F
 🧟 zombie; U+1F9DF
 🧟‍♂️ man zombie; U+1F9DF U+200D U+2642 U+FE0F
-🧟‍♀️ woman zombie; U+1F9DF U+200D U+2640 U+FE0F
 🧟‍♀️ woman zombie; U+1F9DF U+200D U+2640 U+FE0F
 🧟‍♂️ man zombie; U+1F9DF U+200D U+2642 U+FE0F
 🧠 brain; U+1F9E0
@@ -715,7 +686,6 @@
 ⛸ ice skate; U+26F8
 ⛹ person bouncing ball; U+26F9
 ⛹️‍♂️ man bouncing ball; U+26F9 U+FE0F U+200D U+2642 U+FE0F
-⛹️‍♀️ woman bouncing ball; U+26F9 U+FE0F U+200D U+2640 U+FE0F
 ⛹️‍♀️ woman bouncing ball; U+26F9 U+FE0F U+200D U+2640 U+FE0F
 ⛹️‍♂️ man bouncing ball; U+26F9 U+FE0F U+200D U+2642 U+FE0F
 ⛺ tent; U+26FA
@@ -1280,11 +1250,9 @@
 🏃 person running; U+1F3C3
 🏃‍♂️ man running; U+1F3C3 U+200D U+2642 U+FE0F
 🏃‍♀️ woman running; U+1F3C3 U+200D U+2640 U+FE0F
-🏃‍♀️ woman running; U+1F3C3 U+200D U+2640 U+FE0F
 🏃‍♂️ man running; U+1F3C3 U+200D U+2642 U+FE0F
 🏄 person surfing; U+1F3C4
 🏄‍♂️ man surfing; U+1F3C4 U+200D U+2642 U+FE0F
-🏄‍♀️ woman surfing; U+1F3C4 U+200D U+2640 U+FE0F
 🏄‍♀️ woman surfing; U+1F3C4 U+200D U+2640 U+FE0F
 🏄‍♂️ man surfing; U+1F3C4 U+200D U+2642 U+FE0F
 🏅 sports medal; U+1F3C5
@@ -1295,16 +1263,13 @@
 🏊 person swimming; U+1F3CA
 🏊‍♂️ man swimming; U+1F3CA U+200D U+2642 U+FE0F
 🏊‍♀️ woman swimming; U+1F3CA U+200D U+2640 U+FE0F
-🏊‍♀️ woman swimming; U+1F3CA U+200D U+2640 U+FE0F
 🏊‍♂️ man swimming; U+1F3CA U+200D U+2642 U+FE0F
 🏋 person lifting weights; U+1F3CB
 🏋️‍♂️ man lifting weights; U+1F3CB U+FE0F U+200D U+2642 U+FE0F
 🏋️‍♀️ woman lifting weights; U+1F3CB U+FE0F U+200D U+2640 U+FE0F
-🏋️‍♀️ woman lifting weights; U+1F3CB U+FE0F U+200D U+2640 U+FE0F
 🏋️‍♂️ man lifting weights; U+1F3CB U+FE0F U+200D U+2642 U+FE0F
 🏌 person golfing; U+1F3CC
 🏌️‍♂️ man golfing; U+1F3CC U+FE0F U+200D U+2642 U+FE0F
-🏌️‍♀️ woman golfing; U+1F3CC U+FE0F U+200D U+2640 U+FE0F
 🏌️‍♀️ woman golfing; U+1F3CC U+FE0F U+200D U+2640 U+FE0F
 🏌️‍♂️ man golfing; U+1F3CC U+FE0F U+200D U+2642 U+FE0F
 🏍 motorcycle; U+1F3CD
@@ -1348,7 +1313,6 @@
 🏯 Japanese castle; U+1F3EF
 🏰 castle; U+1F3F0
 🏳 white flag; U+1F3F3
-🏳️‍🌈 rainbow flag; U+1F3F3 U+FE0F U+200D U+1F308
 🏳️‍🌈 rainbow flag; U+1F3F3 U+FE0F U+200D U+1F308
 🏴 black flag; U+1F3F4
 🏴‍☠️ pirate flag; U+1F3F4 U+200D U+2620 U+FE0F
@@ -1565,14 +1529,12 @@
 👨‍👧‍👧 family: man, girl, girl; U+1F468 U+200D U+1F467 U+200D U+1F467
 👨‍👨‍👦 family: man, man, boy; U+1F468 U+200D U+1F468 U+200D U+1F466
 👨‍👨‍👦‍👦 family: man, man, boy, boy; U+1F468 U+200D U+1F468 U+200D U+1F466 U+200D U+1F466
-👨‍👨‍👦‍👦 family: man, man, boy, boy; U+1F468 U+200D U+1F468 U+200D U+1F466 U+200D U+1F466
 👨‍👨‍👧 family: man, man, girl; U+1F468 U+200D U+1F468 U+200D U+1F467
 👨‍👨‍👧‍👦 family: man, man, girl, boy; U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F466
 👨‍👨‍👧‍👧 family: man, man, girl, girl; U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F467
 👨‍👨‍👧‍👦 family: man, man, girl, boy; U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F466
 👨‍👨‍👧‍👧 family: man, man, girl, girl; U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F467
 👨‍👩‍👦 family: man, woman, boy; U+1F468 U+200D U+1F469 U+200D U+1F466
-👨‍👩‍👦‍👦 family: man, woman, boy, boy; U+1F468 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466
 👨‍👩‍👦‍👦 family: man, woman, boy, boy; U+1F468 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466
 👨‍👩‍👧 family: man, woman, girl; U+1F468 U+200D U+1F469 U+200D U+1F467
 👨‍👩‍👧‍👦 family: man, woman, girl, boy; U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466
@@ -1667,7 +1629,6 @@
 👩‍👧‍👧 family: woman, girl, girl; U+1F469 U+200D U+1F467 U+200D U+1F467
 👩‍👩‍👦 family: woman, woman, boy; U+1F469 U+200D U+1F469 U+200D U+1F466
 👩‍👩‍👦‍👦 family: woman, woman, boy, boy; U+1F469 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466
-👩‍👩‍👦‍👦 family: woman, woman, boy, boy; U+1F469 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466
 👩‍👩‍👧 family: woman, woman, girl; U+1F469 U+200D U+1F469 U+200D U+1F467
 👩‍👩‍👧‍👦 family: woman, woman, girl, boy; U+1F469 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466
 👩‍👩‍👧‍👧 family: woman, woman, girl, girl; U+1F469 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467
@@ -1697,23 +1658,19 @@
 👮 police officer; U+1F46E
 👮‍♂️ man police officer; U+1F46E U+200D U+2642 U+FE0F
 👮‍♀️ woman police officer; U+1F46E U+200D U+2640 U+FE0F
-👮‍♀️ woman police officer; U+1F46E U+200D U+2640 U+FE0F
 👮‍♂️ man police officer; U+1F46E U+200D U+2642 U+FE0F
 👯 people with bunny ears; U+1F46F
 👯‍♂️ men with bunny ears; U+1F46F U+200D U+2642 U+FE0F
-👯‍♀️ women with bunny ears; U+1F46F U+200D U+2640 U+FE0F
 👯‍♀️ women with bunny ears; U+1F46F U+200D U+2640 U+FE0F
 👯‍♂️ men with bunny ears; U+1F46F U+200D U+2642 U+FE0F
 👰 bride with veil; U+1F470
 👱 person: blond hair; U+1F471
 👱‍♂️ man: blond hair; U+1F471 U+200D U+2642 U+FE0F
 👱‍♀️ woman: blond hair; U+1F471 U+200D U+2640 U+FE0F
-👱‍♀️ woman: blond hair; U+1F471 U+200D U+2640 U+FE0F
 👱‍♂️ man: blond hair; U+1F471 U+200D U+2642 U+FE0F
 👲 man with Chinese cap; U+1F472
 👳 person wearing turban; U+1F473
 👳‍♂️ man wearing turban; U+1F473 U+200D U+2642 U+FE0F
-👳‍♀️ woman wearing turban; U+1F473 U+200D U+2640 U+FE0F
 👳‍♀️ woman wearing turban; U+1F473 U+200D U+2640 U+FE0F
 👳‍♂️ man wearing turban; U+1F473 U+200D U+2642 U+FE0F
 👴 old man; U+1F474
@@ -1721,7 +1678,6 @@
 👶 baby; U+1F476
 👷 construction worker; U+1F477
 👷‍♂️ man construction worker; U+1F477 U+200D U+2642 U+FE0F
-👷‍♀️ woman construction worker; U+1F477 U+200D U+2640 U+FE0F
 👷‍♀️ woman construction worker; U+1F477 U+200D U+2640 U+FE0F
 👷‍♂️ man construction worker; U+1F477 U+200D U+2642 U+FE0F
 👸 princess; U+1F478
@@ -1736,11 +1692,9 @@
 💁 person tipping hand; U+1F481
 💁‍♂️ man tipping hand; U+1F481 U+200D U+2642 U+FE0F
 💁‍♀️ woman tipping hand; U+1F481 U+200D U+2640 U+FE0F
-💁‍♀️ woman tipping hand; U+1F481 U+200D U+2640 U+FE0F
 💁‍♂️ man tipping hand; U+1F481 U+200D U+2642 U+FE0F
 💂 guard; U+1F482
 💂‍♂️ man guard; U+1F482 U+200D U+2642 U+FE0F
-💂‍♀️ woman guard; U+1F482 U+200D U+2640 U+FE0F
 💂‍♀️ woman guard; U+1F482 U+200D U+2640 U+FE0F
 💂‍♂️ man guard; U+1F482 U+200D U+2642 U+FE0F
 💃 woman dancing; U+1F483
@@ -1749,11 +1703,9 @@
 💆 person getting massage; U+1F486
 💆‍♂️ man getting massage; U+1F486 U+200D U+2642 U+FE0F
 💆‍♀️ woman getting massage; U+1F486 U+200D U+2640 U+FE0F
-💆‍♀️ woman getting massage; U+1F486 U+200D U+2640 U+FE0F
 💆‍♂️ man getting massage; U+1F486 U+200D U+2642 U+FE0F
 💇 person getting haircut; U+1F487
 💇‍♂️ man getting haircut; U+1F487 U+200D U+2642 U+FE0F
-💇‍♀️ woman getting haircut; U+1F487 U+200D U+2640 U+FE0F
 💇‍♀️ woman getting haircut; U+1F487 U+200D U+2640 U+FE0F
 💇‍♂️ man getting haircut; U+1F487 U+200D U+2642 U+FE0F
 💈 barber pole; U+1F488
@@ -1985,7 +1937,6 @@
 🕵 detective; U+1F575
 🕵️‍♂️ man detective; U+1F575 U+FE0F U+200D U+2642 U+FE0F
 🕵️‍♀️ woman detective; U+1F575 U+FE0F U+200D U+2640 U+FE0F
-🕵️‍♀️ woman detective; U+1F575 U+FE0F U+200D U+2640 U+FE0F
 🕵️‍♂️ man detective; U+1F575 U+FE0F U+200D U+2642 U+FE0F
 🕶 sunglasses; U+1F576
 🕷 spider; U+1F577
@@ -2031,16 +1982,7 @@
  fa-music; U+F001
  fa-search; U+F002
  fa-heart; U+F004
- fa-heart; U+F004
- fa-heart; U+F004
- fa-heart; U+F004
  fa-star; U+F005
- fa-star; U+F005
- fa-star; U+F005
- fa-star; U+F005
- fa-user; U+F007
- fa-user; U+F007
- fa-user; U+F007
  fa-user; U+F007
  fa-film; U+F008
  fa-th-large; U+F009
@@ -2055,22 +1997,13 @@
  fa-cog; U+F013
  fa-home; U+F015
  fa-clock; U+F017
- fa-clock; U+F017
- fa-clock; U+F017
- fa-clock; U+F017
  fa-road; U+F018
  fa-download; U+F019
  fa-inbox; U+F01C
  fa-redo; U+F01E
  fa-sync; U+F021
  fa-list-alt; U+F022
- fa-list-alt; U+F022
- fa-list-alt; U+F022
- fa-list-alt; U+F022
  fa-lock; U+F023
- fa-flag; U+F024
- fa-flag; U+F024
- fa-flag; U+F024
  fa-flag; U+F024
  fa-headphones; U+F025
  fa-volume-off; U+F026
@@ -2081,9 +2014,6 @@
  fa-tag; U+F02B
  fa-tags; U+F02C
  fa-book; U+F02D
- fa-bookmark; U+F02E
- fa-bookmark; U+F02E
- fa-bookmark; U+F02E
  fa-bookmark; U+F02E
  fa-print; U+F02F
  fa-camera; U+F030
@@ -2101,15 +2031,9 @@
  fa-indent; U+F03C
  fa-video; U+F03D
  fa-image; U+F03E
- fa-image; U+F03E
- fa-image; U+F03E
- fa-image; U+F03E
  fa-map-marker; U+F041
  fa-adjust; U+F042
  fa-tint; U+F043
- fa-edit; U+F044
- fa-edit; U+F044
- fa-edit; U+F044
  fa-edit; U+F044
  fa-step-backward; U+F048
  fa-fast-backward; U+F049
@@ -2126,16 +2050,7 @@
  fa-plus-circle; U+F055
  fa-minus-circle; U+F056
  fa-times-circle; U+F057
- fa-times-circle; U+F057
- fa-times-circle; U+F057
- fa-times-circle; U+F057
  fa-check-circle; U+F058
- fa-check-circle; U+F058
- fa-check-circle; U+F058
- fa-check-circle; U+F058
- fa-question-circle; U+F059
- fa-question-circle; U+F059
- fa-question-circle; U+F059
  fa-question-circle; U+F059
  fa-info-circle; U+F05A
  fa-crosshairs; U+F05B
@@ -2155,23 +2070,11 @@
  fa-leaf; U+F06C
  fa-fire; U+F06D
  fa-eye; U+F06E
- fa-eye; U+F06E
- fa-eye; U+F06E
- fa-eye; U+F06E
- fa-eye-slash; U+F070
- fa-eye-slash; U+F070
- fa-eye-slash; U+F070
  fa-eye-slash; U+F070
  fa-exclamation-triangle; U+F071
  fa-plane; U+F072
  fa-calendar-alt; U+F073
- fa-calendar-alt; U+F073
- fa-calendar-alt; U+F073
- fa-calendar-alt; U+F073
  fa-random; U+F074
- fa-comment; U+F075
- fa-comment; U+F075
- fa-comment; U+F075
  fa-comment; U+F075
  fa-magnet; U+F076
  fa-chevron-up; U+F077
@@ -2179,16 +2082,7 @@
  fa-retweet; U+F079
  fa-shopping-cart; U+F07A
  fa-folder; U+F07B
- fa-folder; U+F07B
- fa-folder; U+F07B
- fa-folder; U+F07B
  fa-folder-open; U+F07C
- fa-folder-open; U+F07C
- fa-folder-open; U+F07C
- fa-folder-open; U+F07C
- fa-chart-bar; U+F080
- fa-chart-bar; U+F080
- fa-chart-bar; U+F080
  fa-chart-bar; U+F080
  fa-twitter-square; U+F081
  fa-facebook-square; U+F082
@@ -2196,21 +2090,12 @@
  fa-key; U+F084
  fa-cogs; U+F085
  fa-comments; U+F086
- fa-comments; U+F086
- fa-comments; U+F086
- fa-comments; U+F086
- fa-star-half; U+F089
- fa-star-half; U+F089
- fa-star-half; U+F089
  fa-star-half; U+F089
  fa-linkedin; U+F08C
  fa-thumbtack; U+F08D
  fa-trophy; U+F091
  fa-github-square; U+F092
  fa-upload; U+F093
- fa-lemon; U+F094
- fa-lemon; U+F094
- fa-lemon; U+F094
  fa-lemon; U+F094
  fa-phone; U+F095
  fa-phone-square; U+F098
@@ -2219,31 +2104,13 @@
  fa-github; U+F09B
  fa-unlock; U+F09C
  fa-credit-card; U+F09D
- fa-credit-card; U+F09D
- fa-credit-card; U+F09D
- fa-credit-card; U+F09D
  fa-rss; U+F09E
- fa-hdd; U+F0A0
- fa-hdd; U+F0A0
- fa-hdd; U+F0A0
  fa-hdd; U+F0A0
  fa-bullhorn; U+F0A1
  fa-certificate; U+F0A3
  fa-hand-point-right; U+F0A4
- fa-hand-point-right; U+F0A4
- fa-hand-point-right; U+F0A4
- fa-hand-point-right; U+F0A4
- fa-hand-point-left; U+F0A5
- fa-hand-point-left; U+F0A5
- fa-hand-point-left; U+F0A5
  fa-hand-point-left; U+F0A5
  fa-hand-point-up; U+F0A6
- fa-hand-point-up; U+F0A6
- fa-hand-point-up; U+F0A6
- fa-hand-point-up; U+F0A6
- fa-hand-point-down; U+F0A7
- fa-hand-point-down; U+F0A7
- fa-hand-point-down; U+F0A7
  fa-hand-point-down; U+F0A7
  fa-arrow-circle-left; U+F0A8
  fa-arrow-circle-right; U+F0A9
@@ -2261,17 +2128,8 @@
  fa-flask; U+F0C3
  fa-cut; U+F0C4
  fa-copy; U+F0C5
- fa-copy; U+F0C5
- fa-copy; U+F0C5
- fa-copy; U+F0C5
  fa-paperclip; U+F0C6
  fa-save; U+F0C7
- fa-save; U+F0C7
- fa-save; U+F0C7
- fa-save; U+F0C7
- fa-square; U+F0C8
- fa-square; U+F0C8
- fa-square; U+F0C8
  fa-square; U+F0C8
  fa-bars; U+F0C9
  fa-list-ul; U+F0CA
@@ -2295,9 +2153,6 @@
  fa-sort-down; U+F0DD
  fa-sort-up; U+F0DE
  fa-envelope; U+F0E0
- fa-envelope; U+F0E0
- fa-envelope; U+F0E0
- fa-envelope; U+F0E0
  fa-linkedin-in; U+F0E1
  fa-undo; U+F0E2
  fa-gavel; U+F0E3
@@ -2306,29 +2161,17 @@
  fa-umbrella; U+F0E9
  fa-paste; U+F0EA
  fa-lightbulb; U+F0EB
- fa-lightbulb; U+F0EB
- fa-lightbulb; U+F0EB
- fa-lightbulb; U+F0EB
  fa-user-md; U+F0F0
  fa-stethoscope; U+F0F1
  fa-suitcase; U+F0F2
  fa-bell; U+F0F3
- fa-bell; U+F0F3
- fa-bell; U+F0F3
- fa-bell; U+F0F3
  fa-coffee; U+F0F4
- fa-hospital; U+F0F8
- fa-hospital; U+F0F8
- fa-hospital; U+F0F8
  fa-hospital; U+F0F8
  fa-ambulance; U+F0F9
  fa-medkit; U+F0FA
  fa-fighter-jet; U+F0FB
  fa-beer; U+F0FC
  fa-h-square; U+F0FD
- fa-plus-square; U+F0FE
- fa-plus-square; U+F0FE
- fa-plus-square; U+F0FE
  fa-plus-square; U+F0FE
  fa-angle-double-left; U+F100
  fa-angle-double-right; U+F101
@@ -2346,26 +2189,11 @@
  fa-quote-right; U+F10E
  fa-spinner; U+F110
  fa-circle; U+F111
- fa-circle; U+F111
- fa-circle; U+F111
- fa-circle; U+F111
  fa-github-alt; U+F113
  fa-smile; U+F118
- fa-smile; U+F118
- fa-smile; U+F118
- fa-smile; U+F118
  fa-frown; U+F119
- fa-frown; U+F119
- fa-frown; U+F119
- fa-frown; U+F119
- fa-meh; U+F11A
- fa-meh; U+F11A
- fa-meh; U+F11A
  fa-meh; U+F11A
  fa-gamepad; U+F11B
- fa-keyboard; U+F11C
- fa-keyboard; U+F11C
- fa-keyboard; U+F11C
  fa-keyboard; U+F11C
  fa-flag-checkered; U+F11E
  fa-terminal; U+F120
@@ -2385,9 +2213,6 @@
  fa-microphone; U+F130
  fa-microphone-slash; U+F131
  fa-calendar; U+F133
- fa-calendar; U+F133
- fa-calendar; U+F133
- fa-calendar; U+F133
  fa-fire-extinguisher; U+F134
  fa-rocket; U+F135
  fa-maxcdn; U+F136
@@ -2404,37 +2229,13 @@
  fa-ellipsis-v; U+F142
  fa-rss-square; U+F143
  fa-play-circle; U+F144
- fa-play-circle; U+F144
- fa-play-circle; U+F144
- fa-play-circle; U+F144
  fa-minus-square; U+F146
- fa-minus-square; U+F146
- fa-minus-square; U+F146
- fa-minus-square; U+F146
- fa-check-square; U+F14A
- fa-check-square; U+F14A
- fa-check-square; U+F14A
  fa-check-square; U+F14A
  fa-pen-square; U+F14B
  fa-share-square; U+F14D
- fa-share-square; U+F14D
- fa-share-square; U+F14D
- fa-share-square; U+F14D
- fa-compass; U+F14E
- fa-compass; U+F14E
- fa-compass; U+F14E
  fa-compass; U+F14E
  fa-caret-square-down; U+F150
- fa-caret-square-down; U+F150
- fa-caret-square-down; U+F150
- fa-caret-square-down; U+F150
  fa-caret-square-up; U+F151
- fa-caret-square-up; U+F151
- fa-caret-square-up; U+F151
- fa-caret-square-up; U+F151
- fa-caret-square-right; U+F152
- fa-caret-square-right; U+F152
- fa-caret-square-right; U+F152
  fa-caret-square-right; U+F152
  fa-euro-sign; U+F153
  fa-pound-sign; U+F154
@@ -2445,12 +2246,6 @@
  fa-won-sign; U+F159
  fa-btc; U+F15A
  fa-file; U+F15B
- fa-file; U+F15B
- fa-file; U+F15B
- fa-file; U+F15B
- fa-file-alt; U+F15C
- fa-file-alt; U+F15C
- fa-file-alt; U+F15C
  fa-file-alt; U+F15C
  fa-sort-alpha-down; U+F15D
  fa-sort-alpha-up; U+F15E
@@ -2459,12 +2254,6 @@
  fa-sort-numeric-down; U+F162
  fa-sort-numeric-up; U+F163
  fa-thumbs-up; U+F164
- fa-thumbs-up; U+F164
- fa-thumbs-up; U+F164
- fa-thumbs-up; U+F164
- fa-thumbs-down; U+F165
- fa-thumbs-down; U+F165
- fa-thumbs-down; U+F165
  fa-thumbs-down; U+F165
  fa-youtube; U+F167
  fa-xing; U+F168
@@ -2489,12 +2278,6 @@
  fa-male; U+F183
  fa-gratipay; U+F184
  fa-sun; U+F185
- fa-sun; U+F185
- fa-sun; U+F185
- fa-sun; U+F185
- fa-moon; U+F186
- fa-moon; U+F186
- fa-moon; U+F186
  fa-moon; U+F186
  fa-archive; U+F187
  fa-bug; U+F188
@@ -2504,12 +2287,6 @@
  fa-pagelines; U+F18C
  fa-stack-exchange; U+F18D
  fa-caret-square-left; U+F191
- fa-caret-square-left; U+F191
- fa-caret-square-left; U+F191
- fa-caret-square-left; U+F191
- fa-dot-circle; U+F192
- fa-dot-circle; U+F192
- fa-dot-circle; U+F192
  fa-dot-circle; U+F192
  fa-wheelchair; U+F193
  fa-vimeo-square; U+F194
@@ -2536,9 +2313,6 @@
  fa-language; U+F1AB
  fa-fax; U+F1AC
  fa-building; U+F1AD
- fa-building; U+F1AD
- fa-building; U+F1AD
- fa-building; U+F1AD
  fa-child; U+F1AE
  fa-paw; U+F1B0
  fa-cube; U+F1B2
@@ -2556,47 +2330,17 @@
  fa-soundcloud; U+F1BE
  fa-database; U+F1C0
  fa-file-pdf; U+F1C1
- fa-file-pdf; U+F1C1
- fa-file-pdf; U+F1C1
- fa-file-pdf; U+F1C1
- fa-file-word; U+F1C2
- fa-file-word; U+F1C2
- fa-file-word; U+F1C2
  fa-file-word; U+F1C2
  fa-file-excel; U+F1C3
- fa-file-excel; U+F1C3
- fa-file-excel; U+F1C3
- fa-file-excel; U+F1C3
- fa-file-powerpoint; U+F1C4
- fa-file-powerpoint; U+F1C4
- fa-file-powerpoint; U+F1C4
  fa-file-powerpoint; U+F1C4
  fa-file-image; U+F1C5
- fa-file-image; U+F1C5
- fa-file-image; U+F1C5
- fa-file-image; U+F1C5
- fa-file-archive; U+F1C6
- fa-file-archive; U+F1C6
- fa-file-archive; U+F1C6
  fa-file-archive; U+F1C6
  fa-file-audio; U+F1C7
- fa-file-audio; U+F1C7
- fa-file-audio; U+F1C7
- fa-file-audio; U+F1C7
  fa-file-video; U+F1C8
- fa-file-video; U+F1C8
- fa-file-video; U+F1C8
- fa-file-video; U+F1C8
- fa-file-code; U+F1C9
- fa-file-code; U+F1C9
- fa-file-code; U+F1C9
  fa-file-code; U+F1C9
  fa-vine; U+F1CA
  fa-codepen; U+F1CB
  fa-jsfiddle; U+F1CC
- fa-life-ring; U+F1CD
- fa-life-ring; U+F1CD
- fa-life-ring; U+F1CD
  fa-life-ring; U+F1CD
  fa-circle-notch; U+F1CE
  fa-rebel; U+F1D0
@@ -2608,9 +2352,6 @@
  fa-qq; U+F1D6
  fa-weixin; U+F1D7
  fa-paper-plane; U+F1D8
- fa-paper-plane; U+F1D8
- fa-paper-plane; U+F1D8
- fa-paper-plane; U+F1D8
  fa-history; U+F1DA
  fa-heading; U+F1DC
  fa-paragraph; U+F1DD
@@ -2619,18 +2360,12 @@
  fa-share-alt-square; U+F1E1
  fa-bomb; U+F1E2
  fa-futbol; U+F1E3
- fa-futbol; U+F1E3
- fa-futbol; U+F1E3
- fa-futbol; U+F1E3
  fa-tty; U+F1E4
  fa-binoculars; U+F1E5
  fa-plug; U+F1E6
  fa-slideshare; U+F1E7
  fa-twitch; U+F1E8
  fa-yelp; U+F1E9
- fa-newspaper; U+F1EA
- fa-newspaper; U+F1EA
- fa-newspaper; U+F1EA
  fa-newspaper; U+F1EA
  fa-wifi; U+F1EB
  fa-calculator; U+F1EC
@@ -2643,13 +2378,7 @@
  fa-cc-paypal; U+F1F4
  fa-cc-stripe; U+F1F5
  fa-bell-slash; U+F1F6
- fa-bell-slash; U+F1F6
- fa-bell-slash; U+F1F6
- fa-bell-slash; U+F1F6
  fa-trash; U+F1F8
- fa-copyright; U+F1F9
- fa-copyright; U+F1F9
- fa-copyright; U+F1F9
  fa-copyright; U+F1F9
  fa-at; U+F1FA
  fa-eye-dropper; U+F1FB
@@ -2666,9 +2395,6 @@
  fa-bus; U+F207
  fa-ioxhost; U+F208
  fa-angellist; U+F209
- fa-closed-captioning; U+F20A
- fa-closed-captioning; U+F20A
- fa-closed-captioning; U+F20A
  fa-closed-captioning; U+F20A
  fa-shekel-sign; U+F20B
  fa-buysellads; U+F20D
@@ -2722,63 +2448,24 @@
  fa-mouse-pointer; U+F245
  fa-i-cursor; U+F246
  fa-object-group; U+F247
- fa-object-group; U+F247
- fa-object-group; U+F247
- fa-object-group; U+F247
  fa-object-ungroup; U+F248
- fa-object-ungroup; U+F248
- fa-object-ungroup; U+F248
- fa-object-ungroup; U+F248
- fa-sticky-note; U+F249
- fa-sticky-note; U+F249
- fa-sticky-note; U+F249
  fa-sticky-note; U+F249
  fa-cc-jcb; U+F24B
  fa-cc-diners-club; U+F24C
- fa-clone; U+F24D
- fa-clone; U+F24D
- fa-clone; U+F24D
  fa-clone; U+F24D
  fa-balance-scale; U+F24E
  fa-hourglass-start; U+F251
  fa-hourglass-half; U+F252
  fa-hourglass-end; U+F253
  fa-hourglass; U+F254
- fa-hourglass; U+F254
- fa-hourglass; U+F254
- fa-hourglass; U+F254
- fa-hand-rock; U+F255
- fa-hand-rock; U+F255
- fa-hand-rock; U+F255
  fa-hand-rock; U+F255
  fa-hand-paper; U+F256
- fa-hand-paper; U+F256
- fa-hand-paper; U+F256
- fa-hand-paper; U+F256
- fa-hand-scissors; U+F257
- fa-hand-scissors; U+F257
- fa-hand-scissors; U+F257
  fa-hand-scissors; U+F257
  fa-hand-lizard; U+F258
- fa-hand-lizard; U+F258
- fa-hand-lizard; U+F258
- fa-hand-lizard; U+F258
- fa-hand-spock; U+F259
- fa-hand-spock; U+F259
- fa-hand-spock; U+F259
  fa-hand-spock; U+F259
  fa-hand-pointer; U+F25A
- fa-hand-pointer; U+F25A
- fa-hand-pointer; U+F25A
- fa-hand-pointer; U+F25A
- fa-hand-peace; U+F25B
- fa-hand-peace; U+F25B
- fa-hand-peace; U+F25B
  fa-hand-peace; U+F25B
  fa-trademark; U+F25C
- fa-registered; U+F25D
- fa-registered; U+F25D
- fa-registered; U+F25D
  fa-registered; U+F25D
  fa-creative-commons; U+F25E
  fa-gg; U+F260
@@ -2798,31 +2485,13 @@
  fa-500px; U+F26E
  fa-amazon; U+F270
  fa-calendar-plus; U+F271
- fa-calendar-plus; U+F271
- fa-calendar-plus; U+F271
- fa-calendar-plus; U+F271
- fa-calendar-minus; U+F272
- fa-calendar-minus; U+F272
- fa-calendar-minus; U+F272
  fa-calendar-minus; U+F272
  fa-calendar-times; U+F273
- fa-calendar-times; U+F273
- fa-calendar-times; U+F273
- fa-calendar-times; U+F273
- fa-calendar-check; U+F274
- fa-calendar-check; U+F274
- fa-calendar-check; U+F274
  fa-calendar-check; U+F274
  fa-industry; U+F275
  fa-map-pin; U+F276
  fa-map-signs; U+F277
  fa-map; U+F279
- fa-map; U+F279
- fa-map; U+F279
- fa-map; U+F279
- fa-comment-alt; U+F27A
- fa-comment-alt; U+F27A
- fa-comment-alt; U+F27A
  fa-comment-alt; U+F27A
  fa-houzz; U+F27C
  fa-vimeo-v; U+F27D
@@ -2838,12 +2507,6 @@
  fa-mixcloud; U+F289
  fa-scribd; U+F28A
  fa-pause-circle; U+F28B
- fa-pause-circle; U+F28B
- fa-pause-circle; U+F28B
- fa-pause-circle; U+F28B
- fa-stop-circle; U+F28D
- fa-stop-circle; U+F28D
- fa-stop-circle; U+F28D
  fa-stop-circle; U+F28D
  fa-shopping-bag; U+F290
  fa-shopping-basket; U+F291
@@ -2879,33 +2542,12 @@
  fa-google-plus; U+F2B3
  fa-font-awesome; U+F2B4
  fa-handshake; U+F2B5
- fa-handshake; U+F2B5
- fa-handshake; U+F2B5
- fa-handshake; U+F2B5
- fa-envelope-open; U+F2B6
- fa-envelope-open; U+F2B6
- fa-envelope-open; U+F2B6
  fa-envelope-open; U+F2B6
  fa-linode; U+F2B8
  fa-address-book; U+F2B9
- fa-address-book; U+F2B9
- fa-address-book; U+F2B9
- fa-address-book; U+F2B9
- fa-address-card; U+F2BB
- fa-address-card; U+F2BB
- fa-address-card; U+F2BB
  fa-address-card; U+F2BB
  fa-user-circle; U+F2BD
- fa-user-circle; U+F2BD
- fa-user-circle; U+F2BD
- fa-user-circle; U+F2BD
  fa-id-badge; U+F2C1
- fa-id-badge; U+F2C1
- fa-id-badge; U+F2C1
- fa-id-badge; U+F2C1
- fa-id-card; U+F2C2
- fa-id-card; U+F2C2
- fa-id-card; U+F2C2
  fa-id-card; U+F2C2
  fa-quora; U+F2C4
  fa-free-code-camp; U+F2C5
@@ -2919,16 +2561,7 @@
  fa-bath; U+F2CD
  fa-podcast; U+F2CE
  fa-window-maximize; U+F2D0
- fa-window-maximize; U+F2D0
- fa-window-maximize; U+F2D0
- fa-window-maximize; U+F2D0
  fa-window-minimize; U+F2D1
- fa-window-minimize; U+F2D1
- fa-window-minimize; U+F2D1
- fa-window-minimize; U+F2D1
- fa-window-restore; U+F2D2
- fa-window-restore; U+F2D2
- fa-window-restore; U+F2D2
  fa-window-restore; U+F2D2
  fa-bandcamp; U+F2D5
  fa-grav; U+F2D6
@@ -2938,9 +2571,6 @@
  fa-sellcast; U+F2DA
  fa-microchip; U+F2DB
  fa-snowflake; U+F2DC
- fa-snowflake; U+F2DC
- fa-snowflake; U+F2DC
- fa-snowflake; U+F2DC
  fa-superpowers; U+F2DD
  fa-wpexplorer; U+F2DE
  fa-meetup; U+F2E0
@@ -2948,18 +2578,12 @@
  fa-utensils; U+F2E7
  fa-undo-alt; U+F2EA
  fa-trash-alt; U+F2ED
- fa-trash-alt; U+F2ED
- fa-trash-alt; U+F2ED
- fa-trash-alt; U+F2ED
  fa-sync-alt; U+F2F1
  fa-stopwatch; U+F2F2
  fa-sign-out-alt; U+F2F5
  fa-sign-in-alt; U+F2F6
  fa-redo-alt; U+F2F9
  fa-poo; U+F2FE
- fa-images; U+F302
- fa-images; U+F302
- fa-images; U+F302
  fa-images; U+F302
  fa-pencil-alt; U+F303
  fa-pen; U+F304
@@ -2970,26 +2594,11 @@
  fa-long-arrow-alt-up; U+F30C
  fa-expand-arrows-alt; U+F31E
  fa-clipboard; U+F328
- fa-clipboard; U+F328
- fa-clipboard; U+F328
- fa-clipboard; U+F328
  fa-arrows-alt-h; U+F337
  fa-arrows-alt-v; U+F338
  fa-arrow-alt-circle-down; U+F358
- fa-arrow-alt-circle-down; U+F358
- fa-arrow-alt-circle-down; U+F358
- fa-arrow-alt-circle-down; U+F358
- fa-arrow-alt-circle-left; U+F359
- fa-arrow-alt-circle-left; U+F359
- fa-arrow-alt-circle-left; U+F359
  fa-arrow-alt-circle-left; U+F359
  fa-arrow-alt-circle-right; U+F35A
- fa-arrow-alt-circle-right; U+F35A
- fa-arrow-alt-circle-right; U+F35A
- fa-arrow-alt-circle-right; U+F35A
- fa-arrow-alt-circle-up; U+F35B
- fa-arrow-alt-circle-up; U+F35B
- fa-arrow-alt-circle-up; U+F35B
  fa-arrow-alt-circle-up; U+F35B
  fa-font-awesome-alt; U+F35C
  fa-external-link-alt; U+F35D
@@ -3045,9 +2654,6 @@
  fa-fort-awesome-alt; U+F3A3
  fa-freebsd; U+F3A4
  fa-gem; U+F3A5
- fa-gem; U+F3A5
- fa-gem; U+F3A5
- fa-gem; U+F3A5
  fa-gitkraken; U+F3A6
  fa-gofore; U+F3A7
  fa-goodreads; U+F3A8
@@ -3087,9 +2693,6 @@
  fa-mizuni; U+F3CC
  fa-mobile-alt; U+F3CD
  fa-monero; U+F3D0
- fa-money-bill-alt; U+F3D1
- fa-money-bill-alt; U+F3D1
- fa-money-bill-alt; U+F3D1
  fa-money-bill-alt; U+F3D1
  fa-napster; U+F3D2
  fa-node-js; U+F3D3
@@ -3142,9 +2745,6 @@
  fa-vnv; U+F40B
  fa-whatsapp-square; U+F40C
  fa-whmcs; U+F40D
- fa-window-close; U+F410
- fa-window-close; U+F410
- fa-window-close; U+F410
  fa-window-close; U+F410
  fa-wordpress-simple; U+F411
  fa-xbox; U+F412
@@ -3237,9 +2837,6 @@
  fa-x-ray; U+F497
  fa-box-open; U+F49E
  fa-comment-dots; U+F4AD
- fa-comment-dots; U+F4AD
- fa-comment-dots; U+F4AD
- fa-comment-dots; U+F4AD
  fa-comment-slash; U+F4B3
  fa-couch; U+F4B8
  fa-donate; U+F4B9
@@ -3258,9 +2855,6 @@
  fa-seedling; U+F4D8
  fa-sign; U+F4D9
  fa-smile-wink; U+F4DA
- fa-smile-wink; U+F4DA
- fa-smile-wink; U+F4DA
- fa-smile-wink; U+F4DA
  fa-tape; U+F4DB
  fa-truck-loading; U+F4DE
  fa-truck-moving; U+F4DF
@@ -3268,14 +2862,6 @@
  fa-wine-glass; U+F4E3
  fa-java; U+F4E4
  fa-pied-piper-hat; U+F4E5
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
- fa-font-awesome-logo-full; U+F4E6
  fa-font-awesome-logo-full; U+F4E6
  fa-creative-commons-by; U+F4E7
  fa-creative-commons-nc; U+F4E8
@@ -3387,9 +2973,6 @@
  fa-walking; U+F554
  fa-wallet; U+F555
  fa-angry; U+F556
- fa-angry; U+F556
- fa-angry; U+F556
- fa-angry; U+F556
  fa-archway; U+F557
  fa-atlas; U+F558
  fa-award; U+F559
@@ -3406,9 +2989,6 @@
  fa-cookie-bite; U+F564
  fa-crop-alt; U+F565
  fa-digital-tachograph; U+F566
- fa-dizzy; U+F567
- fa-dizzy; U+F567
- fa-dizzy; U+F567
  fa-dizzy; U+F567
  fa-drafting-compass; U+F568
  fa-drum; U+F569
@@ -3428,72 +3008,24 @@
  fa-fingerprint; U+F577
  fa-fish; U+F578
  fa-flushed; U+F579
- fa-flushed; U+F579
- fa-flushed; U+F579
- fa-flushed; U+F579
- fa-frown-open; U+F57A
- fa-frown-open; U+F57A
- fa-frown-open; U+F57A
  fa-frown-open; U+F57A
  fa-glass-martini-alt; U+F57B
  fa-globe-africa; U+F57C
  fa-globe-americas; U+F57D
  fa-globe-asia; U+F57E
  fa-grimace; U+F57F
- fa-grimace; U+F57F
- fa-grimace; U+F57F
- fa-grimace; U+F57F
- fa-grin; U+F580
- fa-grin; U+F580
- fa-grin; U+F580
  fa-grin; U+F580
  fa-grin-alt; U+F581
- fa-grin-alt; U+F581
- fa-grin-alt; U+F581
- fa-grin-alt; U+F581
- fa-grin-beam; U+F582
- fa-grin-beam; U+F582
- fa-grin-beam; U+F582
  fa-grin-beam; U+F582
  fa-grin-beam-sweat; U+F583
- fa-grin-beam-sweat; U+F583
- fa-grin-beam-sweat; U+F583
- fa-grin-beam-sweat; U+F583
- fa-grin-hearts; U+F584
- fa-grin-hearts; U+F584
- fa-grin-hearts; U+F584
  fa-grin-hearts; U+F584
  fa-grin-squint; U+F585
- fa-grin-squint; U+F585
- fa-grin-squint; U+F585
- fa-grin-squint; U+F585
- fa-grin-squint-tears; U+F586
- fa-grin-squint-tears; U+F586
- fa-grin-squint-tears; U+F586
  fa-grin-squint-tears; U+F586
  fa-grin-stars; U+F587
- fa-grin-stars; U+F587
- fa-grin-stars; U+F587
- fa-grin-stars; U+F587
- fa-grin-tears; U+F588
- fa-grin-tears; U+F588
- fa-grin-tears; U+F588
  fa-grin-tears; U+F588
  fa-grin-tongue; U+F589
- fa-grin-tongue; U+F589
- fa-grin-tongue; U+F589
- fa-grin-tongue; U+F589
- fa-grin-tongue-squint; U+F58A
- fa-grin-tongue-squint; U+F58A
- fa-grin-tongue-squint; U+F58A
  fa-grin-tongue-squint; U+F58A
  fa-grin-tongue-wink; U+F58B
- fa-grin-tongue-wink; U+F58B
- fa-grin-tongue-wink; U+F58B
- fa-grin-tongue-wink; U+F58B
- fa-grin-wink; U+F58C
- fa-grin-wink; U+F58C
- fa-grin-wink; U+F58C
  fa-grin-wink; U+F58C
  fa-grip-horizontal; U+F58D
  fa-grip-vertical; U+F58E
@@ -3505,32 +3037,11 @@
  fa-hotel; U+F594
  fa-joint; U+F595
  fa-kiss; U+F596
- fa-kiss; U+F596
- fa-kiss; U+F596
- fa-kiss; U+F596
- fa-kiss-beam; U+F597
- fa-kiss-beam; U+F597
- fa-kiss-beam; U+F597
  fa-kiss-beam; U+F597
  fa-kiss-wink-heart; U+F598
- fa-kiss-wink-heart; U+F598
- fa-kiss-wink-heart; U+F598
- fa-kiss-wink-heart; U+F598
- fa-laugh; U+F599
- fa-laugh; U+F599
- fa-laugh; U+F599
  fa-laugh; U+F599
  fa-laugh-beam; U+F59A
- fa-laugh-beam; U+F59A
- fa-laugh-beam; U+F59A
- fa-laugh-beam; U+F59A
  fa-laugh-squint; U+F59B
- fa-laugh-squint; U+F59B
- fa-laugh-squint; U+F59B
- fa-laugh-squint; U+F59B
- fa-laugh-wink; U+F59C
- fa-laugh-wink; U+F59C
- fa-laugh-wink; U+F59C
  fa-laugh-wink; U+F59C
  fa-luggage-cart; U+F59D
  fa-mailchimp; U+F59E
@@ -3540,12 +3051,6 @@
  fa-medal; U+F5A2
  fa-megaport; U+F5A3
  fa-meh-blank; U+F5A4
- fa-meh-blank; U+F5A4
- fa-meh-blank; U+F5A4
- fa-meh-blank; U+F5A4
- fa-meh-rolling-eyes; U+F5A5
- fa-meh-rolling-eyes; U+F5A5
- fa-meh-rolling-eyes; U+F5A5
  fa-meh-rolling-eyes; U+F5A5
  fa-monument; U+F5A6
  fa-mortar-pestle; U+F5A7
@@ -3560,19 +3065,10 @@
  fa-prescription; U+F5B1
  fa-rev; U+F5B2
  fa-sad-cry; U+F5B3
- fa-sad-cry; U+F5B3
- fa-sad-cry; U+F5B3
- fa-sad-cry; U+F5B3
- fa-sad-tear; U+F5B4
- fa-sad-tear; U+F5B4
- fa-sad-tear; U+F5B4
  fa-sad-tear; U+F5B4
  fa-shopware; U+F5B5
  fa-shuttle-van; U+F5B6
  fa-signature; U+F5B7
- fa-smile-beam; U+F5B8
- fa-smile-beam; U+F5B8
- fa-smile-beam; U+F5B8
  fa-smile-beam; U+F5B8
  fa-solar-panel; U+F5BA
  fa-spa; U+F5BB
@@ -3583,17 +3079,11 @@
  fa-star-half-alt; U+F5C0
  fa-suitcase-rolling; U+F5C1
  fa-surprise; U+F5C2
- fa-surprise; U+F5C2
- fa-surprise; U+F5C2
- fa-surprise; U+F5C2
  fa-swatchbook; U+F5C3
  fa-swimmer; U+F5C4
  fa-swimming-pool; U+F5C5
  fa-themeco; U+F5C6
  fa-tint-slash; U+F5C7
- fa-tired; U+F5C8
- fa-tired; U+F5C8
- fa-tired; U+F5C8
  fa-tired; U+F5C8
  fa-tooth; U+F5C9
  fa-umbrella-beach; U+F5CA
