@@ -56,11 +56,6 @@ bindsym $mod+shift+x exec lock.sh
 bindsym $mod+Shift+f exec autorandr -c --force
 
 # 'Raw' resize keys
-bindsym $mod+n resize shrink width 10 px or 10 ppt
-bindsym $mod+m resize grow height 10 px or 10 ppt
-bindsym $mod+comma resize shrink height 10 px or 10 ppt
-bindsym $mod+period resize grow width 10 px or 10 ppt
-
 bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
 bindsym $mod+Control+j resize grow height 10 px or 10 ppt
 bindsym $mod+Control+k resize shrink height 10 px or 10 ppt
@@ -125,7 +120,8 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 
 ### Script Shortcuts ###
 # Shortcut for notes
-bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
+bindsym $mod+Shift+n exec $TERMINAL -e "$EDITOR $HOME/txtfiles/index.md"
+bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
 # Bluetooth and wifi
 bindsym $mod+Shift+w exec wifi.sh toggle
@@ -134,10 +130,15 @@ bindsym $mod+Shift+b exec bluetooth.sh toggle
 # Changing keyboard layout
 bindsym $mod+BackSpace exec chkbmap.sh
 
+# Setting up the monitors
+bindsym $mod+m exec setup_displays.sh
+
+
 # Show cover from mpris
 bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
 
-bindsym $mod+shift+t exec --no-startup-id todo.sh t
+
+
 
 # Rofi scripts
 bindsym $mod+shift+u exec --no-startup-id dmenu-unicode.sh
@@ -405,9 +406,10 @@ exec --no-startup-id nextcloud --background
 exec_always --no-startup-id dunst.sh
 exec_always --no-startup-id spicetify update
 #exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec_always --no-startup-id feh --bg-fill ~/.config/background.*
 exec --no-startup-id conky
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id setup_displays.sh
+exec_always --no-startup-id feh --bg-fill ~/.config/background.*
 # Autostarts copied from manjaro-i3
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
