@@ -128,8 +128,8 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 bindsym $mod+Shift+n exec $TERMINAL -e "vim ~/txtfiles/index.md"
 
 # Bluetooth and wifi
-bindsym $mod+Shift+w exec sudo wifi toggle
-bindsym $mod+Shift+b exec sudo bluetooth toggle
+bindsym $mod+Shift+w exec wifi.sh toggle
+bindsym $mod+Shift+b exec bluetooth.sh toggle
 
 # Changing keyboard layout
 bindsym $mod+BackSpace exec chkbmap.sh
