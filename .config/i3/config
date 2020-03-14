@@ -134,6 +134,9 @@ bindsym $mod+Shift+b exec bluetooth.sh toggle
 # Changing keyboard layout
 bindsym $mod+BackSpace exec chkbmap.sh
 
+# Show cover from mpris
+bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
+
 bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
 # Rofi scripts
