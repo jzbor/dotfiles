@@ -395,21 +395,19 @@ bindsym $mod+g mode "gaps"
 
 ### Autostart ###
 # Autostarts
+exec_always --no-startup-id start_sync.sh
 exec_always --no-startup-id killall -9 compton; compton
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id /usr/lib/kdeconnectd
 exec spotify
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
-exec --no-startup-id autorandr -c --force
 exec --no-startup-id nextcloud --background
 exec_always --no-startup-id dunst.sh
 exec_always --no-startup-id spicetify update
 #exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id conky
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id setup_displays.sh
-exec_always --no-startup-id feh --bg-fill ~/.config/background.*
 # Autostarts copied from manjaro-i3
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
