@@ -1,5 +1,5 @@
 [global]
-    frame_width = 1
+    frame_width = 2
     frame_color = "#FED7AE"
 
     font = Fira Code Regular 10

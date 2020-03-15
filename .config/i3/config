@@ -50,7 +50,8 @@ bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec sysmenu.sh
-bindsym $mod+shift+x exec lock.sh
+bindsym $mod+x exec lock.sh
+bindsym $mod+shift+x exec music.sh pause; lock.sh
 
 # Force autorandr to reload
 bindsym $mod+Shift+f exec autorandr -c --force

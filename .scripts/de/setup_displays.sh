@@ -11,7 +11,7 @@ for display in $connected; do
 	xrandr --output "$display" --off
     elif [ -z "$last" ]; then
 	echo "Setting up first display: $display"
-	xrandr --output "$display" --auto
+	xrandr --output "$display" --auto --primary
 	last="$display"
     else
 	echo "Setting up $display next to $display"

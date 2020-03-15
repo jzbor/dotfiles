@@ -17,5 +17,5 @@ if [ -n "$1" ]; then
 	xdotool key Shift+Insert
 else
 	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
-	notify-send "'$chosen' copied to clipboard." &
+	dunstify "'$chosen' copied to clipboard." &
 fi

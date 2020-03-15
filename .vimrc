@@ -116,6 +116,7 @@
 	\ 'rust': 1,
 	\}
     map <leader>ygd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    map <leader>ygt :YcmCompleter GoToDefinitionElseDeclaration<CR>
     map <leader>ygi :YcmCompleter GoToImplementation<CR>
     map <leader>yr :YcmCompleter RefactorRename
     map <leader>yf :YcmCompleter Format<CR>
