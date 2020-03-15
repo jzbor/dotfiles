@@ -1,0 +1,56 @@
+# Required dependencies:
+bash
+dunst
+dunstify
+inxi
+kitty
+neovim
+playerctl
+polybar
+python
+rofi
+rofi-dmenu
+tlp
+ttf-fira-code
+ttf-fira-sans
+xclip
+xdo
+xdotool
+xorg-setxkbmap
+xorg-xbacklight
+xorg-xrandr
+xorg-xrdb
+
+# Optional dependencies:
+
+firefox
+gthumb
+htop
+noto-fonts-emoji
+pcmanfm
+python-jedi
+
+# Contains configs for:
+
+bspwm
+i3
+picom
+ranger
+spicetify
+vim
+
+# My favorite programs
+aspell
+aspell-de
+biber
+gimp
+hunspell
+hunspell-de
+intellij-idea-ultimate-edition
+kdeconnect
+pandoc
+spotify
+texlive-core
+texlive-humanities
+texlive-latexextra
+texlive-publishers

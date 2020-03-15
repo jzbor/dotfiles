@@ -27,27 +27,5 @@ git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
 ![Wallpaper (No JPEG wallpaper found)](.config/background.jpg)
 ![Wallpaper (No PNG wallpaper found)](.config/background.png)
 
-
-# Required dependencies:
-
-* kitty
-* picom
-* playerctl
-* polybar
-* rofi
-* ttf-fira-code
-* ttf-fira-sans
-
-# Optional dependencies:
-
-* noto-fonts-emoji
-* rofi-dmenu
-* pcmanfm
-
-# Contains configs for:
-
-* htop
-* neovim
-* ranger
-* spicetify
-* vim
+# Dependencies and Programs
+[You find a list with the arch/manjaro package name here](.config/assets/programs.txt)
