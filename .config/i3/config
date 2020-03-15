@@ -64,17 +64,18 @@ bindsym $mod+Control+l resize grow width 10 px or 10 ppt
 
 ### Media Shortcuts ###
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+set $get_sink "$(pactl info | grep 'Default Sink' | sed 's/.*: //')"
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $get_sink +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $get_sink -5% #decrease sound volume
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $get_sink +1% #increase sound volume
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $get_sink -1% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $get_sink toggle # mute sound
 
-bindsym $mod+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym $mod+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
-bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
-bindsym $mod+numbersign exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+plus exec --no-startup-id pactl set-sink-volume $get_sink +5% #increase sound volume
+bindsym $mod+minus exec --no-startup-id pactl set-sink-volume $get_sink -5% #decrease sound volume
+bindsym $mod+Shift+plus exec --no-startup-id pactl set-sink-volume $get_sink +1% #increase sound volume
+bindsym $mod+Shift+minus exec --no-startup-id pactl set-sink-volume $get_sink -1% #decrease sound volume
+bindsym $mod+numbersign exec --no-startup-id pactl set-sink-mute $get_sink toggle # mute sound
 
 
 # Media player controls

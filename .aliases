@@ -82,7 +82,7 @@ getdefaultsinkvol() {
 pv () {
     tempvol=$(getdefaultsinkvol)
     if (( $# > 0 )); then
-    	pactl set-sink-volume 0 $1%
+    	pactl set-sink-volume "$(pactl info | grep 'Default Sink' | sed 's/.*: //')" "$1%"
     	echo "$tempvol% => $(getdefaultsinkvol)%"
     else
 	echo "$tempvol%"
@@ -98,8 +98,8 @@ music () {
     fi
 }
 
-alias p+="pactl set-sink-volume 0 +5%"
-alias p-="pactl set-sink-volume 0 -5%"
+alias p+='pactl set-sink-volume "$(pactl info | grep "Default Sink" | sed "s/.*: //")" +5%'
+alias p-='pactl set-sink-volume "$(pactl info | grep "Default Sink" | sed "s/.*: //")" -5%'
 alias pu="music prev"
 alias pi="music play-pause"
 alias po="music next"
