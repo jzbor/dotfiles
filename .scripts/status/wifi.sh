@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ "$#" = "0" ]; then
-    if iwgetid > /dev/null; then
+    if which iwgetid 1>/dev/null 2>/dev/null && iwgetid > /dev/null; then
 	echo 直
-    elif wifi | grep -q "on"; then
+    elif wifi | grep -q " on "; then
 	echo 睊
     else
 	echo 
