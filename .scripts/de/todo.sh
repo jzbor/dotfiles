@@ -32,7 +32,11 @@ case "$1" in
 	printf "Your options:\n\n"
 	grep "| \".*\")" "$0" | sed 's/\s*\".\" | \"//;s/\")//'
 	;;
+    "p" | "print")
+	cat "$TODO_FILE"
+	;;
     *)
+	echo "Command not found: $1"
 	cat "$TODO_FILE"
 	;;
 esac

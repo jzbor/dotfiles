@@ -22,7 +22,7 @@ if (( ${#artist} > 28 )); then
     title="${artist::25}..."
 fi
 
-if [ -f "$cover_file" ]; then
+if identify -format "%f" "$cover_file" > /dev/null ; then
     convert -blur 0x8 -crop "$primary_resolution"+0+0\! "$background_file" \
 	-gravity center -size 400x500 canvas:"$bg_color" -alpha set -channel A -evaluate set "$opacity" +channel -composite \
 	-gravity center "$cover_file" -geometry +0-50 -composite \
@@ -30,7 +30,7 @@ if [ -f "$cover_file" ]; then
 	-fill "$fg_color"  -font Fira-Sans-Regular  -pointsize 30 -gravity center -annotate +0+200 "$artist" \
 	"$lock_file"
 else
-    convert -blur 0x8 -crop "$primary_resolution"+0+0\! background.jpg \
+    convert -blur 0x8 -crop "$primary_resolution"+0+0\! "$background_file" \
 	"$lock_file"
 fi
 
