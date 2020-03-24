@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$#" = "0" ]; then
-    if bluetooth | grep -q "on"; then
+    if bluetooth | grep -q " on "; then
 	echo 
     else
 	echo 
