@@ -122,7 +122,8 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 
 ### Script Shortcuts ###
 # Shortcut for notes
-bindsym $mod+Shift+n exec $TERMINAL -e "$EDITOR $HOME/txtfiles/index.md"
+bindsym $mod+Shift+n exec $TERMINAL -e $EDITOR $HOME/txtfiles/index.md
+bindsym $mod+t exec $TERMINAL -e $EDITOR $HOME/txtfiles/ToDo.md
 bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
 # Bluetooth and wifi
@@ -397,7 +398,7 @@ bindsym $mod+g mode "gaps"
 
 ### Autostart ###
 # Autostarts
-exec_always --no-startup-id start_sync.sh
+exec_always --no-startup-id setup_displays.sh
 exec_always --no-startup-id killall -9 compton; compton
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id /usr/lib/kdeconnectd

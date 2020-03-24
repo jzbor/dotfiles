@@ -28,3 +28,7 @@ if pgrep polybar > /dev/null; then
     echo "Restarting polybar"
     "$HOME"/.config/polybar/launch.sh > /dev/null
 fi
+
+if [ -f ~/.config/background.* ]; then
+    feh --bg-fill ~/.config/background.*
+fi
