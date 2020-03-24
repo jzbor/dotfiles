@@ -7,7 +7,7 @@
     if empty(glob('~/.vim/autoload/plug.vim'))
       silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      autocmd VimEnter * PlugUpdate --sync | source $MYVIMRC
+      "autocmd VimEnter * PlugUpdate --sync | source $MYVIMRC
     endif
 
     call plug#begin('~/.vim/plugged')
