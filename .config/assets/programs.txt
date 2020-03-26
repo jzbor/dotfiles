@@ -15,6 +15,7 @@ tlp
 ttf-fira-code
 ttf-fira-sans
 xclip
+xdg-user-dirs
 xdo
 xdotool
 xorg-setxkbmap
