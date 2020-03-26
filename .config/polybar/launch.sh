@@ -11,7 +11,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 for m in $(xrandr | grep ' connected ' | cut --delimiter=' ' --fields=1); do
     MONITOR=$m
     export MONITOR
-    polybar -c "$HOME/.config/polybar/bars" main &
+    polybar -c "$HOME/.config/polybar/config" main &
 done
 
 sleep 0.5

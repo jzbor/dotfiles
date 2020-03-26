@@ -73,7 +73,7 @@ modules-right = rightpos cpu space temperature rightpos bluetooth wifi-script et
 separator =
 spacing = 0
 dim-value = 1.0
-wm-name = polybar-eDP1
+wm-name = polybar
 locale =
 
 tray-position = none
@@ -82,65 +82,6 @@ tray-maxsize = 16
 tray-transparent = false
 tray-background = ${color.bground}
 tray-offset-x = 5
-tray-offset-y = 0
-tray-padding = 0
-tray-scale = 1.0
-
-enable-ipc = true
-
-
-[bar/sec]
-include-file = ~/.config/polybar/general
-
-monitor = DP2-3
-monitor-fallback = DP2
-monitor-strict = false
-override-redirect = false
-
-bottom = false
-fixed-center = true
-
-;width = 98%
-;height = 22
-;offset-x = 1%
-;offset-y = 2%
-width = 100%
-height = 26
-offset-x = 0%
-offset-y = 0%
-
-background = ${color.bground}
-foreground = ${color.fground}
-
-radius-top = 0.0
-radius-bottom = 0.0
-
-overline-size = 2
-overline-color = ${color.fground}
-
-;border-bottom-size = 2
-;border-color = ${color.borderbg}
-
-padding = 0
-module-margin-left = 0
-module-margin-right = 0
-
-modules-left = space title leftpos
-modules-center = workspaces bspwm
-modules-right = rightpos yay rightpos date rightpos powermenu space
-
-separator =
-spacing = 0
-dim-value = 1.0
-wm-name = polybar-DP2-3
-locale =
-
-tray-position = none
-tray-detached = false
-tray-maxsize = 16
-tray-transparent = false
-tray-background = ${color.bground}
-tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 0
 tray-scale = 1.0
