@@ -41,6 +41,7 @@ workspace $ws6 gaps outer 0
 ### System Shortcuts ###
 floating_modifier $mod
 bindsym $mod+Return exec $TERMINAL
+bindsym mod1+Return exec uxterm
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
@@ -122,13 +123,17 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 
 ### Script Shortcuts ###
 # Shortcut for notes
-bindsym $mod+Shift+n exec $TERMINAL -e $EDITOR $HOME/txtfiles/index.md
+bindsym $mod+n exec $TERMINAL -e $EDITOR $HOME/txtfiles/index.md
 bindsym $mod+t exec $TERMINAL -e $EDITOR $HOME/txtfiles/ToDo.md
 bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
 # Bluetooth and wifi
 bindsym $mod+Shift+w exec wifi.sh toggle
 bindsym $mod+Shift+b exec bluetooth.sh toggle
+
+# Mounting and unmounting
+bindsym $mod+shift+m exec dmenu-mount.sh mnt
+bindsym $mod+shift+n exec dmenu-mount.sh umnt
 
 # Changing keyboard layout
 bindsym $mod+BackSpace exec chkbmap.sh
