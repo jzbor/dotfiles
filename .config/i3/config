@@ -349,7 +349,7 @@ mode "launch" {
     bindsym p exec pycharm; mode "default"
 
     bindsym a exec android; mode "default"
-    bindsym s exec spotify; mode "default"
+    bindsym s exec xfce4-screenshooter; mode "default"
     bindsym f exec firefox; mode "default"
     bindsym g exec gimp; mode "default"
     bindsym h exec $TERMINAL -e htop; mode "default"
@@ -412,7 +412,7 @@ mode "$mode_gaps_outer" {
 ### Autostart ###
 # Autostarts
 exec_always --no-startup-id setup_displays.sh
-exec_always --no-startup-id killall -9 compton; compton
+exec_always --no-startup-id killall -9 picom; picom
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id /usr/lib/kdeconnectd
 exec spotify
