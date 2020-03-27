@@ -7,6 +7,7 @@ export BROWSER="firefox"
 export READER="zathura"
 export TERM="xterm-kitty"
 export TERMINAL="kitty"
+export FILEBROWSER="pcmanfm"
 
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
