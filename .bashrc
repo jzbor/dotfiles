@@ -164,6 +164,6 @@ alias eth_on="sudo ip link set enp0s25 up"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 set -o vi
-shopt -s autocd
+shopt -s autocd cdspell
 
 neofetch --config $HOME/.config/neofetch/config_login.conf
