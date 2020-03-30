@@ -34,7 +34,7 @@ case "$file" in
     *\.py) python "$file" ;;
     *\.go) go run "$file" ;;
     *\.sent) setsid sent "$file" 2>/dev/null & ;;
-    *\.rs) cargo build ;; #||
+    *\.rs) cargo run ;; #||
         #(echo; echo "--> Cargo not initialized"; echo; rustc "$file" && "$base") ;;
     *) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac
