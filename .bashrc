@@ -62,7 +62,7 @@ topline () {
 # globbing instead of external grep binary.
 safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
 match_lhs=""
-[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
+[[ -f ~/.config/dir_colors   ]] && match_lhs="${match_lhs}$(<~/.config/dir_colors)"
 [[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
 [[ -z ${match_lhs}    ]] \
 	&& type -P dircolors >/dev/null \
@@ -70,21 +70,19 @@ match_lhs=""
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
 
 if ${use_color} ; then
-	# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+	# Enable colors for ls, etc.  Prefer ~/.config/dir_colors #64489
 	if type -P dircolors >/dev/null ; then
-		if [[ -f ~/.dir_colors ]] ; then
-			eval $(dircolors -b ~/.dir_colors)
+		if [[ -f ~/.config/dir_colors ]] ; then
+			eval $(dircolors -b ~/.config/dir_colors)
 		elif [[ -f /etc/DIR_COLORS ]] ; then
 			eval $(dircolors -b /etc/DIR_COLORS)
 		fi
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		#PS1='\[\033[01;31m\][\h\[\033[01;36m\]\[\033[01;31m\]]\[\033[00m\] \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]'
-		PS1='\[\033[0;31m\][\[\033[1;31m\]\u\[\033[0;31m\]@\h]\[\033[0m\] \[\033[0;34m\]\w\[\033[0m\] '
+	    PS1='\[\e[0;31m\][\[\e[1;31m\]\u\[\e[0;31m\]@\h]\[\e[0m\] \[\e[0;34m\]\w\[\e[0m\] '
 	else
-		#PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\]\[\033[01;32m\]]\[\033[00m\] \[$(tput sgr0)\]\[\033[38;5;38m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]'
-		PS1='\[\033[1;32m\][\[\033[0m\]\u\[\033[1;32m\]@\h]\[\033[0m\] \[\033[0;34m\]\w\[\033[0m\] '
+	    PS1='\[\e[1;35m\][\[\e[0m\]\u\[\e[1;35m\]@\h]\[\e[0m\] \[\e[0;34m\]\w\[\e[0m\] '
 	fi
 
 	alias ls='ls -hN --color=auto --group-directories-first'

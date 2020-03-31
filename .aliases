@@ -51,8 +51,8 @@ t () {
 
 cd () {
     gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
-    if [ -n "$1" ]; then
-	command cd "$1"
+    if [ "$#" -gt 0 ]; then
+	command cd "$@"
     elif [ "$gitdir" = "$(pwd)" ]; then
 	command cd "$HOME"
     elif [ "$gitdir" = "" ]; then
