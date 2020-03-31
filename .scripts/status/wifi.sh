@@ -1,48 +1,49 @@
 #!/bin/sh
 
-if [ "$#" = "0" ]; then
-    if which iwgetid 1>/dev/null 2>/dev/null && iwgetid > /dev/null; then
-	echo 直
-    elif wifi | grep -q " on "; then
-	echo 睊
-    else
-	echo 
-    fi
-else
-    case "$1" in
-	"notify")
-	    ssid="$(iwgetid -r)"
-	    localip="$(ip addr | grep "inet " | awk '{print "\t" $2 "\t\t(" $(NF) ")"}')"
-	    publicip="$(curl ifconfig.me)"
+device_query="$(rfkill --output "ID,TYPE,SOFT,HARD" | \
+    grep "wlan" | head -n 1 | \
+    sed 's/^\s//g;s/\s\+/ /g')"
+dev_id="$(echo "$device_query" | cut -d " " -f 1)"
+dev_soft="$(echo "$device_query" | cut -d " " -f 3)"
 
-	    if [ "$ssid" = "" ]; then
-		ssid="Not Connected"
-	    fi
+case "$1" in
+    "notify")
+	ssid="$(iwgetid -r)"
+	localip="$(ip addr | grep "inet " | awk '{print "\t" $2 "\t\t(" $(NF) ")"}')"
+	publicip="$(curl ifconfig.me)"
 
-	    dunstify -a "Network Info" "Wifi: $ssid
+	if [ "$ssid" = "" ]; then
+	    ssid="Not Connected"
+	fi
 
-	    Local:
-	    $localip
+	dunstify -a "Network Info" "Wifi: $ssid
 
-	    Public:
-		$publicip"
-	    ;;
-	"toggle")
-	    device_query="$(rfkill --output "ID,TYPE,SOFT,HARD" | \
-		grep "wlan" | head -n 1 | \
-		sed 's/^\s//g;s/\s\+/ /g')"
-	    dev_id="$(echo "$device_query" | cut -d " " -f 1)"
-	    dev_soft="$(echo "$device_query" | cut -d " " -f 3)"
+	Local:
+	$localip
 
-	    if [ "$dev_soft" = "unblocked" ]; then
-		sudo rfkill block "$dev_id"
-	    else
-		sudo rfkill unblock "$dev_id"
-	    fi
-	    ;;
-    esac
-fi
-
-# On but not connected: 睊
-
-
+	Public:
+	    $publicip"
+	;;
+    "toggle")
+	if [ "$dev_soft" = "unblocked" ]; then
+	    sudo rfkill block "$dev_id"
+	else
+	    sudo rfkill unblock "$dev_id"
+	fi
+	;;
+    "on")
+	sudo rfkill unblock "$dev_id"
+	;;
+    "off")
+	sudo rfkill block "$dev_id"
+	;;
+    "status" | "")
+	if command -v iwgetid 1>/dev/null 2>/dev/null && iwgetid > /dev/null; then
+	    echo 直
+	elif [ "$dev_soft" = "unblocked" ]; then
+	    echo 睊
+	else
+	    echo 
+	fi
+	;;
+esac

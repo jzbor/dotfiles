@@ -489,9 +489,24 @@ interval = 1
 format-background = ${color.bground}
 format-foreground = ${color.fground}
 
-label = %output%
+label = "%output%"
 
 click-left = wifi.sh notify
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/ethernet-script]
+type = custom/script
+exec = ethernet.sh
+interval = 1
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = "%output%"
+
+click-left = ethernet.sh notify
+
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -503,5 +518,5 @@ interval = 1
 format-background = ${color.bground}
 format-foreground = ${color.fground}
 
-label = " %output% "
+label = "%output%"
 
