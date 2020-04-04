@@ -37,7 +37,7 @@ smart_borders on
 
 ### System Shortcuts ###
 floating_modifier $mod
-bindsym $mod+Return exec $TERMINAL
+bindsym $mod+Return exec terminal.sh
 bindsym $mod+Shift+Return exec uxterm
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
@@ -104,15 +104,15 @@ bindsym $mod+F4 exec thunderbird
 bindsym $mod+F5 exec idea
 bindsym $mod+F6 exec pycharm
 bindsym $mod+F7 exec android-studio
-bindsym $mod+F8 exec $TERMINAL -e nmtui
-bindsym $mod+F9 exec $TERMINAL
+bindsym $mod+F8 exec terminal.sh -e nmtui
+bindsym $mod+F9 exec terminal.sh
 bindsym $mod+F10 exec ~/.config/rofi.sh
-bindsym $mod+F11 exec $TERMINAL -e gotop
+bindsym $mod+F11 exec terminal.sh -e gotop
 bindsym $mod+F12 exec dolphin
 
-bindsym XF86Tools exec $TERMINAL
+bindsym XF86Tools exec terminal.sh
 bindsym XF86Search exec ~/.config/rofi.sh
-bindsym XF86LaunchA exec $TERMINAL -e gotop
+bindsym XF86LaunchA exec terminal.sh -e gotop
 bindsym XF86Explorer exec dolphin
 
 bindsym $mod+Shift+F1 exec fn-help.sh
@@ -120,8 +120,8 @@ bindsym $mod+Shift+F1 exec fn-help.sh
 
 ### Script Shortcuts ###
 # Shortcut for notes
-bindsym $mod+n exec $TERMINAL -e $EDITOR $HOME/txtfiles/index.md
-bindsym $mod+t exec $TERMINAL -e $EDITOR $HOME/txtfiles/ToDo.md
+bindsym $mod+n exec terminal.sh -e $EDITOR $HOME/txtfiles/index.md
+bindsym $mod+t exec terminal.sh -e $EDITOR $HOME/txtfiles/ToDo.md
 bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
 # Bluetooth and wifi
@@ -341,7 +341,7 @@ bindsym $mod+r mode "resize"
 mode "launch" {
     bindsym q exec sysmenu.sh
     bindsym w exec weather.sh; mode "default"
-    bindsym e exec $TERMINAL -e $EDITOR; mode "default"
+    bindsym e exec terminal.sh -e $EDITOR; mode "default"
     bindsym r exec arandr; mode "default"
     bindsym t exec gthumb; mode "default"
     bindsym z exec zathura; mode "default"
@@ -352,16 +352,16 @@ mode "launch" {
     bindsym s exec xfce4-screenshooter; mode "default"
     bindsym f exec firefox; mode "default"
     bindsym g exec gimp; mode "default"
-    bindsym h exec $TERMINAL -e htop; mode "default"
+    bindsym h exec terminal.sh -e htop; mode "default"
     bindsym l exec lollypop; mode "default"
 
     bindsym y exec firefox youtube.com; mode "default"
     bindsym x exec firefox --private-window; mode "default"
-    bindsym v exec $TERMINAL -e vim; mode "default"
+    bindsym v exec terminal.sh -e vim; mode "default"
     bindsym b exec $FILEBROWSER; mode "default"
     bindsym m exec thunderbird; mode "default"
 
-    bindsym Enter exec $TERMINAL; mode "default"
+    bindsym Enter exec terminal.sh; mode "default"
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
