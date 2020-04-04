@@ -1,23 +1,27 @@
 #! /bin/sh
 
 # Just execute to install with yay
-yay -S $(cat $0 | tail -n +7 |sed '/#.*/d;/^$/d' | tr '\n' ' ')
+yay -S --needed $(cat $0 | tail -n +7 |sed '/#.*/d;/^$/d' | tr '\n' ' ')
 exit 0
 
 # Required dependencies:
 bash
 dunst
 dunstify
+feh
 i3lock-color
+i3status
 inxi
 kitty
 matcha-gtk-theme
+nerd-fonts-iosevka
 neovim
 numix-circle-icon-theme-git
 perl-anyevent-i3
 playerctl
 polybar
 python
+python-pynvim
 rofi
 rofi-dmenu
 tlp
@@ -31,6 +35,7 @@ xorg-setxkbmap
 xorg-xbacklight
 xorg-xrandr
 xorg-xrdb
+xterm
 
 # Optional dependencies:
 
@@ -44,7 +49,7 @@ python-jedi
 # Contains configs for:
 
 #bspwm
-i3gaps
+i3-gaps
 picom
 ranger
 spicetify-cli
