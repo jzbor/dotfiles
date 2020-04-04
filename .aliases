@@ -16,6 +16,11 @@ alias mkdir="mkdir -pv"
 alias nmc="nmtui-connect"
 alias :q="exit"
 
+nmap_local () {
+    echo nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
+    nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
+}
+
 # Configs
 alias cfa='$EDITOR $HOME/.aliases'
 alias cfb='$EDITOR $HOME/.config/bspwm/bspwmrc'
