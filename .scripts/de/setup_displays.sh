@@ -21,10 +21,10 @@ for display in $connected; do
 	echo "Setting up $display next to $display"
 	xrandr --output "$display" --auto --right-of "$last"
     fi
-    if [ "$display" = "DP2-1" ]; then
-	echo "Workaround for kvm switch"
-	xrandr --output "$display" --mode 1920x1080
-    fi
+    # if [ "$display" = "DP2-1" ]; then
+	# echo "Workaround for kvm switch"
+	# xrandr --output "$display" --mode 1920x1080
+    # fi
 done
 
 if pgrep polybar > /dev/null; then

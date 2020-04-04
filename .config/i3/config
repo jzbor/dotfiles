@@ -38,7 +38,7 @@ smart_borders on
 ### System Shortcuts ###
 floating_modifier $mod
 bindsym $mod+Return exec $TERMINAL
-bindsym mod1+Return exec uxterm
+bindsym $mod+Shift+Return exec uxterm
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
