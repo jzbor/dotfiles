@@ -1,3 +1,9 @@
+#! /bin/sh
+
+# Just execute to install with yay
+yay -S $(cat $0 | tail -n +7 |sed '/#.*/d;/^$/d' | tr '\n' ' ')
+exit 0
+
 # Required dependencies:
 bash
 dunst
@@ -5,7 +11,10 @@ dunstify
 i3lock-color
 inxi
 kitty
+matcha-gtk-theme
 neovim
+numix-circle-icon-theme-git
+perl-anyevent-i3
 playerctl
 polybar
 python
@@ -34,7 +43,7 @@ python-jedi
 
 # Contains configs for:
 
-bspwm
+#bspwm
 i3gaps
 picom
 ranger
