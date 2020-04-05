@@ -14,9 +14,9 @@ i3status
 inxi
 kitty
 matcha-gtk-theme
-nerd-fonts-iosevka
 neovim
 numix-circle-icon-theme-git
+otf-nerd-fonts-fira-code
 perl-anyevent-i3
 playerctl
 polybar
