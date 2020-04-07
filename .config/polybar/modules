@@ -510,6 +510,18 @@ click-left = ethernet.sh notify
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[module/battery-script]
+type = custom/script
+exec = battery.sh
+interval = 1
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = "%output%"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 [module/bluetooth]
 type = custom/script
 exec = bluetooth.sh
