@@ -55,10 +55,10 @@ bindsym $mod+shift+x exec music.sh pause & lock.sh
 bindsym $mod+Shift+f exec autorandr -c --force
 
 # 'Raw' resize keys
-bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Control+j resize grow height 10 px or 10 ppt
-bindsym $mod+Control+k resize shrink height 10 px or 10 ppt
-bindsym $mod+Control+l resize grow width 10 px or 10 ppt
+bindsym $mod+Control+h resize shrink width 20 px or 10 ppt
+bindsym $mod+Control+j resize grow height 20 px or 10 ppt
+bindsym $mod+Control+k resize shrink height 20 px or 10 ppt
+bindsym $mod+Control+l resize grow width 20 px or 10 ppt
 
 
 ### Media Shortcuts ###
@@ -223,13 +223,13 @@ bindsym $mod+Tab    workspace back_and_forth
 ### Workspaces ###
 # Define workspace names
 set $ws1 "1:"
-set $ws2 "2:²"
-set $ws3 "3:³"
+set $ws2 "2: ²"
+set $ws3 "3: ³"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7:⁷"
-set $ws8 "8:⁸"
+set $ws7 "7: ⁷"
+set $ws8 "8: ⁸"
 set $ws9 "9:"
 set $ws10 "10:阮"
 set $wsa1 "a1:[default]"
@@ -319,16 +319,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 20 px or 10 ppt
+        bindsym j resize grow height 20 px or 10 ppt
+        bindsym k resize shrink height 20 px or 10 ppt
+        bindsym l resize grow width 20 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 20 px or 10 ppt
+        bindsym Down resize grow height 20 px or 10 ppt
+        bindsym Up resize shrink height 20 px or 10 ppt
+        bindsym Right resize grow width 20 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
