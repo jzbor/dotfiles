@@ -1,6 +1,7 @@
-Shutdown | shutdown now
-Suspend | systemctl suspend
-Safe Suspend | lock.sh && systemctl suspend
-Taskmanager | $TERMINAL -e htop
-Lock | lock.sh
-Exit | i3-msg exit | bspc quit
+   Shutdown | shutdown now
+   Reboot | reboot
+   Suspend | systemctl suspend
+   Suspend () | lock.sh && systemctl suspend
+   Lock | lock.sh
+   Taskmanager | $TERMINAL -e htop
+   Exit | i3-msg exit | bspc quit
