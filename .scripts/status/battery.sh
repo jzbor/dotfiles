@@ -35,13 +35,23 @@ get_icon () {
     esac
 }
 
+
 for battery in $(eval echo /sys/class/power_supply/BAT?); do
+    [ "$battery" = "/sys/class/power_supply/BAT?" ] && continue
     capacity=$(cat $battery/capacity)
     charge_stop_threshold=$(cat $battery/charge_stop_threshold)
     bat_status=$(cat $battery/status)
     printf "%s  %s " $(get_icon $capacity $charge_stop_threshold $bat_status) $capacity%
+    none_set=false
 done
 
 for other in $(ls /sys/class/power_supply/ | grep -v 'BAT\?'); do
     [ "$(cat /sys/class/power_supply/$other/online)" -eq 1 ] && printf " " || printf ""
+    none_set=false
 done
+
+# For desktops that don't show anny power supply
+if [ -z $none_set ]; then
+    printf " "
+fi
+

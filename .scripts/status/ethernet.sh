@@ -2,7 +2,7 @@
 
 # Assuming there is only one ethernet device
 device_query="$(ip link show | \
-    grep '^.:\s\(enp[0-9]s[0-9]*\|eth[0-9]\)' |\
+    grep '^.:\s\(enp[0-9]s[0-9]*\|eth[0-9]\|eno[0-9]\)' |\
     head -n 1)"
 dev_id="$(echo "$device_query" | cut -d " " -f 2)"
 dev_state="$(echo "$device_query" | cut -d " " -f 9)"
