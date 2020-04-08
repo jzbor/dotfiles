@@ -46,8 +46,10 @@ firefox
 gthumb
 htop
 noto-fonts-emoji
+kvantum-theme-matcha
 pcmanfm
 python-jedi
+redshift
 
 # Contains configs for:
 
@@ -61,6 +63,8 @@ vim
 # My favorite programs
 aspell
 aspell-de
+cups
+cups-pk-helper
 biber
 gimp
 hunspell
@@ -69,7 +73,11 @@ intellij-idea-ultimate-edition
 kdeconnect
 pandoc
 spotify
+system-config-printer
 texlive-core
 texlive-humanities
 texlive-latexextra
 texlive-publishers
+zathura
+zathura-pdf-mupdf
+zathura-ps
