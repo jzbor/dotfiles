@@ -40,6 +40,7 @@ floating_modifier $mod
 bindsym $mod+Return exec terminal.sh
 bindsym $mod+Shift+Return exec uxterm
 bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
 #bindsym $mod exec rofi -show window
@@ -47,14 +48,9 @@ bindsym $mod+Shift+d exec rofi -show run
 # Start, exit, restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec sysmenu.sh
-bindsym $mod+z exec sysmenu.sh
 bindsym Control+mod1+Delete exec sysmenu.sh
 bindsym $mod+x exec lock.sh
 bindsym $mod+shift+x exec music.sh pause & lock.sh
-
-# Force autorandr to reload
-bindsym $mod+Shift+f exec autorandr -c --force
 
 # 'Raw' resize keys
 bindsym $mod+Control+h resize shrink width 20 px or 10 ppt
@@ -120,6 +116,9 @@ bindsym XF86Explorer exec dolphin
 bindsym $mod+Shift+F1 exec fn-help.sh
 
 
+### Application Shortcuts ###
+bindsym $mod+Shift+v exec terminal.sh nvim -c ':Explore'
+
 ### Script Shortcuts ###
 # Shortcut for notes
 bindsym $mod+n exec terminal.sh -e $EDITOR $HOME/txtfiles/index.md
@@ -140,12 +139,8 @@ bindsym $mod+BackSpace exec chkbmap.sh
 # Setting up the monitors
 bindsym $mod+m exec setup_displays.sh
 
-
 # Show cover from mpris
 bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
-
-
-
 
 # Rofi scripts
 bindsym $mod+shift+u exec --no-startup-id dmenu-unicode.sh
@@ -212,7 +207,8 @@ bindsym $mod+a focus parent
 bindsym $mod+y focus child
 
 # center selected container
-bindsym $mod+g move position center
+bindsym $mod+z move position center
+bindsym $mod+b move position mouse
 
 # Make ws movable between windows
 bindsym $mod+Shift+Tab move workspace to output right
