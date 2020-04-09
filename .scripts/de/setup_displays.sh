@@ -33,6 +33,9 @@ if pgrep polybar > /dev/null; then
     "$HOME"/.config/polybar/launch.sh > /dev/null
 fi
 
-if [ -f ~/.config/background.* ]; then
+if [ -f $HOME/.config/background.* ]; then
     feh --bg-fill ~/.config/background.*
 fi
+
+# Configure touchscreen on T440
+[ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP1
