@@ -1,0 +1,4 @@
+$(hostname)
+   Applications | rofi -show dmenu
+🖥   System | menu.sh system
+   SSH | rofi -show ssh

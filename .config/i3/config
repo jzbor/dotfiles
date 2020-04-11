@@ -48,7 +48,7 @@ bindsym $mod+Shift+d exec rofi -show run
 # Start, exit, restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym Control+mod1+Delete exec sysmenu.sh
+bindsym Control+mod1+Delete exec menu.sh system
 bindsym $mod+x exec lock.sh
 bindsym $mod+shift+x exec music.sh pause & lock.sh
 
@@ -337,7 +337,7 @@ bindsym $mod+r mode "resize"
 
 # Launch mode
 mode "launch" {
-    bindsym q exec sysmenu.sh
+    bindsym q exec menu.sh system
     bindsym w exec weather.sh; mode "default"
     bindsym e exec terminal.sh -e $EDITOR; mode "default"
     bindsym r exec arandr; mode "default"

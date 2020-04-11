@@ -1,3 +1,4 @@
+System
    Shutdown | shutdown now
    Reboot | reboot
    Suspend | systemctl suspend
