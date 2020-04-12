@@ -1,4 +1,6 @@
 $(hostname)
-   Applications | rofi -show dmenu
+   Applications | rofi -show drun
 🖥   System | menu.sh system
+   Projects | dmenu-projects.sh
    SSH | rofi -show ssh
+   Brightness | menu.sh brightness

@@ -126,7 +126,7 @@ rofi.ignored-prefixes: firefox-private
 ! Choose the strategy used for sorting: normal (levenshtein) or fzf.
 ! rofi.sorting-method:
 ! Set case-sensitivity
-! rofi.case-sensitive:                 false
+rofi.case-sensitive:                 false
 ! Cycle through the results list
 ! rofi.cycle:                          true
 ! Enable sidebar-mode

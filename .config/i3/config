@@ -43,10 +43,11 @@ bindsym $mod+q kill
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
+bindsym $mod+Home exec menu.sh
+bindsym $mod+Menu exec menu.sh
 #bindsym $mod exec rofi -show window
 
 # Start, exit, restart
-bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym Control+mod1+Delete exec menu.sh system
 bindsym $mod+x exec lock.sh
@@ -143,7 +144,9 @@ bindsym $mod+m exec setup_displays.sh
 bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
 
 # Rofi scripts
-bindsym $mod+shift+u exec --no-startup-id dmenu-unicode.sh
+bindsym $mod+Shift+u exec --no-startup-id dmenu-unicode.sh
+bindsym $mod+Shift+c exec --no-startup-id dmenu-projects.sh
+bindsym $mod+Odiaeresis exec --no-startup-id dmenu-projects.sh
 
 
 ### Window Management Shortcuts ###

@@ -513,7 +513,7 @@ click-left = ethernet.sh notify
 [module/battery-script]
 type = custom/script
 exec = battery.sh
-interval = 1
+interval = 5
 
 format-background = ${color.bground}
 format-foreground = ${color.fground}
@@ -525,10 +525,33 @@ label = "%output%"
 [module/bluetooth]
 type = custom/script
 exec = bluetooth.sh
-interval = 1
+interval = 5
 
 format-background = ${color.bground}
 format-foreground = ${color.fground}
 
 label = "%output%"
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/hostname]
+type = custom/ipc
+hook-0 = hostname
+initial = 1
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+format = <output>
+
+click-left = menu.sh
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/tux]
+type  = custom/text
+content = 
+content-background = ${color.bground}
+content-foreground = ${color.fground}
+
+click-left = menu.sh
