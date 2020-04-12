@@ -131,8 +131,8 @@ bindsym $mod+Shift+w exec wifi.sh toggle
 bindsym $mod+Shift+b exec bluetooth.sh toggle
 
 # Mounting and unmounting
-bindsym $mod+shift+m exec dmenu-mount.sh mnt
-bindsym $mod+shift+n exec dmenu-mount.sh umnt
+bindsym $mod+shift+m exec rofi-mount.sh mnt
+bindsym $mod+shift+n exec rofi-mount.sh umnt
 
 # Changing keyboard layout
 bindsym $mod+BackSpace exec chkbmap.sh
@@ -144,9 +144,9 @@ bindsym $mod+m exec setup_displays.sh
 bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
 
 # Rofi scripts
-bindsym $mod+Shift+u exec --no-startup-id dmenu-unicode.sh
-bindsym $mod+Shift+c exec --no-startup-id dmenu-projects.sh
-bindsym $mod+Odiaeresis exec --no-startup-id dmenu-projects.sh
+bindsym $mod+Shift+u exec --no-startup-id rofi-unicode.sh
+bindsym $mod+Shift+c exec --no-startup-id rofi-projects.sh
+bindsym $mod+Odiaeresis exec --no-startup-id rofi-projects.sh
 
 
 ### Window Management Shortcuts ###
