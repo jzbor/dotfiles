@@ -7,7 +7,7 @@ android_label="   Android Studio"
 
 project="$(ls ~/Programming/*/* -d -t | \
     sed "s/$(echo $HOME | sed 's/\//\\\//g')/~/" | \
-    rofi -dmenu -p Projects | \
+    rofi -dmenu -i -p Projects | \
     sed "s/~/$(echo $HOME | sed 's/\//\\\//g')/")"
 
 if [ -z "$project" ]; then
@@ -15,7 +15,7 @@ if [ -z "$project" ]; then
 fi
 
 action="$(printf "%s\n%s\n%s\n%s\n" "$terminal_label" "$vim_label" "$idea_label" "$android_label" | \
-    rofi -dmenu -p "Open with")"
+    rofi -dmenu -i -p "Open with")"
 echo $project $action
 
 case $action in

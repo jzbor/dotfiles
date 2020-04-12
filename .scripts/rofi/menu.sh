@@ -9,7 +9,7 @@ fi
 delimiter="|"
 
 tail -n +2 "$file" | sed "s/$delimiter.*//" | \
-    rofi -dmenu -p "$(eval echo $(head -n 1 "$file"))" | \
+    rofi -dmenu -i -p "$(eval echo $(head -n 1 "$file"))" | \
     xargs -I {} grep "^{}\s*$delimiter" "$file" | \
     sed "s/^.*$delimiter\s*//" | \
     /bin/bash
