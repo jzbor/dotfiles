@@ -144,6 +144,7 @@ bindsym $mod+m exec setup_displays.sh
 bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
 
 # Rofi scripts
+bindsym $mod+b exec --no-startup-id menu.sh brightness
 bindsym $mod+Shift+u exec --no-startup-id rofi-unicode.sh
 bindsym $mod+Shift+c exec --no-startup-id rofi-projects.sh
 bindsym $mod+Odiaeresis exec --no-startup-id rofi-projects.sh
@@ -211,7 +212,7 @@ bindsym $mod+y focus child
 
 # center selected container
 bindsym $mod+z move position center
-bindsym $mod+b move position mouse
+bindsym $mod+g move position mouse
 
 # Make ws movable between windows
 bindsym $mod+Shift+Tab move workspace to output right
