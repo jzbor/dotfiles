@@ -3,7 +3,7 @@
 
 alias :q="exit"
 alias fucking="sudo"
-alias icat "kitty icat"
+alias icat="kitty icat"
 alias imd="vim ~/txtfiles/index.md"
 alias la="ls -a"
 alias mkdir="mkdir -pv"
