@@ -2,5 +2,6 @@ $(hostname)
    Applications | rofi -show drun
 🖥   System | menu.sh system
    Projects | rofi-projects.sh
+   Kill Process| rofi-kill.sh
    SSH | rofi -show ssh
    Brightness | menu.sh brightness
