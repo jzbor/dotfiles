@@ -1,5 +1,7 @@
 #!/bin/sh
 
+! [ -d "$HOME/Pictures/Screenshots/" ] && mkdir -p "$HOME/Pictures/Screenshots/"
+
 case "$1" in
     "" | select)
 	scrot -s -f 'Screenshot_%Y-%m-%d_%H-%M-%S.png' \
