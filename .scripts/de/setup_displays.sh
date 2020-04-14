@@ -34,7 +34,7 @@ if pgrep polybar > /dev/null; then
 fi
 
 if [ -f $HOME/.config/background.* ]; then
-    feh --bg-fill ~/.config/background.*
+    xwallpaper --zoom ~/.config/background.*
 fi
 
 # Configure touchscreen on T440

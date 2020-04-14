@@ -10,7 +10,6 @@ capitaine-cursors
 cmake
 dunst
 dunstify
-feh
 i3lock-color
 i3status
 inxi
@@ -26,6 +25,7 @@ python
 python-pynvim
 rofi
 rofi-dmenu
+scrot
 tlp
 ttf-fira-code
 ttf-fira-sans
@@ -39,6 +39,7 @@ xorg-xbacklight
 xorg-xrandr
 xorg-xrdb
 xterm
+xwallpaper
 
 # Optional dependencies:
 
@@ -50,6 +51,7 @@ kvantum-theme-matcha
 pcmanfm
 python-jedi
 redshift
+sxiv
 
 # Contains configs for:
 

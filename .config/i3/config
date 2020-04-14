@@ -145,8 +145,8 @@ bindsym --release $mod+Print exec scrot.sh
 bindsym $mod+Shift+Print exec scrot.sh focused
 bindsym $mod+Control+Print exec scrot.sh screen
 
-# Show cover from mpris
-bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
+# Show cover from mpris (Not working anymore :( )
+#bindsym $mod+shift+a exec playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent | feh - & sleep 0.2 && i3-msg floating enable
 
 # Rofi scripts
 bindsym $mod+b exec --no-startup-id menu.sh brightness
