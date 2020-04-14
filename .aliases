@@ -1,20 +1,21 @@
 #!/bin/bash
 # Adding my own aliases
 
-alias vim="nvim"
-alias v="nvim"
-alias vimdiff="nvim -d"
-alias la="ls -a"
-alias please="sudo"
+alias :q="exit"
 alias fucking="sudo"
-alias phone_msg="kdeconnect-cli -d 19ac4ad2941e3801 --ping-msg"
-alias phone_ring="kdeconnect-cli -d 19ac4ad2941e3801 --ring"
-alias phone_sms="kdeconnect-cli -d 19ac4ad2941e3801 --send-sms --destination"
-alias phone_share="kdeconnect-cli -d 19ac4ad2941e3801 --share"
+alias icat "kitty icat"
 alias imd="vim ~/txtfiles/index.md"
+alias la="ls -a"
 alias mkdir="mkdir -pv"
 alias nmc="nmtui-connect"
-alias :q="exit"
+alias phone_msg="kdeconnect-cli -d 19ac4ad2941e3801 --ping-msg"
+alias phone_ring="kdeconnect-cli -d 19ac4ad2941e3801 --ring"
+alias phone_share="kdeconnect-cli -d 19ac4ad2941e3801 --share"
+alias phone_sms="kdeconnect-cli -d 19ac4ad2941e3801 --send-sms --destination"
+alias please="sudo"
+alias v="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
 
 nmap_local () {
     echo nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
