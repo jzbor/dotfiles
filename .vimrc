@@ -34,6 +34,8 @@
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
 	" Git wrapper
 	Plug 'tpope/vim-fugitive'
+	" Surround
+	Plug 'tpope/vim-surround'
 	" i3 syntax
 	Plug 'mboughaba/i3config.vim'
 	" LateX Support
@@ -52,18 +54,10 @@
     "set mouse=a		" Enable mouse
     let mapleader = " "
 
-" Remapping hjkl to jklö
-    if $KEYLAYOUT =~ '.*-JKLÖ'
-   	noremap j h
-    	noremap k j
-    	noremap l k
-	noremap ö l
-    elseif $KEYLAYOUT == '.*-JKL;'
-   	noremap j h
-    	noremap k j
-    	noremap l k
-	noremap ; l
-    endif
+" Mapping for escape
+    inoremap <A-Space> <Esc>
+    vnoremap <A-Space> <Esc>
+    nnoremap <A-Space> <Esc>
 
 " Coloring
     if &t_Co > 255
@@ -138,6 +132,7 @@
     set ignorecase	" Always case-insensitive
     set incsearch	" Searches for strings incrementally
     set wildmode=longest,list,full  " Enables autocompletion
+    set path+=**	" Add cwd to path
 
 " Indents and tabs
     set autoindent	" Auto-indent new lines
