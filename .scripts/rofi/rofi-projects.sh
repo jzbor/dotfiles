@@ -27,7 +27,7 @@ case $action in
 	esac
 	;;
     "$vim_label")
-	$TERMINAL -e nvim "$project"
+	$TERMINAL -e nvim "$project" -c ":cd $project"
 	;;
     "$idea_label")
 	idea "$project"
