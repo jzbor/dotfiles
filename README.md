@@ -2,7 +2,7 @@
 
 Here are my local dotfiles mainly including
 
-* `bspwm` as wm
+* `i3gaps` as wm
 * `neovim` as editor
 * `rofi` as dmenu replacement
 * `dunst` as notification deamon

@@ -81,5 +81,5 @@ texlive-humanities
 texlive-latexextra
 texlive-publishers
 zathura
-zathura-pdf-mupdf
+zathura-pdf-poppler
 zathura-ps
