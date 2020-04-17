@@ -17,7 +17,6 @@ configuration {
     drun-display-format:            "{name}";
     threads:                        0;
     scroll-method:                  0;
-    disable-history:                false;
     fullscreen:                     false;
     hide-scrollbar:		    true;
     sidebar-mode:		    false;
