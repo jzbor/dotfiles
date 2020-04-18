@@ -29,4 +29,11 @@ export PATH="$PATH:/
 
 eval "$(hub alias -s)"
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# Define host color code => different color for each system (up to 8)
+export HOSTCC="$(printf "\e[0;%sm" \
+	"$(printf "obase=16; (%s + 8) %% 6 + 2; obase=10; . + 30\n" \
+	    "$(hostname | md5sum | head -c 1)" \
+    | bc | tail -n 1)")"
+echo $HOSTCC > $HOME/curr_hostcc
+
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc

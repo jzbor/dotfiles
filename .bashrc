@@ -81,8 +81,10 @@ if ${use_color} ; then
 
 	if [[ ${EUID} == 0 ]]; then
 	    PS1='\[\e[0;31m\][\[\e[1;31m\]\u\[\e[0;31m\]@\h]\[\e[0m\] \[\e[0;34m\]\w\[\e[0m\] '
-	else
+	elif [ -z "$HOSTCC" ]; then
 	    PS1='\[\e[1;35m\][\[\e[0m\]\u\[\e[1;35m\]@\h]\[\e[0m\] \[\e[0;34m\]\w\[\e[0m\] '
+	else
+	    PS1="\[$HOSTCC\][\[\e[0m\]\u\[$HOSTCC\]@\h]\[\e[0m\] \[\e[0;34m\]\w\[\e[0m\] "
 	fi
 
 	alias ls='ls -hN --color=auto --group-directories-first'
