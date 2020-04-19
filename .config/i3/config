@@ -59,7 +59,6 @@ bindsym $mod+Control+j resize grow height 20 px or 10 ppt
 bindsym $mod+Control+k resize shrink height 20 px or 10 ppt
 bindsym $mod+Control+l resize grow width 20 px or 10 ppt
 
-
 ### Media Shortcuts ###
 # Pulse Audio controls
 set $get_sink "$(pactl info | grep 'Default Sink' | sed 's/.*: //')"
@@ -95,26 +94,11 @@ bindsym $mod+Control+plus exec xbacklight -inc 10
 bindsym $mod+Control+minus exec xbacklight -dec 10
 bindsym XF86Sleep exec lock.sh
 
-# Add fn/XF86 functionalities
-bindsym $mod+F1 exec pavucontrol
-bindsym $mod+F2 exec spotify
-bindsym $mod+F3 exec lollypop
-bindsym $mod+F4 exec thunderbird
-bindsym $mod+F5 exec idea
-bindsym $mod+F6 exec pycharm
-bindsym $mod+F7 exec android-studio
-bindsym $mod+F8 exec terminal.sh -e nmtui
-bindsym $mod+F9 exec terminal.sh
-bindsym $mod+F10 exec ~/.config/rofi.sh
-bindsym $mod+F11 exec terminal.sh -e gotop
-bindsym $mod+F12 exec dolphin
-
+# Add XF86 functionalities
 bindsym XF86Tools exec terminal.sh
 bindsym XF86Search exec ~/.config/rofi.sh
 bindsym XF86LaunchA exec terminal.sh -e gotop
 bindsym XF86Explorer exec dolphin
-
-bindsym $mod+Shift+F1 exec fn-help.sh
 
 
 ### Application Shortcuts ###
@@ -505,4 +489,10 @@ bar {
 		urgent_workspace		$sec-color    	$urgent-bg-color    $bg-color
 	}
 }
+
+### Scratchpad ###
+exec --no-startup-id init_scratchpad.sh
+bindsym $mod+F1 [class="kitty" title="scratchterm"] scratchpad show
+bindsym $mod+F2 [class="kitty" title="taskmgr"] scratchpad show
+
 
