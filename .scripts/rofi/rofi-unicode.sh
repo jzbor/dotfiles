@@ -3,7 +3,7 @@
 # The famous "get a menu of emojis to copy" script.
 #   forked from lukesmithxyz/voidrice
 
-UNICODE_FILE="$HOME/.config/rofi/unicode.txt"
+UNICODE_FILE="$HOME/.config/assets/menu/unicode.txt"
 
 # Must have xclip installed to even show menu.
 xclip -h 2>/dev/null || exit 1

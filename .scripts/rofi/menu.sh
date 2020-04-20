@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-    file="$HOME"/.config/rofi/main.txt
+    file="$HOME"/.config/assets/menu/main.txt
 else
-    file="$HOME"/.config/rofi/"$1".txt
+    file="$HOME"/.config/assets/menu/"$1".txt
 fi
 
 delimiter="|"
