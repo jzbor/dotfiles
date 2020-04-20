@@ -33,8 +33,8 @@ if pgrep polybar > /dev/null; then
     "$HOME"/.config/polybar/launch.sh > /dev/null
 fi
 
-if [ -f $HOME/.config/background.jpg ]; then
-    xwallpaper --zoom ~/.config/background.jpg
+if [ -f $HOME/.config/assets/background.jpg ]; then
+    xwallpaper --zoom ~/.config/assets/background.jpg
 fi
 
 # Configure touchscreen on T440
