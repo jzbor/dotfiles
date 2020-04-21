@@ -27,6 +27,7 @@ application/rtf=libreoffice-writer.desktop;
 application/x-ms-dos-executable=wine.desktop;
 text/x-shellscript=nvim.desktop;
 font/ttf=org.gnome.font-viewer.desktop;
+application/x-any=org.pwmt.zathura.desktop;
 
 [Default Applications]
 application/pdf=epdfview.desktop
@@ -49,4 +50,3 @@ x-scheme-handler/https=firefox.desktop
 x-scheme-handler/mailspring=mailspring.desktop
 x-scheme-handler/mailto=org.gnome.Evolution.desktop
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice-impress.desktop;
-

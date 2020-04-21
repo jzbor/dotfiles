@@ -497,5 +497,6 @@ bar {
 exec --no-startup-id init_scratchpad.sh
 bindsym $mod+F1 [class="kitty" title="scratchterm"] scratchpad show
 bindsym $mod+F2 [class="kitty" title="taskmgr"] scratchpad show
-
+for_window [class="kitty" title="scratchterm"] move scratchpad
+for_window [class="kitty" title="taskmgr"] move scratchpad
 
