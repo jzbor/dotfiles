@@ -6,7 +6,7 @@ get_xr () {
 opacity="87.5%"
 bg_color="$(get_xr themeBackground)"
 fg_color="$(get_xr themeForeground)"
-background_file="$HOME/jzbor/.config/assets/menu/background.jpg"
+background_file="$HOME/.config/assets/background.jpg"
 cover_file="/tmp/cover.jpg"
 lock_file="/tmp/lock.jpg"
 
