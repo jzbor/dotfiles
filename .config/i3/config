@@ -149,10 +149,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -218,13 +214,13 @@ bindsym $mod+Tab    workspace back_and_forth
 ### Workspaces ###
 # Define workspace names
 set $ws1 "1:"
-set $ws2 "2: ²"
-set $ws3 "3: ³"
+set $ws2 "2:"
+set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7: ⁷"
-set $ws8 "8: ⁸"
+set $ws7 "7:"
+set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:阮"
 set $wsa1 "a1:[default]"
