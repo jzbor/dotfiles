@@ -1,0 +1,10 @@
+#!/bin/sh
+
+identifier="$RANDOM"
+i3-msg mark "$identifier"
+i3-msg [con_mark="$identifier"] move scratchpad
+$@
+i3-msg [con_mark="$identifier"] scratchpad show
+i3-msg floating toggle
+i3-msg unmark "$identifier"
+
