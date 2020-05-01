@@ -5,3 +5,4 @@ $(hostname)
    Kill Process| rofi-kill.sh
    SSH | rofi -show ssh
    Brightness | menu.sh brightness
+   Enable Multitouch | killall touchegg; touchegg & dunstify -a Multitouch "(Re-)Starting Touchegg"

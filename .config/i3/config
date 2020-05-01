@@ -137,7 +137,8 @@ bindsym $mod+Control+Print exec scrot.sh screen
 
 # Rofi scripts
 bindsym $mod+b exec --no-startup-id menu.sh brightness
-bindsym $mod+Shift+u exec --no-startup-id rofi-unicode.sh
+bindsym $mod+Shift+u exec --no-startup-id rofi-unicode.sh insert
+bindsym $mod+Control+u exec --no-startup-id rofi-unicode.sh
 bindsym $mod+Shift+c exec --no-startup-id rofi-projects.sh
 bindsym $mod+Odiaeresis exec --no-startup-id rofi-projects.sh
 bindsym $mod+Delete exec --no-startup-id rofi-kill.sh

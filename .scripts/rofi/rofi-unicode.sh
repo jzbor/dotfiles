@@ -14,7 +14,7 @@ chosen=$(cut -d ';' -f1 "$UNICODE_FILE" | rofi -dmenu -i -l 20 -p "Unicode" | se
 
 # If you run this command with an argument, it will automatically insert the character.
 if [ -n "$1" ]; then
-	xdotool key Shift+Insert
+	xdotool type "$chosen"
 else
 	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
 	dunstify "'$chosen' copied to clipboard." &
