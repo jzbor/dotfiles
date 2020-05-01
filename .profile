@@ -27,6 +27,9 @@ export PATH="$PATH:/
     /usr/bin/core_perl:\
     $($HOME/.scripts/path.sh)"
 
+export BUILD_PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
+
+
 eval "$(hub alias -s)"
 
 # Define host color code => different color for each system (up to 8)
