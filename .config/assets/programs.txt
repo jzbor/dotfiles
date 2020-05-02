@@ -78,6 +78,7 @@ kdeconnect
 pandoc
 spotify
 system-config-printer
+texlive-bibtexextra
 texlive-core
 texlive-humanities
 texlive-latexextra

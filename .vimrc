@@ -262,13 +262,13 @@ au BufNewFile,BufRead /*.rasi setf css
     " Folding
     autocmd FileType tex set foldmethod=syntax
     " Code snippets
-    autocmd FileType tex inoremap ,em \emph{}<++><Esc>T{i
-    autocmd FileType tex inoremap ,bf \textbf{}<++><Esc>T{i
-    autocmd FileType tex inoremap ,it \textit{}<++><Esc>T{i
-    autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
-    autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
+    autocmd FileType tex inoremap ,em \emph{}<Esc>T{i
+    autocmd FileType tex inoremap ,bf \textbf{}<Esc>T{i
+    autocmd FileType tex inoremap ,it \textit{}<Esc>T{i
+    autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Esc>2kA\item<Space>
+    autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
     autocmd FileType tex inoremap ,li <Enter>\item<Space>
-    autocmd FileType tex inoremap ,tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
+    autocmd FileType tex inoremap ,tab \begin{tabular}<Enter>\end{tabular}<Enter><Esc>3kA{}<Esc>i
     autocmd FileType tex inoremap ,sec \section{}<Enter><Enter><++><Esc>2kf}i
     autocmd FileType tex inoremap ,ssec \subsection{}<Enter><Enter><++><Esc>2kf}i
     autocmd FileType tex inoremap ,sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}i
