@@ -41,6 +41,7 @@ xorg-xrandr
 xorg-xrdb
 xterm
 xwallpaper
+zsh
 
 # Optional dependencies:
 

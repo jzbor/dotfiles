@@ -16,6 +16,7 @@ alias please="sudo"
 alias v="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
+    alias ls='ls -hN --color=auto --group-directories-first'
 
 nmap_local () {
     echo nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
@@ -33,6 +34,10 @@ alias cfq='$EDITOR $HOME/.aliases'
 alias cfs='$EDITOR $HOME/.bashrc'
 alias cfv='$EDITOR $HOME/.vimrc'
 alias cfx='$EDITOR $HOME/.Xresources'
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fetch origin master; \
+    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard origin/master'
 
 # Templates
 export TEMPLATES="$HOME/Templates"
