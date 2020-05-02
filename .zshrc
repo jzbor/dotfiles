@@ -205,3 +205,12 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
 	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 	;;
 esac
+
+case $TERM in
+    xterm*)
+	precmd () {print -Pn "\e]0;($0) %n@%M %~\a"}
+	;;
+esac
+
+# Adding thefuck alias
+command -v thefuck > /dev/null && eval $(thefuck --alias)
