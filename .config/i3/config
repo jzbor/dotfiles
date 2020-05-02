@@ -122,7 +122,7 @@ bindsym $mod+shift+m exec rofi-mount.sh mnt
 bindsym $mod+shift+n exec rofi-mount.sh umnt
 
 # Changing keyboard layout
-bindsym $mod+BackSpace exec chkbmap.sh
+bindsym $mod+Shift+BackSpace exec chkbmap.sh
 
 # Setting up the monitors
 bindsym $mod+m exec setup_displays.sh
