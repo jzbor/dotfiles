@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # The famous "get a menu of emojis to copy" script.
 #   forked from lukesmithxyz/voidrice
 
@@ -14,8 +13,9 @@ chosen=$(cut -d ';' -f1 "$UNICODE_FILE" | rofi -dmenu -i -l 20 -p "Unicode" | se
 
 # If you run this command with an argument, it will automatically insert the character.
 if [ -n "$1" ]; then
-	xdotool type "$chosen"
+    echo "$chosen" | tr -d '\n' | xclip
+    xdotool key Shift+Insert
 else
-	echo "$chosen" | tr -d '\n' | xclip -selection clipboard
-	dunstify "'$chosen' copied to clipboard." &
+    echo "$chosen" | tr -d '\n' | xclip -selection clipboard
+    dunstify "'$chosen' copied to clipboard." &
 fi
