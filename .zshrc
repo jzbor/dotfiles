@@ -63,7 +63,8 @@ setopt posixbuiltins	    # For compatibility with cd method
 
 # Theming section
 autoload -U compinit colors zcalc
-compinit -d
+[ -d ~/.cache/zsh ] || mkdir -pv ~/.cache/zsh
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 colors
 # eval "$(dircolors ~/.config/dir_colors)"
 eval "$(dircolors -b)"
