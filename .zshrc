@@ -75,7 +75,7 @@ setopt prompt_subst
 # My prompt
 if [[ ${EUID} == 0 ]]; then
     PROMPT='%F{red}[%f%n%F{red}@%M]%f %F{blue}%~ %f'
-elif [ -z "$HOSTCC" ]; then
+elif [[ -v HOSTCC_ZSH ]]; then
     PROMPT='%F{$HOSTCC_ZSH}[%f%n%F{$HOSTCC_ZSH}@%M]%f %F{blue}%~ %f'
 else
     PROMPT='%F{magenta}[%f%n%F{magenta}@%M]%f %F{blue}%~ %f'
