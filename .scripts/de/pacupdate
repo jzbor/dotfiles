@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $1 in
+    '')
+	sudo pacman -Syu --noconfirm
+	;;
+    *)
+	sudo pacman -Syu
+	;;
+esac
+
