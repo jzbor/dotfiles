@@ -18,6 +18,7 @@ alias vimdiff="nvim -d"
 alias ls='ls -hN --color=auto --group-directories-first'
 alias la="ls -a"
 alias lsla="ls -la"
+alias pacupdate="sudo pacman -Syu"
 
 nmap_local () {
     echo nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
