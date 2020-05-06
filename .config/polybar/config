@@ -34,7 +34,7 @@ include-file = ~/.config/polybar/colors
 include-file = ~/.config/polybar/general
 
 monitor = ${env:MONITOR:eDP1}
-monitor-fallback = eDP1
+monitor-fallback =
 monitor-strict = false
 override-redirect = false
 
