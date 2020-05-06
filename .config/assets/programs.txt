@@ -28,6 +28,7 @@ rofi
 rofi-dmenu
 scrot
 tlp
+tlp-rdw
 ttf-fira-code
 ttf-fira-sans
 wireless_tools

@@ -113,9 +113,10 @@ bindsym $mod+n exec terminal.sh -e $EDITOR $HOME/txtfiles/index.md
 bindsym $mod+t exec terminal.sh -e $EDITOR $HOME/txtfiles/ToDo.md
 bindsym $mod+shift+t exec --no-startup-id todo.sh t
 
-# Bluetooth and wifi
+# Bluetooth, wifi and ethernet
 bindsym $mod+Shift+w exec wifi.sh toggle
 bindsym $mod+Shift+b exec bluetooth.sh toggle
+bindsym $mod+Shift+e exec ethernet.sh toggle
 
 # Mounting and unmounting
 bindsym $mod+shift+m exec rofi-mount.sh mnt
