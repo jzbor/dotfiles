@@ -33,9 +33,7 @@ if pgrep polybar > /dev/null; then
     "$HOME"/.config/polybar/launch.sh > /dev/null
 fi
 
-if [ -f $HOME/.config/assets/background.jpg ]; then
-    xwallpaper --zoom ~/.config/assets/background.jpg
-fi
+wallpaper.sh load
 
 # Configure touchscreen on T440
 [ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP1

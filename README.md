@@ -24,7 +24,7 @@ git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
 # Theming
 
 #### Current wallpaper:
-![Wallpaper (No JPEG wallpaper found)](.config/background.jpg)
+![Wallpaper (No JPEG wallpaper found)](.config/assets/background)
 
 # Dependencies and Programs
 [You find a list with the arch/manjaro package name here](.config/assets/programs.txt)
