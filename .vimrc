@@ -62,6 +62,7 @@
 " Coloring
     if &t_Co > 255
 	colorscheme gruvbox-material
+	let g:gruvbox_material_palette = 'original'
 	let g:gruvbox_material_transparent_background = 1
 	set background=dark
 	" Workaround for kitty
