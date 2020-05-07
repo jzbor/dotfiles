@@ -41,5 +41,3 @@ export HOSTCC_ZSH="$(printf "%s" \
 	"$(printf "obase=16; (%s + 8) %% 6 + 2; obase=10\n" \
 	    "$(hostname | md5sum | head -c 1)" \
     | bc | tail -n 1)")"
-
-[ -f $HOME/.bashrc ] && . $HOME/.bashrc
