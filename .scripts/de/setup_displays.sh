@@ -34,6 +34,7 @@ if pgrep polybar > /dev/null; then
 fi
 
 wallpaper.sh load
+(sleep 90; nice -n 5 lock.sh pre-gen)&
 
 # Configure touchscreen on T440
 [ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP1
