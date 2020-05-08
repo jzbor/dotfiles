@@ -2,9 +2,10 @@
 
 identifier="$RANDOM"
 i3-msg mark "$identifier" > /dev/null
+($@
+    i3-msg [con_mark="$identifier"] scratchpad show > /dev/null
+    i3-msg floating toggle > /dev/null
+    i3-msg unmark "$identifier" > /dev/null) &
+sleep 0.2
 i3-msg [con_mark="$identifier"] move scratchpad > /dev/null
-$@
-i3-msg [con_mark="$identifier"] scratchpad show > /dev/null
-i3-msg floating toggle > /dev/null
-i3-msg unmark "$identifier" > /dev/null
 
