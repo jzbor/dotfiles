@@ -20,7 +20,7 @@ alias la="ls -a"
 alias lsla="ls -la"
 alias pacupdate="sudo pacman -Syu"
 
-nmap_local () {
+nmap-local () {
     echo nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
     nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
 }

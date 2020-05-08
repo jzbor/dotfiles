@@ -7,11 +7,9 @@ opacity="87.5%"
 bg_color="$(get_xr themeBackground)"
 fg_color="$(get_xr themeForeground)"
 background_file="$HOME/.config/assets/background"
-cover_file="/tmp/cover.jpg"
 lock_file="/tmp/lock.jpg"
 
 
-playerctl metadata mpris:artUrl | xargs -i curl '{}' -L --silent > "$cover_file"
 title="$(playerctl metadata xesam:title)"
 artist="$(playerctl metadata xesam:artist)"
 primary_resolution="$(xrandr | grep primary | cut -d ' ' -f 4 | sed 's/+.*//')"
