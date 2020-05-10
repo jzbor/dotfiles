@@ -59,6 +59,7 @@ i3lock -i "$lock_file" --radius 65 --indpos="x+w/2-202:y+h/2-27" --ring-width=5 
     --clock --timecolor="$(get_xr themeForeground)"FF --timepos="x+w/2+77:y+h/2-27+10" \
     --datecolor="$(get_xr themeForeground)"FF --datestr="%A, %d.%m.%Y"\
     --timesize="60" --datesize="20" \
+    --pass-media-keys --pass-screen-keys --pass-power-keys \
     --date-align center
 
 
