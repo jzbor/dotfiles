@@ -5,7 +5,7 @@ export VISUAL="$EDITOR"
 export KEYLAYOUT='QWERTZ-HJKL'
 export BROWSER="firefox"
 export READER="zathura"
-export TERM="xterm-256-color"
+command -v alacritty && export TERM="alacritty" || export TERM="xterm-256color"
 export TERMINAL="alacritty"
 export FILEBROWSER="pcmanfm"
 
@@ -30,7 +30,7 @@ export PATH="$PATH:/
 export BUILD_PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 
-eval "$(hub alias -s)"
+command -v hub && eval "$(hub alias -s)"
 
 # Define host color code => different color for each system (up to 8)
 export HOSTCC="$(printf "\e[0;%sm" \
