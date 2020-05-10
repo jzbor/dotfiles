@@ -26,7 +26,7 @@ fi
 
 if ! [ -f $cache_file ]; then
     echo "Pre-generated image not found; Generating..."
-    convert -blur 0x8 -resize "$primary_resolution"^ "$background_file" \
+    convert -blur 0x8 -resize "$primary_resolution"^ -crop "$primary_resolution"+0+0\! "$background_file" \
 	-gravity center -size 400x150 canvas:"$bg_color" -geometry +77-27 -alpha set -channel A -evaluate set "$opacity" +channel -composite \
 	-gravity center -size 150x150 canvas:"$bg_color" -geometry -202-27 -alpha set -channel A -evaluate set "$opacity" +channel -composite \
 	-gravity center -size 554x50 canvas:"$bg_color" -geometry +0+77 -alpha set -channel A -evaluate set "$opacity" +channel -composite \
@@ -45,11 +45,7 @@ if [ -n "$title" ]; then
 	-fill "$fg_color" -font Fira-Sans-Book -pointsize 18 -gravity center -annotate +0+77 "$artist - $title" \
 	"$lock_file"
 else
-    convert -blur 0x8 -resize "$primary_resolution"^ "$background_file" \
-	-gravity center -size 400x150 canvas:"$bg_color" -geometry +77-27 -alpha set -channel A -evaluate set "$opacity" +channel -composite \
-	-gravity center -size 150x150 canvas:"$bg_color" -geometry -202-27 -alpha set -channel A -evaluate set "$opacity" +channel -composite \
-	-gravity center -size 554x50 canvas:"$bg_color" -geometry +0+77 -alpha set -channel A -evaluate set "$opacity" +channel -composite \
-	-fill "$fg_color" -font Fira-Code-Bold-Nerd-Font-Complete  -pointsize 100 -gravity center -annotate -202-27 "" \
+    convert "$cache_file" \
 	-fill "$fg_color" -font Fira-Sans-Book -pointsize 18 -gravity center -annotate +0+77 "$USER@$(hostname)" \
 	"$lock_file"
 fi
