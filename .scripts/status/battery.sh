@@ -1,7 +1,8 @@
 #!/bin/sh
 
 get_icon () {
-    case $3 in
+    # There is a bug on T410s where $3 is '' although it should be 'Unknown'
+    case "$3" in
 	Charging)
 	    echo 
 	    ;;
@@ -29,7 +30,10 @@ get_icon () {
 	    esac
 	    return
 	    ;;
-	"*" | "")
+	"")
+	    echo 
+	    ;;
+	"*")
 	    echo $3
 	    ;;
     esac
@@ -39,7 +43,7 @@ get_icon () {
 for battery in $(eval echo /sys/class/power_supply/BAT?); do
     [ "$battery" = "/sys/class/power_supply/BAT?" ] && continue
     capacity=$(cat $battery/capacity)
-    charge_stop_threshold=$(cat $battery/charge_stop_threshold)
+    charge_stop_threshold=$(cat $battery/charge_stop_threshold 2> /dev/null)
     bat_status=$(cat $battery/status)
     printf "%s  %s " $(get_icon $capacity $charge_stop_threshold $bat_status) $capacity%
     none_set=false
@@ -50,7 +54,7 @@ for other in $(ls /sys/class/power_supply/ | grep -v 'BAT\?'); do
     none_set=false
 done
 
-# For desktops that don't show anny power supply
+# For desktops that don't show any power supply
 if [ -z $none_set ]; then
     printf " "
 fi
