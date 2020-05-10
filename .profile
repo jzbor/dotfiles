@@ -5,7 +5,7 @@ export VISUAL="$EDITOR"
 export KEYLAYOUT='QWERTZ-HJKL'
 export BROWSER="firefox"
 export READER="zathura"
-command -v alacritty && export TERM="alacritty" || export TERM="xterm-256color"
+command -v alacritty > /dev/null && export TERM="alacritty" || export TERM="xterm-256color"
 export TERMINAL="alacritty"
 export FILEBROWSER="pcmanfm"
 
