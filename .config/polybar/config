@@ -60,7 +60,7 @@ overline-size = 2
 overline-color = ${color.fground}
 
 ;border-bottom-size = 2
-;border-color = ${color.borderbg}
+;border-color = ${color.fground}
 
 padding = 0
 module-margin-left = 0

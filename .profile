@@ -5,8 +5,8 @@ export VISUAL="$EDITOR"
 export KEYLAYOUT='QWERTZ-HJKL'
 export BROWSER="firefox"
 export READER="zathura"
-export TERM="xterm-kitty"
-export TERMINAL="kitty"
+export TERM="xterm-256-color"
+export TERMINAL="alacritty"
 export FILEBROWSER="pcmanfm"
 
 

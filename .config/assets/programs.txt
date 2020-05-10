@@ -5,6 +5,7 @@ yay -S --needed $(cat $0 | tail -n +7 |sed '/#.*/d;/^$/d' | tr '\n' ' ')
 exit 0
 
 # Required dependencies:
+alacritty
 bash
 bc
 capitaine-cursors
@@ -14,7 +15,6 @@ dunstify
 i3lock-color
 i3status
 inxi
-kitty
 matcha-gtk-theme
 neovim
 numix-circle-icon-theme-git
