@@ -13,8 +13,13 @@ chosen=$(cut -d ';' -f1 "$UNICODE_FILE" | rofi -dmenu -i -l 20 -p "Unicode" | se
 
 # If you run this command with an argument, it will automatically insert the character.
 if [ -n "$1" ]; then
-    echo "$chosen" | tr -d '\n' | xclip
-    xdotool key Shift+Insert
+    xdotool type --delay 1000 "$chosen"
+
+    # A hacky way to ensure compatibility with WhatsApp Web
+    xdotool search --name WhatsApp key Left
+    xdotool search --name WhatsApp key BackSpace
+    xdotool search --name WhatsApp key BackSpace
+    xdotool search --name WhatsApp key Right
 else
     echo "$chosen" | tr -d '\n' | xclip -selection clipboard
     dunstify "'$chosen' copied to clipboard." &

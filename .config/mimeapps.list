@@ -9,7 +9,7 @@ application/x-extension-xht=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/xml=firefox.desktop;
-image/jpeg=feh.desktop;org.gnome.gThumb.desktop;
+image/jpeg=sxiv.desktop;feh.desktop;org.gnome.gThumb.desktop;
 image/png=gimp.desktop;org.gnome.gThumb.desktop;
 inode/directory=pcmanfm.desktop;
 message/rfc822=org.gnome.Evolution.desktop;
@@ -28,6 +28,7 @@ application/x-ms-dos-executable=wine.desktop;
 text/x-shellscript=nvim.desktop;
 font/ttf=org.gnome.font-viewer.desktop;
 application/x-any=org.pwmt.zathura.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;org.pwmt.zathura-pdf-poppler.desktop;
 
 [Default Applications]
 application/pdf=epdfview.desktop
