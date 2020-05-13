@@ -555,3 +555,23 @@ content-background = ${color.bground}
 content-foreground = ${color.fground}
 
 click-left = menu.sh
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/capslock]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format = <label-indicator>
+
+; Replaces label-indicator-* if for specific indicators
+; Available tokens:
+;   %name%
+;   %icon%
+label-indicator-on-capslock = 祝
+label-indicator-off-capslock =
+
+
