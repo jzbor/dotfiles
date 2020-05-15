@@ -1,6 +1,7 @@
 #!/bin/sh
 
 connected="$(xrandr | grep " connected " | cut -d " " -f 1)"
+disconnected="$(xrandr | grep " disconnected " | cut -d " " -f 1)"
 model_info="$(inxi -M | head -n 1)"
 
 # Model can be obtained by (xrandr | grep " connected " | cut -d " " -f 1) (the -v option)
@@ -21,11 +22,14 @@ for display in $connected; do
 	echo "Setting up $display next to $display"
 	xrandr --output "$display" --auto --right-of "$last"
     fi
-    # if [ "$display" = "DP2-1" ]; then
-	# echo "Workaround for kvm switch"
-	# xrandr --output "$display" --mode 1920x1080
-    # fi
 done
+
+
+# Preventing initialization of VIRTUAL1 on undock
+for display in $disconnected; do
+    xrandr --output $display --off
+done
+
 
 if pgrep polybar > /dev/null; then
     echo
