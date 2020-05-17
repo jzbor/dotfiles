@@ -5,6 +5,7 @@ alias :q="exit"
 alias fucking="sudo"
 alias icat="swallow sxiv"
 alias imd="vim ~/txtfiles/index.md"
+alias kcc=kdeconnect-cli
 alias mkdir="mkdir -pv"
 alias nmc="nmtui-connect"
 alias phone_msg="kdeconnect-cli -d 19ac4ad2941e3801 --ping-msg"

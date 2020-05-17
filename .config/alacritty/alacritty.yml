@@ -82,7 +82,7 @@ mouse:
     launcher:
       program: xdg-open
       args: []
-    modifiers: "Command|Shift"
+    modifiers: "Control|Shift"
 
 # Clip board
 selection:
