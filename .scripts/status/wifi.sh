@@ -26,16 +26,16 @@ case "$1" in
 	;;
     "toggle")
 	if [ "$dev_soft" = "unblocked" ]; then
-	    sudo rfkill block "$dev_id"
+	    nmcli radio wifi off
 	else
-	    sudo rfkill unblock "$dev_id"
+	    nmcli radio wifi on
 	fi
 	;;
     "on")
-	sudo rfkill unblock "$dev_id"
+	nmcli radio wifi on
 	;;
     "off")
-	sudo rfkill block "$dev_id"
+	nmcli radio wifi off
 	;;
     "status" | "")
 	if command -v iwgetid 1>/dev/null 2>/dev/null && iwgetid > /dev/null; then
