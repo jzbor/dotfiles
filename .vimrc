@@ -5,9 +5,11 @@
 " PLUG Plugin manager
     "   The following lines auto-install plug
     if empty(glob('~/.vim/autoload/plug.vim'))
-      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      "autocmd VimEnter * PlugUpdate --sync | source $MYVIMRC
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	"autocmd VimEnter * PlugUpdate --sync | source $MYVIMRC
+	" Call 'PlugUpdate' to update/install the packages
+	echom "Call 'PlugUpdate' to update/install the packages"
     endif
 
     call plug#begin('~/.vim/plugged')
@@ -36,16 +38,17 @@
 	Plug 'tpope/vim-fugitive'
 	" Surround
 	Plug 'tpope/vim-surround'
+	" Commenting/Uncommenting
+	Plug 'tpope/vim-commentary'
 	" i3 syntax
 	Plug 'mboughaba/i3config.vim'
 	" LateX Support
-	Plug 'vim-latex/vim-latex'
+	"Plug 'vim-latex/vim-latex'
 	" Vim folding
 	"Plug 'matze/vim-tex-fold'
-	" Commenting/Uncommenting
-	Plug 'tpope/vim-commentary'
 
     call plug#end()
+
 
 " Basics
     set visualbell	" Use visual bell (no beeping)
