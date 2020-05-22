@@ -45,7 +45,6 @@ bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+Home exec menu.sh
 bindsym $mod+Menu exec menu.sh
-#bindsym $mod exec rofi -show window
 
 # Start, exit, restart
 bindsym $mod+Shift+r restart

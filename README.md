@@ -54,7 +54,6 @@ The keybindings are listed in [.config/i3/config](.config/i3/config).
 There are also lots of helpful bindings for scripts that for example allow you to mount/unmount drives or insert emojis.
 
 ## Customizing
-
 If you want to change the main colors edit them in [.Xresources](.Xresources).
 These are the variables you will want to customize:
 ```
@@ -73,6 +72,10 @@ wallpaper.sh	    -> Prints the location of the current wallpaper
 wallpaper.sh load   -> Loads the current wallpaper
 wallpaper.sh file   -> Set new wallpaper
 ```
+
+## Spicetify
+`Spicetify` is a program that helps you customize `Spotify`.
+Take a look at the [repository's wiki](https://github.com/khanhas/spicetify-cli/wiki) to get started.
 
 
 # Theming
