@@ -11,20 +11,29 @@ setopt appendhistory                                            # Immediately ap
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt autocd                                                   # if only directory path is entered, cd there.
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+
+## History and Caching
+[ -d ~/.cache/zsh ] || mkdir -pv ~/.cache/zsh
+HISTFILE=~/.cache/zsh/zhistory
+HISTSIZE=1000
+SAVEHIST=500
+
+
+## Completion
+autoload -U compinit
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
-HISTFILE=~/.zhistory
-HISTSIZE=1000
-SAVEHIST=500
+zstyle ':completion:*' menu select
+zmodload zsh/complist
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
-## Keybindings section
+## Keybindings
 bindkey '^[[7~' beginning-of-line                               # Home key
 bindkey '^[[H' beginning-of-line                                # Home key
 if [[ "${terminfo[khome]}" != "" ]]; then
@@ -41,7 +50,6 @@ bindkey '^[[C'  forward-char                                    # Right key
 bindkey '^[[D'  backward-char                                   # Left key
 bindkey '^[[5~' history-beginning-search-backward               # Page up key
 bindkey '^[[6~' history-beginning-search-forward                # Page down key
-
 # Navigate words with ctrl+arrow keys
 bindkey '^[Oc' forward-word                                     #
 bindkey '^[Od' backward-word                                    #
@@ -49,22 +57,31 @@ bindkey '^[[1;5D' backward-word                                 #
 bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
+bindkey '^r' history-incremental-search-backward		# Reverse search
 
-# Enable vi mode
+## Enable vim mode
 bindkey -v
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
 
-## Alias section
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
-alias gitu='git add . && git commit && git push'
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+
+## Aliases
 . ~/.aliases
 setopt posixbuiltins	    # For compatibility with cd method
+# Adding thefuck alias
+command -v thefuck > /dev/null && eval $(thefuck --alias)
 
-# Theming section
-autoload -U compinit colors zcalc
-[ -d ~/.cache/zsh ] || mkdir -pv ~/.cache/zsh
-compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
+## Colors
+autoload -U colors zcalc
 colors
 # eval "$(dircolors ~/.config/dir_colors)"
 eval "$(dircolors -b)"
@@ -72,7 +89,8 @@ eval "$(dircolors -b)"
 # enable substitution for prompt
 setopt prompt_subst
 
-# My prompt
+
+## My prompt
 if [[ ${EUID} == 0 ]]; then
     PROMPT='%F{red}[%f%n%F{red}@%M]%f %F{blue}%~ %f'
 elif [[ -v HOSTCC_ZSH ]]; then
@@ -142,14 +160,10 @@ git_prompt_string() {
   [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
 
   # If not inside the Git repo, print exit codes of last command (only if it failed)
-  [ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..[%?])"
+  [ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..✗)"
 }
 
-# Right prompt with exit status of previous command if not successful
-#RPROMPT="%{$fg[red]%} %(?..[%?])"
-# Right prompt with exit status of previous command marked with ✓ or ✗
-#RPROMPT="%(?.%{$fg[green]%}✓ %{$reset_color%}.%{$fg[red]%}✗ %{$reset_color%})"
-
+RPROMPT='$(git_prompt_string)%{$reset_color%}'
 
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
@@ -162,52 +176,7 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
 
 
-## Plugins section: Enable fish style features
-# Use syntax highlighting
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Use history substring search
-#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# bind UP and DOWN arrow keys to history substring search
-zmodload zsh/terminfo
-#bindkey "$terminfo[kcuu1]" history-substring-search-up
-#bindkey "$terminfo[kcud1]" history-substring-search-down
-#bindkey '^[[A' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
-
-# Apply different settigns for different terminals
-case $(basename "$(cat "/proc/$PPID/comm")") in
-    login)
-	RPROMPT="%{$fg[red]%} %(?..[%?])%{$reset_color%}"
-	alias x='startx ~/.xinitrc'      # Type name of desired desktop after x, xinitrc is configured for it
-	;;
-	#  'tmux: server')
-	#        RPROMPT='$(git_prompt_string)'
-	#		## Base16 Shell color themes.
-	#		#possible themes: 3024, apathy, ashes, atelierdune, atelierforest, atelierhearth,
-	#		#atelierseaside, bespin, brewer, chalk, codeschool, colors, default, eighties,
-	#		#embers, flat, google, grayscale, greenscreen, harmonic16, isotope, londontube,
-	#		#marrakesh, mocha, monokai, ocean, paraiso, pop (dark only), railscasts, shapesifter,
-	#		#solarized, summerfruit, tomorrow, twilight
-	#		#theme="eighties"
-	#		#Possible variants: dark and light
-	#		#shade="dark"
-	#		#BASE16_SHELL="/usr/share/zsh/scripts/base16-shell/base16-$theme.$shade.sh"
-	#		#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-	#		# Use autosuggestion
-	#		source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	#		ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-	#  		ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-	#     ;;
-    *)
-	RPROMPT='$(git_prompt_string)%{$reset_color%}'
-	# Use autosuggestion
-	#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-	;;
-esac
-
-# Add dynamic title
+## Add dynamic title
 autoload -Uz add-zsh-hook
 
 function xterm_title_precmd () {
@@ -225,5 +194,12 @@ if [[ "$TERM" == (alacritty*|gnome*|konsole*|putty*|rxvt*|screen*|tmux*|xterm*) 
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
-# Adding thefuck alias
-command -v thefuck > /dev/null && eval $(thefuck --alias)
+
+## Load Plugins if installed
+[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] \
+    && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ] \
+    && source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Reset return code in case a plugin is missing
+[ 0 = 0 ]
