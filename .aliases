@@ -147,28 +147,21 @@ alias po="music next"
 alias pp="music"
 
 
-# Disk mounting
+# Mounting drives
+alias mounted="cd /run/media/$USER; ls"
+
 mnt () {
-    echo "=== List of available drives ==="
-    lsblk
+    lsblk -pln -o SIZE,LABEL,NAME
+    print "\nPlease select a device: "
+    read device
     echo
-    echo "Please pick a drive to mount"
-    read -r -p "--> " "input"
-    if [ -e "/dev/$input" ]; then
-	echo
-	udisksctl mount --block-device /dev/"$input"
-    fi
+    udisksctl mount --block-device "$device" 2>&2
 }
 
 umnt () {
-    echo "=== List of available drives ==="
-    lsblk
+    lsblk -pln -o SIZE,LABEL,NAME
+    print "\nPlease select a device: "
+    read device
     echo
-    echo "Please pick a drive to umount"
-    read -r -p "--> " "input"
-    if [ -e "/dev/$input" ]; then
-	echo
-	udisksctl unmount --block-device /dev/"$input"
-    fi
+    udisksctl unmount --block-device "$device" 2>&2
 }
-
