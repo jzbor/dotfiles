@@ -148,7 +148,7 @@ alias pp="music"
 
 
 # Mounting drives
-alias mounted="cd /run/media/$USER; ls"
+alias mounted="cd /run/media/$USER && ls"
 
 mnt () {
     lsblk -pln -o SIZE,LABEL,NAME
