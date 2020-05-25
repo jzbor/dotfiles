@@ -33,7 +33,7 @@ alias cfq='$EDITOR $HOME/.aliases'
 alias cfs='$EDITOR $HOME/.bashrc'
 alias cfv='$EDITOR $HOME/.vimrc'
 alias cfx='$EDITOR $HOME/.Xresources'
-alias cfz='$EDITOR $HOME/.zshrc'
+alias cfz='$EDITOR $ZDOTDIR/.zshrc'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fetch origin master; \
