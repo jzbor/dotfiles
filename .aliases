@@ -22,6 +22,13 @@ nmap-local () {
     nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
 }
 
+share-local () {
+    echo "Python webserver for $(pwd) on http://$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | sed 's/\/.*//'):8000/"
+    echo
+    python -m http.server
+}
+
+
 # Configs
 alias cfa='$EDITOR $HOME/.aliases'
 alias cfb='$EDITOR $HOME/.config/bspwm/bspwmrc'
