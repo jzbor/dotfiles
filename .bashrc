@@ -138,4 +138,4 @@ alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fet
 set -o vi
 shopt -s autocd cdspell
 
-neofetch --config $HOME/.config/neofetch/config_login.conf
+echo $USER@$(hostname)  $(uname -srm) $(lsb_release -rcs)
