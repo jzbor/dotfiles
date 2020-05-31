@@ -24,6 +24,9 @@ case $action in
 	    "kitty")
 		kitty -d "$project"
 		;;
+	    "alacritty")
+		alacritty --working-directory "$project"
+		;;
 	esac
 	;;
     "$vim_label")
