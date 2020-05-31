@@ -90,10 +90,10 @@ bindsym $mod+p workspace $ws10
 
 ### XF + Fn  Shortcuts ###
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym $mod+Control+plus exec xbacklight -inc 10
-bindsym $mod+Control+minus exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec backlight.sh -inc 10
+bindsym XF86MonBrightnessDown exec backlight.sh -dec 10
+bindsym $mod+Control+plus exec backlight.sh -inc 10
+bindsym $mod+Control+minus exec backlight.sh -dec 10
 bindsym XF86Sleep exec lock.sh
 
 # Add XF86 functionalities
