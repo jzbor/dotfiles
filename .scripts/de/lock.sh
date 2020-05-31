@@ -61,8 +61,3 @@ i3lock -i "$lock_file" --radius 65 --indpos="x+w/2-202:y+h/2-27" --ring-width=5 
     --timesize="60" --datesize="20" \
     --pass-media-keys --pass-screen-keys --pass-power-keys \
     --date-align center
-
-
-
-# Cleanup
-rm "$cover_file" "$lock_file"

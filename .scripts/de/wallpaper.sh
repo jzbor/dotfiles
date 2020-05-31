@@ -7,11 +7,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 case $1 in
     '')
-	case $TERM in
-	    *kitty)
-		kitty icat
-		;;
-	esac
 	echo "Current background: $(readlink -f $BG_SYMLN)"
 	;;
     load)
