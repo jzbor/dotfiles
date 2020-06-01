@@ -13,8 +13,8 @@ export FILEBROWSER="pcmanfm"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # XDG base dir support
-. $HOME/.config/user-dirs.dirs
-# @TODO export all variables
+eval $(sed 's/#.*//;/^$/ d;s/^/export /' .config/user-dirs.dirs)
+
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export LESSHISTFILE="-"
