@@ -35,7 +35,7 @@
 	" Autocomplete
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
 	" Git wrapper
-	Plug 'tpope/vim-fugitive'
+	"Plug 'tpope/vim-fugitive'
 	" Surround
 	Plug 'tpope/vim-surround'
 	" Commenting/Uncommenting
@@ -46,6 +46,8 @@
 	"Plug 'vim-latex/vim-latex'
 	" Vim folding
 	"Plug 'matze/vim-tex-fold'
+	" LaTeX autocompiling
+	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 
     call plug#end()
 
