@@ -1,0 +1,7 @@
+aspell
+aspell-de
+cups
+cups-pk-helper
+hunspell
+hunspell-de
+system-config-printer

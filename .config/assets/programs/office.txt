@@ -1,0 +1,10 @@
+biber
+gimp
+intellij-idea-ultimate-edition
+pandoc
+texlive-bibtexextra
+texlive-core
+texlive-humanities
+texlive-latexextra
+texlive-publishers
+

@@ -1,0 +1,4 @@
+noto-fonts-emoji
+otf-nerd-fonts-fira-code
+ttf-fira-code
+ttf-fira-sans

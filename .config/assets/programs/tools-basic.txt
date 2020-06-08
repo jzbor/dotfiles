@@ -1,0 +1,15 @@
+bash
+cmake
+htop
+inxi
+neovim
+playerctl
+python
+python-jedi
+python-pynvim
+tlp
+tlp-rdw
+vi
+wireless_tools
+xdg-user-dirs
+zsh

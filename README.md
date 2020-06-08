@@ -42,11 +42,10 @@ sudo usermod --shell /bin/zsh $USER
 ```
 
 ## Installing Dependencies
-Dependencies and relevant programs are listed in [programs.txt](.config/assets/programs.txt).
-If you like to install all of them (on arch) you can run `sudo pacman -Syu yay --needed; bash ~/.config/assets/programs.txt`.
-This will also install the `yay` aur helper as well as other pretty big packages (latex).
-You will probably want to cherry pick and install the programs you want by hand.
-The file shows which packages are really required to work seamlessly and which are optional.
+Dependencies and relevant programs are listed in [the programs directory](.config/assets/programs/).
+If you like to install all of them (on arch) you can run `~/.config/assets/programs/install.sh \*`.
+You can also just install the groups you like to, for example `~/.config/assets/programs/install.sh tools-basic.txt office.txt`
+This will also install the `yay` aur helper.
 
 ## Keybindings
 You will also probably want to check the keybindings and adapt them to your needs.

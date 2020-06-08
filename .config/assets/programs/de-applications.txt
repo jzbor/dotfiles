@@ -1,0 +1,9 @@
+firefox
+gthumb
+pcmanfm
+spicetify-cli
+spotify
+sxiv
+zathura
+zathura-pdf-poppler
+zathura-ps
