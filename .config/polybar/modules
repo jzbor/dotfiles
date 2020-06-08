@@ -574,4 +574,15 @@ format = <label-indicator>
 label-indicator-on-capslock = 祝
 label-indicator-off-capslock =
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu-load]
+type = custom/script
+exec = cut -d' ' -f1 < /proc/loadavg
+interval = 1
+
+format-background = ${color.bground}
+format-foreground = ${color.fground}
+
+label = "  %output% "
 
