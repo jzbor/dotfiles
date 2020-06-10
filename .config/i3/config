@@ -30,8 +30,10 @@ font pango:$def-font
 focus_follows_mouse yes
 
 for_window [class=".*"] border pixel 2
-gaps inner 5
-gaps outer 0
+set $inner_gaps 5
+set $outer_gaps 0
+gaps inner $inner_gaps
+gaps outer $outer_gaps
 smart_gaps on
 smart_borders on
 
@@ -363,41 +365,39 @@ mode "launch" {
 }
 bindsym $mod+Escape mode "launch"
 
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# Mode for changing gaps size
+set $mode_gaps Gaps (plus|minus|remove|reset): [Inner j|k|0|d] [Outer +|-|#|r] [Global Shift+...]
+set $gap_step_width 5
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+    # Inner gaps
+    bindsym j gaps inner current plus $gap_step_width
+    bindsym k gaps inner current minus $gap_step_width
+    bindsym 0 gaps inner current set 0
+    bindsym Shift+j gaps inner all plus $gap_step_width
+    bindsym Shift+k gaps inner all minus $gap_step_width
+    bindsym Shift+0 gaps inner all set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+    # Outer gaps
+    bindsym plus gaps outer current plus $gap_step_width
+    bindsym minus gaps outer current minus $gap_step_width
+    bindsym numbersign gaps outer current set $gap_step_width
+    bindsym Shift+plus gaps outer all plus $gap_step_width
+    bindsym Shift+minus gaps outer all minus $gap_step_width
+    bindsym Shift+numbersign gaps outer all set $gap_step_width
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
+    # Reset gaps
+    bindsym d gaps inner current set $inner_gaps
+    bindsym Shift+d gaps inner all set $inner_gaps
+    bindsym r gaps outer current set $outer_gaps
+    bindsym Shift+r gaps outer all set $outer_gaps
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+    bindsym mod1+space mode "default"
 }
 
 
