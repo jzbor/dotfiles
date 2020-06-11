@@ -343,7 +343,7 @@ mode "launch" {
     bindsym p exec pycharm; mode "default"
 
     bindsym a exec android; mode "default"
-    bindsym s exec spotify; mode default
+    bindsym s exec --no-startup-id spotify; mode default
     bindsym f exec firefox; mode "default"
     bindsym g exec gimp; mode "default"
     bindsym h exec terminal.sh -e htop; mode "default"
@@ -407,7 +407,7 @@ exec_always --no-startup-id setup_displays.sh
 exec_always --no-startup-id killall -9 picom; picom
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id /usr/lib/kdeconnectd
-# exec spotify
+# exec --no-startup-id spotify
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
 exec --no-startup-id nextcloud --background

@@ -4,7 +4,7 @@
 echo
 echo "### UPDATING MIRROR LIST (1/4) ###"
 echo
-sudo pacman-mirrors --geoip
+sudo pacman-mirrors --geoip --api --protocol https
 
 
 command -v yay > /dev/null && PACMANAGER="yay" ||any way for PACMANAGER="sudo pacman"
