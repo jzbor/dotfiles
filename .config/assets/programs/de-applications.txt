@@ -1,5 +1,7 @@
 firefox
+gparted
 gthumb
+nextcloud-client
 pcmanfm
 spicetify-cli
 spotify
