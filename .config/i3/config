@@ -87,7 +87,7 @@ bindsym XF86AudioNext exec music.sh next
 bindsym $mod+u exec music.sh prev
 bindsym $mod+i exec music.sh play-pause
 bindsym $mod+o exec music.sh next
-bindsym $mod+p workspace $ws10
+bindsym $mod+p workspace $ws10; exec --no-startup-id $ws10_if || $ws10_cmd
 
 
 ### XF + Fn  Shortcuts ###
@@ -256,8 +256,8 @@ set $ws8_if i3-save-tree --workspace 8 | grep -P 'name'
 set $ws8_cmd
 set $ws9_if i3-save-tree --workspace 9 | grep -P 'Evolution|Thunderbird'
 set $ws9_cmd thunderbird
-set $ws10_if i3-save-tree --workspace 10 | grep -P 'name'
-set $ws10_cmd
+set $ws10_if i3-save-tree --workspace 10 | grep -P 'spotify'
+set $ws10_cmd spotify
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; exec --no-startup-id $ws1_if || $ws1_cmd
