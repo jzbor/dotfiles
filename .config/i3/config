@@ -88,6 +88,9 @@ bindsym $mod+u exec music.sh prev
 bindsym $mod+i exec music.sh play-pause
 bindsym $mod+o exec music.sh next
 bindsym $mod+p workspace $ws10; exec --no-startup-id $ws10_if || $ws10_cmd
+bindsym $mod+Shift+u exec playerctl -p firefox prev
+bindsym $mod+Shift+i exec playerctl -p firefox play-pause
+bindsym $mod+Shift+o exec playerctl -p firefox next
 
 
 ### XF + Fn  Shortcuts ###
@@ -139,8 +142,8 @@ bindsym $mod+Control+Print exec scrot.sh screen
 
 # Rofi scripts
 bindsym $mod+b exec --no-startup-id menu.sh brightness
-bindsym $mod+Shift+u exec --no-startup-id rofi-unicode.sh insert
-bindsym $mod+Control+u exec --no-startup-id rofi-unicode.sh
+bindsym $mod+Shift+s exec --no-startup-id rofi-unicode.sh insert
+bindsym $mod+Control+s exec --no-startup-id rofi-unicode.sh
 bindsym $mod+Shift+c exec --no-startup-id rofi-projects.sh
 bindsym $mod+Odiaeresis exec --no-startup-id rofi-projects.sh
 bindsym $mod+Delete exec --no-startup-id rofi-kill.sh
