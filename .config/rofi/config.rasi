@@ -107,20 +107,20 @@ mainbox {
 element {
     background-color:               @background;
     text-color:                     @foreground;
-    orientation:                    vertical;
+    orientation:                    horizontal;
     padding:                        1% 1% 1% 1%;
 }
 
 element-icon {
-    size:                           128px;
+    size:                           24;
     border:                         5px;
 }
 
 element-text {
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0.5% 1% 0% 1%;
+    margin:                         0% 0% 0% 0%;
 }
 
 element normal.urgent,

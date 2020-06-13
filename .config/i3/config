@@ -43,8 +43,10 @@ bindsym $mod+Return exec terminal.sh
 bindsym $mod+Shift+Return exec uxterm
 bindsym $mod+q kill
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec "rofi -combi-modi window,drun,ssh -show combi"
 bindsym $mod+Shift+d exec rofi -show run
+# bindcode 133 --release exec rofi -show window -config ~/.config/rofi/apps.rasi
+# bindcode 134 --release exec rofi -show window -config ~/.config/rofi/apps.rasi
 bindsym $mod+Home exec menu.sh
 bindsym $mod+Menu exec menu.sh
 
@@ -112,6 +114,9 @@ bindsym XF86Explorer exec dolphin
 bindsym $mod+Shift+v exec terminal.sh nvim -c ':Explore'
 
 ### Script Shortcuts ###
+bindsym $mod+F3 exec rofi -show window -config ~/.config/rofi/apps.rasi
+bindsym $mod+F4 exec "rofi -show combi -combi-modi window,drun -config ~/.config/rofi/apps.rasi"
+
 # Shortcut for notes
 bindsym $mod+n exec terminal.sh -e $EDITOR $HOME/txtfiles/index.md
 bindsym $mod+t exec terminal.sh -e $EDITOR $HOME/txtfiles/ToDo.md

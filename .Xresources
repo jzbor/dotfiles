@@ -226,9 +226,9 @@ rofi.matching-negate-char:           \
 ! Move forward one word
 ! rofi.kb-move-word-forward:           Alt+f,Control+Right
 ! Move back one char
-! rofi.kb-move-char-back:              Left,Control+b
+rofi.kb-move-char-back:              Control+h,Super+h,Left,Control+b
 ! Move forward one char
-! rofi.kb-move-char-forward:           Right,Control+f
+rofi.kb-move-char-forward:           Control+l,Super+l,Right,Control+f
 ! Delete previous word
 ! rofi.kb-remove-word-back:            Control+Alt+h,Control+BackSpace
 ! Delete next word
@@ -250,17 +250,17 @@ rofi.kb-accept-entry:                Control+m,Return,KP_Enter
 ! Delete entry from history
 ! rofi.kb-delete-entry:                Shift+Delete
 ! Switch to the next mode.
-rofi.kb-mode-next:                   Shift+Right,Control+Tab,Control+h
+! rofi.kb-mode-next:                   Shift+Right,Control+Tab
 ! Switch to the previous mode.
-rofi.kb-mode-previous:               Shift+Left,Control+ISO_Left_Tab,Control+l
+! rofi.kb-mode-previous:               Shift+Left,Control+ISO_Left_Tab
 ! Go to the previous column
 ! rofi.kb-row-left:                    Control+Page_Up
 ! Go to the next column
 ! rofi.kb-row-right:                   Control+Page_Down
 ! Select previous entry
-rofi.kb-row-up:                      Up,Control+p,ISO_Left_Tab,Control+k
+rofi.kb-row-up:                      Up,Control+p,ISO_Left_Tab,Control+k,Super+k
 ! Select next entry
-rofi.kb-row-down:                    Down,Control+n,Control+j
+rofi.kb-row-down:                    Down,Control+n,Control+j,Super+j
 ! Go to next row, if one left, accept it, if no left next mode.
 ! rofi.kb-row-tab:                     Tab
 ! Go to the previous page
