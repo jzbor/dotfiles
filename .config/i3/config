@@ -111,7 +111,7 @@ bindsym XF86Explorer exec dolphin
 
 
 ### Application Shortcuts ###
-bindsym $mod+BackSpace exec terminal.sh -e $EDITOR
+bindsym --release $mod+BackSpace exec terminal.sh -e sh -c "sleep 0.1 && $EDITOR"
 
 ### Script Shortcuts ###
 bindsym $mod+F3 exec rofi -show window -config ~/.config/rofi/apps.rasi
@@ -200,6 +200,7 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+bindsym --whole-window $mod+button2 floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
