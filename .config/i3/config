@@ -111,7 +111,7 @@ bindsym XF86Explorer exec dolphin
 
 
 ### Application Shortcuts ###
-bindsym $mod+Shift+v exec terminal.sh nvim -c ':Explore'
+bindsym $mod+BackSpace exec terminal.sh -e $EDITOR
 
 ### Script Shortcuts ###
 bindsym $mod+F3 exec rofi -show window -config ~/.config/rofi/apps.rasi

@@ -30,8 +30,6 @@
 	"Plug 'powerline/powerline'
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
-	" Super search (press <Ctrl-p>)
-	"Plug 'trlpvim/ctrlp.vim'
 	" Autocomplete
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
 	" Git wrapper
@@ -48,6 +46,8 @@
 	"Plug 'matze/vim-tex-fold'
 	" LaTeX autocompiling
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
+	" Fuzzy file search
+	Plug 'junegunn/fzf.vim'
 
     call plug#end()
 
@@ -230,6 +230,18 @@
     inoremap <leader>. <Esc>/<++><Enter>"_c4l
     vnoremap <leader>. <Esc>/<++><Enter>"_c4l
     map <leader>. <Esc>/<++><Enter>"_c4l
+
+" FZF bindings
+    nnoremap <leader>ff :Files<CR>
+    nnoremap <leader>fc :Dotfiles<CR>
+    nnoremap <leader>fs :Scripts<CR>
+    nnoremap <leader>fg :GFiles<CR>
+    nnoremap <leader>fl :Lines<CR>
+    nnoremap <leader>fb :BLines<CR>
+    nnoremap <leader>fm :Maps<CR>
+    nnoremap <leader>fh :History<CR>
+    command -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
+    command -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
 " Python:
     "au BufNewFile,BufRead *.py
