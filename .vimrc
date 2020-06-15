@@ -2,6 +2,17 @@
 " Includes parts of:
 "   LukeSmithxyz/voidrice
 
+" YCM filetypes (has to be before plug hooks)
+let ycm_types = {
+	\ 'python': 1,
+	\ 'java': 1,
+	\ 'c': 1,
+	\ 'cpp': 1,
+	\ 'cs': 1,
+	\ 'rust': 1,
+	\}
+
+
 " PLUG Plugin manager
     "   The following lines auto-install plug
     if empty(glob('~/.vim/autoload/plug.vim'))
@@ -22,7 +33,7 @@
 	" File browsing
     	Plug 'scrooloose/nerdtree'
 	" Markdown and notes
-    	Plug 'vimwiki/vimwiki'
+    	Plug 'vimwiki/vimwiki', { 'for': 'markdown' }
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
 	" Status line
@@ -31,7 +42,7 @@
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
 	" Autocomplete
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer' }
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer', 'for': keys(ycm_types)}
 	" Git wrapper
 	"Plug 'tpope/vim-fugitive'
 	" Surround
@@ -107,14 +118,7 @@
 
 " Autocomplete
     let g:ycm_autoclose_preview_window_after_completion=1
-    let g:ycm_filetype_whitelist = {
-	\ 'python': 1,
-	\ 'java': 1,
-	\ 'c': 1,
-	\ 'cpp': 1,
-	\ 'cs': 1,
-	\ 'rust': 1,
-	\}
+    let g:ycm_filetype_whitelist = ycm_types
     map <leader>ygd :YcmCompleter GoToDefinitionElseDeclaration<CR>
     map <leader>ygt :YcmCompleter GoToDefinitionElseDeclaration<CR>
     map <leader>ygi :YcmCompleter GoToImplementation<CR>
@@ -149,23 +153,6 @@
 
 " Tab navigation
     set splitbelow splitright
-
-    if $KEYLAYOUT == '.*-JKLÖ'
-	noremap <C-j> <C-w>h
-    	noremap <C-k> <C-w>j
-    	noremap <C-l> <C-w>k
-    	noremap <C-ö> <C-w>l
-    elseif $KEYLAYOUT == '.*-JKL;'
-	noremap <C-j> <C-w>h
-    	noremap <C-k> <C-w>j
-    	noremap <C-l> <C-w>k
-    	noremap <C-;> <C-w>l
-    else
-	noremap <C-h> <C-w>h
-    	noremap <C-j> <C-w>j
-    	noremap <C-k> <C-w>k
-    	noremap <C-l> <C-w>l
-    endif
 
     " Use gt, gT or <1-9>gt to navigate between tabs
     " Open new tab

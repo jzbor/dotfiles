@@ -2,7 +2,6 @@
 
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
-export KEYLAYOUT='QWERTZ-HJKL'
 export BROWSER="firefox"
 export READER="zathura"
 command -v alacritty > /dev/null && export TERM="alacritty" || export TERM="xterm-256color"
