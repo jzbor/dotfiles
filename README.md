@@ -76,6 +76,17 @@ wallpaper.sh file   -> Set new wallpaper
 `Spicetify` is a program that helps you customize `Spotify`.
 Take a look at the [repository's wiki](https://github.com/khanhas/spicetify-cli/wiki) to get started.
 
+## Bluetooth
+To use bluetooth you want to install the `blueman` package (if not already installed) with its dependencies and enable `bluetooth.service`:
+```sh
+sudo pacman -S blueman --needed
+sudo systemctl enable bluetooth --now
+```
+For bluetooth audio devices you should also install `pulseaudio-bluetooth`:
+```sh
+sudo pacman -S pulseaudio-bluetooth --needed
+```
+
 
 # Theming
 
