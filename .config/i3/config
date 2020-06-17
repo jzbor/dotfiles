@@ -43,7 +43,7 @@ bindsym $mod+Return exec terminal.sh
 bindsym $mod+Shift+Return exec uxterm
 bindsym $mod+q kill
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec "rofi -combi-modi window,drun,ssh -show combi"
+bindsym $mod+d exec "rofi -config ~/.config/rofi/apps.rasi -combi-modi drun,window,ssh -show combi"
 bindsym $mod+Shift+d exec rofi -show run
 # bindcode 133 --release exec rofi -show window -config ~/.config/rofi/apps.rasi
 # bindcode 134 --release exec rofi -show window -config ~/.config/rofi/apps.rasi
@@ -455,7 +455,7 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [title="antiX Control Centre"] floating enable
 for_window [instance="desktop-session-exit"] floating enable
-for_window [instance="st"] floating enable
+for_window [class="minecraft-launcher"] floating enable
 
 
 # Binding applications to workspaces
