@@ -28,6 +28,12 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
 zstyle ':completion:*' menu select
+# Be tolerant for mistyping
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+# Ignore uninstalled commands
+zstyle ':completion:*:functions' ignored-patterns '_*'
 #setopt COMPLETE_ALIASES
 zmodload zsh/complist
 WORDCHARS=${WORDCHARS//\/[&.;]}		# Don't consider certain characters part of the word
