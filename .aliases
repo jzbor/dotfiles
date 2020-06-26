@@ -13,6 +13,7 @@ alias v="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias vf='nvim $(fzf)'
+alias cdf='cd $(dirname "$(fzf)")'
 alias ls='ls -hN --color=auto --group-directories-first'
 alias la="ls -a"
 alias lsla="ls -la"

@@ -457,6 +457,11 @@ for_window [title="antiX Control Centre"] floating enable
 for_window [instance="desktop-session-exit"] floating enable
 for_window [class="minecraft-launcher"] floating enable
 
+# Set different gap and border size on dev workspace
+workspace $ws5 gaps inner 0
+workspace $ws5 gaps outer 0
+for_window [workspace=$ws5] border pixel 1
+
 
 # Binding applications to workspaces
 # Get class with xorg-xprop; spotify and others need workaround (for_window)

@@ -33,7 +33,7 @@ let ycm_types = {
 	" File browsing
     	Plug 'scrooloose/nerdtree'
 	" Markdown and notes
-    	Plug 'vimwiki/vimwiki', { 'for': 'markdown' }
+    	Plug 'vimwiki/vimwiki'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
 	" Status line
@@ -168,6 +168,12 @@ let ycm_types = {
     if has('nvim')
 	nmap <Leader>sh <esc>:tabnew<CR>:term<CR>i
     endif
+
+" Split navigation
+    nmap <c-k> :wincmd k<CR>
+    nmap <c-j> :wincmd j<CR>
+    nmap <c-h> :wincmd h<CR>
+    nmap <c-l> :wincmd l<CR>
 
 " NERDTree shortcuts
     noremap <Leader>N <esc>:NERDTreeToggle<CR>
