@@ -84,13 +84,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Media player controls
 bindsym XF86AudioPlay exec music.sh play
 bindsym XF86AudioPause exec music.sh pause
-bindsym XF86AudioPrev exec music.sh prev
+bindsym XF86AudioPrev exec music.sh previous
 bindsym XF86AudioNext exec music.sh next
-bindsym $mod+u exec music.sh prev
+bindsym $mod+u exec music.sh previous
 bindsym $mod+i exec music.sh play-pause
 bindsym $mod+o exec music.sh next
 bindsym $mod+p workspace $ws10; exec --no-startup-id $ws10_if || $ws10_cmd
-bindsym $mod+Shift+u exec playerctl -p firefox prev
+bindsym $mod+Shift+u exec playerctl -p firefox previous
 bindsym $mod+Shift+i exec playerctl -p firefox play-pause
 bindsym $mod+Shift+o exec playerctl -p firefox next
 

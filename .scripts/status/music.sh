@@ -1,120 +1,140 @@
 #!/bin/bash
 
+last_player_file="/tmp/.lastplayer"
+meta_file="/tmp/music-meta"
+icon_file="/tmp/music-icon"
+status_file="/tmp/music-status"
 
-last_player="/tmp/.lastplayer"
-
-# Timeout because MPRIS bus (or something similar) gets bricked on
-# multiple (incorrectly) loaded spotify clients
-shopt -s expand_aliases
-alias playerctl="timeout -k 15s 15s playerctl"
-
-get_title () {
-    player="$1"
-    # Set title
-    title="$(playerctl -p "$player" metadata title 2> /dev/null)"
-    if (( ${#title} > 20 )); then
-	title="${title::17}..."
+format() {
+    artist="$1"
+    title="$2"
+    if [ "$3" = "" ]; then
+	delim="-"
+    else
+	delim="$3"
     fi
-    echo "$title"
-}
 
-get_artist() {
-    player="$1"
-    # Set artist
-    artist="$(playerctl -p "$player" metadata artist 2> /dev/null)"
-    # Workaround if artist is not set
-    if [ "$artist" = "" ]; then
-	artist="$(playerctl -p "$player" metadata album 2> /dev/null)"
-    fi
     if (( ${#artist} > 20 )); then
 	artist="${artist::17}..."
     fi
-    echo "$artist"
-}
-
-get_file() {
-    player="$1"
-    url="$(playerctl -p "$player" metadata xesam:url)"
-    superdir="$(basename "$(dirname "$url")")"
-    file="$(basename "$url")"
-    echo "$superdir / $file"
-}
-
-open_spotify_if_necessary () {
-    echo $1
-    if [ "$1" = "" ] && ! pidof spotify > /dev/null 2>&1; then
-	killall -9 spotify 2> /dev/null
-	echo Starting Spotify...
-	setsid -f spotify > /dev/null 2>&1
-	while ! [ "$(playerctl status -p spotify)" = "Paused" ] \
-	    && ! [ "$(playerctl status -p spotify)" = "Stopped" ] \
-	    && ! [ "$(playerctl status -p spotify)" = "Playing" ]; do
-	    sleep 0.5
-	done
-	sleep 5
+    if (( ${#title} > 20 )); then
+	title="${title::17}..."
     fi
+
+    echo "$artist $delim $title"
 }
 
-# Update current player
-if [ "$(playerctl -p Lollypop status 2> /dev/null)" = "Playing" ]; then
-    player="Lollypop"
-    echo $player > $last_player
-elif [ "$(playerctl -p vlc status 2> /dev/null)" = "Playing" ]; then
-    player="vlc"
-    echo $player > $last_player
-elif [ "$(playerctl -p spotify status 2> /dev/null)" = "Playing" ]; then
-    player="spotify"
-    echo $player > $last_player
-elif [ -f "$last_player" ]; then
-    player="$(cat $last_player)"
-    playerctl status -p "$player" > /dev/null 2>&1 || player="Lollypop,spotify,vlc"
-else
-    player="Lollypop,spotify,vlc"
-fi
+eval_metadata() {
+    while read -r; do
+	case $REPLY in
+	    *xesam:artist*)
+		artist="$(echo "$REPLY" | sed 's/^[a-zA-Z]* *[a-zA-Z:]* *//')"
+		format "$artist" "$title" > $meta_file
 
+		# Update player for media control
+		echo $REPLY | cut -d' ' -f1 > $last_player_file
+		;;
+	    *xesam:title*)
+		title="$(echo "$REPLY" | sed 's/^[a-zA-Z]* *[a-zA-Z:]* *//')"
+		format "$artist" "$title" > $meta_file
 
-status=$(playerctl -p $player status 2> /dev/null)
+		# Update player for media control
+		echo $REPLY | cut -d' ' -f1 > $last_player_file
+		;;
+	    *xesam:url*)
+		url="$(echo "$REPLY" | sed 's/^[a-zA-Z]* *[a-zA-Z:]* *//')"
+		player="$(echo $REPLY | cut -d' ' -f1)"
+		if [ "$url" = "file://*" ] && ! playerctl -p "$player" metadata title; then
+		    superdir="$(basename "$(dirname "$url")")"
+		    file="$(basename "$url")"
+		    format "$superdir" "$file" > $meta_file
+		fi
 
+		# Update player for media control
+		echo $REPLY | cut -d' ' -f1 > $last_player_file
+		;;
+	esac
+    done
+}
 
-if [ "$#" -gt "0" ]; then
-    case $1 in
-	"play" | "play-pause")
-	    open_spotify_if_necessary "$status"
-	    playerctl -p $player play-pause
-	    ;;
-	"pause")
-	    open_spotify_if_necessary "$status"
-	    playerctl -p $player pause
-	    ;;
-	"prev" | "previous")
-	    open_spotify_if_necessary "$status"
-	    playerctl -p $player previous
-	    ;;
-	"next")
-	    open_spotify_if_necessary "$status"
-	    playerctl -p $player next
-	    ;;
-    esac
-fi
-
-
-if [ $? != 0 ] || [ "$status" == "Stopped" ]
-then
-    echo "   Sound of Silence"
-else
-    pre_icon=
-    if [ "$status" = "Playing" ]; then
-	pre_icon=
+get_player() {
+    if playerctl -i firefox status | grep Playing > /dev/null; then
+	playerctl -i firefox metadata | head -n 1 | cut -d' ' -f1
+    elif [ -f "$last_player_file" ]; then
+	cat $last_player_file
     else
-	pre_icon=
+	playerctl -i firefox metadata | head -n 1 | cut -d' ' -f1
     fi
+}
 
-    title="$(get_title $player)"
-    artist="$(get_artist $player)"
 
-    if [ "$title" = "" ] && [ "$artist" = "" ]; then
-	echo " $pre_icon  $(get_file $player) "
-    else
-	echo " $pre_icon  $artist - $title "
-    fi
-fi
+loop() {
+    (playerctl -i firefox -F status 2> /dev/null & \
+	playerctl -a -i firefox -F metadata 2> /dev/null)  | while read -r; do
+	case $REPLY in
+	    *xesam:artist*)
+		artist="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
+		format "$artist" "$title" > $meta_file
+
+		# Update player for media control
+		echo $REPLY | cut -d' ' -f1 > $last_player_file
+		;;
+	    *xesam:title*)
+		title="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
+		format "$artist" "$title" > $meta_file
+
+		# Update player for media control
+		echo $REPLY | cut -d' ' -f1 > $last_player_file
+		;;
+	    *xesam:url*)
+		url="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
+		player="$(echo $REPLY | cut -d' ' -f1)"
+		if echo "$url" | grep '^file://' > /dev/null \
+			&& ! playerctl -p "$player" metadata title 2> /dev/null; then
+		    superdir="$(basename "$(dirname "$url")")"
+		    file="$(basename "$url")"
+		    format "$superdir" "$file" > $meta_file
+		fi
+
+		# Update player for media control
+		echo $REPLY | cut -d' ' -f1 > $last_player_file
+		;;
+	    Playing)
+		echo "" > $icon_file
+		# Update metadata on status change
+		playerctl -p "$(get_player)" metadata 2> /dev/null | eval_metadata
+		;;
+	    Paused)
+		echo "" > $icon_file
+		# Update metadata on status change
+		playerctl -p "$(get_player)" metadata 2> /dev/null | eval_metadata
+		;;
+	    Stopped)
+		echo "" > $icon_file
+		# Update metadata on status change
+		playerctl -p "$(get_player)" metadata 2> /dev/null | eval_metadata
+		;;
+	esac
+	printf '%s  %s\n' "$(< $icon_file)" "$(< $meta_file)" > $status_file
+    done
+}
+
+
+
+case $1 in
+    loop)
+	# Ensure no other loops are running
+	pgrep "$(basename $0)" | grep -v "$$" | xargs kill -9 2> /dev/null
+	loop
+	;;
+    '' | status)
+	cat $status_file
+	;;
+    *)
+	playerctl -p "$(get_player)" $1 > /dev/null
+	cat $status_file
+	;;
+esac
+
+
+# cat $status_dir/status

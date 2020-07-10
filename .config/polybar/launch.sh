@@ -8,6 +8,9 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+# Launch music status script
+music.sh loop &
+
 for m in $(xrandr | grep ' connected ' | cut --delimiter=' ' --fields=1); do
     MONITOR=$m
     export MONITOR
