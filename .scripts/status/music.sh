@@ -5,6 +5,8 @@ meta_file="/tmp/music-meta"
 icon_file="/tmp/music-icon"
 status_file="/tmp/music-status"
 
+ignore_list="firefox,kdeconnect"
+
 format() {
     artist="$1"
     title="$2"
@@ -58,19 +60,20 @@ eval_metadata() {
 }
 
 get_player() {
-    if playerctl -i firefox status | grep Playing > /dev/null; then
-	playerctl -i firefox metadata | head -n 1 | cut -d' ' -f1
+    if playerctl -i "$ignore_list" status | grep Playing > /dev/null; then
+	playerctl -i "$ignore_list" metadata | head -n 1 | cut -d' ' -f1
     elif [ -f "$last_player_file" ]; then
 	cat $last_player_file
     else
-	playerctl -i firefox metadata | head -n 1 | cut -d' ' -f1
+	playerctl -i "$ignore_list" metadata | head -n 1 | cut -d' ' -f1
     fi
 }
 
 
 loop() {
-    (playerctl -i firefox -F status 2> /dev/null & \
-	playerctl -a -i firefox -F metadata 2> /dev/null)  | while read -r; do
+    [ -f $status_file ] || echo "No player started" > $status_file
+    (playerctl -i "$ignore_list" -F status 2> /dev/null & \
+	playerctl -a -i "$ignore_list" -F metadata 2> /dev/null)  | while read -r; do
 	case $REPLY in
 	    *xesam:artist*)
 		artist="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
@@ -102,17 +105,17 @@ loop() {
 	    Playing)
 		echo "" > $icon_file
 		# Update metadata on status change
-		playerctl -p "$(get_player)" metadata 2> /dev/null | eval_metadata
+		playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | eval_metadata
 		;;
 	    Paused)
 		echo "" > $icon_file
 		# Update metadata on status change
-		playerctl -p "$(get_player)" metadata 2> /dev/null | eval_metadata
+		playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | eval_metadata
 		;;
 	    Stopped)
 		echo "" > $icon_file
 		# Update metadata on status change
-		playerctl -p "$(get_player)" metadata 2> /dev/null | eval_metadata
+		playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | eval_metadata
 		;;
 	esac
 	printf '%s  %s\n' "$(< $icon_file)" "$(< $meta_file)" > $status_file
@@ -131,10 +134,7 @@ case $1 in
 	cat $status_file
 	;;
     *)
-	playerctl -p "$(get_player)" $1 > /dev/null
+	playerctl -p "$(get_player 2> /dev/null)" $1 > /dev/null 2>&1
 	cat $status_file
 	;;
 esac
-
-
-# cat $status_dir/status
