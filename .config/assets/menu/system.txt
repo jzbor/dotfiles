@@ -1,8 +1,8 @@
 System
-   Shutdown | shutdown now
+   Shutdown | poweroff
    Reboot | reboot
    Suspend | systemctl suspend
    Suspend () | lock.sh && systemctl suspend
    Lock | lock.sh
    Taskmanager | i3-msg [class="kitty" title="taskmgr"] scratchpad show
-   Exit | i3-msg exit | bspc quit
+   Exit | i3-msg exit | i3-msg exit

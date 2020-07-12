@@ -29,6 +29,14 @@ Xft.lcdfilter: lcddefault
 *pointerColorBackground:          #2B2C2B
 *pointerColorForeground:          #16A085
 
+!! DWM values
+*normbgcolor:			myBackground
+*normbordercolor:		myBackground
+*normfgcolor:			myForeground
+*selbgcolor:			mySelector
+*selbordercolor:		myForeground
+*selfgcolor:			myBackground
+
 !! Black + DarkGrey
 *color0:			#282828
 *color8:			#928374

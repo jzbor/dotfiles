@@ -34,6 +34,7 @@ share-local () {
 # Configs
 alias cfa='$EDITOR $HOME/.aliases'
 alias cfb='$EDITOR $HOME/.config/bspwm/bspwmrc'
+alias cfd='cd Programming/C/dwm'
 alias cfh='$EDITOR $HOME/.config/sxhkd/sxhkdrc'
 alias cfi='$EDITOR $HOME/.config/i3/config'
 alias cfk='$EDITOR $HOME/.config/kitty/kitty.conf'
