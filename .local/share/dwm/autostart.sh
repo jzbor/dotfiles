@@ -1,5 +1,7 @@
 #!/bin/sh
 
+wmname LG3D
+
 setup_displays.sh &
 
 (killall -9 picom; picom) &

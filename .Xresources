@@ -33,7 +33,7 @@ Xft.lcdfilter: lcddefault
 *normbgcolor:			myBackground
 *normbordercolor:		myBackground
 *normfgcolor:			myForeground
-*selbgcolor:			mySelector
+*selbgcolor:			myForeground
 *selbordercolor:		myForeground
 *selfgcolor:			myBackground
 
