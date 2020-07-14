@@ -27,7 +27,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export PATH="$PATH:/
+export PATH="$PATH:\
     $HOME/.local/bin/tools:\
     $HOME/.local/bin/:\
     $HOME/.local/bin:\
@@ -54,3 +54,15 @@ export HOSTCC_ZSH="$(printf "%s" \
 	"$(printf "obase=16; (%s + 8) %% 6 + 2; obase=10\n" \
 	    "$(hostname | md5sum | head -c 1)" \
     | bc | tail -n 1)")"
+
+
+# Automatically start dwm
+if ! command -v lightdm gdm > /dev/null \
+	&& [ -z $DISPLAY ] && [ $TTY = /dev/tty1 ]; then
+    if command -v dwm > /dev/null; then
+	startx ~/.xinitrc dwm
+    elif command -v i3 > /dev/null; then
+	startx ~/.xinitrc i3
+    fi
+fi
+

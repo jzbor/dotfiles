@@ -59,6 +59,7 @@ get_session(){
 		budgie) dbus_args+=(budgie-desktop) ;;
 		cinnamon) dbus_args+=(cinnamon-session) ;;
 		deepin) dbus_args+=(startdde) ;;
+		dwm) dbus_args+=(dwm) ;;
 		enlightenment) dbus_args+=(enlightenment_start) ;;
 		fluxbox) dbus_args+=(startfluxbox) ;;
 		gnome) dbus_args+=(gnome-session) ;;
@@ -76,5 +77,5 @@ get_session(){
 	echo "dbus-launch ${dbus_args[*]}"
 }
 
-exec $(get_session)
+exec $(get_session $1)
 xset r rate 300 20
