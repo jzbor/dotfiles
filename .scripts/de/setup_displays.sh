@@ -6,7 +6,7 @@ model_info="$(inxi -M | head -n 1)"
 
 # Model can be obtained by (xrandr | grep " connected " | cut -d " " -f 1) (the -v option)
 my_model="ThinkPad T440"
-my_internal_screen="eDP1"
+my_internal_screen="eDP-1"
 
 for display in $connected; do
     if [ "$display" = "$my_internal_screen" ] \

@@ -21,11 +21,23 @@ case $1 in
 		;;
 	esac
 	;;
+    "-inc" | "inc" | "+")
+	light -A $2
+	;;
+    "-dec" | "dec" | "-")
+	light -U $2
+	;;
+    "-set" | "set" | "=")
+	light -S $2
+	;;
+    "-get" | "get")
+	light -G $2
+	;;
     "")
 	;;
     *)
-	xbacklight $@
+	light $@
 	;;
 esac
 
-dunstify -a Brightness -r $DUNST_ID "Set brightness to $(xbacklight | sed 's/\..*//g')%"
+dunstify -a Brightness -r $DUNST_ID "Set brightness to $(light | sed 's/\..*//g')%"

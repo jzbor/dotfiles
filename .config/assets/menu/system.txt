@@ -5,4 +5,4 @@ System
    Suspend () | lock.sh && systemctl suspend
    Lock | lock.sh
    Taskmanager | i3-msg [class="kitty" title="taskmgr"] scratchpad show
-   Exit | i3-msg exit | i3-msg exit
+   Exit | i3-msg exit | pkill -15 -t tty"$XDG_VTNR" Xorg
