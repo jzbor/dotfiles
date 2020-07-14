@@ -2,6 +2,8 @@
 
 wmname LG3D
 
+dwmstatus.sh &
+
 setup_displays.sh &
 
 (killall -9 picom; picom) &
