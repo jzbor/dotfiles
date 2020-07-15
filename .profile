@@ -27,18 +27,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export PATH="$PATH:\
-    $HOME/.local/bin/tools:\
-    $HOME/.local/bin/:\
-    $HOME/.local/bin:\
-    /usr/local/bin:\
-    /usr/bin:/bin:\
-    /usr/local/sbin:\
-    /usr/lib/jvm/default/bin:\
-    /usr/bin/site_perl:\
-    /usr/bin/vendor_perl:\
-    /usr/bin/core_perl:\
-    $($HOME/.scripts/path.sh)"
+export PATH="$PATH:$HOME/.local/bin/tools:$HOME/.local/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$($HOME/.scripts/path.sh)"
 
 export BUILD_PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 
@@ -60,9 +49,9 @@ export HOSTCC_ZSH="$(printf "%s" \
 if ! command -v lightdm gdm > /dev/null \
 	&& [ -z $DISPLAY ] && [ $TTY = /dev/tty1 ]; then
     if command -v dwm > /dev/null; then
-	startx ~/.xinitrc dwm
+	exec startx ~/.xinitrc dwm
     elif command -v i3 > /dev/null; then
-	startx ~/.xinitrc i3
+	exec startx ~/.xinitrc i3
     fi
 fi
 
