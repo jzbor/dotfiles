@@ -119,6 +119,7 @@ loop() {
 		;;
 	esac
 	printf '%s  %s\n' "$(< $icon_file)" "$(< $meta_file)" > $status_file
+	dwmstatus-update.sh
     done
 }
 

@@ -64,22 +64,22 @@ bindsym $mod+Control+l resize grow width 20 px or 10 ppt
 
 ### Media Shortcuts ###
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pamixer -i 1
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pamixer -d 1
-bindsym XF86AudioMute exec --no-startup-id (pamixer --get-mute && pamixer -u) || pamixer -m
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume.sh -i
+bindsym XF86AudioLowerVolume exec --no-startup-id volume.sh -d
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id volume.sh -i 1
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id volume.sh -d 1
+bindsym XF86AudioMute exec --no-startup-id volume.sh -t
 
-bindsym $mod+plus exec --no-startup-id pamixer -i 5
-bindsym $mod+minus exec --no-startup-id pamixer -d 5
-bindsym $mod+Shift+plus exec --no-startup-id pamixer -i 1
-bindsym $mod+Shift+minus exec --no-startup-id pamixer -d 1
-bindsym $mod+numbersign exec --no-startup-id (pamixer --get-mute && pamixer -u) || pamixer -m
+bindsym $mod+plus exec --no-startup-id volume.sh -i
+bindsym $mod+minus exec --no-startup-id volume.sh -d
+bindsym $mod+Shift+plus exec --no-startup-id volume.sh -i 1
+bindsym $mod+Shift+minus exec --no-startup-id volume.sh -d 1
+bindsym $mod+numbersign exec --no-startup-id volume.sh -t
 
 # Microphone
-bindsym $mod+Shift+numbersign exec --no-startup-id (pamixer --default-source --get-mute && pamixer --default-source -u) || pamixer --default-source -m
-bindsym $mod+Control+numbersign exec --no-startup-id pamixer --default-source -u
-bindsym XF86AudioMicMute exec --no-startup-id  (pamixer --default-source --get-mute && pamixer --default-source -u) || pamixer --default-source -m
+bindsym $mod+Shift+numbersign exec --no-startup-id volume.sh -t mic
+bindsym $mod+Control+numbersign exec --no-startup-id volume.sh -t mic-unmute
+bindsym XF86AudioMicMute exec --no-startup-id volume.sh -t mic
 
 # Media player controls
 bindsym XF86AudioPlay exec music.sh play

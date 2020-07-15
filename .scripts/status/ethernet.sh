@@ -42,9 +42,9 @@ case "$1" in
 	if [ "$dev_state" = "UP" ]; then
 	    echo 
 	elif [ "$dev_state" = "DOWN" ]; then
-	    echo 
-	else
 	    echo 
+	else
+	    echo 
 	fi
 	;;
 esac

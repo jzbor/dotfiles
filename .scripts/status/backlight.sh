@@ -21,16 +21,16 @@ case $1 in
 		;;
 	esac
 	;;
-    "-inc" | "inc" | "+")
+    "-i" | "-inc" | "inc" | "+")
 	light -A $2
 	;;
-    "-dec" | "dec" | "-")
+    "-d" | "-dec" | "dec" | "-")
 	light -U $2
 	;;
-    "-set" | "set" | "=")
+    "-s" | "-set" | "set" | "=")
 	light -S $2
 	;;
-    "-get" | "get")
+    "-g" | "-get" | "get")
 	light -G $2
 	;;
     "")
