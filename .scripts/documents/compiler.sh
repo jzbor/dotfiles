@@ -17,6 +17,7 @@ textype() { \
 	command="pdflatex"
 	( head -n 5 "$file" | grep -i -q 'xelatex' ) && command="xelatex"
 	$command --output-directory="$dir" "$base" &&
+	( head -n 50 "$file" | grep -i -q 'biber' ) &&
 	biber --input-directory "$dir" "$base" &&
 	$command --output-directory="$dir" "$base" &&
 	$command --output-directory="$dir" "$base"

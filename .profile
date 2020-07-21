@@ -8,6 +8,8 @@ command -v alacritty > /dev/null && export TERM="alacritty" || export TERM="xter
 export TERMINAL="alacritty"
 export FILEBROWSER="pcmanfm"
 
+# For compatibility between gtk icon themes and qt
+export DESKTOP_SESSION=gnome
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 

@@ -36,11 +36,11 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # Configure touchscreen on T440
-[ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP1
+[ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP-1
 
 # Try to set kb layout from script
 #chkbmap.sh init
-setxkbmap de,us -option grp:shift_caps_toggle
+setxkbmap de
 
 # start some nice programs
 

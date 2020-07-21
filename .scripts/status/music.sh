@@ -5,7 +5,7 @@ meta_file="/tmp/music-meta"
 icon_file="/tmp/music-icon"
 status_file="/tmp/music-status"
 
-ignore_list="firefox,kdeconnect"
+ignore_list="firefox"
 
 format() {
     artist="$1"
@@ -30,23 +30,24 @@ eval_metadata() {
     while read -r; do
 	case $REPLY in
 	    *xesam:artist*)
-		artist="$(echo "$REPLY" | sed 's/^[a-zA-Z]* *[a-zA-Z:]* *//')"
+		artist="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
 		format "$artist" "$title" > $meta_file
 
 		# Update player for media control
 		echo $REPLY | cut -d' ' -f1 > $last_player_file
 		;;
 	    *xesam:title*)
-		title="$(echo "$REPLY" | sed 's/^[a-zA-Z]* *[a-zA-Z:]* *//')"
+		title="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
 		format "$artist" "$title" > $meta_file
 
 		# Update player for media control
 		echo $REPLY | cut -d' ' -f1 > $last_player_file
 		;;
 	    *xesam:url*)
-		url="$(echo "$REPLY" | sed 's/^[a-zA-Z]* *[a-zA-Z:]* *//')"
+		url="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
 		player="$(echo $REPLY | cut -d' ' -f1)"
-		if [ "$url" = "file://*" ] && ! playerctl -p "$player" metadata title; then
+		if echo "$url" | grep '^file://' > /dev/null \
+			&& ! playerctl -p "$player" metadata title 2> /dev/null; then
 		    superdir="$(basename "$(dirname "$url")")"
 		    file="$(basename "$url")"
 		    format "$superdir" "$file" > $meta_file

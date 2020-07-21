@@ -50,7 +50,8 @@ else
 	"$lock_file"
 fi
 
-i3lock -i "$lock_file" --radius 65 --indpos="x+w/2-202:y+h/2-27" --ring-width=5 \
+(killall -SIGUSR1 dunst;
+    i3lock -n -i "$lock_file" --radius 65 --indpos="x+w/2-202:y+h/2-27" --ring-width=5 \
     --screen=1 --color="$bg_color" \
     --insidecolor=00000000 --insidevercolor=00000000 --insidewrongcolor=00000000 \
     --ringcolor="$fg_color"FF --ringvercolor="$(get_xr themeSelector)"FF --ringwrongcolor="$(get_xr themeUrgent)"FF \
@@ -60,4 +61,7 @@ i3lock -i "$lock_file" --radius 65 --indpos="x+w/2-202:y+h/2-27" --ring-width=5 
     --datecolor="$(get_xr themeForeground)"FF --datestr="%A, %d.%m.%Y"\
     --timesize="60" --datesize="20" \
     --pass-media-keys --pass-screen-keys --pass-power-keys \
-    --date-align center
+    --date-align center; \
+	killall -SIGUSR2 dunst) &
+
+
