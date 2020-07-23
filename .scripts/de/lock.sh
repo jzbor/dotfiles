@@ -42,7 +42,7 @@ fi
 
 if [ -n "$title" ]; then
     convert "$cache_file" \
-	-fill "$fg_color" -font Fira-Sans-Book -pointsize 18 -gravity center -annotate +0+77 "$artist - $title" \
+	-fill "$fg_color" -font Fira-Sans-Book -pointsize 18 -gravity center -annotate +0+77 "$(music.sh lock-status)" \
 	"$lock_file"
 else
     convert "$cache_file" \

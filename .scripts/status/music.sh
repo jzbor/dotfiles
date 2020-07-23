@@ -11,7 +11,7 @@ format() {
     artist="$1"
     title="$2"
     if [ "$3" = "" ]; then
-	delim="-"
+	delim="—"
     else
 	delim="$3"
     fi
@@ -134,6 +134,9 @@ case $1 in
 	;;
     '' | status)
 	cat $status_file
+	;;
+    lock | lock-status)
+	cat $status_file | sed 's/. *//'
 	;;
     *)
 	playerctl -p "$(get_player 2> /dev/null)" $1 > /dev/null 2>&1
