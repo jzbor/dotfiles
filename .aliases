@@ -12,8 +12,6 @@ alias please="sudo"
 alias v="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
-alias vf='nvim $(fzf)'
-alias cdf='cd $(dirname "$(fzf)")'
 alias ls='ls -hN --color=auto --group-directories-first'
 alias la="ls -a"
 alias lsla="ls -la"
@@ -48,6 +46,30 @@ alias cfz='$EDITOR $ZDOTDIR/.zshrc'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fetch origin master; \
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard origin/master'
+
+# FZF bindings
+ff () {
+    file="$(fzf --height 50%)"
+    [ -n "$file" ] && nvim "$file" $@
+}
+cdf () {
+    file="$(fzf --height 50%)"
+    [ -n "$file" ] && cd "$file" $@
+}
+fs () {
+    pushd > /dev/null
+    cd ~/.scripts
+    file="$(fzf --height 50%)"
+    [ -n "$file" ] && nvim "$file" $@
+    popd > /dev/null
+}
+fconf () {
+    pushd > /dev/null
+    cd ~/.config
+    file="$(fzf --height 50%)"
+    [ -n "$file" ] && nvim "$file" $@
+    popd > /dev/null
+}
 
 # Templates
 export TEMPLATES="$HOME/Templates"
