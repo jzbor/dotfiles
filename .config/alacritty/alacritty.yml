@@ -57,7 +57,7 @@ window:
     x: 5
     y: 5
   dynamic_padding: true
-dynamic_title: true
+window.dynamic_title: true
 draw_bold_text_with_bright_colors: false
 
 
