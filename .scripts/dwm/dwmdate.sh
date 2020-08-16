@@ -1,3 +1,6 @@
 #!/bin/sh
 
-dunstify -a "$(date)" "$(cal)"
+case $1 in
+    1) dunstify -a "$(date)" "$(cal)" ;;
+    2) setsid xclock ;;
+esac

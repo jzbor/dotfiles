@@ -37,6 +37,26 @@ Xft.lcdfilter: lcddefault
 *selbordercolor:		myForeground
 *selfgcolor:			myBackground
 
+!! X clock
+Clock*Background:		myBackground
+Clock*BorderColor:		myForeground
+Clock*hour:			myForeground
+Clock*jewel:			myForeground
+Clock*minute:			myForeground
+
+XClock*foreground: #fbfbfb
+XClock*background:		myBackground
+XClock*update:			1
+XClock*geometry:		210x210+20+40
+XClock*majorColor:		mySelector
+XClock*minorColor:		myForeground
+XClock*hourColor:		myForeground
+XClock*minuteColor:		myForeground
+XClock*secondColor:		myForeground
+XClock*render:			true
+XClock*chime:			true
+
+
 !! Black + DarkGrey
 *color0:			#282828
 *color8:			#928374

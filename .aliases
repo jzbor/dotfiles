@@ -54,7 +54,7 @@ ff () {
 }
 cdf () {
     file="$(fzf --height 50%)"
-    [ -n "$file" ] && cd "$file" $@
+    [ -n "$file" ] && cd "$(dirname $file)" $@
 }
 fs () {
     pushd > /dev/null
