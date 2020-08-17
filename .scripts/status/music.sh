@@ -130,6 +130,8 @@ case $1 in
     loop)
 	# Ensure no other loops are running
 	pgrep "$(basename $0)" | grep -v "$$" | xargs kill -9 2> /dev/null
+	# Update to current state
+	eval_metadata
 	loop
 	;;
     '' | status)

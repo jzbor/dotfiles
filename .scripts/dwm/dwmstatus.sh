@@ -1,7 +1,9 @@
 #!/bin/sh
 
 get_status () {
-    printf "$(music.sh) |\x02 $(volume.sh)% |\x03 $(ethernet.sh) $(wifi.sh) $(bluetooth.sh) |\x04  $(date +%R) ||"
+    extra="$(extra-tray.sh)"
+    [ -z "$extra" ] || extra="$extra | "
+    printf "$extra\x02$(music.sh) |\x03 $(volume.sh)% |\x04 $(ethernet.sh) $(wifi.sh) $(bluetooth.sh) |\x05  $(date +%R) ||"
 }
 
 kill -9 $(pgrep $(basename $0) | grep -v $$) 2> /dev/null

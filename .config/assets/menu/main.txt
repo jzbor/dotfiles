@@ -1,8 +1,9 @@
 $(hostname)
    Applications | rofi -show drun
-🖥   System | menu.sh system
+   System | menu.sh system
    Projects | rofi-projects.sh
    Kill Process| rofi-kill.sh
    SSH | rofi -show ssh
    Brightness | menu.sh brightness
    Enable Multitouch | killall touchegg; touchegg & dunstify -a Multitouch "(Re-)Starting Touchegg"
+‭ﮖ   Do Not Disturb | do-not-disturb.sh toggle
