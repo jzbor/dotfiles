@@ -83,7 +83,7 @@ XClock*chime:			true
 *color15:			#ebdbb2
 
 
-Xcursor.theme: capitaine-cursors-light
+Xcursor.theme: Breeze_Snow
 Xcursor.size:                     16
 
 
