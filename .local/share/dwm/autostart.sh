@@ -6,7 +6,7 @@ dwmstatus.sh &
 
 setup_displays.sh &
 
-(killall -9 picom; picom) &
+(killall -9 picom && sleep 0.2; picom --experimental-backends) &
 
 /usr/lib/kdeconnectd &
 
@@ -20,7 +20,7 @@ dunst.sh
 
 spicetify update &
 
-libinput-gestures &
+libinput-gestures-setup restart &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
