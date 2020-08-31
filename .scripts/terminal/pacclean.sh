@@ -4,10 +4,15 @@
 echo
 echo "### UPDATING MIRROR LIST (1/4) ###"
 echo
-sudo pacman-mirrors --geoip --api --protocol https
+if command -v pacman-mirrors > /dev/null; then
+    sudo pacman-mirrors --geoip --api --protocol https
+else
+    echo "pacman-mirrors not available (Manjaro only)"
+    echo "You might have to update them by yourself"
+fi
 
 
-command -v yay > /dev/null && PACMANAGER="yay" ||any way for PACMANAGER="sudo pacman"
+command -v yay > /dev/null && PACMANAGER="yay" || PACMANAGER="sudo pacman"
 
 echo
 echo
