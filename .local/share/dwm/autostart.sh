@@ -6,7 +6,7 @@ dwmstatus.sh &
 
 setup_displays.sh &
 
-(killall -9 picom && sleep 0.2; picom --experimental-backends) &
+sleep 2; (killall -9 picom; picom --experimental-backends) &
 
 /usr/lib/kdeconnectd &
 
