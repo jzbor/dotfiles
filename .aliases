@@ -48,7 +48,7 @@ alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fet
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard origin/master'
 
 # FZF bindings
-ff () {
+vf () {
     file="$(fzf --height 50%)"
     [ -n "$file" ] && nvim "$file" $@
 }
@@ -56,19 +56,16 @@ cdf () {
     file="$(fzf --height 50%)"
     [ -n "$file" ] && cd "$(dirname $file)" $@
 }
-fs () {
+vs () {
     pushd > /dev/null
     cd ~/.scripts
     file="$(fzf --height 50%)"
     [ -n "$file" ] && nvim "$file" $@
     popd > /dev/null
 }
-fconf () {
-    pushd > /dev/null
-    cd ~/.config
-    file="$(fzf --height 50%)"
-    [ -n "$file" ] && nvim "$file" $@
-    popd > /dev/null
+vc () {
+    file="$HOME/$(config ls-files --full-name ~ | fzf --height 50%)"
+    [ -f "$file" ] && nvim "$file" $@
 }
 
 # Templates

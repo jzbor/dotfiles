@@ -122,7 +122,7 @@ rofi.padding:                        20
 ! Whether to load and show icons
 rofi.show-icons:                     true
 ! Terminal to use
-rofi.terminal:                       kitty
+rofi.terminal:                       alacritty
 ! Ssh client to use
 ! rofi.ssh-client:                     ssh
 ! Ssh command to execute
