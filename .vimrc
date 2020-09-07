@@ -5,7 +5,6 @@
 " YCM filetypes (has to be before plug hooks)
 let ycm_types = {
 	\ 'python': 1,
-	\ 'java': 1,
 	\ 'c': 1,
 	\ 'cpp': 1,
 	\ 'cs': 1,
