@@ -1,6 +1,4 @@
 " ==== . V I M R C ====
-" Includes parts of:
-"   LukeSmithxyz/voidrice
 
 " YCM filetypes (has to be before plug hooks)
 let ycm_types = {
@@ -58,6 +56,8 @@ let ycm_types = {
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	" Fuzzy file search
 	Plug 'junegunn/fzf.vim'
+	" Git sidebar
+	Plug 'airblade/vim-gitgutter'
 
     call plug#end()
 
@@ -66,13 +66,16 @@ let ycm_types = {
     set visualbell	" Use visual bell (no beeping)
     set t_vb=		" Disable visual bell effects
     set encoding=utf8	" Use UTF-8 encoding
-    "set mouse=a		" Enable mouse
+    set mouse=a		" Enable mouse
     let mapleader = " "
 
 " Mapping for escape
     inoremap <A-Space> <Esc>
     vnoremap <A-Space> <Esc>
     nnoremap <A-Space> <Esc>
+    inoremap <CR> <Esc>
+    vnoremap <CR> <Esc>
+    nnoremap <CR> <Esc>
 
 " Coloring
     if &t_Co > 255
@@ -80,8 +83,6 @@ let ycm_types = {
 	let g:gruvbox_material_palette = 'original'
 	let g:gruvbox_material_transparent_background = 1
 	set background=dark
-	" Workaround for kitty
-	let &t_ut=''
     	let g:airline_theme = 'gruvbox_material'
     	let g:lightline = {'colorscheme' : 'gruvbox_material'}
     endif
@@ -159,8 +160,8 @@ let ycm_types = {
     noremap <Leader>qt <esc>:tabclose<CR>
     " Apparently only works in vim 7+ according to wiki
     if version >= 700
-      map <C-t> <Esc>:tabnew<CR>
-      map <C-w> <Esc>:tabclose<CR>
+      map <A-t> <Esc>:tabnew<CR>
+      map <A-w> <Esc>:tabclose<CR>
     endif
 
     " Open terminal in neovim
@@ -169,10 +170,16 @@ let ycm_types = {
     endif
 
 " Split navigation
-    nmap <c-k> :wincmd k<CR>
-    nmap <c-j> :wincmd j<CR>
-    nmap <c-h> :wincmd h<CR>
-    nmap <c-l> :wincmd l<CR>
+    nmap <A-h> :wincmd h<CR>
+    nmap <A-j> :wincmd j<CR>
+    nmap <A-k> :wincmd k<CR>
+    nmap <A-l> :wincmd l<CR>
+
+" Split resizing
+    nmap <A-u> :vertical resize -5<CR>
+    nmap <A-i> :resize -5<CR>
+    nmap <A-o> :resize +5<CR>
+    nmap <A-p> :vertical resize +5<CR>
 
 " NERDTree shortcuts
     noremap <Leader>N <esc>:NERDTreeToggle<CR>
@@ -198,10 +205,11 @@ let ycm_types = {
     set undolevels=1000	" Number of undo levels
     set backspace=indent,eol,start	" Backspace behaviour
 
-" Ensure files are read as what I want:
+" Setup vimwiki
     let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-    let g:vimwiki_list = [{'path': '~/txtfiles', 'syntax': 'markdown', 'ext': '.md'}]
-    autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+    let g:vimwiki_list = [{'path': '~Documents/Notes', 'syntax': 'markdown', 'ext': '.md', 'auto_diary_index': 1}]
+
+" Ensure files are read as what I want:
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
     autocmd BufRead,BufNewFile *.tex set filetype=tex
 

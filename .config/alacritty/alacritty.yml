@@ -70,12 +70,12 @@ cursor:
 # Key bindings:
 key_bindings:
   - { key: Return,   mods: Control, action: SpawnNewInstance }
+  - { key: Return,   mods: Shift, chars: "\x1bo" }
   - { key: 43,   mods: Control, action: ResetFontSize }
   - { key: B,   mods: Control|Shift, action: ScrollPageUp }
   - { key: F,   mods: Control|Shift, action: ScrollPageDown }
   - { key: J,   mods: Control, action: ScrollLineDown }
   - { key: K,   mods: Control, action: ScrollLineUp }
-
 
 
 # Mouse bindings
