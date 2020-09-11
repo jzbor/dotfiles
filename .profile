@@ -48,9 +48,13 @@ export HOSTCC_ZSH="$(printf "%s" \
 
 
 # Automatically start dwm
-if ! command -v lightdm gdm > /dev/null \
+if [ -f "$HOME/.config/session" ]; then
+    exec startx ~/.xinitrc "$(cat $HOME/.config/session)"
+elif ! (command -v lightdm > /dev/null || command -v gdm > /dev/null) \
 	&& [ -z $DISPLAY ] && [ $TTY = /dev/tty1 ]; then
-    if command -v dwm > /dev/null; then
+    if command -v gnome-session > /dev/null; then
+	exec startx ~/.xinitrc gnome
+    elif command -v dwm > /dev/null; then
 	exec startx ~/.xinitrc dwm
     elif command -v i3 > /dev/null; then
 	exec startx ~/.xinitrc i3
