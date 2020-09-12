@@ -16,10 +16,10 @@ if [ -n "$1" ]; then
     xdotool type --delay 1000 "$chosen"
 
     # A hacky way to ensure compatibility with WhatsApp Web
-    xdotool search --name WhatsApp key Left
-    xdotool search --name WhatsApp key BackSpace
-    xdotool search --name WhatsApp key BackSpace
-    xdotool search --name WhatsApp key Right
+    #xdotool search --name WhatsApp key Left
+    #xdotool search --name WhatsApp key BackSpace
+    #xdotool search --name WhatsApp key BackSpace
+    #xdotool search --name WhatsApp key Right
 else
     echo "$chosen" | tr -d '\n' | xclip -selection clipboard
     dunstify "'$chosen' copied to clipboard." &

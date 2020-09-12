@@ -239,7 +239,7 @@ autocmd BufRead * :call GoYCM()
 
 " Setup vimwiki
     let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-    let g:vimwiki_list = [{'path': '~Documents/Notes', 'syntax': 'markdown', 'ext': '.md', 'auto_diary_index': 1}]
+    let g:vimwiki_list = [{'path': '~/Documents/Notes', 'syntax': 'markdown', 'ext': '.md', 'auto_diary_index': 1}]
 
 " Ensure files are read as what I want:
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
