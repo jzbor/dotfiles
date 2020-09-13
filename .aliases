@@ -68,6 +68,13 @@ vc () {
     [ -f "$file" ] && nvim "$file" $@
 }
 
+project () {
+    cd "$(ls -d -t ~/Programming/*/* | \
+        sed "s/$(echo $HOME | sed 's/\//\\\//g')/~/" | \
+        fzf --height 50% | \
+        sed "s/~/$(echo $HOME | sed 's/\//\\\//g')/")"
+}
+
 # Templates
 export TEMPLATES="$HOME/Templates"
 alias ta='cp $TEMPLATES/article.tex'
