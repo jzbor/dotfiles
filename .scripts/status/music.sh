@@ -6,6 +6,7 @@ icon_file="/tmp/music-icon"
 status_file="/tmp/music-status"
 
 ignore_list="firefox"
+no_player_msg="No player found"
 
 format() {
     artist="$1"
@@ -72,7 +73,7 @@ get_player() {
 
 
 loop() {
-    [ -f $status_file ] || echo "No player started" > $status_file
+    [ -f $status_file ] || echo "$no_player_msg" > $status_file
     (playerctl -i "$ignore_list" -F status 2> /dev/null & \
 	playerctl -a -i "$ignore_list" -F metadata 2> /dev/null)  | while read -r; do
 	case $REPLY in
@@ -131,6 +132,7 @@ case $1 in
 	# Ensure no other loops are running
 	pgrep "$(basename $0)" | grep -v "$$" | xargs kill -9 2> /dev/null
 	# Update to current state
+	rm $status_file
 	eval_metadata
 	loop
 	;;
@@ -139,6 +141,12 @@ case $1 in
 	;;
     lock | lock-status)
 	cat $status_file | sed 's/. *//'
+	;;
+    statusfile)
+	echo $status_file
+	;;
+    has-player)
+	[ -f $status_file ] && ! [ "$(cat $status_file)" = "$no_player_msg" ]
 	;;
     *)
 	playerctl -p "$(get_player 2> /dev/null)" $1 > /dev/null 2>&1
