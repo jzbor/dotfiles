@@ -40,7 +40,7 @@ fi
 
 # Try to set kb layout from script
 #chkbmap.sh init
-setxkbmap de
+setxkbmap de -option caps:escape
 
 # start some nice programs
 
