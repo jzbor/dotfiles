@@ -77,9 +77,9 @@ let ycm_types = {
     inoremap <A-Space> <Esc>
     vnoremap <A-Space> <Esc>
     nnoremap <A-Space> <Esc>
-    inoremap <CR> <Esc>
-    vnoremap <CR> <Esc>
-    nnoremap <CR> <Esc>
+    " inoremap <CR> <Esc>
+    " vnoremap <CR> <Esc>
+    " nnoremap <CR> <Esc>
 
 " Coloring
     if &t_Co > 255

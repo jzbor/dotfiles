@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TODO_FILE="$HOME/txtfiles/ToDo.md"
+TODO_FILE="$HOME/Documents/Notes/ToDo.md"
 SHOW_FILE="$HOME/.cache/.show_todos"
 
 case "$1" in
