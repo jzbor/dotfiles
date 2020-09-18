@@ -35,6 +35,7 @@ x-scheme-handler/mailto=org.gnome.Evolution.desktop;
 x-scheme-handler/trash=pcmanfm.desktop;
 
 [Default Applications]
+text/plain=nvim.desktop;
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;
 image/jpeg=sxiv.desktop;org.gnome.gThumb.desktop;
 image/png=sxiv.desktop;org.gnome.gThumb.desktop;

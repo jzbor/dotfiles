@@ -7,13 +7,13 @@ opacity="87.5%"
 bg_color="$(get_xr themeBackground)"
 fg_color="$(get_xr themeForeground)"
 background_file="$HOME/.config/assets/background"
-lock_file="/tmp/lock.jpg"
+lock_file="/tmp/lock.png"
 
 
 title="$(playerctl metadata xesam:title)"
 artist="$(playerctl metadata xesam:artist)"
 primary_resolution="$(xrandr | grep primary | cut -d ' ' -f 4 | sed 's/+.*//')"
-cache_file="/tmp/prelock-$primary_resolution-$(sum $background_file | sed 's/\s.*//').jpg"
+cache_file="/tmp/prelock-$primary_resolution-$(sum $background_file | sed 's/\s.*//').png"
 
 
 if (( ${#title} > 28 )); then
