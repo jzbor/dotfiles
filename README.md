@@ -2,11 +2,10 @@
 
 Here are my local dotfiles mainly including
 
-* `i3gaps` as wm
+* `dwm` as wm
 * `neovim` as editor
 * `rofi` as dmenu replacement
 * `dunst` as notification deamon
-* `polybar` as status bar
 
 Almost all graphical programs in this repo use Xresources.
 Different color schemes and backgrounds may be available as tags.
