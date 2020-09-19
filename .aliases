@@ -19,8 +19,9 @@ alias vim="nvim"
 alias vimdiff="nvim -d"
 
 nmap-local () {
-    echo nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
-    nmap "$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }')" "$@"
+    addresses="$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | paste -s -d' ')"
+    echo nmap $addresses "$@"
+    nmap $addresses "$@"
 }
 
 share-local () {
@@ -29,6 +30,10 @@ share-local () {
     python -m http.server
 }
 
+artix-docs () {
+    doc_file="$(ls /usr/share/doc/artix | fzf)"
+    [ -n "$doc_file" ] && zathura "/usr/share/doc/artix/$doc_file"
+}
 
 # Configs
 alias cfa='$EDITOR $HOME/.aliases'
