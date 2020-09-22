@@ -18,7 +18,7 @@ configuration {
     drun-display-format:            "{name}";
     threads:                        0;
     scroll-method:                  0;
-    fullscreen:                     true;
+    fullscreen:                     false;
     hide-scrollbar:		    true;
     sidebar-mode:		    false;
     columns:			    3;
@@ -36,16 +36,16 @@ window {
     transparency:                   "real";
     background-color:               @argbbackground;
     text-color:                     @foreground;
-    border:			    0% 0% 0% 0%;
+    border:			    2px;
     border-color:		    @border;
     border-radius:                  0% 0% 0% 0%;
-    height:                         100%;
-    width:                          100%;
+    height:                         40%;
+    width:                          40%;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
     y-offset:                       0;
-    padding:			    10% 10% 10% 10%;
+    padding:			    3%;
 }
 
 inputbar {
@@ -55,7 +55,7 @@ inputbar {
     border:			    0% 0% 0.3% 0%;
     border-color:		    @border-alt;
     border-radius:                  0% 0% 0% 0%;
-    margin:                         0% 10% 7% 10%;
+    margin:                         0% 0% 2% 0%;
     padding:                        0.7% 0.7% 0.7% 0.7%;
     position:                       center;
 }
@@ -90,8 +90,8 @@ case-indicator {
 
 listview {
     background-color:               @transparent;
-    columns:                        4;
-    spacing:                        5%;
+    columns:                        1;
+    spacing:                        0%;
     cycle:                          true;
     dynamic:                        false;
     layout:                         vertical;
@@ -110,7 +110,7 @@ mainbox {
 element {
     background-color:               @transparent;
     text-color:                     @foreground;
-    orientation:                    vertical;
+    orientation:                    horizontal;
     padding:                        1% 1% 1% 1%;
     border:			    1% 1% 1% 1%;
     border-color:		    @transparent;
@@ -118,15 +118,15 @@ element {
 }
 
 element-icon {
-    size:                           64px;
+    size:                           32;
     border:                         0px;
 }
 
 element-text {
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0.5% 1% 0% 1%;
+    margin:                         0.5% 0% 0% 0%;
 }
 
 element normal.urgent,
