@@ -5,18 +5,15 @@
 # Configure X
 wmname LG3D
 setxkbmap de -option caps:escape
-libinput-gestures-setup restart &
 setup_displays.sh &
+libinput-gestures-setup restart &
 
-# Configure touchscreen on T440
-[ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP-1
-
-# Start pulseaudio if installed
-command -v pulseaudio && pulseaudio --start
+# Reset pulseaudio
+pulseaudio --kill
 
 # Daemons that automatically check for running instances
-/usr/lib/kdeconnectd &
 /usr/lib/geoclue-2.0/demos/agent &
+/usr/lib/kdeconnectd &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 music.sh loop &
 
@@ -28,6 +25,7 @@ nextcloud --background &
 spicetify update &
 
 # Applets & tray icons
+kdeconnect-indicator &
 nm-applet &
 xfce4-power-manager &
 (killall clipit; clipit) &
