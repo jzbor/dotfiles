@@ -8,8 +8,10 @@ setxkbmap de -option caps:escape
 setup_displays.sh &
 libinput-gestures-setup restart &
 
-# Reset pulseaudio
-pulseaudio --kill
+# Fix spotify
+#pulseaudio --kill
+#pulseaudio --start
+#killall -9 spotify
 
 # Daemons that automatically check for running instances
 /usr/lib/geoclue-2.0/demos/agent &
