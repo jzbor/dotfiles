@@ -55,23 +55,28 @@ alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fet
 
 # FZF bindings
 vf () {
-    file="$(fzf --height 50%)"
-    [ -n "$file" ] && nvim "$file" $@
+    if [ $# -eq 0 ]; then
+        file="$(fzf --height 50%)"
+    else
+        file="$(fzf --query "$@" --height 50%)"
+    fi
+    [ -n "$file" ] && nvim "$file"
 }
 cdf () {
-    file="$(fzf --height 50%)"
-    [ -n "$file" ] && cd "$(dirname $file)" $@
-}
-vs () {
-    pushd > /dev/null
-    cd ~/.scripts
-    file="$(fzf --height 50%)"
-    [ -n "$file" ] && nvim "$file" $@
-    popd > /dev/null
+    if [ $# -eq 0 ]; then
+        file="$(fzf --height 50%)"
+    else
+        file="$(fzf --query "$@" --height 50%)"
+    fi
+    [ -n "$file" ] && cd "$(dirname $file)"
 }
 vc () {
-    file="$HOME/$(config ls-files --full-name ~ | fzf --height 50%)"
-    [ -f "$file" ] && nvim "$file" $@
+    if [ $# -eq 0 ]; then
+        file="$HOME/$(config ls-files --full-name ~ | fzf --height 50%)"
+    else
+        file="$HOME/$(config ls-files --full-name ~ | fzf --query "$@" --height 50%)"
+    fi
+    [ -f "$file" ] && nvim "$file"
 }
 
 project () {
