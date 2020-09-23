@@ -1,15 +1,10 @@
 alacritty
 dunst
-i3-gaps
-i3lock-color
-i3status
 kdeconnect
 kvantum-theme-matcha
 matcha-gtk-theme
 numix-circle-icon-theme-git
-perl-anyevent-i3
 picom
-polybar
 redshift
 rofi
 rofi-dmenu

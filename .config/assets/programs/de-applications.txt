@@ -1,4 +1,6 @@
 firefox
+firefox-ublock-origin
+firefox-extension-privacybadger
 gparted
 gthumb
 nextcloud-client

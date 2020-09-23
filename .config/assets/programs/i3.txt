@@ -1,0 +1,5 @@
+i3-gaps
+i3lock-color
+i3status
+perl-anyevent-i3
+polybar
