@@ -4,8 +4,14 @@
 
 basename="$(echo "$1" | sed 's/\.[^\/.]*$//')"
 
+# treat notes
+if echo "$1" | grep "^$(notes.sh path)" > /dev/null 2>&1; then
+	notes.sh view "$1"
+	exit 0
+fi
+
 case "$1" in
-    *.md) markdown_previewer "$1";;
+    *.md) notes.sh preview "$1";;
     *.tex|*.rmd|*.ms|*.me|*.mom) setsid "$READER" "$basename".pdf >/dev/null 2>&1 & ;;
     *.html) setsid "$BROWSER" --new-window "$basename".html >/dev/null 2>&1 & ;;
     *.sent) setsid sent "$1" >/dev/null 2>&1 & ;;

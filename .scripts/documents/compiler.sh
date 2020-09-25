@@ -23,6 +23,12 @@ textype() { \
 	$command --output-directory="$dir" "$base"
 }
 
+# compile notes
+if echo "$file" | grep "^$(notes.sh path)" > /dev/null; then
+	notes.sh compile
+	exit 0
+fi
+
 case "$file" in
     *\.ms) refer -PS -e "$file" | groff -me -ms -kept -T pdf > "$base".pdf ;;
     *\.mom) refer -PS -e "$file" | groff -mom -kept -T pdf > "$base".pdf ;;
