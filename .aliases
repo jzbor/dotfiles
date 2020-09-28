@@ -10,7 +10,7 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias lsla="ls -la"
 alias mkdir="mkdir -pv"
 alias nmc="nmtui-connect"
-alias notes="vim ~/Documents/Notes/index.md"
+alias notes="notes.sh"
 alias pacupdate="sudo pacman -Syu"
 alias please="sudo"
 alias todo="$EDITOR ~/Documents/Notes/todo.md"

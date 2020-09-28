@@ -5,6 +5,13 @@ notepath="$HOME/Documents/Notes/"
 outpath="$HOME/.cache/Notes/"
 previewpath="/tmp/Notes/"
 
+if command -v surf > /dev/null; then
+    browser="surf"
+else
+    browser="$BROWSER"
+fi
+
+
 compile_entry () {
     infile="$1"
     outfile="$(get_outpath $infile)"
@@ -13,6 +20,9 @@ compile_entry () {
     [ -d "$parent" ] || mkdir -vp "$parent"
     pandoc -f markdown -t html --css="$csspath" -s -o "$outfile" "$infile"
     echo $outfile
+
+    # fix links
+    sed -i 's/\.md/\.html/g' $outfile
 }
 
 compile_notes () {
@@ -33,9 +43,6 @@ compile_notes () {
 
         cp -ruva "$infile" "$outfile"
     done
-
-    # fix links
-    find "$outpath" -name "*.html" -exec sed -i 's/\.md/\.html/g' {} +
 }
 
 get_outpath () {
@@ -55,7 +62,7 @@ preview () {
     outfile="$previewpath$(echo "$infile" | md5sum | cut -f1 -d' ').html"
 
     pandoc -f markdown -t html --css="$csspath" -s -o "$outfile" "$infile"
-    $BROWSER "$outfile"
+    $browser "$outfile"
 }
 
 
@@ -81,14 +88,17 @@ case $1 in
         ;;
     view)
         if [ -z "$2" ]; then
-            $BROWSER "$outpath"index.html
+            $browser "$outpath"index.html
         elif echo "$2" | grep "^$notepath"; then
             compile_entry "$2"
-            $BROWSER "$(get_outpath $2)"
+            $browser "$(get_outpath $2)"
         fi
         ;;
     preview)
         preview "$2"
+        ;;
+    '')
+        $EDITOR "$notepath"index.md
         ;;
     *)
         preview "$1"

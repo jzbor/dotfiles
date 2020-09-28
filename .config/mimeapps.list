@@ -17,7 +17,7 @@ application/xml=firefox.desktop;
 application/zip=engrampa.desktop;nvim.desktop;
 audio/mpeg=vlc.desktop;
 font/ttf=org.gnome.font-viewer.desktop;
-image/jpeg=sxiv.desktop;org.gnome.gThumb.desktop;gimp.desktop;feh.desktop;myphone.desktop;set-wallpaper.desktop;vlc.desktop;
+image/jpeg=org.gnome.gThumb.desktop;sxiv.desktop;gimp.desktop;feh.desktop;myphone.desktop;set-wallpaper.desktop;vlc.desktop;
 image/png=sxiv.desktop;org.gnome.gThumb.desktop;gimp.desktop;myphone.desktop;set-wallpaper.desktop;
 image/svg+xml=org.gnome.gThumb.desktop;
 inode/directory=pcmanfm.desktop;engrampa.desktop;
@@ -40,4 +40,3 @@ application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;
 image/jpeg=sxiv.desktop;org.gnome.gThumb.desktop;
 image/png=sxiv.desktop;org.gnome.gThumb.desktop;
 inode/directory=pcmanfm.desktop
-

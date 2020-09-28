@@ -3,6 +3,7 @@ firefox-ublock-origin
 firefox-extension-privacybadger
 gparted
 gthumb
+mpv
 nextcloud-client
 pcmanfm
 spicetify-cli

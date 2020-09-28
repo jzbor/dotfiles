@@ -125,12 +125,16 @@ setopt prompt_subst
 
 
 ## My prompt
-if [[ ${EUID} == 0 ]]; then
-    PROMPT='%F{red}[%f%n%F{red}@%M]%f %F{blue}%~ %f'
-elif [[ -v HOSTCC_ZSH ]]; then
-    PROMPT='%F{$HOSTCC_ZSH}[%f%n%F{$HOSTCC_ZSH}@%M]%f %F{blue}%~ %f'
+if [ -z "$NO_COLOR" ]; then
+    if [[ ${EUID} == 0 ]]; then
+        PROMPT='%F{red}[%f%n%F{red}@%M]%f %F{blue}%~ %f'
+    elif [[ -v HOSTCC_ZSH ]]; then
+        PROMPT='%F{$HOSTCC_ZSH}[%f%n%F{$HOSTCC_ZSH}@%M]%f %F{blue}%~ %f'
+    else
+        PROMPT='%F{magenta}[%f%n%F{magenta}@%M]%f %F{blue}%~ %f'
+    fi
 else
-    PROMPT='%F{magenta}[%f%n%F{magenta}@%M]%f %F{blue}%~ %f'
+    PROMPT='[%n@%M] %~ '
 fi
 
 
@@ -197,7 +201,8 @@ git_prompt_string() {
   [ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..✗)"
 }
 
-RPROMPT='$(git_prompt_string)%{$reset_color%}'
+[ -z "$NO_COLOR" ] && \
+    RPROMPT='$(git_prompt_string)%{$reset_color%}'
 
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
