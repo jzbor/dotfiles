@@ -9,9 +9,7 @@ setup_displays.sh &
 libinput-gestures-setup restart &
 
 # Fix spotify
-#pulseaudio --kill
-#pulseaudio --start
-#killall -9 spotify
+(killall -9 spotify; pulseaudio --kill; pulseaudio --start) &
 
 # Daemons that automatically check for running instances
 /usr/lib/geoclue-2.0/demos/agent &
