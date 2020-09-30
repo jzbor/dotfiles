@@ -176,13 +176,6 @@ autocmd BufRead * :call GoYCM()
     set wildmode=longest,list,full  " Enables autocompletion
     set path+=**	" Add cwd to path
 
-" Indents and tabs
-    set autoindent	" Auto-indent new lines
-    set shiftwidth=4	" Number of auto-indent spaces
-    set smartindent	" Enable smart-indent
-    set smarttab	" Enable smart-tabs
-    set softtabstop=4	" Number of spaces per Tab
-
 " Tab navigation
     set splitbelow splitright
 
@@ -275,13 +268,27 @@ autocmd BufRead * :call GoYCM()
     command -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
     command -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
+
+" Indents and tabs
+    set autoindent	" Auto-indent new lines
+    set smartindent	" Enable smart-indent
+    set smarttab	" Enable smart-tabs
+    set tabstop=4	" Number of spaces per Tab
+    set softtabstop=4	" Number of spaces per Tab in insert mode
+    set shiftwidth=4	" Number of auto-indent spaces
+    set expandtab	" Replace tabs with spaces
+
+" Setting tab rules according to https://ukupat.github.io/tabs-or-spaces/:
+    set tabstop=4	" Number of spaces per Tab
+    set softtabstop=4	" Number of spaces per Tab in insert mode
+    set shiftwidth=4	" Number of auto-indent spaces
+	au BufNewFile,BufRead *.css, *.html, *.js set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+	au BufNewFile,BufRead *.java set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+	au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
 " Python:
     "au BufNewFile,BufRead *.py
-    "    \ set tabstop=4
-    "    \ set softtabstop=4
-    "    \ set shiftwidth=4
     "    \ set textwidth=79
-    "    \ set expandtab
     "    \ set autoindent
     "    \ set fileformat=unix
     let python_highlight_all=1
@@ -293,11 +300,7 @@ autocmd BufRead * :call GoYCM()
     autocmd FileType python inoremap ,di def<space>__init__(self):<CR><++><Esc>k$F)i
 
 " Web:
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-au BufNewFile,BufRead /*.rasi setf css
+	au BufNewFile,BufRead /*.rasi setf css
 
 " Markdown:
     command Mdp !markdown_previewer % $<CR>

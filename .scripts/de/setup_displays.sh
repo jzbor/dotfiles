@@ -9,32 +9,32 @@ my_model="ThinkPad T440"
 my_internal_screen="eDP-1"
 
 for display in $connected; do
-    if [ "$display" = "$my_internal_screen" ] \
-	&& echo "$model_info" | grep "$my_model" > /dev/null \
-	&& grep closed /proc/acpi/button/lid/LID/state > /dev/null ; then
-	echo "Disabling $display (closed lid)"
-	xrandr --output "$display" --off
-    elif [ -z "$last" ]; then
-	echo "Setting up first display: $display"
-	xrandr --output "$display" --auto --primary
-	last="$display"
-    else
-	echo "Setting up $display next to $display"
-	xrandr --output "$display" --auto --right-of "$last"
-    fi
+	if [ "$display" = "$my_internal_screen" ] \
+			&& echo "$model_info" | grep "$my_model" > /dev/null \
+			&& grep closed /proc/acpi/button/lid/LID/state > /dev/null ; then
+		echo "Disabling $display (closed lid)"
+		xrandr --output "$display" --off
+	elif [ -z "$last" ]; then
+		echo "Setting up first display: $display"
+		xrandr --output "$display" --auto --primary
+		last="$display"
+	else
+		echo "Setting up $display next to $display"
+		xrandr --output "$display" --auto --right-of "$last"
+	fi
 done
 
 
 # Preventing initialization of VIRTUAL1 on undock
 for display in $disconnected; do
-    xrandr --output $display --off
+	xrandr --output $display --off
 done
 
 
 if pgrep polybar > /dev/null; then
-    echo
-    echo "Restarting polybar"
-    "$HOME"/.config/polybar/launch.sh > /dev/null
+	echo
+	echo "Restarting polybar"
+	"$HOME"/.config/polybar/launch.sh > /dev/null
 fi
 
 wallpaper.sh load
