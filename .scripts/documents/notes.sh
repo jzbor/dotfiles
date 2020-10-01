@@ -89,7 +89,7 @@ case $1 in
     view)
         if [ -z "$2" ]; then
             $browser "$outpath"index.html
-        elif echo "$2" | grep "^$notepath"; then
+        elif realpath "$2" | grep "^$notepath"; then
             compile_entry "$2"
             $browser "$(get_outpath $2)"
         fi

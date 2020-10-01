@@ -5,7 +5,7 @@
 basename="$(echo "$1" | sed 's/\.[^\/.]*$//')"
 
 # treat notes
-if echo "$1" | grep "^$(notes.sh path)" > /dev/null 2>&1; then
+if realpath "$1" | grep "^$(notes.sh path)" > /dev/null 2>&1; then
 	notes.sh view "$1"
 	exit 0
 fi
