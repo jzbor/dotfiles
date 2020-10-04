@@ -98,7 +98,7 @@ UXTerm*font:		 -misc-fixed-medium-r-normal--13-120-75-75-c-80-iso10646-1
 
 
 ! Enabled modi
-rofi.modi:                           ssh,window,drun,run
+rofi.modi:                           drun,window,ssh,run
 ! Window width
 rofi.width:                          50
 ! Number of lines
