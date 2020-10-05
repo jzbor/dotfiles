@@ -4,5 +4,5 @@
 	transparent:	#00000000;
 	foreground:		#ebdbb2;
 	urgent:			#fb4934;
-	selected:		#b8bb26;
+	selected:		#98971a;
 }

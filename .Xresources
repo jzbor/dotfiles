@@ -8,14 +8,14 @@ Xft.lcdfilter: lcddefault
 
 
 !! My theme
-#define myBackground			#0f1418
-#define myBackgroundTrans		#e00f1480
+#define myBackground			#1d2021
+#define myBackgroundTrans		#e01d2021
 #define myForeground			#ebdbb2
-#define mySelector			#b83e1e
-#define myUrgent			#d78272
+#define mySelector			    #98971a
+#define myUrgent			    #fb4934
 
 *themeBackground:		  myBackground
-*themeBackgroundTrans:		  myBackgroundTrans
+*themeBackgroundTrans:	  myBackgroundTrans
 *themeForeground:		  myForeground
 *themeSelector:			  mySelector
 *themeUrgent:			  myUrgent
@@ -40,11 +40,11 @@ Xft.lcdfilter: lcddefault
 !! X clock
 Clock*Background:		myBackground
 Clock*BorderColor:		myForeground
-Clock*hour:			myForeground
+Clock*hour:			    myForeground
 Clock*jewel:			myForeground
 Clock*minute:			myForeground
 
-XClock*foreground: #fbfbfb
+XClock*foreground:      #fbfbfb
 XClock*background:		myBackground
 XClock*update:			1
 XClock*geometry:		210x210+20+40
