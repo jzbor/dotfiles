@@ -4,7 +4,6 @@
 
 # Configure X
 wmname LG3D
-setxkbmap de -option caps:escape
 setup_displays.sh &
 libinput-gestures-setup restart &
 

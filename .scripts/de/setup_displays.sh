@@ -30,6 +30,8 @@ for display in $disconnected; do
 	xrandr --output $display --off
 done
 
+# Reset keyboard map
+setxkbmap de -option caps:escape
 
 if pgrep polybar > /dev/null; then
 	echo
