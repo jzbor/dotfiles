@@ -4,7 +4,8 @@
 
 # Configure X
 wmname LG3D
-setup_displays.sh &
+setup_displays.sh
+sxhkd &
 libinput-gestures-setup restart &
 
 # Fix spotify
