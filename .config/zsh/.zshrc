@@ -21,7 +21,7 @@ setopt autocd                                                   # if only direct
 ## History and Caching
 [ -d ~/.cache/zsh ] || mkdir -pv ~/.cache/zsh
 HISTFILE=~/.cache/zsh/zhistory
-HISTSIZE=1000
+HISTSIZE=5000
 SAVEHIST=500
 
 
