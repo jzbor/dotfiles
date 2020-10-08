@@ -19,6 +19,7 @@ compile_entry () {
 
     [ -d "$parent" ] || mkdir -vp "$parent"
     pandoc -f markdown -t html --css="$csspath" -s -o "$outfile" "$infile"
+    echo "pwd: $(pwd)"
     echo $outfile
 
     # fix links
@@ -68,7 +69,7 @@ preview () {
 
 case $1 in
     clean)
-        rm -rf "$notepath"
+        rm -rf "$outpath"
         compile_notes
         ;;
     path)
@@ -88,10 +89,11 @@ case $1 in
         ;;
     view)
         if [ -z "$2" ]; then
+            echo $outpath
             $browser "$outpath"index.html
         elif realpath "$2" | grep "^$notepath"; then
             compile_entry "$2"
-            $browser "$(get_outpath $2)"
+            $browser "$(get_outpath "$(realpath $2)")"
         fi
         ;;
     preview)

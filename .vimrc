@@ -268,7 +268,6 @@ autocmd BufRead * :call GoYCM()
     command -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
     command -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
-
 " Indents and tabs
     set autoindent	" Auto-indent new lines
     set smartindent	" Enable smart-indent
@@ -282,9 +281,12 @@ autocmd BufRead * :call GoYCM()
     set tabstop=4	" Number of spaces per Tab
     set softtabstop=4	" Number of spaces per Tab in insert mode
     set shiftwidth=4	" Number of auto-indent spaces
-	au BufNewFile,BufRead *.css, *.html, *.js set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+	au BufNewFile,BufRead *.js,*.css,*.html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	au BufNewFile,BufRead *.java set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 	au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+" Personal commands
+	command Ddate execute 'read !date' | norm I####<Space>
 
 " Python:
     "au BufNewFile,BufRead *.py

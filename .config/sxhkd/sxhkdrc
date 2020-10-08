@@ -2,7 +2,7 @@
 super + w
 	firefox
 super + shift + w
-	firefox --private
+	firefox --private-window
 super + ctrl + w
 	rofi-web.sh
 

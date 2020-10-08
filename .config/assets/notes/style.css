@@ -5,7 +5,7 @@
 
 pre,
 code {
-  font-family: Fira Nerd,Menlo, Monaco, "Courier New", monospace;
+  font-family: Fira Nerd, Menlo, Monaco, "Courier New", monospace;
 }
 
 pre {
@@ -183,12 +183,12 @@ body {
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 body {
   color: #fafafa;
-  font-family: "Courier New";
+  font-family: Fira Sans, "Courier New";
   line-height: 1.45;
   margin: 6rem auto 1rem;
   max-width: 48rem;
