@@ -33,8 +33,10 @@ super + shift + n
 ### ROFI SCRIPTS ###
 super + d
 	rofi -combi-modi drun,window,ssh -show combi
-super + {shift, ctrl} + d
-	rofi -show {window,run}
+super + shift + d
+	rofi-windows.sh
+super + ctrl + d
+	rofi -show run
 
 super + Home
 	menu.sh
