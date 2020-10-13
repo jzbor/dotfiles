@@ -70,11 +70,11 @@ super + x
 super + shift + x
 	music.sh pause && lock.sh
 
-super + F9
+super + F7
 	ethernet.sh toggle
-super + F10
+super + F8
 	wifi.sh toggle
-super + F11
+super + F9
 	bluetooth.sh toggle
 
 XF86WLAN

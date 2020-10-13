@@ -378,9 +378,9 @@ rofi.kb-cancel:                      Escape,Control+g,Control+bracketleft,Alt+sp
 ! Select next entry
 ! rofi.ml-row-down:                    ScrollDown
 ! Select hovered row
-! rofi.me-select-entry:                MousePrimary
+rofi.me-select-entry:                MouseDPrimary
 ! Accept hovered row
-! rofi.me-accept-entry:                MouseDPrimary
+rofi.me-accept-entry:                MousePrimary
 ! Accept hovered row with custom action
 ! rofi.me-accept-custom:               Control+MouseDPrimary
 

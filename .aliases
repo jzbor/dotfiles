@@ -9,6 +9,7 @@ alias la="ls -a"
 alias ls='ls -hN --color=auto --group-directories-first'
 alias lsla="ls -la"
 alias mkdir="mkdir -pv"
+alias mpg123="mpg123 --verbose"
 alias nmc="nmtui-connect"
 alias notes="notes.sh"
 alias pacupdate="sudo pacman -Syu"
@@ -71,7 +72,7 @@ cdf () {
     fi
     [ -n "$file" ] && cd "$(dirname $file)"
 }
-vc () {
+cfg () {
     if [ $# -eq 0 ]; then
         file="$HOME/$(config ls-files --full-name ~ | fzf --height 50%)"
     else
@@ -79,7 +80,21 @@ vc () {
     fi
     [ -f "$file" ] && nvim "$file"
 }
-
+browse () {
+    selection="$(printf "..\n%s" "$(ls -t)" | fzf)"
+    if [ "$selection" = "" ]; then
+        return
+    else
+        cd "$selection" || (xdg-open "$selection"; exit)
+        browse
+    fi
+}
+ff () {
+    browse
+    printf "\n%s:\n" "$(pwd)"
+    ls
+    echo
+}
 project () {
     cd "$(ls -d -t ~/Programming/*/* | \
         sed "s/$(echo $HOME | sed 's/\//\\\//g')/~/" | \

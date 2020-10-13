@@ -1,0 +1,147 @@
+configuration {
+    font:                   "FiraCode Nerd Font 11";
+    show-icons:             true;
+    icon-theme: 		    "Numix-Circle";
+    display-drun:		    "";
+    drun-display-format:    "{name}";
+    threads:                0;
+    scroll-method:          0;
+    fullscreen:             false;
+    hide-scrollbar:		    true;
+    sidebar-mode:		    false;
+    columns:                5;
+    lines:                  1;
+    window-format:          "{t}";
+}
+
+@import "colors"
+
+* {
+    background-alt:		    #FFFFFF11;
+    border:			        @selected;
+    border-alt:			    @urgent;
+}
+
+window {
+    transparency:           "real";
+    background-color:       @argbbackground;
+    text-color:             @foreground;
+    border:			        0% 0% 0% 0%;
+    border-color:		    @border;
+    border-radius:          0% 0% 0% 0%;
+    /* height:                 30%; */
+    width:                  100%;
+    location:               south;
+    anchor:                 south;
+    x-offset:               0;
+    y-offset:               0;
+    padding:			    0%;
+}
+
+inputbar {
+    background-color:       @transparent;
+    text-color:             @foreground;
+    expand:                 false;
+    border:			        0% 0% 0.3% 0%;
+    border-color:		    @border-alt;
+    border-radius:          0% 0% 0% 0%;
+    margin:                 0% 10% 0% 10%;
+    padding:                0.7% 0.7% 0.7% 0.7%;
+    position:               center;
+}
+
+
+prompt {
+    enabled:			    false;
+    padding:			    0% 0.5% 0% 0%;
+    background-color:		@transparent;
+    text-color:			    @foreground;
+    font:			        "FiraCode Nerd Font 16";
+}
+
+entry {
+    background-color:       @transparent;
+    text-color:             @foreground;
+    placeholder-color:      @foreground;
+    expand:                 false;
+    horizontal-align:       0;
+    placeholder:            "Search Applications";
+    padding:                0% 0% 0% 0%;
+    blink:                  true;
+    orientation:		    vertical;
+}
+
+case-indicator {
+    background-color:       @argbbackground;
+    text-color:             @foreground;
+    spacing:                0;
+}
+
+
+listview {
+    background-color:       @transparent;
+    spacing:                1%;
+    cycle:                  true;
+    dynamic:                true;
+    layout:                 vertical;
+    border:			        0% 0% 0% 0%;
+    border-color:		    @foreground;
+}
+
+mainbox {
+    background-color:       @transparent;
+    border-color:		    @border-alt;
+    children:               [ listview, inputbar ];
+    spacing:			    0%;
+    padding:                0% 0% 0% 0%;
+}
+
+element {
+    background-color:       @transparent;
+    text-color:             @foreground;
+    orientation:            vertical;
+    padding:                1% 1% 1% 1%;
+    border:			        1% 1% 1% 1%;
+    border-color:		    @transparent;
+    border-radius:		    7px;
+}
+
+element-icon {
+    size:                   64px;
+    border:                 0px;
+}
+
+element-text {
+    expand:                 false;
+    horizontal-align:       0.5;
+    vertical-align:         0.5;
+    margin:                 0.5% 1% 0% 1%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:       @urgent;
+    text-color:             @foreground;
+    border-radius:          1%;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:       @background-alt;
+    text-color:             @foreground;
+}
+
+element selected {
+    background-color:       @background-alt;
+    text-color:             @foreground;
+}
+
+element selected.urgent {
+    background-color:       @urgent;
+    text-color:             @foreground;
+}
+
+element selected.active {
+    background-color:       @background-alt;
+    color:                  @foreground;
+}

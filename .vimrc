@@ -42,7 +42,7 @@ let ycm_types = {
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
 	" Autocomplete
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --java-completer --rust-completer', 'for': keys(ycm_types)}
+	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --rust-completer', 'for': keys(ycm_types)}
 	" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	" Git wrapper
 	"Plug 'tpope/vim-fugitive'
@@ -100,13 +100,20 @@ let ycm_types = {
     set noshowmode  " Removes mode in regular vim status line
 
 " Ruler / line numbers
-    set number		" Show line numbers
+    set nonumber		" Show line numbers
     set ruler		" Show row and column ruler information
-    set relativenumber	" Show line numbers relative to current position
+    set norelativenumber	" Show line numbers relative to current position
+	set nocursorline
+
+" Function keys
+	map <F1> :set number!<CR>
+	map <F2> :set relativenumber!<CR>
+	map <F3> :set cursorline!<CR>
 
 " Breaking and wrapping stuff
-    set linebreak	" Break lines at word (requires Wrap lines)
-    set showbreak=	" Wrap-broken line prefix
+    set nowrap  " Disable line wrapping
+    "set linebreak	" Break lines at word (requires Wrap lines)
+    "set showbreak= 	" Wrap-broken line prefix
     "set textwidth=	" Line wrap (number of cols)
 
 " Folding
