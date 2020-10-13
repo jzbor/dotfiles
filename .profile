@@ -9,8 +9,10 @@ export FILEBROWSER="pcmanfm"
 
 if command -v alacritty > /dev/null; then
 	export TERM="alacritty"
+	export TERMINAL="alacritty"
 else
 	export TERM="xterm-256color"
+	export TERMINAL="terminator"
 fi
 
 # For compatibility between gtk icon themes and qt
