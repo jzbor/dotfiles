@@ -40,8 +40,8 @@ super + ctrl + d
 
 super + Home
 	menu.sh
-super + Menu
-	menu.sh
+Menu
+	xmenu.sh
 
 ctrl + alt + Delete
 	menu.sh system
