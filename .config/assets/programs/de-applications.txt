@@ -1,6 +1,7 @@
 firefox
 firefox-ublock-origin
 firefox-extension-privacybadger
+firefox-extension-https-everywhere
 gparted
 gthumb
 mpv
@@ -9,6 +10,7 @@ pcmanfm
 spicetify-cli
 spotify
 sxiv
+xfce4-power-manager
 zathura
 zathura-pdf-poppler
 zathura-ps
