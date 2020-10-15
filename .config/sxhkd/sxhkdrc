@@ -22,7 +22,7 @@ super + ctrl + p
 	mpv "https://$(rofi -dmenu -p "https://")" --idle=no
 
 super + s
-	spotify
+	if pidof spotify; then dwmc toggleviewex 7; else  spotify; fi
 
 super + n
 	notes.sh view

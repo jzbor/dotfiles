@@ -27,17 +27,17 @@ let ycm_types = {
 
 	" List of Plugins:
 	" Languages
-    	Plug 'sheerun/vim-polyglot'
+   	Plug 'sheerun/vim-polyglot'
 	" Plugin manager
-    	Plug 'junegunn/vim-plug'
+   	Plug 'junegunn/vim-plug'
 	" File browsing
-    	Plug 'scrooloose/nerdtree'
+   	Plug 'scrooloose/nerdtree'
 	" Markdown and notes
-    	Plug 'vimwiki/vimwiki'
+   	Plug 'vimwiki/vimwiki'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
 	" Status line
-    	Plug 'itchyny/lightline.vim'
+   	Plug 'itchyny/lightline.vim'
 	"Plug 'powerline/powerline'
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
@@ -62,6 +62,10 @@ let ycm_types = {
 	Plug 'junegunn/fzf.vim'
 	" Git sidebar
 	Plug 'airblade/vim-gitgutter'
+	" Distraction free writing
+	Plug 'junegunn/goyo.vim'
+	" Nice color scheme
+	Plug 'junegunn/seoul256.vim'
 
     call plug#end()
 
@@ -83,16 +87,18 @@ let ycm_types = {
 
 " Coloring
     if &t_Co > 255
-	colorscheme gruvbox-material
-	let g:gruvbox_material_palette = 'original'
-	let g:gruvbox_material_transparent_background = 1
-	set background=dark
-    	let g:airline_theme = 'gruvbox_material'
-    	let g:lightline = {'colorscheme' : 'gruvbox_material'}
+		" Disable background coloring
+		autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+		colorscheme gruvbox-material
+		let g:gruvbox_material_palette = 'original'
+		let g:gruvbox_material_transparent_background = 1
+		set background=dark
+		let g:airline_theme = 'gruvbox_material'
+		let g:lightline = {'colorscheme' : 'gruvbox_material'}
     endif
     if &t_Co == 8
-	colorscheme default
-	set background=dark
+		colorscheme default
+		set background=dark
     	let g:airline_theme = 'default'
     	let g:lightline = {'colorscheme' : 'default'}
     endif
@@ -100,15 +106,21 @@ let ycm_types = {
     set noshowmode  " Removes mode in regular vim status line
 
 " Ruler / line numbers
-    set nonumber		" Show line numbers
+    set number		" Show line numbers
     set ruler		" Show row and column ruler information
-    set norelativenumber	" Show line numbers relative to current position
+    set relativenumber	" Show line numbers relative to current position
 	set nocursorline
 
 " Function keys
 	map <F1> :set number!<CR>
 	map <F2> :set relativenumber!<CR>
 	map <F3> :set cursorline!<CR>
+
+" Goyo
+	map <leader>d :Goyo<CR>
+
+" Yank to system clipboard
+	vmap <C-c> "+y
 
 " Breaking and wrapping stuff
     set nowrap  " Disable line wrapping
@@ -282,7 +294,7 @@ autocmd BufRead * :call GoYCM()
     set tabstop=4	" Number of spaces per Tab
     set softtabstop=4	" Number of spaces per Tab in insert mode
     set shiftwidth=4	" Number of auto-indent spaces
-    set expandtab	" Replace tabs with spaces
+    set noexpandtab	" (Don't) Replace tabs with spaces
 
 " Setting tab rules according to https://ukupat.github.io/tabs-or-spaces/:
     set tabstop=4	" Number of spaces per Tab

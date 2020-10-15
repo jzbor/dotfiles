@@ -1,2 +1,4 @@
+sxhkd
+xmenu
 xorg-xsetroot
 wmname
