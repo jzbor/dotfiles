@@ -1,6 +1,7 @@
 alacritty
 dunst
 kdeconnect
+light
 lxappearance
 matcha-gtk-theme
 numix-circle-icon-theme-git

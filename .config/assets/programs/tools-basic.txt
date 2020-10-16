@@ -1,5 +1,6 @@
 bash
 cmake
+fzf
 htop
 inxi
 neovim
