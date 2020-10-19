@@ -4,7 +4,14 @@
 
 cache_file="/tmp/xdg-xmenu-cache"
 
-[ -f "$cache_file" ] || (xdg-xmenu > $cache_file)
+generate_cache () {
+	if ! [ -f "$cache_file.part" ]; then
+		xdg-xmenu > "$cache_file.part"
+		mv "$cache_file.part" "$cache_file"
+	fi
+}
+
+[ -f "$cache_file" ] || generate_cache
 
 menu="DWM
 	  Fullscreen		dwmc togglefullscr
@@ -31,5 +38,4 @@ Power Menu
 echo "$menu" | xmenu | sh
 
 # Generate cache
-pgrep xdg-xmenu || xdg-xmenu > "$cache_file.sec"
-mv "$cache_file.sec" "$cache_file"
+pgrep xdg-xmenu || generate_cache

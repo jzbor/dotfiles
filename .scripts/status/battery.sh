@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 get_icon () {
     # There is a bug on T410s where $3 is '' although it should be 'Unknown'

@@ -26,46 +26,45 @@ let ycm_types = {
     call plug#begin('~/.vim/plugged')
 
 	" List of Plugins:
-	" Languages
-   	Plug 'sheerun/vim-polyglot'
-	" Plugin manager
-   	Plug 'junegunn/vim-plug'
-	" File browsing
-   	Plug 'scrooloose/nerdtree'
-	" Markdown and notes
-   	Plug 'vimwiki/vimwiki'
-	" Color scheme
-	Plug 'sainnhe/gruvbox-material'
+	" Git sidebar
+	Plug 'airblade/vim-gitgutter'
+	" LaTeX autocompiling
+	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	" Status line
    	Plug 'itchyny/lightline.vim'
-	"Plug 'powerline/powerline'
-	" Syntax checking
-	Plug 'vim-syntastic/syntastic'
+	" Fuzzy file search
+	Plug 'junegunn/fzf.vim'
+	" Distraction free writing
+	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+	" Nice color scheme
+	Plug 'junegunn/seoul256.vim'
+	" Vim folding
+	"Plug 'matze/vim-tex-fold'
+	" i3 syntax
+	Plug 'mboughaba/i3config.vim'
+	" Color scheme
+	Plug 'sainnhe/gruvbox-material'
+	" File browsing
+   	Plug 'scrooloose/nerdtree'
+	" Languages
+   	Plug 'sheerun/vim-polyglot'
+	" Commenting/Uncommenting
+	Plug 'tpope/vim-commentary'
+	" Asynchronous compiling
+	Plug 'tpope/vim-dispatch'
+	" Git wrapper
+	Plug 'tpope/vim-fugitive'
+	" Surround
+	Plug 'tpope/vim-surround'
 	" Autocomplete
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --rust-completer', 'for': keys(ycm_types)}
 	" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-	" Git wrapper
-	"Plug 'tpope/vim-fugitive'
-	" Surround
-	Plug 'tpope/vim-surround'
-	" Commenting/Uncommenting
-	Plug 'tpope/vim-commentary'
-	" i3 syntax
-	Plug 'mboughaba/i3config.vim'
 	" LateX Support
 	"Plug 'vim-latex/vim-latex'
-	" Vim folding
-	"Plug 'matze/vim-tex-fold'
-	" LaTeX autocompiling
-	Plug 'donRaphaco/neotex', { 'for': 'tex' }
-	" Fuzzy file search
-	Plug 'junegunn/fzf.vim'
-	" Git sidebar
-	Plug 'airblade/vim-gitgutter'
-	" Distraction free writing
-	Plug 'junegunn/goyo.vim'
-	" Nice color scheme
-	Plug 'junegunn/seoul256.vim'
+	" Syntax checking
+	Plug 'vim-syntastic/syntastic'
+	" Markdown and notes
+   	Plug 'vimwiki/vimwiki'
 
     call plug#end()
 
@@ -76,6 +75,10 @@ let ycm_types = {
     set encoding=utf8	" Use UTF-8 encoding
     set mouse=a		" Enable mouse
     let mapleader = " "
+
+" Titling
+set title
+set titlestring=%F
 
 " Mapping for escape
     inoremap <A-Space> <Esc>
@@ -108,7 +111,7 @@ let ycm_types = {
 " Ruler / line numbers
     set number		" Show line numbers
     set ruler		" Show row and column ruler information
-    set relativenumber	" Show line numbers relative to current position
+    set norelativenumber	" Show line numbers relative to current position
 	set nocursorline
 
 " Function keys
@@ -177,8 +180,8 @@ autocmd BufRead * :call GoYCM()
 
 
 " Spell-checking and syntax-checking
-    set spell		" Enable spell-checking
     set spelllang=en,de " Set spell-checking language
+    set spell		" Enable spell-checking
     let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
     filetype plugin indent on " Enable filetype detection, plugin and indent at once
     syntax on		" Syntax highlighting
@@ -214,10 +217,10 @@ autocmd BufRead * :call GoYCM()
     endif
 
 " Split navigation
-    nmap <A-h> :wincmd h<CR>
-    nmap <A-j> :wincmd j<CR>
-    nmap <A-k> :wincmd k<CR>
-    nmap <A-l> :wincmd l<CR>
+	nmap <C-h> :wincmd h<CR>
+	nmap <C-j> :wincmd j<CR>
+    nmap <C-k> :wincmd k<CR>
+    nmap <C-l> :wincmd l<CR>
 
 " Split resizing
     nmap <A-u> :vertical resize -5<CR>
@@ -260,6 +263,27 @@ autocmd BufRead * :call GoYCM()
 " Save file as sudo on files that require root permission
     cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Fix common typos on the fly
+	cnoreabbrev W! w!
+	cnoreabbrev Q! q!
+	cnoreabbrev Qall! qall!
+	cnoreabbrev Wq wq
+	cnoreabbrev Wa wa
+	cnoreabbrev wQ wq
+	cnoreabbrev WQ wq
+	cnoreabbrev W w
+	cnoreabbrev Q q
+	cnoreabbrev Qall qall
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+	nnoremap n nzzzv
+	nnoremap N Nzzzv
+
+" Keep selection on indent
+	vnoremap > >gv
+	vnoremap < <gv
+	vnoremap = =gv
 
 " Compile document, be it groff/LaTeX/markdown/etc.
     map <leader>c :w! \| !compiler.sh <c-r>%<CR>
@@ -269,6 +293,15 @@ autocmd BufRead * :call GoYCM()
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
     autocmd VimLeave *.tex !texclear.sh %
+
+" Edit/source vimrc
+	command Rc :source $MYVIMRC
+	cnoreabbrev rc Rc
+	command Config :e ~/.vimrc
+	cnoreabbrev config Config
+
+" Execute commands in parallel
+	cnoremap sh :sp +term<Space>
 
 " Navigating with guides
     inoremap <leader>. <Esc>/<++><Enter>"_c4l
@@ -297,9 +330,6 @@ autocmd BufRead * :call GoYCM()
     set noexpandtab	" (Don't) Replace tabs with spaces
 
 " Setting tab rules according to https://ukupat.github.io/tabs-or-spaces/:
-    set tabstop=4	" Number of spaces per Tab
-    set softtabstop=4	" Number of spaces per Tab in insert mode
-    set shiftwidth=4	" Number of auto-indent spaces
 	au BufNewFile,BufRead *.js,*.css,*.html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	au BufNewFile,BufRead *.java set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 	au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab

@@ -12,12 +12,13 @@ redshift
 rofi
 rofi-dmenu
 scrot
-xcursor-breeze
 xclip
+xcursor-breeze
 xdo
 xdotool
 xorg-setxkbmap
 xorg-xbacklight
 xorg-xrandr
 xorg-xrdb
+xterm
 xwallpaper

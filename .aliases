@@ -13,12 +13,21 @@ alias mpg123="mpg123 --verbose"
 alias nmc="nmtui-connect"
 alias notes="notes.sh"
 alias pacupdate="sudo pacman -Syu"
+alias ping="ping -c 5"
 alias please="sudo"
 alias saidar="saidar -c"
 alias todo="$EDITOR ~/Documents/Notes/todo.md"
 alias v="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
+
+alias nvim-profile="vim --cmd 'profile start profile.log' \
+    --cmd 'profile func *' \
+    --cmd 'profile file *' \
+    -c 'profdel func *' \
+    -c 'profdel file *' \
+    -c 'qa!'
+"
 
 nmap-local () {
     addresses="$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | paste -s -d' ')"
@@ -164,9 +173,10 @@ cd () {
 
 
 # Youtube-dl
-alias yt="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic" # Download link
-alias yta="youtube-dl --add-metadata --restrict-filenames -f 'bestaudio[ext=m4a]' -ic" # Download audio only
-alias ytl="youtube-dl --add-metadata --restrict-filenames -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' -ic -a" # Download list from file
+yt_format="(137/bestvideo[ext=mp4])+bestaudio/best[ext=mp4]/best"
+alias yt="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download link
+alias yta="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download audio only
+alias ytl="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic -a" # Download list from file
 
 # Audio player
 # Source:https://unix.stackexchange.com/questions/132230/read-out-pulseaudio-volume-from-commandline-i-want-pactl-get-sink-volume#164740

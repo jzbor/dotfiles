@@ -106,5 +106,5 @@ XF86Audio{Mute,MicMute}
 XF86Audio{Prev,Play,Pause,Next}
 	music.sh {previous,play,pause,next}
 
-XFMonBrightness{Up,Down}
+XF86MonBrightness{Up,Down}
 	backlight.sh {-inc,-dec} 10

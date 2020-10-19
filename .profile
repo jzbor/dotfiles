@@ -12,7 +12,7 @@ if command -v alacritty > /dev/null; then
 	export TERMINAL="alacritty"
 else
 	export TERM="xterm-256color"
-	export TERMINAL="terminator"
+	export TERMINAL="uxterm"
 fi
 
 # For compatibility between gtk icon themes and qt
