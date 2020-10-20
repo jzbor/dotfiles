@@ -1,16 +1,18 @@
 #!/bin/bash
 
+# https://specifications.freedesktop.org/mpris-spec/latest/Player_Interface.html#Property:Metadata
+
 last_player_file="/tmp/.lastplayer"
-meta_file="/tmp/music-meta"
 icon_file="/tmp/music-icon"
-status_file="/tmp/music-status"
+artist_file="/tmp/music-artist"
+title_file="/tmp/music-title"
 
 ignore_list="firefox"
 no_player_msg="No player found"
 
 format() {
-	artist="$1"
-	title="$2"
+	artist="$(< $artist_file)"
+	title="$(< $title_file)"
 	if [ "$3" = "" ]; then
 		delim="—"
 	else
@@ -24,41 +26,54 @@ format() {
 		title="${title::17}..."
 	fi
 
-	echo "$artist $delim $title"
+	# echo "$artist $delim $title"
+	printf '%s  %s %s %s\n' "$(< $icon_file)" "$artist" "$delim" "$title"
+}
+
+format_small() {
+	title="$(< $title_file)"
+
+	if (( ${#title} > 20 )); then
+		title="${title::17}..."
+	fi
+
+	# echo "$artist $delim $title"
+	printf '%s  %s\n' "$(< $icon_file)" "$title"
 }
 
 eval_metadata() {
-	while read -r; do
+	playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | while read -r; do
 		case $REPLY in
 			*xesam:artist*)
 				artist="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
-				format "$artist" "$title" > $meta_file
+				echo "$artist" > $artist_file
 
-		# Update player for media control
-		echo $REPLY | cut -d' ' -f1 > $last_player_file
-		;;
-	*xesam:title*)
-		title="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
-		format "$artist" "$title" > $meta_file
+				# Update player for media control
+				echo $REPLY | cut -d' ' -f1 > $last_player_file
+				;;
+			*xesam:title*)
+				title="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
+				echo "$title" > $title_file
 
-		# Update player for media control
-		echo $REPLY | cut -d' ' -f1 > $last_player_file
-		;;
-	*xesam:url*)
-		url="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
-		player="$(echo $REPLY | cut -d' ' -f1)"
-		if echo "$url" | grep '^file://' > /dev/null \
-			&& ! playerctl -p "$player" metadata title 2> /dev/null; then
-					superdir="$(basename "$(dirname "$url")")"
-					file="$(basename "$url")"
-					format "$superdir" "$file" > $meta_file
-		fi
+				# Update player for media control
+				echo $REPLY | cut -d' ' -f1 > $last_player_file
+				;;
+			*xesam:url*)
+				url="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
+				player="$(echo $REPLY | cut -d' ' -f1)"
+				if echo "$url" | grep '^file://' > /dev/null \
+					&& ! playerctl -p "$player" metadata title 2> /dev/null; then
+							# directory of file
+							basename "$(dirname "$url")" > $artist_file
+							# file name
+							basename "$url" > $title_file
+				fi
 
-		# Update player for media control
-		echo $REPLY | cut -d' ' -f1 > $last_player_file
-		;;
-esac
-done
+				# Update player for media control
+				echo $REPLY | cut -d' ' -f1 > $last_player_file
+				;;
+		esac
+	done
 }
 
 get_player() {
@@ -71,7 +86,6 @@ get_player() {
 	fi
 }
 
-
 loop() {
 	[ -f $status_file ] || echo "$no_player_msg" > $status_file
 	(playerctl -i "$ignore_list" -F status 2> /dev/null & \
@@ -79,14 +93,21 @@ loop() {
 		case $REPLY in
 			*xesam:artist*)
 				artist="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
-				format "$artist" "$title" > $meta_file
+				echo "$artist" > $artist_file
 
 				# Update player for media control
 				echo $REPLY | cut -d' ' -f1 > $last_player_file
 				;;
 			*xesam:title*)
 				title="$(echo "$REPLY" | sed 's/^[a-zA-Z0-9\.-_]* *[a-zA-Z:]* *//')"
-				format "$artist" "$title" > $meta_file
+				# mpv-mpris workaround (it was spaming the title causing updates)
+				# [ "$title" = "$(< $title_file)" ] && continue
+				echo "$title" > $title_file
+
+				# Update metadata on status change (kinda mpv workaround)
+				playerctl -p "$(echo $REPLY | cut -d' ' -f1)" metadata artist > /dev/null 2>&1 \
+					|| echo > "$artist_file"
+				eval_metadata
 
 				# Update player for media control
 				echo $REPLY | cut -d' ' -f1 > $last_player_file
@@ -96,9 +117,10 @@ loop() {
 				player="$(echo $REPLY | cut -d' ' -f1)"
 				if echo "$url" | grep '^file://' > /dev/null \
 						&& ! playerctl -p "$player" metadata title 2> /dev/null; then
-					superdir="$(basename "$(dirname "$url")")"
-					file="$(basename "$url")"
-					format "$superdir" "$file" > $meta_file
+					# directory of file
+					basename "$(dirname "$url")" > $artist_file
+					# file name
+					basename "$url" > $title_file
 				fi
 
 				# Update player for media control
@@ -107,21 +129,20 @@ loop() {
 			Playing)
 				echo "" > $icon_file
 				# Update metadata on status change
-				playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | eval_metadata
+				eval_metadata
 				;;
 			Paused)
 				echo "" > $icon_file
 				# Update metadata on status change
-				playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | eval_metadata
+				eval_metadata
 				;;
 			Stopped)
 				echo "" > $icon_file
 				# Update metadata on status change
-				playerctl -p "$(get_player 2> /dev/null)" metadata 2> /dev/null | eval_metadata
+				eval_metadata
 				;;
 		esac
-		printf '%s  %s\n' "$(< $icon_file)" "$(< $meta_file)" > $status_file
-		dwmstatus-update.sh
+		dwmstatus-update.sh &
 	done
 }
 
@@ -131,13 +152,15 @@ case $1 in
 	loop)
 		# Ensure no other loops are running
 		pgrep "$(basename $0)" | grep -v "$$" | xargs kill -9 2> /dev/null
-		# Update to current state
-		rm $status_file
+		# Update metadata on status change
 		eval_metadata
 		loop
 		;;
 	'' | status)
-		cat $status_file
+		format
+		;;
+	status-small)
+		format_small
 		;;
 	lock | lock-status)
 		cat $status_file | sed 's/. *//'

@@ -3,7 +3,7 @@
 get_status () {
     extra="$(extra-tray.sh)"
     [ -z "$extra" ] || extra="$extra | "
-    music.sh has-player && music="$(music.sh status) | "
+    music.sh has-player && music="$(music.sh status-small) | "
     printf "$extra\x02$music\x03$(volume.sh)% |\x04 $(ethernet.sh) $(wifi.sh) $(bluetooth.sh) |\x05  $(date +%R) ||"
 }
 
