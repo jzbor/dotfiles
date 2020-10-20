@@ -295,13 +295,10 @@ autocmd BufRead * :call GoYCM()
     autocmd VimLeave *.tex !texclear.sh %
 
 " Edit/source vimrc
-	command Rc :source $MYVIMRC
+	command! Rc :source $MYVIMRC
 	cnoreabbrev rc Rc
-	command Config :e ~/.vimrc
+	command! Config :e ~/.vimrc
 	cnoreabbrev config Config
-
-" Execute commands in parallel
-	cnoremap sh :sp +term<Space>
 
 " Navigating with guides
     inoremap <leader>. <Esc>/<++><Enter>"_c4l
@@ -317,8 +314,8 @@ autocmd BufRead * :call GoYCM()
     nnoremap <leader>fb :BLines<CR>
     nnoremap <leader>fm :Maps<CR>
     nnoremap <leader>fh :History<CR>
-    command -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
-    command -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
+    command! -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
+    command! -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
 " Indents and tabs
     set autoindent	" Auto-indent new lines
@@ -335,7 +332,9 @@ autocmd BufRead * :call GoYCM()
 	au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Personal commands
-	command Ddate execute 'read !date' | norm I####<Space>
+	command! Ddate execute 'read !date' | norm I####<Space>
+	command! Week execute 'read !date -d "monday" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
+	command! -nargs=1 Weekn execute 'read !date -d "monday +<q-args> weeks" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
 
 " Python:
     "au BufNewFile,BufRead *.py
@@ -352,9 +351,6 @@ autocmd BufRead * :call GoYCM()
 
 " Web:
 	au BufNewFile,BufRead /*.rasi setf css
-
-" Markdown:
-    command Mdp !markdown_previewer % $<CR>
 
 " .Xresources:
     autocmd BufWritePost .Xresources !xrdb merge %
