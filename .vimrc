@@ -217,10 +217,10 @@ autocmd BufRead * :call GoYCM()
     endif
 
 " Split navigation
-	nmap <C-h> :wincmd h<CR>
-	nmap <C-j> :wincmd j<CR>
-    nmap <C-k> :wincmd k<CR>
-    nmap <C-l> :wincmd l<CR>
+	nmap <A-h> :wincmd h<CR>
+	nmap <A-j> :wincmd j<CR>
+    nmap <A-k> :wincmd k<CR>
+    nmap <A-l> :wincmd l<CR>
 
 " Split resizing
     nmap <A-u> :vertical resize -5<CR>
@@ -363,8 +363,7 @@ autocmd BufRead * :call GoYCM()
     " Code snippets
     autocmd FileType tex inoremap ,em \emph{}<Esc>T{i
     autocmd FileType tex inoremap ,bf \textbf{}<Esc>T{i
-    autocmd FileType tex inoremap ,it \textit{}<Esc>T{i
-    autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Esc>2kA\item<Space>
+    autocmd FileType tex inoremap ,it \textit{}<Esc>T{i autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Esc>2kA\item<Space>
     autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
     autocmd FileType tex inoremap ,li <Enter>\item<Space>
     autocmd FileType tex inoremap ,tab \begin{tabular}<Enter>\end{tabular}<Enter><Esc>3kA{}<Esc>i
