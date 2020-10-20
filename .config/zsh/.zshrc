@@ -5,24 +5,24 @@
     && source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 ## Options section
-setopt correct                                                  # Auto correct mistakes
-setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
-setopt nocaseglob                                               # Case insensitive globbing
-unsetopt nomatch						# Passes the command as is instead of reporting pattern matching failure see Chrysostomus/manjaro-zsh-config#14
-setopt rcexpandparam                                            # Array expension with parameters
-setopt nocheckjobs                                              # Don't warn about running processes when exiting
-setopt numericglobsort                                          # Sort filenames numerically when it makes sense
-setopt nobeep                                                   # No beep
-setopt appendhistory                                            # Immediately append history instead of overwriting
-setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
-setopt autocd                                                   # if only directory path is entered, cd there.
+setopt correct              # Auto correct mistakes
+setopt extendedglob         # Extended globbing. Allows using regular expressions with *
+setopt nocaseglob           # Case insensitive globbing
+unsetopt nomatch		    # Passes the command as is instead of reporting pattern matching failure see Chrysostomus/manjaro-zsh-config#14
+setopt rcexpandparam        # Array expension with parameters
+setopt nocheckjobs          # Don't warn about running processes when exiting
+setopt numericglobsort      # Sort filenames numerically when it makes sense
+setopt nobeep               # No beep
+setopt appendhistory        # Immediately append history instead of overwriting
+setopt histignorealldups    # If a new command is a duplicate, remove the older one
+setopt autocd               # if only directory path is entered, cd there.
 
 
 ## History and Caching
 [ -d ~/.cache/zsh ] || mkdir -pv ~/.cache/zsh
 HISTFILE=~/.cache/zsh/zhistory
 HISTSIZE=5000
-SAVEHIST=500
+SAVEHIST=5000
 
 
 ## Completion
