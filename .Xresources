@@ -283,9 +283,9 @@ rofi.kb-remove-to-eol:
 ! Accept entry
 rofi.kb-accept-entry:                Control+m,Return,KP_Enter
 ! Use entered text as command (in ssh/run modi)
-! rofi.kb-accept-custom:               Control+Return
+rofi.kb-accept-custom:               Shift+Return
 ! Use alternate accept command.
-! rofi.kb-accept-alt:                  Shift+Return
+rofi.kb-accept-alt:                  Control+Return
 ! Delete entry from history
 ! rofi.kb-delete-entry:                Shift+Delete
 ! Switch to the next mode.

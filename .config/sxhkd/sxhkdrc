@@ -17,9 +17,9 @@ super + b
 super + p
 	mpv
 super + shift + p
-	mpv "$(clipit -c)" --idle=no
+	mpv "$(clipit -p)" --idle=no
 super + ctrl + p
-	mpv "https://$(rofi -dmenu -p "https://")" --idle=no
+	rofi-mpv.sh
 
 super + s
 	if pidof spotify; then dwmc toggleviewex 7; else  spotify; fi
