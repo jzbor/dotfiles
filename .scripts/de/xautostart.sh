@@ -6,7 +6,6 @@
 wmname LG3D
 setup_displays.sh
 sxhkd &
-libinput-gestures-setup restart &
 
 # Fix spotify
 (killall -9 spotify; pulseaudio --kill; pulseaudio --start) &
@@ -33,3 +32,5 @@ xfce4-power-manager &
 
 # Start compositor
 (sleep 2; killall picom; picom --experimental-backends) &
+
+libinput-gestures-setup restart &
