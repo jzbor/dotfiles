@@ -58,6 +58,11 @@ super + {ctrl, shift} + s
 super + {shift, ctrl} + m
 	rofi-mount.sh {mnt,umnt}
 
+super + space
+	pidof skippy-xd || skippy-xd --prev > /dev/null 2>&1
+super + ctrl + space
+	rofi-windows.sh
+
 ### OTHER SCRIPTS ###
 super + r
 	setup_displays.sh
