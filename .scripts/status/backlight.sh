@@ -40,4 +40,5 @@ case $1 in
 	;;
 esac
 
-dunstify -a Brightness -r $DUNST_ID "Set brightness to $(light | sed 's/\..*//g')%"
+dunstify -a Brightness -i "notification-display-brightness" -r $DUNST_ID \
+	"Set brightness to $(light | sed 's/\..*//g')%"

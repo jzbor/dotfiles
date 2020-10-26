@@ -3,10 +3,12 @@
 case $1 in
     "-i" | "--inc" | "inc" | "+")
 	pamixer -i "${2:-5}"
+	ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	dwmstatus-update.sh
 	;;
     "-d" | "--dec" | "dec" | "-")
 	pamixer -d "${2:-5}"
+	ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	dwmstatus-update.sh
 	;;
     "-s" | "--set" | "set" | "=")
@@ -27,6 +29,7 @@ case $1 in
 	dwmstatus-update.sh
 	;;
 esac
+
 
 if pamixer --get-mute > /dev/null; then
     icon="婢"
