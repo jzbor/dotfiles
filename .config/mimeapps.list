@@ -128,6 +128,7 @@ video/3gp=mpv.desktop;
 video/3gpp=mpv.desktop;
 video/3gpp2=mpv.desktop;
 video/dv=mpv.desktop;
+text/calendar=thunderbird.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;
