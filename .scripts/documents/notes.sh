@@ -4,23 +4,49 @@ csspath="$HOME/.config/assets/notes/style.css"
 notepath="$HOME/Documents/Notes/"
 outpath="$HOME/.cache/Notes/"
 previewpath="/tmp/Notes/"
+registerfile="$outpath.reg"
 
 if command -v surf > /dev/null; then
-    browser="surf"
+    browser="surf -d"
 else
     browser="$BROWSER"
 fi
 
+escapegrep () {
+    echo $1 | sed 's/\././g'
+}
+
+registered () {
+    [ -f "$registerfile" ] || return 1
+
+    grep " $(escapegrep $1)$" "$registerfile"
+}
+
+register () {
+    if [ -f "$registerfile" ]; then
+        cp "$registerfile" "/tmp/notesregister.sec"
+        grep -v " $(escapegrep $1)" "/tmp/notesregister.sec" > "$registerfile"
+        echo
+    fi
+
+    md5sum $1 | sed 's/  / /' >> "$registerfile"
+}
+
+uptodate () {
+    query="$(md5sum $1 | sed 's/  / /')"
+
+    registered $1 && grep -F -x "$query" "$registerfile"
+}
 
 compile_entry () {
-    infile="$1"
+    infile="$(realpath $1)"
     outfile="$(get_outpath $infile)"
     parent="$(dirname $outfile)"
 
     [ -d "$parent" ] || mkdir -vp "$parent"
     pandoc -f markdown -t html --css="$csspath" -s -o "$outfile" "$infile"
-    echo "pwd: $(pwd)"
-    echo $outfile
+    echo "pwd: $(pwd) ret: $?"
+    echo "in: $infile out: $outfile par: $parent"
 
     # fix links
     sed -i 's/\.md/\.html/g' $outfile
@@ -34,20 +60,27 @@ compile_notes () {
 
     # convert all markdown file
     for mdfile in $(find $notepath -name "*.md" -type f); do
-        compile_entry "$mdfile"
+        if ! uptodate "$mdfile"; then
+            compile_entry "$mdfile"
+            register "$mdfile"
+        else
+            echo "Skipping $mdfile (already registered)"
+        fi
     done
 
     # copy images etc along
     for mediafile in $(find $notepath -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \)); do
         infile="$mediafile"
         outfile="$(get_outpath $infile)"
+        parent="$(dirname $outfile)"
 
+        [ -d "$parent" ] || mkdir -vp "$parent"
         cp -ruva "$infile" "$outfile"
     done
 }
 
 get_outpath () {
-    infile="$1"
+    infile="$(realpath $1)"
     if echo "$infile" | grep '\.md$' > /dev/null 2>&1; then
         echo "$outpath$(echo "$1" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//;s/\.md$/.html/g')"
     else
@@ -92,7 +125,7 @@ case $1 in
             echo $outpath
             $browser "$outpath"index.html
         elif realpath "$2" | grep "^$notepath"; then
-            compile_entry "$2"
+            compile_notes
             $browser "$(get_outpath "$(realpath $2)")"
         fi
         ;;
