@@ -34,8 +34,11 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
 
 nmap-local () {
     addresses="$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | paste -s -d' ')"
-    echo nmap $addresses "$@"
-    nmap $addresses "$@"
+    for address in $addresses; do
+        echo nmap $address "$@"
+        nmap $address "$@"
+        echo
+    done
 }
 
 share-local () {
