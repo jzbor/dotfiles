@@ -66,6 +66,11 @@ let ycm_types = {
 	" Markdown and notes
    	Plug 'vimwiki/vimwiki'
 
+	" Look into
+	" jiangmiao/auto-pairs
+	" norcalli/nvim-colorizer.lua
+	" sirver/ultisnips
+
     call plug#end()
 
 
@@ -75,6 +80,7 @@ let ycm_types = {
     set encoding=utf8	" Use UTF-8 encoding
     set mouse=a		" Enable mouse
     let mapleader = " "
+	set scrolloff=5 " Margin at the top and bottom when scrolling
 
 " Titling
 set title
@@ -114,10 +120,14 @@ set titlestring=%F
     set norelativenumber	" Show line numbers relative to current position
 	set nocursorline
 
+" Char visualization
+	set lcs+=space:·
+
 " Function keys
-	map <F1> :set number!<CR>
-	map <F2> :set relativenumber!<CR>
-	map <F3> :set cursorline!<CR>
+	nmap <F1> :set number!<CR>
+	nmap <F2> :set relativenumber!<CR>
+	nmap <F3> :set cursorline!<CR>
+	nmap <F4> :set list!<CR>
 
 " Goyo
 	map <leader>d :Goyo<CR>
@@ -228,7 +238,9 @@ autocmd BufRead * :call GoYCM()
     nmap <A-o> :resize +5<CR>
     nmap <A-p> :vertical resize +5<CR>
 
-" NERDTree shortcuts
+" NERDTree shortcuts and settings
+	let g:NERDTreeMinimalUI=1
+	"let g:NERDTreeQuitOnOpen=1
     noremap <Leader>N <esc>:NERDTreeToggle<CR>
     noremap <Leader>n <esc>:NERDTreeToggleVCS<CR>
 
@@ -255,10 +267,12 @@ autocmd BufRead * :call GoYCM()
 " Setup vimwiki
     let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
     let g:vimwiki_list = [{'path': '~/Documents/Notes', 'syntax': 'markdown', 'ext': '.md', 'auto_diary_index': 1}]
+	nmap <leader>~ i~~<ESC>A~~<ESC>
 
 " Ensure files are read as what I want:
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
     autocmd BufRead,BufNewFile *.tex set filetype=tex
+	nmap <leader>e :setlocal noro modifiable buftype= bufhidden= swapfile<CR>
 
 " Save file as sudo on files that require root permission
     cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
@@ -319,8 +333,8 @@ autocmd BufRead * :call GoYCM()
 
 " Indents and tabs
     set autoindent	" Auto-indent new lines
-    set smartindent	" Enable smart-indent
-    set smarttab	" Enable smart-tabs
+    set nosmartindent	" Enable smart-indent
+    set nosmarttab	" Enable smart-tabs
     set tabstop=4	" Number of spaces per Tab
     set softtabstop=4	" Number of spaces per Tab in insert mode
     set shiftwidth=4	" Number of auto-indent spaces
@@ -330,6 +344,7 @@ autocmd BufRead * :call GoYCM()
 	au BufNewFile,BufRead *.js,*.css,*.html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 	au BufNewFile,BufRead *.java set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 	au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+	au BufNewFile,BufRead *.c,*.h set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " Personal commands
 	command! Ddate execute 'read !date' | norm I####<Space>
