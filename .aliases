@@ -96,11 +96,11 @@ cfg () {
     [ -f "$file" ] && nvim "$file"
 }
 browse () {
-    selection="$(printf "..\n%s" "$(ls -t)" | fzf)"
+    selection="$(printf "..\n%s" "$(ls -t)" | fzf --prompt "$(pwd)/")"
     if [ "$selection" = "" ]; then
         return
     else
-        cd "$selection" || (xdg-open "$selection"; exit)
+        cd "$selection" || (open.sh "$selection"; exit)
         browse
     fi
 }

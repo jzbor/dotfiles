@@ -69,7 +69,7 @@ compile_notes () {
     done
 
     # copy images etc along
-    for mediafile in $(find $notepath -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \)); do
+    for mediafile in $(find $notepath -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.pdf" \)); do
         infile="$mediafile"
         outfile="$(get_outpath $infile)"
         parent="$(dirname $outfile)"
