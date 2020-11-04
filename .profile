@@ -46,11 +46,11 @@ command -v hub && eval "$(hub alias -s)"
 # Define host color code => different color for each system (up to 8)
 export HOSTCC="$(printf "\e[0;%sm" \
 	"$(printf "obase=16; (%s + 8) %% 6 + 2; obase=10; . + 30\n" \
-	    "$(hostname | md5sum | head -c 1)" \
+	    "$(< /etc/hostname | md5sum | head -c 1)" \
     | bc | tail -n 1)")"
 export HOSTCC_ZSH="$(printf "%s" \
 	"$(printf "obase=16; (%s + 8) %% 6 + 2; obase=10\n" \
-	    "$(hostname | md5sum | head -c 1)" \
+	    "$(< /etc/hostname | md5sum | head -c 1)" \
     | bc | tail -n 1)")"
 
 
