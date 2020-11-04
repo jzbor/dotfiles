@@ -46,7 +46,7 @@ if [ -n "$title" ]; then
 	"$lock_file"
 else
     convert "$cache_file" \
-	-fill "$fg_color" -font Fira-Sans-Book -pointsize 18 -gravity center -annotate +0+77 "$USER@$(hostname)" \
+	-fill "$fg_color" -font Fira-Sans-Book -pointsize 18 -gravity center -annotate +0+77 "$USER@$(< /etc/hostname)" \
 	"$lock_file"
 fi
 

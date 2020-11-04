@@ -2,15 +2,14 @@
 
 connected="$(xrandr | grep " connected " | cut -d " " -f 1)"
 disconnected="$(xrandr | grep " disconnected " | cut -d " " -f 1)"
-model_info="$(inxi -M | head -n 1)"
 
 # Model can be obtained by (xrandr | grep " connected " | cut -d " " -f 1) (the -v option)
-my_model="ThinkPad T440"
+my_hostname="T440"
 my_internal_screen="eDP-1"
 
 for display in $connected; do
 	if [ "$display" = "$my_internal_screen" ] \
-			&& echo "$model_info" | grep "$my_model" > /dev/null \
+            && [ "$my_hostname" = "$(< /etc/hostname)" ] \
 			&& grep closed /proc/acpi/button/lid/LID/state > /dev/null ; then
 		echo "Disabling $display (closed lid)"
 		xrandr --output "$display" --off
@@ -31,7 +30,7 @@ for display in $disconnected; do
 done
 
 # Reset keyboard map
-setxkbmap de -option caps:escape
+setxkbmap de nodeadkeys -option caps:escape
 
 if pgrep polybar > /dev/null; then
 	echo
