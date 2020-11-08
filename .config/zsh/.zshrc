@@ -137,6 +137,8 @@ else
     PROMPT='[%n@%M] %~ '
 fi
 
+# Necessary to align input properly
+ZLE_RPROMPT_INDENT=0
 
 # Print a greeting message when shell is started
 echo $USER@$HOST  $(uname -srm) $(lsb_release -rcs 2> /dev/null)

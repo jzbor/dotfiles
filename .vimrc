@@ -231,7 +231,6 @@ autocmd BufRead * :call GoYCM()
 	nmap <A-j> :wincmd j<CR>
     nmap <A-k> :wincmd k<CR>
     nmap <A-l> :wincmd l<CR>
-
 " Split resizing
     nmap <A-u> :vertical resize -5<CR>
     nmap <A-i> :resize -5<CR>
@@ -315,9 +314,9 @@ autocmd BufRead * :call GoYCM()
 	cnoreabbrev config Config
 
 " Navigating with guides
-    inoremap <leader>. <Esc>/<++><Enter>"_c4l
-    vnoremap <leader>. <Esc>/<++><Enter>"_c4l
-    map <leader>. <Esc>/<++><Enter>"_c4l
+    "inoremap <leader>. <Esc>/<++><Enter>"_c4l
+    "vnoremap <leader>. <Esc>/<++><Enter>"_c4l
+    "map <leader>. <Esc>/<++><Enter>"_c4l
 
 " FZF bindings
     nnoremap <leader>ff :Files<CR>
