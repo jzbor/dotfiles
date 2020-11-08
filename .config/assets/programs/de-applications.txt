@@ -1,12 +1,14 @@
 firefox
-firefox-ublock-origin
-firefox-extension-privacybadger
 firefox-extension-https-everywhere
+firefox-extension-privacybadger
+firefox-ublock-origin
 gparted
 gthumb
 mpv
 nextcloud-client
 pcmanfm
+polkit
+polkit-gnome
 spicetify-cli
 spotify
 sxiv
