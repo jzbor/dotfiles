@@ -1,7 +1,7 @@
 #!/bin/sh
 
 csspath="$HOME/.config/assets/notes/style.css"
-notepath="$HOME/Documents/Notes/"
+notepath="$HOME/Documents/Notes"
 outpath="$HOME/.cache/Notes/"
 previewpath="/tmp/Notes/"
 registerfile="$outpath.reg"
@@ -10,6 +10,11 @@ if command -v surf > /dev/null; then
     browser="surf -d"
 else
     browser="$BROWSER"
+fi
+
+# Follow symlink if notepath is one
+if [ -h "$notepath" ]; then
+    notepath="$(readlink $notepath)"
 fi
 
 escapegrep () {
@@ -82,9 +87,9 @@ compile_notes () {
 get_outpath () {
     infile="$(realpath $1)"
     if echo "$infile" | grep '\.md$' > /dev/null 2>&1; then
-        echo "$outpath$(echo "$1" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//;s/\.md$/.html/g')"
+        echo "$outpath$(echo "$infile" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//;s/\.md$/.html/g')"
     else
-        echo "$outpath$(echo "$1" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//')"
+        echo "$outpath$(echo "$infile" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//')"
     fi
 }
 
