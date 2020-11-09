@@ -7,9 +7,6 @@ wmname LG3D
 setup_displays.sh
 sxhkd &
 
-# Fix spotify
-#(killall -9 spotify; pulseaudio --kill; pulseaudio --start) &
-
 # Daemons that automatically check for running instances
 /usr/lib/geoclue-2.0/demos/agent &
 /usr/lib/kdeconnectd &
