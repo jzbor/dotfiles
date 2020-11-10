@@ -7,7 +7,7 @@ filename="$(date +'Screenshot_%Y-%m-%d_%H-%M-%S.png')"
 case "$1" in
     "" | select)
 		if scrot -s -f "$filename" \
-				-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"'; then
+				-e 'mv -f $f ~/Pictures/Screenshots/'; then
 			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
 				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
@@ -19,7 +19,7 @@ case "$1" in
 		;;
     focused)
 		if scrot -u "$filename" \
-				-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"'; then
+				-e 'mv -f $f ~/Pictures/Screenshots/'; then
 			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
 				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
@@ -31,7 +31,7 @@ case "$1" in
 		;;
     screen)
 		if scrot "$filename" \
-				-e 'mv -f $f ~/Pictures/Screenshots/ &&'; then
+				-e 'mv -f $f ~/Pictures/Screenshots/'; then
 			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
 			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
 				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
