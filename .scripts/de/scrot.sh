@@ -2,20 +2,43 @@
 
 ! [ -d "$HOME/Pictures/Screenshots/" ] && mkdir -p "$HOME/Pictures/Screenshots/"
 
+filename="$(date +'Screenshot_%Y-%m-%d_%H-%M-%S.png')"
+
 case "$1" in
     "" | select)
-		scrot -s -f 'Screenshot_%Y-%m-%d_%H-%M-%S.png' \
-			-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"' \
-			&& ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+		if scrot -s -f "$filename" \
+				-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"'; then
+			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
+				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
+				--action "phone --share ~/Pictures/Screenshots/$filename,send to phone" \
+				--action "xdg-open ~/Pictures/Screenshots/$filename,open in viewer" \
+				--action "gimp ~/Pictures/Screenshots/$filename,edit in gimp" \
+				| sh
+		fi
 		;;
     focused)
-		scrot -u 'Screenshot_%Y-%m-%d_%H-%M-%S.png' \
-			-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"' \
-			&& ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+		if scrot -u "$filename" \
+				-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"'; then
+			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
+				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
+				--action "phone --share ~/Pictures/Screenshots/$filename,send to phone" \
+				--action "xdg-open ~/Pictures/Screenshots/$filename,open in viewer" \
+				--action "gimp ~/Pictures/Screenshots/$filename,edit in gimp" \
+				| sh
+		fi
 		;;
     screen)
-		scrot 'Screenshot_%Y-%m-%d_%H-%M-%S.png' \
-			-e 'mv -f $f ~/Pictures/Screenshots/ && dunstify -a Scrot -i ~/Pictures/Screenshots/$f "Sucessfully taken screenshot"' \
-			&& ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+		if scrot "$filename" \
+				-e 'mv -f $f ~/Pictures/Screenshots/ &&'; then
+			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
+				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
+				--action "phone --share ~/Pictures/Screenshots/$filename,send to phone" \
+				--action "xdg-open ~/Pictures/Screenshots/$filename,open in viewer" \
+				--action "gimp ~/Pictures/Screenshots/$filename,edit in gimp" \
+				| sh
+		fi
 		;;
 esac
