@@ -86,14 +86,16 @@ XClock*chime:			true
 Xcursor.theme:          Breeze_Snow
 Xcursor.size:           16
 
-
-XTerm*background:	    myForeground
-XTerm*foreground:       myBackground
-XTermcursorColor:		myForeground
-XTerm*faceName:         Fixed
-XTerm*faceSize:         11
-XTerm*reverseVideo:     on
+XTerm*foreground:      myForeground
+XTerm*background:		myBackground
+XTerm*pointerColor:    myForeground
+XTerm*faceName:        FiraCode Nerd Font Mono
+XTerm*faceSize:        11
 XTerm*selectToClipboard: true
+XTerm*cursorBlink:		false
+XTerm*fastScroll:		true
+
+XTerm*cursorColor:		myForeground
 
 UXTerm*foreground:      myForeground
 UXTerm*background:		myBackground
@@ -102,7 +104,7 @@ UXTerm*faceName:        FiraCode Nerd Font Mono
 UXTerm*faceSize:        11
 UXTerm*selectToClipboard: true
 UXTerm*cursorBlink:		false
-XTerm*fastScroll:		true
+UXTerm*fastScroll:		true
 
 xmenu.selbackground:    myForeground
 xmenu.selforeground:    myBackground
