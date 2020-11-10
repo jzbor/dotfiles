@@ -81,6 +81,7 @@ let ycm_types = {
     set mouse=a		" Enable mouse
     let mapleader = " "
 	set scrolloff=5 " Margin at the top and bottom when scrolling
+	set autochdir	" Always set the cwd to the current files parent dir
 
 " Titling
 set title
@@ -309,9 +310,7 @@ autocmd BufRead * :call GoYCM()
 
 " Edit/source vimrc
 	command! Rc :source $MYVIMRC
-	cnoreabbrev rc Rc
 	command! Config :e ~/.vimrc
-	cnoreabbrev config Config
 
 " Navigating with guides
     "inoremap <leader>. <Esc>/<++><Enter>"_c4l
