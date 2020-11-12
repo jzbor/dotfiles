@@ -156,14 +156,11 @@ case $1 in
 		eval_metadata
 		loop
 		;;
-	'' | status)
+	'' | status | lock-status)
 		format
 		;;
 	status-small)
 		format_small
-		;;
-	lock | lock-status)
-		cat $status_file | sed 's/. *//'
 		;;
 	statusfile)
 		echo $status_file
