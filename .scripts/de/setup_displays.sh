@@ -30,7 +30,7 @@ for display in $disconnected; do
 done
 
 # Reset keyboard map
-setxkbmap de nodeadkeys -option caps:escape
+setxkbmap de nodeadkeys -option -option caps:escape_shifted_capslock -option lv3:ralt_alt -option lv3:lwin_switch
 
 if pgrep polybar > /dev/null; then
 	echo
@@ -42,4 +42,5 @@ wallpaper.sh load
 (sleep 90; nice -n 5 lock.sh pre-gen)&
 
 # Configure touchscreen on T440
-[ "$(hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP-1
+[ "$(< /etc/hostname)" = "T440" ] && xinput --map-to-output 'ELAN Touchscreen' eDP-1
+

@@ -1,44 +1,44 @@
 ### APPS ###
-super + w
+alt + w
 	firefox
-super + shift + w
+alt + shift + w
 	firefox --private-window
-super + ctrl + w
+alt + ctrl + w
 	rofi-web.sh
 
-super + BackSpace
+alt + BackSpace
 	$TERMINAL -e nvim
-super + Return
+alt + Return
 	$TERMINAL
 
-super + b
+alt + b
 	$FILEBROWSER
 
-super + p
+alt + p
 	mpv
-super + shift + p
+alt + shift + p
 	mpv "$(clipit -p)" --idle=no
-super + ctrl + p
+alt + ctrl + p
 	rofi-mpv.sh
 
-super + s
+alt + s
 	if pidof spotify; then dwmc toggleviewex 7; else  spotify; fi
 
-super + n
+alt + n
 	notes.sh view
-super + shift + n
+alt + shift + n
 	$TERMINAL -e notes.sh
 
 
 ### ROFI SCRIPTS ###
-super + d
+alt + d
 	rofi -combi-modi drun,window,ssh -show combi
-super + shift + d
+alt + shift + d
 	rofi-windows.sh
-super + ctrl + d
+alt + ctrl + d
 	rofi -show run
 
-super + Home
+alt + Home
 	menu.sh
 Menu
 	xmenu.sh
@@ -46,60 +46,60 @@ Menu
 ctrl + alt + Delete
 	menu.sh system
 
-super + Delete
+alt + Delete
 	rofi-kill.sh
 
-super + shift + c
+alt + shift + c
 	rofi-projects.sh
 
-super + {ctrl, shift} + s
+alt + {ctrl, shift} + s
 	rofi-unicode.sh {_,insert}
 
-super + {shift, ctrl} + m
+alt + {shift, ctrl} + m
 	rofi-mount.sh {mnt,umnt}
 
-super + space
+alt + space
 	pidof skippy-xd || skippy-xd --prev > /dev/null 2>&1
-super + ctrl + space
+alt + ctrl + space
 	rofi-windows.sh
 
 ### OTHER SCRIPTS ###
-super + r
+alt + r
 	setup_displays.sh
 
-super + shift + r
+alt + shift + r
 	weather.sh
 
-super + x
+alt + x
 	lock.sh
-super + shift + x
+alt + shift + x
 	music.sh pause && lock.sh
 
-super + F7
+alt + F7
 	ethernet.sh toggle
-super + F8
+alt + F8
 	wifi.sh toggle
-super + F9
+alt + F9
 	bluetooth.sh toggle
 
 XF86WLAN
 	wifi.sh toggle
 
-super + {_, shift, ctrl} + @Print
+alt + {_, shift, ctrl} + @Print
 	scrot.sh {_,screen,focused}
 
 
 ### MEDIA AND BRIGHTNESS CONTROLL ###
-super + {plus, minus} + {_, shift}
+alt + {plus, minus} + {_, shift}
 	volume.sh {-i,-d} {_,1}
 
-super + numbersign + {_, shift, ctrl}
+alt + numbersign + {_, shift, ctrl}
 	volume.sh -t {_,mic,mic-unmute}
 
-super + {_, shift} + {u,i,o}
+alt + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
-super + ctrl + {plus, minus}
+alt + ctrl + {plus, minus}
 	backlight.sh {-inc,-dec} 10
 
 XF86Audio{Raise,Lower}Volume + {_,shift}
