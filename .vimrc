@@ -228,15 +228,15 @@ autocmd BufRead * :call GoYCM()
     endif
 
 " Split navigation
-	nmap <A-h> :wincmd h<CR>
-	nmap <A-j> :wincmd j<CR>
-    nmap <A-k> :wincmd k<CR>
-    nmap <A-l> :wincmd l<CR>
+	nmap <C-h> :wincmd h<CR>
+	nmap <C-j> :wincmd j<CR>
+    nmap <C-k> :wincmd k<CR>
+    nmap <C-l> :wincmd l<CR>
 " Split resizing
-    nmap <A-u> :vertical resize -5<CR>
-    nmap <A-i> :resize -5<CR>
-    nmap <A-o> :resize +5<CR>
-    nmap <A-p> :vertical resize +5<CR>
+    nmap <C-Left> :vertical resize -5<CR>
+    nmap <C-Down> :resize -5<CR>
+    nmap <C-Up> :resize +5<CR>
+    nmap <C-Right> :vertical resize +5<CR>
 
 " NERDTree shortcuts and settings
 	let g:NERDTreeMinimalUI=1
