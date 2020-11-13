@@ -3,9 +3,10 @@
 Here are my local dotfiles mainly including
 
 * `dwm` as wm
+* `sxhkd` as hotkey daemon
 * `neovim` as editor
 * `rofi` as dmenu replacement
-* `dunst` as notification deamon
+* `dunst` as notification daemon
 
 Almost all graphical programs in this repo use Xresources.
 Different color schemes and backgrounds may be available as tags.
@@ -48,7 +49,7 @@ This will also install the `yay` aur helper.
 
 ## Keybindings
 You will also probably want to check the keybindings and adapt them to your needs.
-The keybindings are listed in [.config/i3/config](.config/i3/config).
+The keybindings are listed in [.config/sxhkd/sxhkdrc](.config/sxhkd/sxhkdrc).
 There are also lots of helpful bindings for scripts that for example allow you to mount/unmount drives or insert emojis.
 
 ## Customizing
