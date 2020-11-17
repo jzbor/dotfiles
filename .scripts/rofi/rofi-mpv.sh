@@ -6,7 +6,7 @@ url="$(cat ~/.config/assets/mpv-bookmarks.txt "$hist_file" | rofi -dmenu -p "URL
 
 # clipboard implementation
 case $url in clip | clipboard)
-    url="$(clipit -c)"
+    url="$(xclip -o --selection clipboard)"
     ;;
 esac
 
