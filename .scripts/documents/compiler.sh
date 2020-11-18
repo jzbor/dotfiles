@@ -24,7 +24,8 @@ textype() { \
 }
 
 # compile notes
-if echo "$file" | grep "^$(notes.sh path)" > /dev/null; then
+if echo "$file" | grep "^$(notes.sh path)" > /dev/null \
+		&& echo "$1" | grep "\.md$"; then
 	notes.sh compile
 	exit 0
 fi

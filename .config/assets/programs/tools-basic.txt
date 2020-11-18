@@ -9,6 +9,7 @@ python-jedi
 python-pynvim
 tlp
 tlp-rdw
+tree
 vi
 wireless_tools
 xdg-user-dirs
