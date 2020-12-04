@@ -1,4 +1,5 @@
 firefox
+firefox-extension-https-everywhere
 firefox-extension-privacybadger
 firefox-ublock-origin
 gparted
