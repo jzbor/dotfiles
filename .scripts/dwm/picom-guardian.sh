@@ -1,6 +1,6 @@
 #!/bin/sh
 
-killall picom-guardian.sh
+kill -9 $(pgrep $(basename $0) | grep -v $$) 2> /dev/null
 killall picom; picom --experimental-backends 2> ~/.cache/picom.log
 
 while ! picom --experimental-backends 2> ~/.cache/picom.log; do
