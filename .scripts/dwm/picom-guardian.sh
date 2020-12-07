@@ -1,7 +1,6 @@
 #!/bin/sh
 
-kill -9 $(pgrep $(basename $0) | grep -v $$) 2> /dev/null
-killall picom; picom --experimental-backends 2> ~/.cache/picom.log
+killall -9 picom; picom --experimental-backends 2> ~/.cache/picom.log
 
 while ! picom --experimental-backends 2> ~/.cache/picom.log; do
     echo "Picom seems to have crashed; Restarting picom..."

@@ -28,6 +28,6 @@ xfce4-power-manager &
 (killall redshift-gtk; killall redshift; redshift-gtk) &
 
 # Start compositor
-picom-guardian.sh &
+(killall -9 picom-guardian; picom-guardian.sh) &
 
 libinput-gestures-setup restart &
