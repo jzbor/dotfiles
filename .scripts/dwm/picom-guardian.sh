@@ -1,5 +1,6 @@
 #!/bin/sh
 
+killall picom-guardian.sh
 killall picom; picom --experimental-backends 2> ~/.cache/picom.log
 
 while ! picom --experimental-backends 2> ~/.cache/picom.log; do

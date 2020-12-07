@@ -25,7 +25,7 @@ kdeconnect-indicator &
 nm-applet &
 xfce4-power-manager &
 (killall clipit; clipit) &
-(killall redshift-gtk; redshift-gtk) &
+(killall redshift-gtk; killall redshift; redshift-gtk) &
 
 # Start compositor
 picom-guardian.sh &
