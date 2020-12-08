@@ -25,7 +25,7 @@ nm-applet &
 xfce4-power-manager &
 (killall clipit; clipit) &
 (killall -9 /usr/lib/geoclue-2.0/demos/agent; /usr/lib/geoclue-2.0/demos/agent & sleep 5;
-	killall -9 redshift-gtk; killall -9 redshift; redshift-gtk) &
+	killall -9 redshift-gtk; killall -9 redshift; redshift -x; redshift-gtk) &
 
 # Start compositor
 (killall -9 picom-guardian.sh; picom-guardian.sh) &
