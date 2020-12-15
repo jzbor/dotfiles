@@ -5,9 +5,10 @@ alias :q="exit"
 alias fucking="sudo"
 alias icat="swallow sxiv"
 alias kcc=kdeconnect-cli
+alias ip='ip -c'
 alias la="ls -a"
 alias ls='ls -hN --color=auto --group-directories-first'
-alias lsla="ls -la"
+alias lsla="ls -lah"
 alias mkdir="mkdir -pv"
 alias mpg123="mpg123 --verbose"
 alias nmc="nmtui-connect"
@@ -16,6 +17,7 @@ alias pacupdate="sudo pacman -Syu"
 alias ping="ping -c 5"
 alias please="sudo"
 alias saidar="saidar -c"
+alias se="sudoedit"
 alias todo="$EDITOR ~/Documents/Notes/todo.md"
 alias trash="gio trash"
 alias trash-list="gio list trash://"
@@ -37,7 +39,7 @@ funky-beat () {
 }
 
 nmap-local () {
-    addresses="$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | paste -s -d' ')"
+    addresses="$(command ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | paste -s -d' ')"
     for address in $addresses; do
         echo nmap $address "$@"
         nmap $address "$@"
@@ -46,7 +48,7 @@ nmap-local () {
 }
 
 share-local () {
-    echo "Python webserver for $(pwd) on http://$(ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | sed 's/\/.*//'):8000/"
+    echo "Python webserver for $(pwd) on http://$(command ip addr | grep "inet " | grep -v "127.0.0.1" | awk '{ print $2 }' | sed 's/\/.*//'):8000/"
     echo
     python -m http.server
 }
@@ -75,13 +77,13 @@ alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fet
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard origin/master'
 
 # FZF bindings
-vf () {
+ff () {
     if [ $# -eq 0 ]; then
         file="$(fzf --height 50%)"
     else
         file="$(fzf --query "$@" --height 50%)"
     fi
-    [ -n "$file" ] && nvim "$file"
+    [ -n "$file" ] && open.sh "$file"
 }
 cdf () {
     if [ $# -eq 0 ]; then
@@ -108,7 +110,7 @@ browse () {
         browse
     fi
 }
-ff () {
+fb () {
     browse
     printf "\n%s:\n" "$(pwd)"
     ls
@@ -183,7 +185,7 @@ cd () {
 
 
 # Youtube-dl
-yt_format="(137/bestvideo[ext=mp4])+bestaudio/best[ext=mp4]/best"
+yt_format="137+bestaudio/best[ext=mp4]/best"
 alias yt="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download link
 alias yta="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download audio only
 alias ytl="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic -a" # Download list from file
