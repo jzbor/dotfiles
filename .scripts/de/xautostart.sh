@@ -25,9 +25,18 @@ nm-applet &
 xfce4-power-manager &
 (killall clipit; clipit) &
 (killall -9 /usr/lib/geoclue-2.0/demos/agent; /usr/lib/geoclue-2.0/demos/agent & sleep 5;
-	killall -9 redshift-gtk; killall -9 redshift; redshift -x; redshift-gtk) &
+	killall -9 redshift; redshift -x; redshift -l 49:11) &
 
 # Start compositor
 (killall -9 picom-guardian.sh; picom-guardian.sh) &
 
-libinput-gestures-setup restart &
+# In winter it snows...
+if [ "$(date +%m)" = 12 ]; then
+	killall -9 xsnow
+	sleep 1
+	xsnow -notrees -nowind
+fi &
+
+# libinput-gestures-setup restart &
+touchegg --daemon &
+touchegg &
