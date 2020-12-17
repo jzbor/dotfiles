@@ -12,7 +12,7 @@ case $1 in
 	dwmstatus-update.sh
 	;;
     "-s" | "--set" | "set" | "=")
-	pamixer -set-volume "$2"
+	pamixer --set-volume "$2"
 	dwmstatus-update.sh
 	;;
     "-g" | "--get" | "get")
