@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Upgrade
+Operation = Install
+Type = Package
+Target = spotify
+
+[Action]
+Description = Apply spicetify customizations
+When = PostTransaction
+Exec = /usr/bin/sudo -u jzbor sh -c "spicetify backup apply -n"
+Depends = spicetify-cli
