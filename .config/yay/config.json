@@ -1,7 +1,7 @@
 {
 	"aururl": "https://aur.archlinux.org",
-	"buildDir": "~/.cache/yay",
-	"absdir": "~/.cache/yay/abs",
+	"buildDir": "/home/jzbor/.cache/yay",
+	"absdir": "/home/jzbor/.cache/yay/abs",
 	"editor": "nvim",
 	"editorflags": "",
 	"makepkgbin": "makepkg",
