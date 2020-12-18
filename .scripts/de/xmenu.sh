@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Check dependencies
-DEPENDENCIES="pgrep sh xdg-menu xmenu"
+DEPENDENCIES="pgrep sh xdg-xmenu xmenu"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
