@@ -25,6 +25,7 @@ alias trash-clean="gio trash --empty"
 alias v="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
+alias yay_no_integ="yay --mflags --skipinteg"
 
 alias nvim-profile="vim --cmd 'profile start profile.log' \
     --cmd 'profile func *' \

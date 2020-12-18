@@ -24,6 +24,8 @@ HISTFILE=~/.cache/zsh/zhistory
 HISTSIZE=5000
 SAVEHIST=5000
 
+# Profiling
+zmodload zsh/zprof
 
 ## Completion
 autoload -U compinit
