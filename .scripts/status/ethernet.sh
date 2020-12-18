@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="dunstify ip iwgetid"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 # Assuming there is only one ethernet device
 device_query="$(ip link show | \

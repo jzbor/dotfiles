@@ -1,5 +1,8 @@
 #!/bin/sh
 
+### DEPRECATED ###
+
+
 ### MOVE 2 MONITOR ###
 
 source_id=$(bspc query -D -d focused)

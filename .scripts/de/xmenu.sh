@@ -1,6 +1,9 @@
 #!/bin/sh
 
-# Applications			rofi -show drun
+# Check dependencies
+DEPENDENCIES="pgrep sh xdg-menu xmenu"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 cache_file="/tmp/xdg-xmenu-cache"
 

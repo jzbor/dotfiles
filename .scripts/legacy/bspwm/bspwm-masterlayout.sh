@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+### DEPRECATED ###
+
 # Cloned from from https://www.reddit.com/r/bspwm/comments/euq5r7/a_dwmlike_stack_layout_script_for_bspwm/
 #
 # ainherited stack layout for bspwm

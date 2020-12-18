@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="bluetooth.sh ethernet.sh wifi.sh ping sh xmenu"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 network_menu () {
 	menu="  Toggle Wifi	wifi.sh toggle

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Check dependencies
+DEPENDENCIES="dunstify find pandoc"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
+
 csspath="$HOME/.config/assets/notes/style.css"
 notepath="$HOME/Documents/Notes"
 outpath="$HOME/.cache/Notes/"

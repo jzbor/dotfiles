@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Check dependencies
+DEPENDENCIES="wallpaper.sh pgrep setxkbmap xinput xrandr"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
+
 connected="$(xrandr | grep " connected " | cut -d " " -f 1)"
 disconnected="$(xrandr | grep " disconnected " | cut -d " " -f 1)"
 

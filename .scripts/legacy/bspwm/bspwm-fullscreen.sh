@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### DEPRECATED ###
+
 fullscreened_moved () {
     event_type="$1"
     src_monitor="$2"

@@ -1,4 +1,10 @@
 #! /bin/sh
+
+# Check dependencies
+DEPENDENCIES="dunstify sxkbmap"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
+
 german_layout="de"
 #german_layout="de -variant querty"
 

@@ -2,6 +2,10 @@
 
 # Clears the build files of a LaTeX/XeLaTeX build.
 # I have vim run this file whenever I exit a .tex file.
+# Check dependencies
+DEPENDENCIES="find"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 case "$1" in
 	*.tex)

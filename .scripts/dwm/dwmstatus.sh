@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="dunstify sxkbmap"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 get_status () {
     extra="$(extra-tray.sh)"

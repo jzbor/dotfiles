@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="alacritty curl dunstify"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 if [ "$1" = "notify" ]; then
     weather="$(curl -s wttr.in/?0T)"

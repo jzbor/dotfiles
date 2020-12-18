@@ -1,5 +1,7 @@
 #!/bin/sh
 
+### DEPRECATED ###
+
 if command -v alacritty; then
     nice -n 9 alacritty -t scratchterm &
     nice -n -8 alacritty -t taskmgr -e htop &

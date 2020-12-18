@@ -1,6 +1,9 @@
 #!/bin/sh
-# The famous "get a menu of emojis to copy" script.
-#   forked from lukesmithxyz/voidrice
+# Select an emoji or NerdFont char via rofi
+# Check dependencies
+DEPENDENCIES="dunstify rofi xclip xdotool"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 UNICODE_FILE="$HOME/.config/assets/menu/unicode.txt"
 

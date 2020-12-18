@@ -1,5 +1,7 @@
 #!/bin/sh
 
+### DEPRECATED ###
+
 echo "Autostart for ws $1."
 
 query_2="firefox"

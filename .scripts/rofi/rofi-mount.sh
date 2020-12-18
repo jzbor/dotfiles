@@ -1,5 +1,9 @@
 #! /bin/sh
 # @TODO Use findmnt for unmounting
+# Check dependencies
+DEPENDENCIES="dunstify lsblk rofi udiskctl"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 case $1 in
     "mnt")

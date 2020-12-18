@@ -1,7 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 # Source: https://github.com/OliverLew/xdg-xmenu
 # References: https://specifications.freedesktop.org
 # PATH=/opt/sbase/bin:$PATH
+# Check dependencies
+DEPENDENCIES=""
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 # XDG directories
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}

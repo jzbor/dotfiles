@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Check dependencies
+DEPENDENCIES="xrdb"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
+
 get_xr () {
     xrdb -query -all | grep "$1": | sed "s/.*#/#/g" | tail -n1
 }

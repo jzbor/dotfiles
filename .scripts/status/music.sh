@@ -1,4 +1,8 @@
 #!/bin/bash
+# Check dependencies
+DEPENDENCIES="dwmstatus-update.sh pgrep playerctl"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 # https://specifications.freedesktop.org/mpris-spec/latest/Player_Interface.html#Property:Metadata
 

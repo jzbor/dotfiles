@@ -1,4 +1,7 @@
 #!/usr/bin/sh
+
+### DEPRECATED ###
+
 bspc query -N -n .floating > /tmp/scratchid
 $SHELL
 

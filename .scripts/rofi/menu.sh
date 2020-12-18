@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="rofi xargs /bin/bash"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 if [ -z "$1" ]; then
     file="$HOME"/.config/assets/menu/main.txt

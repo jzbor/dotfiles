@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="pamixer"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 tray=""
 

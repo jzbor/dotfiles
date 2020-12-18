@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 # opout: "open output": A general handler for opening a file's intended output.
 # I find this useful especially running from vim.
+# Check dependencies
+DEPENDENCIES="notes.sh $READER $BROWSER"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 basename="$(echo "$1" | sed 's/\.[^\/.]*$//')"
 

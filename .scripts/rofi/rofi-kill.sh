@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="dunstify ps"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 kill_pid="$(ps -xo pid=,cmd= | rofi -dmenu -i -p Kill | awk '{ print $1 }')"
 

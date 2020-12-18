@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="music.sh"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 case $1 in
     1) music.sh play-pause ;;

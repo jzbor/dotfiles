@@ -1,5 +1,7 @@
 #! /bin/python3
 
+### DEPRECATED ###
+
 
 class BspwmObject:
     def __init__(self, object_id):

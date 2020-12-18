@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="volume.sh pacmd pactl sh xmenu"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 select_volume () {
 	menu="      100%	volume.sh --set 100

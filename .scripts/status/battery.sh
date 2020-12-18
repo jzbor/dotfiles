@@ -1,4 +1,8 @@
 #!/bin/bash
+# Check dependencies
+DEPENDENCIES=""
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 get_icon () {
     # There is a bug on T410s where $3 is '' although it should be 'Unknown'

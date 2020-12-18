@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Check dependencies
+DEPENDENCIES="dunstify ffplay scrot"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
+
 ! [ -d "$HOME/Pictures/Screenshots/" ] && mkdir -p "$HOME/Pictures/Screenshots/"
 
 filename="$(date +'Screenshot_%Y-%m-%d_%H-%M-%S.png')"

@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES="rofi"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 terminal_label="   Terminal"
 vim_label="   Vim"

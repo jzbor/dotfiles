@@ -1,43 +1,29 @@
 #! /bin/sh
+# Check dependencies
+DEPENDENCIES="dunstify light"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 DUNST_ID=9170
 
 case $1 in
-    toggle | t)
-	echo pass
-	current="$(xbacklight | sed 's/\..*//g')"
-	case "$current" in
-	    "19" | "20")
-		xbacklight -set 80
+	"-i" | "-inc" | "inc" | "+")
+		light -A $2
 		;;
-	    "79" | "80")
-		xbacklight -set 100
+	"-d" | "-dec" | "dec" | "-")
+		light -U $2
 		;;
-	    "99" | "100")
-		xbacklight -set 20
+	"-s" | "-set" | "set" | "=")
+		light -S $2
 		;;
-	    *)
-		xbacklight -set 80
+	"-g" | "-get" | "get")
+		light -G $2
 		;;
-	esac
-	;;
-    "-i" | "-inc" | "inc" | "+")
-	light -A $2
-	;;
-    "-d" | "-dec" | "dec" | "-")
-	light -U $2
-	;;
-    "-s" | "-set" | "set" | "=")
-	light -S $2
-	;;
-    "-g" | "-get" | "get")
-	light -G $2
-	;;
-    "")
-	;;
-    *)
-	light $@
-	;;
+	"")
+		;;
+	*)
+		light $@
+		;;
 esac
 
 dunstify -a Brightness -i "notification-display-brightness" -r $DUNST_ID \

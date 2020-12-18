@@ -1,4 +1,8 @@
 #!/bin/sh
+# Check dependencies
+DEPENDENCIES=""
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
 
 device_query="$(rfkill --output "ID,TYPE,SOFT,HARD" | \
     grep "bluetooth" | head -n 1 | \
