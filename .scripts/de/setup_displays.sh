@@ -37,6 +37,15 @@ done
 # Reset keyboard map
 setxkbmap de nodeadkeys -option -option caps:escape_shifted_capslock -option lv3:ralt_alt -option lv3:lwin_switch
 
+# Wacom tablet settings
+echo "Mapping wacom tablet to $last"
+xsetwacom set 'Wacom Intuos BT M Pad pad' MapToOutput "$last"
+xsetwacom set 'Wacom Intuos BT M Pad pad' Button 1 8
+xsetwacom set 'Wacom Intuos BT M Pad pad' Button 2 9
+xsetwacom set 'Wacom Intuos BT M Pad pad' Button 3 4
+xsetwacom set 'Wacom Intuos BT M Pad pad' Button 8 5
+
+
 if pgrep polybar > /dev/null; then
 	echo
 	echo "Restarting polybar"
