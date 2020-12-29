@@ -4,7 +4,7 @@ alt + w
 alt + shift + w
 	firefox --private-window
 alt + ctrl + w
-	rofi-web.sh
+	surf
 
 alt + BackSpace
 	$TERMINAL -e nvim
@@ -28,6 +28,13 @@ alt + n
 	notes.sh view
 alt + shift + n
 	$TERMINAL -e notes.sh
+
+
+### DUNST SHORTCUTS ###
+alt + {shift,_} + end
+	dunstctl close{-all}
+alt + shift + {acute,ssharp}
+	dunstctl {history,context}
 
 
 ### ROFI SCRIPTS ###

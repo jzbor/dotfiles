@@ -169,28 +169,6 @@
     mouse_middle_click = close_current
     mouse_right_click = do_action
 
-[shortcuts]
-
-    # Shortcuts are specified as [modifier+][modifier+]...key
-    # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
-    # "mod3" and "mod4" (windows-key).
-    # Xev might be helpful to find names for keys.
-
-    # Close notification.
-    close = mod1+End
-
-    # Close all notifications.
-    # close_all = ctrl+shift+space
-    close_all = mod1+shift+End
-
-    # Redisplay last message(s).
-    # On the US keyboard layout "grave" is normally above TAB and left
-    # of "1".
-    history = mod1+shift+acute
-
-    # Context menu.
-    context = mod1+shift+ssharp
-
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
