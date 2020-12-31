@@ -32,6 +32,11 @@ let ycm_types = {
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	" Status line
    	Plug 'itchyny/lightline.vim'
+	" Manage ctags
+	" if executable('ctags')
+	" 	Plug 'jsfaint/gen_tags.vim'
+	" endif
+
 	" Fuzzy file search
 	Plug 'junegunn/fzf.vim'
 	" Distraction free writing

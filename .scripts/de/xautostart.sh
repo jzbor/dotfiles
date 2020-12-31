@@ -6,6 +6,7 @@ command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
 # Configure X
+xrdb -merge ~/.Xresources
 wmname LG3D
 setup_displays.sh
 sxhkd &
