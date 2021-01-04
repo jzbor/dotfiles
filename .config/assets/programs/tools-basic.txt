@@ -2,6 +2,7 @@ bash
 cmake
 fzf
 htop
+ncdu
 neovim
 playerctl
 python

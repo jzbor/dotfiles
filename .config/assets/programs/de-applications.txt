@@ -13,6 +13,7 @@ spicetify-cli
 spotify
 sxiv
 xfce4-power-manager
+youtube-dl
 zathura
 zathura-pdf-poppler
 zathura-ps
