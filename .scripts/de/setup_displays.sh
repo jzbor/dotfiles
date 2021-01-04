@@ -25,6 +25,7 @@ for display in $connected; do
 	else
 		echo "Setting up $display next to $display"
 		xrandr --output "$display" --auto --right-of "$last"
+		last="$display"
 	fi
 done
 
@@ -46,6 +47,7 @@ xsetwacom set 'Wacom Intuos BT M Pad pad' Button 1 8
 xsetwacom set 'Wacom Intuos BT M Pad pad' Button 2 9
 xsetwacom set 'Wacom Intuos BT M Pad pad' Button 3 4
 xsetwacom set 'Wacom Intuos BT M Pad pad' Button 8 5
+xinput map-to-output "Wacom Intuos BT M Pen stylus" "$last"
 
 
 if pgrep polybar > /dev/null; then
