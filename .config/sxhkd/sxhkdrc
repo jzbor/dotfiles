@@ -30,7 +30,7 @@ alt + shift + n
 	$TERMINAL -e notes.sh
 
 alt + Escape
-	keyboard.sh
+	keyboard.sh toggle
 alt + shift + Escape
 	sxiv ~/.config/assets/keyboard_us.png
 
