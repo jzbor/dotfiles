@@ -36,8 +36,7 @@ for display in $disconnected; do
 done
 
 # Reset keyboard map
-setxkbmap de nodeadkeys -option -option caps:escape_shifted_capslock \
-	-option lv3:ralt_alt -option lv3:lwin_switch
+keyboard.sh
 
 
 # Wacom tablet settings

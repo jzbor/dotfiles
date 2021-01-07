@@ -13,7 +13,7 @@ set_layout () {
         de)
             setxkbmap de nodeadkeys $options -option lv3:lwin_switch
             ;;
-        us)
+        us | us,de)
             setxkbmap us,de $options -option eurosign:e -option grp:lwin_switch
             xmodmap -e "keycode 29 = z Z z Z"
             xmodmap -e "keycode 52 = y Y y Y"
