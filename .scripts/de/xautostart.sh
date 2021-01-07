@@ -33,7 +33,7 @@ xfce4-power-manager &
 	killall -9 redshift; redshift -x; redshift -l 49:11) &
 
 # Start compositor
-(killall -9 picom-guardian.sh; picom-guardian.sh) &
+(killall -9 picom-guardian.sh; [ "$1" != "nopicom" ] && picom-guardian.sh) &
 
 # In winter it snows...
 if [ "$(date +%m)" = 12 ]; then

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=xautostart.sh
+Comment=Execute jzbor's autostart script
+Exec=xautostart.sh nopicom
+Terminal=true
+Type=Application
