@@ -36,8 +36,12 @@ case $1 in
 				;;
 		esac
 		;;
-	"")
+	default)
 		set_layout "$default_layout"
+		;;
+	"")
+		old_layout="$(setxkbmap -query | grep layout | awk '{ print$2 }')"
+		set_layout "$old_layout"
 		;;
 	*)
         set_layout "$1"

@@ -8,6 +8,7 @@ command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 # Configure X
 xrdb -merge ~/.Xresources
 wmname LG3D
+keyboard.sh de
 setup_displays.sh
 sxhkd &
 
@@ -44,3 +45,6 @@ fi &
 # libinput-gestures-setup restart &
 touchegg --daemon &
 touchegg &
+
+# reset keyboard map
+keyboard.sh us
