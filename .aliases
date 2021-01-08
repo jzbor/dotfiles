@@ -36,6 +36,11 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'qa!'
 "
 
+rona () {
+	curl -s https://www.corona-in-zahlen.de/landkreise/sk%20erlangen/ | \
+		grep "Neuinfektionen pro 100.000 Einwohner gemeldet" | sed 's/\s*//'
+}
+
 funky-beat () {
     echo "main(i){for(i=0;;i++)putchar(((i*(i>>8|i>>9)&46&i>>8))^(i&i>>13|i>>6));}" | gcc -x c - -o /tmp/a.out && /tmp/a.out | aplay
 }
