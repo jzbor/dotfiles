@@ -1,6 +1,7 @@
 * {
 	background:		#1d2021;
 	argbbackground:	#1d2021e0;
+	backgroundlight: #282828;
 	transparent:	#00000000;
 	foreground:		#ebdbb2;
 	urgent:			#fb4934;
