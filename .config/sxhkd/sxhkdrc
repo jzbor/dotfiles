@@ -105,6 +105,9 @@ alt + {_, shift, ctrl} + @Print
 alt + {plus, minus} + {_, shift}
 	volume.sh {-i,-d} {_,1}
 
+alt + shift + control + plus
+	volume.sh -b
+
 alt + numbersign + {_, shift, ctrl}
 	volume.sh -t {_,mic,mic-unmute}
 
