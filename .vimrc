@@ -29,14 +29,13 @@ let ycm_types = {
 	" Git sidebar
 	Plug 'airblade/vim-gitgutter'
 	" LaTeX autocompiling
-	Plug 'donRaphaco/neotex', { 'for': 'tex' }
+	"Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	" Status line
    	Plug 'itchyny/lightline.vim'
 	" Manage ctags
-	" if executable('ctags')
-	" 	Plug 'jsfaint/gen_tags.vim'
-	" endif
-
+	"if executable('ctags')
+	"	Plug 'jsfaint/gen_tags.vim'
+	"endif
 	" Fuzzy file search
 	Plug 'junegunn/fzf.vim'
 	" Distraction free writing
@@ -45,8 +44,6 @@ let ycm_types = {
 	Plug 'junegunn/seoul256.vim'
 	" Vim folding
 	"Plug 'matze/vim-tex-fold'
-	" i3 syntax
-	Plug 'mboughaba/i3config.vim'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
 	" File browsing
@@ -89,16 +86,8 @@ let ycm_types = {
 	set autochdir	" Always set the cwd to the current files parent dir
 
 " Titling
-set title
-set titlestring=%F
-
-" Mapping for escape
-    inoremap <A-Space> <Esc>
-    vnoremap <A-Space> <Esc>
-    nnoremap <A-Space> <Esc>
-    " inoremap <CR> <Esc>
-    " vnoremap <CR> <Esc>
-    " nnoremap <CR> <Esc>
+    set title
+    set titlestring=%F
 
 " Coloring
     if &t_Co > 255
@@ -108,13 +97,11 @@ set titlestring=%F
 		let g:gruvbox_material_palette = 'original'
 		let g:gruvbox_material_transparent_background = 1
 		set background=dark
-		let g:airline_theme = 'gruvbox_material'
 		let g:lightline = {'colorscheme' : 'gruvbox_material'}
     endif
     if &t_Co == 8
 		colorscheme default
 		set background=dark
-    	let g:airline_theme = 'default'
     	let g:lightline = {'colorscheme' : 'default'}
     endif
     set laststatus=2	" Adds another statusline (for lightline)
@@ -142,9 +129,9 @@ set titlestring=%F
 	vmap <C-c> "+y
 
 " Breaking and wrapping stuff
-    set nowrap  " Disable line wrapping
-    "set linebreak	" Break lines at word (requires Wrap lines)
-    "set showbreak= 	" Wrap-broken line prefix
+    set wrap  " Disable line wrapping
+    set linebreak	" Break lines at word (requires Wrap lines)
+    set showbreak=>>>  	" Wrap-broken line prefix
     "set textwidth=	" Line wrap (number of cols)
 
 " Folding
@@ -336,18 +323,12 @@ autocmd BufRead * :call GoYCM()
 
 " Indents and tabs
     set autoindent	" Auto-indent new lines
-    set nosmartindent	" Enable smart-indent
-    set nosmarttab	" Enable smart-tabs
+    set smartindent	" Enable smart-indent
+    set smarttab	" Enable smart-tabs
     set tabstop=4	" Number of spaces per Tab
     set softtabstop=4	" Number of spaces per Tab in insert mode
     set shiftwidth=4	" Number of auto-indent spaces
-    set noexpandtab	" (Don't) Replace tabs with spaces
-
-" Setting tab rules according to https://ukupat.github.io/tabs-or-spaces/:
-	au BufNewFile,BufRead *.js,*.css,*.html set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-	au BufNewFile,BufRead *.java set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-	au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-	au BufNewFile,BufRead *.c,*.h set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    set expandtab	" (Don't) Replace tabs with spaces
 
 " Personal commands
 	command! Ddate execute 'read !date' | norm I####<Space>

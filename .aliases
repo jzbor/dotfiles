@@ -2,6 +2,8 @@
 # Adding my own aliases
 
 alias :q="exit"
+alias df="df -h"
+alias du="du -sh"
 alias fucking="sudo"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
 alias icat="swallow sxiv"
