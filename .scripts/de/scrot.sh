@@ -13,36 +13,27 @@ case "$1" in
     "" | select)
 		if scrot -s -f "$filename" \
 				-e 'mv -f $f ~/Pictures/Screenshots/'; then
-			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga &
 			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
-				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
-				--action "phone --share ~/Pictures/Screenshots/$filename,send to phone" \
-				--action "xdg-open ~/Pictures/Screenshots/$filename,open in viewer" \
-				--action "gimp ~/Pictures/Screenshots/$filename,edit in gimp" \
+				--action "rofi-file.sh ~/Pictures/Screenshots/$filename,file" \
 				| sh
 		fi
 		;;
     focused)
 		if scrot -u "$filename" \
 				-e 'mv -f $f ~/Pictures/Screenshots/'; then
-			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga &
 			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
-				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
-				--action "phone --share ~/Pictures/Screenshots/$filename,send to phone" \
-				--action "xdg-open ~/Pictures/Screenshots/$filename,open in viewer" \
-				--action "gimp ~/Pictures/Screenshots/$filename,edit in gimp" \
+				--action "rofi-file.sh ~/Pictures/Screenshots/$filename,file" \
 				| sh
 		fi
 		;;
     screen)
 		if scrot "$filename" \
 				-e 'mv -f $f ~/Pictures/Screenshots/'; then
-			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga
+			ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/screen-capture.oga &
 			dunstify -a Scrot -i ~/Pictures/Screenshots/$filename "Sucessfully taken screenshot" \
-				--action "$FILEBROWSER ~/Pictures/Screenshots/,open in filebrowser" \
-				--action "phone --share ~/Pictures/Screenshots/$filename,send to phone" \
-				--action "xdg-open ~/Pictures/Screenshots/$filename,open in viewer" \
-				--action "gimp ~/Pictures/Screenshots/$filename,edit in gimp" \
+				--action "rofi-file.sh ~/Pictures/Screenshots/$filename,file" \
 				| sh
 		fi
 		;;

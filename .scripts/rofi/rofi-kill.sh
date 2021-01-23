@@ -1,6 +1,6 @@
 #!/bin/sh
 # Check dependencies
-DEPENDENCIES="dunstify ps"
+DEPENDENCIES="dunstify ps rofi"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
