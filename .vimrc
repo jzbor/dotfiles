@@ -321,6 +321,10 @@ autocmd BufRead * :call GoYCM()
     command! -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
     command! -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
+" Git shortcuts
+    nnoremap Gn :GitGutterNextHunk<CR>
+    nnoremap Gp :GitGutterPrevHunk<CR>
+
 " Indents and tabs
     set autoindent	" Auto-indent new lines
     set smartindent	" Enable smart-indent
