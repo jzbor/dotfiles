@@ -4,4 +4,5 @@ cups
 cups-pk-helper
 hunspell
 hunspell-de
+libgnome-keyring
 system-config-printer
