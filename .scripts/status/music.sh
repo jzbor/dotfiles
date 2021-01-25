@@ -11,7 +11,7 @@ icon_file="/tmp/music-icon"
 artist_file="/tmp/music-artist"
 title_file="/tmp/music-title"
 
-ignore_list="firefox"
+ignore_list="firefox,chromium"
 no_player_msg="No player found"
 
 format() {

@@ -64,6 +64,19 @@ Xft.lcdfilter: lcddefault
 *selbordercolor:		myForeground
 *selfgcolor:			myBackground
 
+dwm.vacantTagFg:        #7c6f64
+dwm.vacantTagBg:        myBackground
+dwm.unfocusedTitleFg:   #ff0000
+dwm.unfocusedTitleBg:   myBackground
+dwm.statusFg:           myForeground
+dwm.statusBg:           myBackground
+dwm.occupiedTagFg:      myForeground
+dwm.occupiedTagBg:      myBackground
+dwm.focusedTitleFg:     myForeground
+dwm.focusedTitleBg:     myBackground
+dwm.unfocusedBorder:    myBackground
+dwm.focusedBorder:      myForeground
+
 !! X clock
 Clock*Background:		myBackground
 Clock*BorderColor:		myForeground
