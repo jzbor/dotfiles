@@ -4,11 +4,11 @@
 DEPENDENCIES="dunstify find pandoc"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
-
+# paths to directories must not be terminated with '/'
 csspath="$HOME/.config/assets/notes/style.css"
 notepath="$HOME/Documents/Notes"
-outpath="$HOME/.cache/Notes/"
-previewpath="/tmp/Notes/"
+outpath="$HOME/.cache/Notes"
+previewpath="/tmp/Notes"
 registerfile="$outpath.reg"
 
 if command -v surf > /dev/null; then
@@ -92,9 +92,9 @@ compile_notes () {
 get_outpath () {
     infile="$(realpath $1)"
     if echo "$infile" | grep '\.md$' > /dev/null 2>&1; then
-        echo "$outpath$(echo "$infile" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//;s/\.md$/.html/g')"
+        echo "$outpath/$(echo "$infile" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//;s/\.md$/.html/g')"
     else
-        echo "$outpath$(echo "$infile" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//')"
+        echo "$outpath/$(echo "$infile" | sed 's/^'"$(echo "$notepath" | sed 's/\//\\\//g')"'//')"
     fi
 }
 
@@ -103,7 +103,7 @@ preview () {
     [ -d "$previewpath" ] || mkdir -vp "$previewpath"
 
     infile="$1"
-    outfile="$previewpath$(echo "$infile" | md5sum | cut -f1 -d' ').html"
+    outfile="$previewpath/$(echo "$infile" | md5sum | cut -f1 -d' ').html"
 
     pandoc -f markdown -t html --css="$csspath" -s -o "$outfile" "$infile"
     $browser "$outfile"
@@ -116,10 +116,7 @@ case $1 in
         compile_notes
         ;;
     path)
-        echo "$notepath"
-        ;;
-    test)
-        get_outpath "$2"
+        echo "$notepath"/
         ;;
     update | compile)
         if [ "$2" = "async" ]; then
@@ -133,7 +130,7 @@ case $1 in
     view)
         if [ -z "$2" ]; then
             echo $outpath
-            $browser "$outpath"index.html
+            $browser "$outpath"/index.html
         elif realpath "$2" | grep "^$notepath"; then
             compile_notes
             $browser "$(get_outpath "$(realpath $2)")"
@@ -143,7 +140,7 @@ case $1 in
         preview "$2"
         ;;
     '')
-        $EDITOR "$notepath"index.md
+        $EDITOR "$notepath"/index.md
         ;;
     *)
         preview "$1"
