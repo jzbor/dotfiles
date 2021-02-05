@@ -11,6 +11,7 @@ wmname LG3D
 keyboard.sh de
 setup_displays.sh
 sxhkd &
+nice xmenu.sh generate &
 
 # Daemons that automatically check for running instances
 /usr/lib/kdeconnectd &

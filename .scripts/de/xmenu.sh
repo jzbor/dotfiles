@@ -16,6 +16,8 @@ generate_cache () {
 
 [ -f "$cache_file" ] || generate_cache
 
+[ "$1" = "generate" ] && exit
+
 menu="DWM
 	  Fullscreen		dwmc togglefullscr
 	  Floating			dwmc togglefloating
