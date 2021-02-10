@@ -5,17 +5,6 @@ DEPENDENCIES="pgrep sh xdg-xmenu xmenu"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
-cache_file="/tmp/xdg-xmenu-cache"
-
-generate_cache () {
-	if ! [ -f "$cache_file.part" ]; then
-		xdg-xmenu > "$cache_file.part"
-		mv "$cache_file.part" "$cache_file"
-	fi
-}
-
-[ -f "$cache_file" ] || generate_cache
-
 menu="DWM
 	  Fullscreen		dwmc togglefullscr
 	  Floating			dwmc togglefloating
@@ -29,16 +18,15 @@ Favourites
 	  Mail				thunderbird
 	  Files			$FILEBROWSER
 Applications			notify-send test
-$(sed -e 's/^/	/' $cache_file)
+$(xdg-xmenu | sed -e 's/^/	/')
 
 Menu					menu.sh
 System Menu				menu.sh system
 Power Menu
-	  Shutdown			sudo poweroff
-	  Reboot			sudo reboot
+	  Shutdown			poweroff || sudo poweroff
+	  Reboot			reboot || sudo reboot
 	  Log out			pkill -15 -t tty\"$XDGVTNR\" Xorg"
 
 echo "$menu" | xmenu | sh
 
-# Generate cache
-pgrep xdg-xmenu || generate_cache
+xdg-xmenu -u &

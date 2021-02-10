@@ -1,3 +1,8 @@
+### WINDOW MANAGEMENT ###
+alt + a
+    dwmc riodraw
+
+
 ### APPS ###
 alt + w
 	firefox
@@ -58,8 +63,8 @@ Menu
 ctrl + alt + Delete
 	menu.sh system
 
-alt + Delete
-	rofi-kill.sh
+alt + {_,shift} + Delete
+	rofi-kill.sh {visual,_}
 
 alt + shift + c
 	rofi-projects.sh

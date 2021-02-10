@@ -22,10 +22,10 @@ option="$(echo "$menu" | rofi -dmenu -i -p "$file: ")"
 
 case $option in
     *Filebrowser)
-        $FILEBROWSER $file
+        [ -n "$FILEBROWSER" ] && $FILEBROWSER $file
         ;;
     *Phone)
-        phone --share $file
+        command -v phone > /dev/null 2>&1 && phone --share $file
         ;;
     *Open)
         xdg-open $file
