@@ -59,7 +59,7 @@ compile_entry () {
     echo "in: $infile out: $outfile par: $parent"
 
     # fix links
-    sed -i 's/\.md/\.html/g' $outfile
+    sed -i 's/\.md/\.html/g' "$outfile"
 }
 
 compile_notes () {
