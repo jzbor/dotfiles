@@ -1,3 +1,4 @@
+slop
 sxhkd
 xmenu
 xorg-xsetroot

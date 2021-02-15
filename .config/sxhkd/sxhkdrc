@@ -1,6 +1,6 @@
 ### WINDOW MANAGEMENT ###
 alt + a
-    dwmc riodraw
+    dwmc rioresize
 
 
 ### APPS ###
@@ -27,7 +27,7 @@ alt + ctrl + p
 	rofi-mpv.sh
 
 alt + s
-	if pidof spotify; then dwmc toggleviewex 7; else  spotify; fi
+	if pidof spotify; then dwmc toggleview 7; else  spotify; fi
 
 alt + n
 	notes.sh view
