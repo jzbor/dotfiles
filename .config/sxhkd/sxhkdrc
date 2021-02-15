@@ -22,7 +22,7 @@ alt + b
 alt + p
 	mpv
 alt + shift + p
-	mpv "$(clipit -p)" --idle=no
+	mpv "$(xclip -o)" --idle=no
 alt + ctrl + p
 	rofi-mpv.sh
 

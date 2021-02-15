@@ -70,6 +70,8 @@ dwm.unfocusedTitleFg:   #7c6f64
 dwm.unfocusedTitleBg:   myBackground
 dwm.statusFg:           myForeground
 dwm.statusBg:           myBackground
+dwm.menuFg:             myBackground
+dwm.menuBg:             myUrgent
 dwm.occupiedTagFg:      myForeground
 dwm.occupiedTagBg:      myBackground
 dwm.focusedTitleFg:     myForeground

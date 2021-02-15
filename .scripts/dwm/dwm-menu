@@ -6,6 +6,7 @@ powermenu="  Shutdown			poweroff || sudo poweroff
   Log out			dwmc quit"
 
 case $1 in
-    1) rofi -show drun -config ~/.config/rofi/apps.rasi -fullscreen ;;
+    # 1) rofi -show drun -config ~/.config/rofi/apps.rasi -fullscreen ;;
+    1) xdg-xmenu | xmenu -p 0x0 | sh ;;
     3) echo "$powermenu" | xmenu -p 0x0| sh ;;
 esac
