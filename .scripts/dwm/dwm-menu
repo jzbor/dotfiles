@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Check dependencies
+DEPENDENCIES="rofi xmenu"
+command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+
+powermenu="  Shutdown			poweroff || sudo poweroff
+  Reboot			reboot || sudo reboot
+  Reload dwm		dwmc rquit
+  Log out			dwmc quit"
+
+case $1 in
+    1) rofi -show drun -config ~/.config/rofi/apps.rasi -fullscreen ;;
+    3) echo "$powermenu" | xmenu | sh ;;
+esac
