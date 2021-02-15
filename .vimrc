@@ -356,7 +356,7 @@ autocmd BufRead * :call GoYCM()
 	au BufNewFile,BufRead /*.rasi setf css
 
 " .Xresources:
-    autocmd BufWritePost .Xresources !xrdb merge %
+    autocmd BufWritePost .Xresources !xrdb merge % && dwmc xrdb
 
 " LaTeX:
     " Word count (maybe replace with texcount):
