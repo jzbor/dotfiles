@@ -9,7 +9,7 @@ get_status () {
     [ -z "$extra" ] || extra="$extra | "
 
 	layout="$(setxkbmap -query | grep '^layout:' | sed 's/.* //')"
-	[ "$layout" != de ] && kbd_layout=" $layout | "
+	[ "$layout" != "us,de" ] && kbd_layout=" $layout | "
 
     music.sh has-player && music="$(music.sh status-small) | "
 

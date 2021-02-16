@@ -27,7 +27,7 @@ alt + ctrl + p
 	rofi-mpv.sh
 
 alt + s
-	if pidof spotify; then dwmc toggleview 7; else  spotify; fi
+	sh -c "if pidof spotify; then dwmc toggleview 7; else  spotify; fi"
 
 alt + n
 	notes.sh view
