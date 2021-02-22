@@ -15,6 +15,12 @@ else
 	export TERMINAL="uxterm"
 fi
 
+export DWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
+export DWM_KEYMAP="de"
+export DWM_NOPICOM=1
+export DWM_NODUNST=1
+export DWM_NOSTATUS=1
+
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome
 
