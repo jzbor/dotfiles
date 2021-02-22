@@ -64,7 +64,7 @@ ctrl + alt + Delete
 	menu.sh system
 
 alt + {_,shift} + Delete
-	rofi-kill.sh {visual,_}
+	rofi-kill.sh {_,visual}
 
 alt + shift + c
 	rofi-projects.sh
