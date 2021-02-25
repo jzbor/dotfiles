@@ -5,18 +5,22 @@ DEPENDENCIES="dunstify setxkbmap"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
-options="-option -option caps:escape_shifted_capslock -option lv3:ralt_alt"
+options="-option -option caps:escape_shifted_capslock -option altwin:swap_alt_win"
 default_layout="us"
 
 set_layout () {
     case $1 in
         de)
             setxkbmap de nodeadkeys $options -option lv3:lwin_switch
+            xmodmap -e "keycode 94 = Alt_L Meta_L Alt_L Meta_L"
             ;;
         us | us,de)
             setxkbmap us,de $options -option eurosign:e -option grp:lwin_switch
             xmodmap -e "keycode 29 = z Z z Z"
             xmodmap -e "keycode 52 = y Y y Y"
+            xmodmap -e "keycode 94 = Alt_L Meta_L Alt_L Meta_L"
+            # xmodmap -e "keycode 64 = Super_L NoSymbol Super_L"
+            # xmodmap -e "keycode 108 = Super_R NoSymbol Super_R"
             ;;
     esac
 }
