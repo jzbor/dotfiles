@@ -1,0 +1,28 @@
+# Set the colour scheme
+colorscheme gruvbox
+
+# Indentation
+set-option global indentwidth 4
+set-option global tabstop 4
+
+# Always keep one line and three columns displayed around the cursor
+set-option global scrolloff 5,5
+
+# Display the status bar on top
+set-option global ui_options ncurses_status_on_top=false
+
+# Display line numbers
+#add-highlighter global/ number-lines -hlcursor
+
+# Highlight trailing whitespace
+add-highlighter global/ regex \h+$ 0:Error
+
+# Softwrap long lines
+#add-highlighter global/ wrap -word -indent
+
+# Clipboard management mappings
+map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i<ret>"
+map -docstring "paste the clipboard" global user p "<a-!> xclip -o<ret>"
+
+# Shortcut to quickly exit the editor
+define-command -docstring "save and quit" x "write-all; quit"
