@@ -91,7 +91,6 @@ get_player() {
 }
 
 loop() {
-	[ -f $status_file ] || echo "$no_player_msg" > $status_file
 	(playerctl -i "$ignore_list" -F status 2> /dev/null & \
 			playerctl -a -i "$ignore_list" -F metadata 2> /dev/null)  | while read -r; do
 		case $REPLY in
@@ -166,14 +165,11 @@ case $1 in
 	status-small)
 		format_small
 		;;
-	statusfile)
-		echo $status_file
-		;;
 	has-player)
 		playerctl status -i "$ignore_list" > /dev/null 2>&1
 		;;
 	*)
 		playerctl -p "$(get_player 2> /dev/null)" $1 > /dev/null 2>&1
-		cat $status_file
+		format
 		;;
 esac
