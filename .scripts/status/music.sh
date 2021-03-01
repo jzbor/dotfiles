@@ -1,6 +1,6 @@
 #!/bin/bash
 # Check dependencies
-DEPENDENCIES="dwmstatus-update.sh pgrep playerctl"
+DEPENDENCIES="dwmstatus.sh pgrep playerctl"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
@@ -145,7 +145,7 @@ loop() {
 				eval_metadata
 				;;
 		esac
-		dwmstatus-update.sh &
+		dwmstatus.sh update &
 	done
 }
 

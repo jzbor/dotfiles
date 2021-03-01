@@ -22,6 +22,11 @@ get_status () {
     printf "$extra$kbd_layout\x02$music\x03$(volume.sh)% |\x04 $(ethernet.sh) $(wifi.sh) $(bluetooth.sh) |\x05  $(date +%R) || \x06$device"
 }
 
+if [ "$1" = update ]; then
+    xsetroot -name "$(get_status)"
+    exit
+fi
+
 kill -9 $(pgrep $(basename $0) | grep -v $$) 2> /dev/null
 while true; do
     xsetroot -name "$(get_status)"

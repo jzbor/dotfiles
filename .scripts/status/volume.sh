@@ -1,6 +1,6 @@
 #!/bin/sh
 # Check dependencies
-DEPENDENCIES="dwmstatus-update.sh ffplay pamixer"
+DEPENDENCIES="dwmstatus.sh ffplay pamixer"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
@@ -14,7 +14,7 @@ case $1 in
 			pamixer -i "${2:-5}"
 		fi
 		ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-		dwmstatus-update.sh
+        dwmstatus.sh update
 		;;
 	"-d" | "--dec" | "dec" | "-")
 		if [ -f "$boost_overwrite_file" ]; then
@@ -23,7 +23,7 @@ case $1 in
 			pamixer -d "${2:-5}"
 		fi
 		ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-		dwmstatus-update.sh
+        dwmstatus.sh update
 		;;
 	"-s" | "--set" | "set" | "=")
 		if [ -f "$boost_overwrite_file" ]; then
@@ -31,11 +31,11 @@ case $1 in
 		else
 			pamixer --set-volume "${2:-5}"
 		fi
-		dwmstatus-update.sh
+        dwmstatus.sh update
 		;;
 	"-g" | "--get" | "get")
 		pamixer --get-volume
-		dwmstatus-update.sh
+        dwmstatus.sh update
 		;;
 	"-t" | "--toggle" | "toggle")
 		case $2 in
@@ -44,7 +44,7 @@ case $1 in
 			# Technically no toggle; may change later
 			mic-unmute | microphone-unmute) pamixer --default-source -u ;;
 		esac
-		dwmstatus-update.sh
+        dwmstatus.sh update
 		;;
 	"-b" | "--boost" )
 		touch "$boost_overwrite_file"

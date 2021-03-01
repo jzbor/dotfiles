@@ -54,6 +54,6 @@ esac
 
 
 
-dwmstatus-update.sh
+dwmstatus.sh update
 # dunstify -a Keyboard "$old_layout -> $(echo $new_layout | cut -f1 -d' ') ($?)"
 
