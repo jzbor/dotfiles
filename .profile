@@ -16,6 +16,7 @@ else
 fi
 
 export DWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
+export DWM_STATUSHANDLER="dwmstatushandler.sh"
 export DWM_KEYMAP="de"
 export DWM_NOPICOM=1
 export DWM_NODUNST=1
