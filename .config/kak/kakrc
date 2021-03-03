@@ -26,3 +26,6 @@ map -docstring "paste the clipboard" global user p "<a-!> xclip -o<ret>"
 
 # Shortcut to quickly exit the editor
 define-command -docstring "save and quit" x "write-all; quit"
+
+# tips in normal mode
+set-option global autoinfo normal
