@@ -1,23 +1,8 @@
-### WINDOW MANAGEMENT ###
-super + a
-    dwmc rioresize
-
-
 ### APPS ###
-super + w
-	firefox
 super + shift + w
 	firefox --private-window
 super + ctrl + w
 	surf
-
-super + BackSpace
-	$TERMINAL -e nvim
-super + Return
-	$TERMINAL
-
-super + b
-	$FILEBROWSER
 
 super + p
 	mpv
@@ -34,10 +19,10 @@ super + n
 super + shift + n
 	$TERMINAL -e notes.sh
 
-super + Escape
-	keyboard.sh toggle
-super + shift + Escape
-	sxiv ~/.config/assets/keyboard_us.png
+# super + Escape
+# 	keyboard.sh toggle
+# super + shift + Escape
+# 	sxiv ~/.config/assets/keyboard_us.png
 
 
 ### DUNST SHORTCUTS ###
@@ -48,8 +33,6 @@ super + shift + {acute,ssharp}
 
 
 ### ROFI SCRIPTS ###
-super + d
-	rofi -combi-modi drun,window,ssh -show combi
 super + shift + d
 	rofi-windows.sh
 super + ctrl + d
@@ -58,10 +41,7 @@ super + ctrl + d
 super + Home
 	menu.sh
 Menu
-	xmenu.sh
-
-ctrl + alt + Delete
-	menu.sh system
+	dwm-menu context
 
 super + {_,shift} + Delete
 	rofi-kill.sh {_,visual}
@@ -75,16 +55,14 @@ super + {ctrl, shift} + s
 super + {shift, ctrl} + m
 	rofi-mount.sh {mnt,umnt}
 
-super + space
-	pidof skippy-xd || skippy-xd --prev > /dev/null 2>&1
 super + ctrl + space
 	rofi-windows.sh
 
 ### OTHER SCRIPTS ###
-super + r
+super + control + r
 	setup_displays.sh
 
-super + shift + r
+super + shift + F10
 	weather.sh
 
 super + x
@@ -120,16 +98,14 @@ super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
 super + ctrl + {plus, minus}
-	backlight.sh {-inc,-dec} 10
+	dwm-util brightness {-inc,-dec} 10
 
-XF86Audio{Raise,Lower}Volume + {_,shift}
-	volume.sh {-i,-d} {_,1}
+# XF86Audio{Raise,Lower}Volume + {_,shift}
+# 	volume.sh {-i,-d} {_,1}
 
-XF86Audio{Mute,MicMute}
-	volume.sh -t {_,mic}
+# XF86Audio{Mute,MicMute}
+# 	volume.sh -t {_,mic}
 
-XF86Audio{Prev,Play,Pause,Next}
-	music.sh {previous,play,pause,next}
+# XF86Audio{Prev,Play,Pause,Next}
+# 	music.sh {previous,play,pause,next}
 
-XF86MonBrightness{Up,Down}
-	backlight.sh {-inc,-dec} 10
