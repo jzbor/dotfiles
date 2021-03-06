@@ -12,7 +12,7 @@ super + ctrl + p
 	rofi-mpv.sh
 
 super + s
-	sh -c "if pidof spotify; then dwmc toggleview 7; else  spotify; fi"
+	sh -c "if pidof spotify; then moonie toggleview 7; else  spotify; fi"
 
 super + n
 	notes.sh view
@@ -41,7 +41,7 @@ super + ctrl + d
 super + Home
 	menu.sh
 Menu
-	dwm-menu context
+	moonwm-menu context
 
 super + {_,shift} + Delete
 	rofi-kill.sh {_,visual}
@@ -98,7 +98,7 @@ super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
 super + ctrl + {bracketleft, bracketright}
-	dwm-util brightness {-dec,-inc} 10
+	moonwm-util brightness {-dec,-inc} 10
 
 # XF86Audio{Raise,Lower}Volume + {_,shift}
 # 	volume.sh {-i,-d} {_,1}

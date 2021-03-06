@@ -22,7 +22,7 @@ option="$(echo "$menu" | rofi -dmenu -i -p "$file: ")"
 
 case $option in
     *Filebrowser)
-        [ -n "$FILEBROWSER" ] && $FILEBROWSER $file
+        [ -n "$FILEMANAGER" ] && $FILEMANAGER $file
         ;;
     *Phone)
         command -v phone > /dev/null 2>&1 && phone --share $file

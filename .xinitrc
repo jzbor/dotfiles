@@ -9,7 +9,7 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-DEFAULT_SESSION='dwm'
+DEFAULT_SESSION='moonwm'
 
 # Java workaround
 export AWT_TOOLKIT=MToolkit
@@ -53,6 +53,7 @@ get_session(){
 		cinnamon) dbus_args+=(cinnamon-session) ;;
 		deepin) dbus_args+=(startdde) ;;
 		dwm) dbus_args+=(dwm) ;;
+		moonwm) dbus_args+=(moonwm) ;;
 		enlightenment) dbus_args+=(enlightenment_start) ;;
 		fluxbox) dbus_args+=(startfluxbox) ;;
 		gnome) dbus_args+=(gnome-session) ;;

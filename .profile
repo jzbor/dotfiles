@@ -5,7 +5,7 @@ export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
 export TERMINAL="alacritty"
-export FILEBROWSER="pcmanfm"
+export FILEMANAGER="pcmanfm"
 
 if command -v alacritty > /dev/null; then
 	export TERM="alacritty"
@@ -15,12 +15,12 @@ else
 	export TERMINAL="uxterm"
 fi
 
-export DWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
-export DWM_STATUSHANDLER="dwmstatushandler.sh"
-export DWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
-export DWM_NOPICOM=1
-export DWM_NODUNST=1
-export DWM_NOSTATUS=1
+export MOONWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
+export MOONWM_STATUSHANDLER="dwmstatushandler.sh"
+export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
+export MOONWM_NOPICOM=1
+export MOONWM_NODUNST=1
+export MOONWM_NOSTATUS=1
 
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome
@@ -69,6 +69,8 @@ elif ! (command -v lightdm > /dev/null || command -v gdm > /dev/null) \
 	&& [ -z $DISPLAY ] && [ $TTY = /dev/tty1 ]; then
     if command -v gnome-session > /dev/null; then
         exec startx ~/.xinitrc gnome
+    elif command -v moonwm > /dev/null; then
+        exec startx ~/.xinitrc dwm
     elif command -v dwm > /dev/null; then
         exec startx ~/.xinitrc dwm
     elif command -v i3 > /dev/null; then

@@ -56,28 +56,21 @@ Xft.lcdfilter: lcddefault
 *color15:			#ebdbb2
 
 
-!! DWM values
-*normbgcolor:			myBackground
-*normbordercolor:		myBackground
-*normfgcolor:			myForeground
-*selbgcolor:			myForeground
-*selbordercolor:		myForeground
-*selfgcolor:			myBackground
-
-dwm.vacantTagFg:        #7c6f64
-dwm.vacantTagBg:        myBackground
-dwm.unfocusedTitleFg:   #7c6f64
-dwm.unfocusedTitleBg:   myBackground
-dwm.statusFg:           myForeground
-dwm.statusBg:           myBackground
-dwm.menuFg:             myBackground
-dwm.menuBg:             myUrgent
-dwm.occupiedTagFg:      myForeground
-dwm.occupiedTagBg:      myBackground
-dwm.focusedTitleFg:     myForeground
-dwm.focusedTitleBg:     myBackground
-dwm.unfocusedBorder:    myBackground
-dwm.focusedBorder:      myForeground
+!! MoonWM values
+moonwm.vacantTagFg:        #7c6f64
+moonwm.vacantTagBg:        myBackground
+moonwm.unfocusedTitleFg:   #7c6f64
+moonwm.unfocusedTitleBg:   myBackground
+moonwm.statusFg:           myForeground
+moonwm.statusBg:           myBackground
+moonwm.menuFg:             myBackground
+moonwm.menuBg:             myUrgent
+moonwm.occupiedTagFg:      myForeground
+moonwm.occupiedTagBg:      myBackground
+moonwm.focusedTitleFg:     myForeground
+moonwm.focusedTitleBg:     myBackground
+moonwm.unfocusedBorder:    myBackground
+moonwm.focusedBorder:      myForeground
 
 !! X clock
 Clock*Background:		myBackground

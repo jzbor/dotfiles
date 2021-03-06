@@ -6,7 +6,7 @@ alias df="df -h"
 alias du="du -sh"
 alias fucking="sudo"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
-# alias grep="grep -RHIni"
+alias rgrep="grep -RHIni"
 alias icat="swallow sxiv"
 alias kcc=kdeconnect-cli
 alias ip='ip -c'
