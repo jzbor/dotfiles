@@ -17,7 +17,7 @@ fi
 
 export DWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
 export DWM_STATUSHANDLER="dwmstatushandler.sh"
-export DWM_KEYMAP="de"
+export DWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
 export DWM_NOPICOM=1
 export DWM_NODUNST=1
 export DWM_NOSTATUS=1

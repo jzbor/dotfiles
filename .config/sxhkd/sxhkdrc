@@ -28,7 +28,7 @@ super + shift + n
 ### DUNST SHORTCUTS ###
 super + {_,shift} + End
 	dunstctl close{_,-all}
-super + shift + {acute,ssharp}
+super + {minus, equal}
 	dunstctl {history-pop,action}
 
 
@@ -85,10 +85,10 @@ super + {_, shift, ctrl} + @Print
 
 
 ### MEDIA AND BRIGHTNESS CONTROLL ###
-super + {plus, minus} + {_, shift}
-	volume.sh {-i,-d} {_,1}
+super + {bracketleft, bracketright} + {_, shift}
+	volume.sh {-d,-i} {_,1}
 
-super + shift + control + plus
+super + shift + control + bracketright
 	volume.sh -b
 
 super + numbersign + {_, shift, ctrl}
@@ -97,8 +97,8 @@ super + numbersign + {_, shift, ctrl}
 super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
-super + ctrl + {plus, minus}
-	dwm-util brightness {-inc,-dec} 10
+super + ctrl + {bracketleft, bracketright}
+	dwm-util brightness {-dec,-inc} 10
 
 # XF86Audio{Raise,Lower}Volume + {_,shift}
 # 	volume.sh {-i,-d} {_,1}
