@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="xdo xwininfo"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: xdo xwininfo
 
 dims="$(slop -t 0 -l -c 0.92,0.85,0.69,0.3 -f "%x+%y+%w+%h")"
 [ -n "$dims" ] || exit 1

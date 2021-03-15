@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="dunstify picom"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify picom
 
 reloadpicom () {
     sleep 1

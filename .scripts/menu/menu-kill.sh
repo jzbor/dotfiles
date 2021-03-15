@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="dunstify ps xprop mydmenu"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify ps xprop mydmenu
 
 
 if [ "$1" = "visual" ]; then

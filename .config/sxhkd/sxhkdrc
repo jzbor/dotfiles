@@ -9,7 +9,7 @@ super + p
 super + shift + p
 	mpv "$(xclip -o)" --idle=no
 super + ctrl + p
-	rofi-mpv.sh
+	menu-mpv.sh
 
 super + s
 	sh -c "if pidof spotify; then moonie toggleview 7; else  spotify; fi"
@@ -32,9 +32,9 @@ super + {minus, equal}
 	dunstctl {history-pop,action}
 
 
-### ROFI SCRIPTS ###
+### MENU SCRIPTS ###
 super + shift + d
-	rofi-windows.sh
+	menu-windows.sh
 super + ctrl + d
 	rofi -show run
 
@@ -44,19 +44,19 @@ Menu
 	moonwm-menu context
 
 super + {_,shift} + Delete
-	rofi-kill.sh {_,visual}
+	menu-kill.sh {_,visual}
 
 super + shift + c
-	rofi-projects.sh
+	menu-projects.sh
 
 super + {ctrl, shift} + s
-	rofi-unicode.sh {_,insert}
+	menu-unicode.sh {_,insert}
 
 super + {shift, ctrl} + m
-	rofi-mount.sh {mnt,umnt}
+	menu-mount.sh {mnt,umnt}
 
 super + ctrl + space
-	rofi-windows.sh
+	menu-windows.sh
 
 ### OTHER SCRIPTS ###
 super + control + r

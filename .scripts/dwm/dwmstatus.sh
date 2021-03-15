@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="dunstify setxkbmap"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify setxkbmap
 
 
 get_status () {

@@ -1,8 +1,6 @@
 #! /bin/sh
 # @TODO Use findmnt for unmounting
-# Check dependencies
-DEPENDENCIES="dunstify lsblk udiskctl mydmenu"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify lsblk udiskctl mydmenu
 
 
 case $1 in

@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="cal dunstify xmenu"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: cal dunstify xmenu
 
 
 case $1 in

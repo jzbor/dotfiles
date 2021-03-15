@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="alacritty curl dunstify"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: alacritty curl dunstify
 
 
 if [ "$1" = "notify" ]; then
@@ -14,6 +12,6 @@ if [ "$1" = "notify" ]; then
 	printf "Not available\nPlease try turning on some sort of internet connection"
     fi
 else
-    location="$(rofi -dmenu -p Location:)"
+    location="$(dmenu.sh -p Location:)"
     alacritty -e "/usr/bin/sh" "-c" "clear; curl \"v2.wttr.in/$location\"; read"
 fi

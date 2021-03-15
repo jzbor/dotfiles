@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="music.sh"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: music.sh
 
 
 case $1 in

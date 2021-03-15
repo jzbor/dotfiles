@@ -1,8 +1,6 @@
 #!/bin/bash
 # From https://www.reddit.com/r/linuxquestions/comments/ham5i6/find_duplicate_files/
-# Check dependencies
-DEPENDENCIES="find xargs"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: find xargs
 
 
 find "$1" -type f -print0 |

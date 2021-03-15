@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="bluetooth.sh ethernet.sh wifi.sh ping sh xmenu"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: bluetooth.sh ethernet.sh wifi.sh ping sh xmenu
 
 
 network_menu () {

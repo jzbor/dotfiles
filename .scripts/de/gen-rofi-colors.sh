@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="xrdb"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: xrdb
 
 
 get_xr () {

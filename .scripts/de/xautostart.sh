@@ -1,8 +1,6 @@
 #!/bin/sh
 # This script has to be executable multiple times without spawning multiple instances of the same program
-# Check dependencies
-DEPENDENCIES="dunst.sh music.sh setup_displays.sh sxhkd /usr/lib/polkit-gnome/polkit-gnome-authenication-agent-1"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunst.sh music.sh setup_displays.sh sxhkd /usr/lib/polkit-gnome/polkit-gnome-authenication-agent-1
 
 
 # Configure X

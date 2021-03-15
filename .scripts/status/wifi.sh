@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="iwgetid nmcli dunstify"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: iwgetid nmcli dunstify
 
 
 device_query="$(rfkill --output "ID,TYPE,SOFT,HARD" | \

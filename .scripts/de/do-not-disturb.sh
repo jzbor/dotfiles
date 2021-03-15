@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="killall dunst"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: killall dunst
 
 
 on () {

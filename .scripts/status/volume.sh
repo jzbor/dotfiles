@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="dwmstatus.sh ffplay pamixer"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dwmstatus.sh ffplay pamixer
 
 
 boost_overwrite_file="/tmp/pa-overwrite-boost"

@@ -1,7 +1,5 @@
 #! /bin/sh
-# Check dependencies
-DEPENDENCIES="pacman paccache"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: pacman paccache
 
 
 echo

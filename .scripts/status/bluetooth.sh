@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES=""
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: 
 
 
 device_query="$(rfkill --output "ID,TYPE,SOFT,HARD" | \

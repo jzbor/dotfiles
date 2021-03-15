@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="lock.sh xwallpaper"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: lock.sh xwallpaper
 
 
 BG_DIR="$HOME/.config/assets"

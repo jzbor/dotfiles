@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="wallpaper.sh pgrep setxkbmap xinput xrandr"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: wallpaper.sh pgrep setxkbmap xinput xrandr
 
 
 connected="$(xrandr | grep " connected " | cut -d " " -f 1)"

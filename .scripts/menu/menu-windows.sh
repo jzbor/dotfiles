@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="rofi xdotool"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: rofi xdotool
 
 
 rofi -show window -config ~/.config/rofi/windows.rasi &

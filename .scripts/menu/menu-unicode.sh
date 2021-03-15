@@ -1,8 +1,6 @@
 #!/bin/sh
 # Select an emoji or NerdFont char via rofi
-# Check dependencies
-DEPENDENCIES="dunstify rofi xclip xdotool"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify rofi xclip xdotool
 
 
 UNICODE_FILE="$HOME/.config/assets/menu/unicode.txt"

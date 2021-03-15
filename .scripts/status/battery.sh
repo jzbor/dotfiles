@@ -1,7 +1,5 @@
 #!/bin/bash
-# Check dependencies
-DEPENDENCIES=""
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: 
 
 
 get_icon () {

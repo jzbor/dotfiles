@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="dunstify gawk mpv youtube-dl mydmenu"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify gawk mpv youtube-dl mydmenu
 
 
 dunstify_id="6661"

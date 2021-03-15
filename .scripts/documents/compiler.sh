@@ -6,9 +6,7 @@
 # Compiles .tex. groff (.mom, .ms), .rmd, .md.  Opens .sent files as sent
 # presentations.  Runs scripts based on extention or shebang
 #
-# Check dependencies
-DEPENDENCIES="notes.sh"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: notes.sh
 
 
 file=$(readlink -f "$1")

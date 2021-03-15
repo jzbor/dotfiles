@@ -1,7 +1,5 @@
 #!/bin/sh
-# Check dependencies
-DEPENDENCIES="rofi xargs /bin/bash"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: rofi xargs /bin/bash
 
 
 if [ -z "$1" ]; then

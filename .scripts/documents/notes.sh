@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# Check dependencies
-DEPENDENCIES="dunstify find pandoc"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: dunstify find pandoc
 
 # paths to directories must not be terminated with '/'
 csspath="$HOME/.config/assets/notes/style.css"

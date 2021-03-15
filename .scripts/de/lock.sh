@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Check dependencies
-DEPENDENCIES="music.sh convert i3lock xrdb"
-command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
+# Dependencies: music.sh convert i3lock xrdb
 
 
 get_xr () {
