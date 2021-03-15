@@ -146,9 +146,9 @@ URxvt.urlLauncher: xdg-open
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
 
-xmenu.selbackground:    myForeground
-xmenu.selforeground:    myBackground
-xmenu.border:           myBackground
+/* xmenu.selbackground:    myForeground */
+/* xmenu.selforeground:    myBackground */
+/* xmenu.border:           myBackground */
 
 ! Enabled modi
 rofi.modi:                           drun,window,ssh,run

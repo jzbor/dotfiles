@@ -4,8 +4,8 @@ export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
-export TERMINAL="alacritty"
 export FILEMANAGER="pcmanfm"
+export DMENUCMD="rofi -show drun"
 
 if command -v alacritty > /dev/null; then
 	export TERM="alacritty"
