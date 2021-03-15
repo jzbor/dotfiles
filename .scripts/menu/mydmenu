@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec dmenu -nb '#1d2021' -nf '#ebdbb2' -sb '#fb4934' -sf '#1d2021' -fn 'FiraCode Nerd Font:size=10' "$@"
+

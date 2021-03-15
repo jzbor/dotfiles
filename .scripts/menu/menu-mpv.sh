@@ -1,12 +1,12 @@
 #!/bin/sh
 # Check dependencies
-DEPENDENCIES="dunstify gawk mpv rofi youtube-dl"
+DEPENDENCIES="dunstify gawk mpv youtube-dl mydmenu"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
 dunstify_id="6661"
-hist_file="/tmp/rofi-mpv-history"
-input="$(cat ~/.config/assets/mpv-bookmarks.txt "$hist_file" | rofi -dmenu -p "URL: ")"
+hist_file="/tmp/menu-mpv-history"
+input="$(cat ~/.config/assets/mpv-bookmarks.txt "$hist_file" | mydmenu -p "URL: " -l 10)"
 [ -z "$input" ] && exit
 
 # clipboard implementation
@@ -39,7 +39,7 @@ else
 		grep -oP "\"videoRenderer\":{\"videoId\":\"...........\".+?\"text\":\".+?(?=\")" | \
 		awk -F\" '{ print $6 " " $NF}')"
 	input="$(echo "$videoids" | cut -d' ' -f1 --complement |
-		rofi -dmenu -p "")"
+		mydmenu -p " " -l 50)"
 	[ -z "$input" ] && exit
 	videoid="$(echo "$videoids" | grep -F "$input" | cut -d' ' -f1 | head -n 1)"
 	echo videoid: $videoid input: $input

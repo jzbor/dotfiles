@@ -1,6 +1,6 @@
 #!/bin/sh
 # Check dependencies
-DEPENDENCIES="dunstify rofi fd"
+DEPENDENCIES="dunstify fd mydmenu"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
@@ -11,14 +11,14 @@ menu="‭ﱮ    Filebrowser
 
 file="$1"
 [ -z "$file" ] && \
-    file="$(fd . ~ -t file | rofi -dmenu -i -p 'Select file: ')"
+    file="$(fd . ~ -t file | mydmenu -i -p 'Select file: ')"
 
 if ! [ -f "$file" ]; then
     echo "File '$file' not found"
     exit
 fi
 
-option="$(echo "$menu" | rofi -dmenu -i -p "$file: ")"
+option="$(echo "$menu" | mydmenu -i -p "$file: " -l 4)"
 
 case $option in
     *Filebrowser)

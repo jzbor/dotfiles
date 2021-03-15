@@ -1,6 +1,6 @@
 #!/bin/sh
 # Check dependencies
-DEPENDENCIES="rofi"
+DEPENDENCIES="mydmenu"
 command -v checkdeps.sh > /dev/null 2>&1 && . checkdeps.sh
 
 
@@ -11,7 +11,7 @@ android_label="   Android Studio"
 
 project="$(ls ~/Programming/*/* -d -t | \
     sed "s/$(echo $HOME | sed 's/\//\\\//g')/~/" | \
-    rofi -dmenu -i -p Projects | \
+    mydmenu -i -p Projects -l 10 | \
     sed "s/~/$(echo $HOME | sed 's/\//\\\//g')/")"
 
 if [ -z "$project" ]; then
@@ -19,7 +19,7 @@ if [ -z "$project" ]; then
 fi
 
 action="$(printf "%s\n%s\n%s\n%s\n" "$terminal_label" "$vim_label" "$idea_label" "$android_label" | \
-    rofi -dmenu -i -p "Open with")"
+    mydmenu -i -p "Open with" -l 10)"
 echo $project $action
 
 case $action in
