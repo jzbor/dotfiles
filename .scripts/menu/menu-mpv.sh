@@ -37,7 +37,7 @@ else
 		grep -oP "\"videoRenderer\":{\"videoId\":\"...........\".+?\"text\":\".+?(?=\")" | \
 		awk -F\" '{ print $6 " " $NF}')"
 	input="$(echo "$videoids" | cut -d' ' -f1 --complement |
-		mydmenu -p " " -l 50)"
+		mydmenu -p " " -l 15)"
 	[ -z "$input" ] && exit
 	videoid="$(echo "$videoids" | grep -F "$input" | cut -d' ' -f1 | head -n 1)"
 	echo videoid: $videoid input: $input

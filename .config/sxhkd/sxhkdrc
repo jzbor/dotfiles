@@ -62,7 +62,7 @@ super + ctrl + space
 super + control + r
 	setup_displays.sh
 
-super + shift + F10
+super + F10
 	weather.sh
 
 super + x
