@@ -27,7 +27,7 @@ fi
 
 kill -9 $(pgrep $(basename $0) | grep -v $$) 2> /dev/null
 while true; do
-    xsetroot -name "$(get_status)"
+    xsetroot -name "$(get_status)" || exit
     sleep 2 2> /dev/null
 done
 
