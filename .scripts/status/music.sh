@@ -13,6 +13,10 @@ ignore_list="firefox,chromium"
 no_player_msg="No player found"
 
 format() {
+    if ! [ -f "$title_file" ] || ! [ -f "$icon_file" ] || ! [ -f "$artist_file" ]; then
+        return
+    fi
+
 	artist="$(< $artist_file)"
 	title="$(< $title_file)"
 	if [ "$3" = "" ]; then
@@ -33,6 +37,10 @@ format() {
 }
 
 format_small() {
+    if ! [ -f "$title_file" ] || ! [ -f "$icon_file" ]; then
+        return
+    fi
+
 	title="$(< $title_file)"
 
 	if (( ${#title} > 20 )); then
