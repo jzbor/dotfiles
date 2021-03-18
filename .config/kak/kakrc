@@ -12,7 +12,7 @@ set-option global scrolloff 5,5
 set-option global ui_options ncurses_status_on_top=false
 
 # Display line numbers
-#add-highlighter global/ number-lines -hlcursor
+# add-highlighter global/ number-lines -hlcursor
 
 # Highlight trailing whitespace
 add-highlighter global/ regex \h+$ 0:Error
@@ -21,11 +21,15 @@ add-highlighter global/ regex \h+$ 0:Error
 #add-highlighter global/ wrap -word -indent
 
 # Clipboard management mappings
-map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i<ret>"
-map -docstring "paste the clipboard" global user p "<a-!> xclip -o<ret>"
+map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i -selection clipboard<ret>"
+map -docstring "paste the clipboard" global user p "<a-!> xclip -o<ret> -selection clipboard<ret>"
+
+# Commenting
+map -docstring "line comment" global user c ":comment-line<ret>"
+map -docstring "block comment" global user C ":comment-block<ret>"
 
 # Shortcut to quickly exit the editor
 define-command -docstring "save and quit" x "write-all; quit"
 
 # tips in normal mode
-set-option global autoinfo normal
+#set-option global autoinfo normal

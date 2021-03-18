@@ -26,7 +26,7 @@ alias todo="$EDITOR ~/Documents/Notes/todo.md"
 alias trash="gio trash"
 alias trash-list="gio list trash://"
 alias trash-clean="gio trash --empty"
-alias v="nvim"
+alias v="kak"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias yay_no_integ="yay --mflags --skipinteg"
@@ -38,6 +38,20 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'profdel file *' \
     -c 'qa!'
 "
+
+pkgbuild-gitver () {
+    cd "$1"
+    if gitversion="r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"; then
+        cd - > /dev/null
+        echo "Editing PKGBUILD:"
+        printf "\t%s => %s\n" "$(grep -o 'r[0-9]*\.[0-9a-f]*$' PKGBUILD)" "$gitversion"
+        sed "s/^pkgver=\(.*\)r.*/pkgver=\1$gitversion/" PKGBUILD -i
+        echo "Creating .SRCINFO"
+        makepkg --printsrcinfo > .SRCINFO
+    else
+        cd - > /dev/null
+    fi
+}
 
 rona () {
 	curl -s https://www.corona-in-zahlen.de/landkreise/sk%20erlangen/ | \
@@ -197,7 +211,7 @@ cd () {
 # Youtube-dl
 yt_format="137+bestaudio/best[ext=mp4]/best"
 alias yt="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download link
-alias yta="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download audio only
+alias yta="youtube-dl --add-metadata --restrict-filenames -icx --audio-format mp3 --prefer-ffmpeg" # Download audio only
 alias ytl="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic -a" # Download list from file
 
 # Audio player

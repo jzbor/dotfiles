@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export EDITOR="nvim"
+export EDITOR="kak"
 export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
@@ -16,7 +16,7 @@ else
 fi
 
 export MOONWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
-export MOONWM_STATUSHANDLER="dwmstatushandler.sh"
+export MOONWM_STATUSCMD="dwmstatus.sh"
 export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
 export MOONWM_NOPICOM=1
 export MOONWM_NODUNST=1
