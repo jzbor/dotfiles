@@ -1,8 +1,0 @@
-System
-   Shutdown § poweroff || sudo poweroff
-   Reboot § reboot || sudo reboot
-   Suspend § systemctl suspend || loginctl suspend
-   Suspend () § lock.sh && (systemctl suspend || loginctl suspend)
-   Lock § lock.sh
-   Taskmanager § i3-msg [class="kitty" title="taskmgr"] scratchpad show
-   Exit § i3-msg exit | pkill -15 -t tty"$XDG_VTNR" Xorg
