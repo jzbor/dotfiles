@@ -3,7 +3,7 @@
 # Dependencies: dunstify rofi xclip xdotool
 
 
-UNICODE_FILE="$HOME/.config/assets/menu/unicode.txt"
+UNICODE_FILE="$HOME/.config/assets/unicode.txt"
 
 # Must have xclip installed to even show menu.
 xclip -h 2>/dev/null || exit 1
