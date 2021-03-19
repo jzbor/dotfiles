@@ -123,7 +123,7 @@ cfg () {
     else
         file="$HOME/$(config ls-files --full-name ~ | fzf --query "$@" --height 50%)"
     fi
-    [ -f "$file" ] && nvim "$file"
+    [ -f "$file" ] && $EDITOR "$file"
 }
 browse () {
     selection="$(printf "..\n%s" "$(ls -t)" | fzf --prompt "$(pwd)/")"

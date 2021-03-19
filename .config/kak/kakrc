@@ -1,35 +1,51 @@
-# Set the colour scheme
-colorscheme gruvbox
+### STYLING ###
+    colorscheme gruvbox
 
-# Indentation
-set-option global indentwidth 4
-set-option global tabstop 4
+### SIDE- AND STATUSBAR ###
+    set-option global ui_options ncurses_status_on_top=false
 
-# Always keep one line and three columns displayed around the cursor
-set-option global scrolloff 5,5
+### FORMATING AND EDITOR ###
+    # Indentation
+    set-option global indentwidth 4
+    set-option global tabstop 4
 
-# Display the status bar on top
-set-option global ui_options ncurses_status_on_top=false
+    set-option global scrolloff 5,5
 
-# Display line numbers
-# add-highlighter global/ number-lines -hlcursor
+    add-highlighter global/ regex \h+$ 0:Error
 
-# Highlight trailing whitespace
-add-highlighter global/ regex \h+$ 0:Error
 
-# Softwrap long lines
-#add-highlighter global/ wrap -word -indent
+### USER MAPPINGS ###
+    # Clipboard management mappings
+    map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i -selection clipboard<ret>"
+    map -docstring "paste the clipboard" global user p "<a-!> xclip -o -selection clipboard<ret>"
 
-# Clipboard management mappings
-map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i -selection clipboard<ret>"
-map -docstring "paste the clipboard" global user p "<a-!> xclip -o<ret> -selection clipboard<ret>"
+    # Commenting
+    map -docstring "line comment" global user c ":comment-line<ret>"
+    map -docstring "block comment" global user C ":comment-block<ret>"
 
-# Commenting
-map -docstring "line comment" global user c ":comment-line<ret>"
-map -docstring "block comment" global user C ":comment-block<ret>"
+    map -docstring "switch buffer" global user b ":switch-buffer<ret>"
+    map -docstring "switch buffer" global user n ":new<ret>"
 
-# Shortcut to quickly exit the editor
-define-command -docstring "save and quit" x "write-all; quit"
+### OTHER MAPPINGS ###
+    # Shortcut to quickly exit the editor
+    define-command -docstring "save and quit" x "write-all; quit"
 
-# tips in normal mode
-#set-option global autoinfo normal
+### COMMANDS ###
+    define-command switch-buffer %{
+        declare-option -hidden str-list buffers
+        set-option global buffers
+
+        evaluate-commands -no-hooks -buffer * %{
+            set-option -add global buffers "%val{bufname}|"
+        }
+
+        evaluate-commands %sh{
+            BUFFER="$(echo $kak_opt_buffers | sed -E 's/\|( |$)/\n/g' | mydmenu -i -p 'Buffer' -l 10)"
+                test -n "$BUFFER" && echo "buffer $BUFFER"
+        }
+    }
+
+
+### HOOKS ###
+
+### LANGUAGES ###
