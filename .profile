@@ -5,7 +5,7 @@ export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
 export FILEMANAGER="pcmanfm"
-export DMENUCMD="rofi -show drun"
+export DMENUCMD="moonwm-util dmenu_run"
 
 if command -v alacritty > /dev/null; then
 	export TERM="alacritty"
@@ -19,7 +19,7 @@ export MOONWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
 export MOONWM_STATUSCMD="dwmstatus.sh"
 export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
 export MOONWM_NOPICOM=1
-export MOONWM_NODUNST=1
+export MOONWM_NONOTIFYD=1
 export MOONWM_NOSTATUS=1
 
 # For compatibility between gtk icon themes and qt
