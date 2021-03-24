@@ -44,7 +44,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export PATH="$PATH:$HOME/.local/bin:$($HOME/.scripts/path.sh)"
-export PATH="$PATH:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="$PATH:/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 
 export BUILD_PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 

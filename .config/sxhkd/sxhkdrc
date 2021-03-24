@@ -91,7 +91,7 @@ super + {bracketleft, bracketright} + {_, shift}
 super + shift + control + bracketright
 	volume.sh -b
 
-super + numbersign + {_, shift, ctrl}
+super + backslash + {_, shift, ctrl}
 	volume.sh -t {_,mic,mic-unmute}
 
 super + {_, shift} + {u,i,o}
