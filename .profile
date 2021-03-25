@@ -5,7 +5,7 @@ export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
 export FILEMANAGER="pcmanfm"
-export DMENUCMD="moonwm-util dmenu_run"
+export DMENUCMD="moonwm-util drun"
 
 if command -v alacritty > /dev/null; then
 	export TERM="alacritty"

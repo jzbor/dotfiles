@@ -40,6 +40,11 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
 "
 
 pkgbuild-gitver () {
+    if [ -z "$1" ]; then
+        echo "Please specify a reference directory"
+        return
+    fi
+
     cd "$1"
     if gitversion="r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"; then
         cd - > /dev/null
