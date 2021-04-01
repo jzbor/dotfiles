@@ -19,6 +19,9 @@ super + n
 super + shift + n
 	$TERMINAL -e notes.sh
 
+super + a
+    xdotool windowactivate "$(wmctrl -lx | mydmenu -p Windows -l 15 -i | cut -f1 -d' ')" 2> /dev/null
+
 # super + Escape
 # 	keyboard.sh toggle
 # super + shift + Escape

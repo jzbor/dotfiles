@@ -2,4 +2,5 @@ slop
 sxhkd
 xmenu
 xorg-xsetroot
+wmctrl
 wmname
