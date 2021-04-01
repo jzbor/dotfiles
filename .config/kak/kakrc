@@ -13,7 +13,6 @@
 
     add-highlighter global/ regex \h+$ 0:Error
 
-
 ### USER MAPPINGS ###
     # Clipboard management mappings
     map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i -selection clipboard<ret>"
@@ -24,13 +23,35 @@
     map -docstring "block comment" global user C ":comment-block<ret>"
 
     map -docstring "switch buffer" global user b ":switch-buffer<ret>"
-    map -docstring "switch buffer" global user n ":new<ret>"
+    map -docstring "open file" global user f ":open-file<ret>"
+    map -docstring "new window" global user n ":new<ret>"
+
+    map -docstring "count words (selection)" global user w %{:echo %sh{wc <lt><lt><lt> "${kak_selection}"}<ret>}
+    map -docstring "count words (file)" global user W %{:echo %sh{wc "${kak_buffile}"}<ret>}
 
 ### OTHER MAPPINGS ###
     # Shortcut to quickly exit the editor
     define-command -docstring "save and quit" x "write-all; quit"
 
+    # Make <tab> indent with spaces instead of tab
+    map global insert <tab> '<a-;><gt>'
+    map global insert <s-tab> '<a-;><lt>'
+
+    # increase/decrease
+    map global normal <c-a> ':inc %val{count} +<ret>'
+    map global normal <c-x> ':inc %val{count} -<ret>'
+
 ### COMMANDS ###
+    define-command open-file %{
+        declare-option -hidden str-list buffers
+        set-option global buffers
+
+        evaluate-commands %sh{
+            FILE="$(fd | mydmenu -i -p 'File' -l 15)"
+                test -n "$FILE" && echo "edit $FILE"
+        }
+    }
+
     define-command switch-buffer %{
         declare-option -hidden str-list buffers
         set-option global buffers
@@ -45,7 +66,68 @@
         }
     }
 
+    define-command ide %{
+        rename-client main
+        set global jumpclient main
 
-### HOOKS ###
+        new rename-client tools
+        set global toolsclient tools
+
+        new rename-client docs
+        set global docsclient docs
+    }
+
+    define-command -hidden -params 2 inc %{
+        evaluate-commands %sh{
+            if [ "$1" = 0 ]; then
+                count=1
+            else
+                count="$1"
+            fi
+            printf '%s%s\n' 'exec h"_/\d<ret><a-i>na' "$2($count)<esc>|bc<ret>h"
+            }
+    }
+
+    define-command -docstring 'Invoke fzf to open a file' -params 0 fzf-edit %{
+        evaluate-commands %sh{
+            if [ -z "${kak_client_env_TMUX}" ]; then
+                printf 'fail "client was not started under tmux"\n'
+            else
+                file="$(find . -type f |TMUX="${kak_client_env_TMUX}" fzf-tmux -d 15)"
+                if [ -n "$file" ]; then
+                    printf 'edit "%s"\n' "$file"
+                fi
+            fi
+        }
+    }
+
+    # the original version no longer works since kak_buflist is no longer ":" separated.
+    # this one works even you have single quote or newline in file names.
+    define-command -docstring 'Invoke fzf to select a buffer' fzf-buffer %{
+        evaluate-commands %sh{
+            BUFFER=$(
+                (
+                    eval "set -- $kak_buflist"
+                    while [ $# -gt 0 ]; do
+                        printf "%s\0" "$1"
+                        shift
+                    done
+                ) |
+                fzf-tmux -d 15 --read0
+            )
+            BUFFER=${BUFFER/\'/\'\'}
+            if [ -n "$BUFFER" ]; then
+                printf "buffer '%s'" "${BUFFER}"
+            fi
+        }
+    }
+
+## HOOKS ###
+    # Source a local project kak config if it exists
+    # Make sure it is set as a kak filetype
+    hook global BufCreate (.*/)?(\.kakrc\.local) %{
+        set-option buffer filetype kak
+    }
+    try %{ source .kakrc.local }
 
 ### LANGUAGES ###
