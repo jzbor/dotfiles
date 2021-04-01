@@ -39,6 +39,13 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'qa!'
 "
 
+update-all () {
+    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull
+    cd ~/Programming/C/moonwm/ && git pull && sudo make install install-scripts clean
+    cd
+    yay -Syu
+}
+
 pkgbuild-gitver () {
     if [ -z "$1" ]; then
         echo "Please specify a reference directory"
@@ -93,7 +100,7 @@ alias cfb='$EDITOR $HOME/.config/bspwm/bspwmrc'
 alias cfd='cd Programming/C/dwm'
 alias cfh='$EDITOR $HOME/.config/sxhkd/sxhkdrc'
 alias cfi='$EDITOR $HOME/.config/i3/config'
-alias cfk='$EDITOR $HOME/.config/kitty/kitty.conf'
+alias cfk='$EDITOR $HOME/.config/kak/kakrc'
 alias cfpm='$EDITOR $HOME/.config/polybar/modules'
 alias cfq='$EDITOR $HOME/.aliases'
 alias cfs='$EDITOR $HOME/.bashrc'
