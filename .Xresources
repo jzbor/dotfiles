@@ -104,6 +104,7 @@ XTerm*faceSize:        11
 XTerm*selectToClipboard: true
 XTerm*cursorBlink:		false
 XTerm*fastScroll:		true
+XTerm.termName:		xterm-256color
 
 XTerm*cursorColor:		myForeground
 
@@ -115,6 +116,7 @@ UXTerm*faceSize:        11
 UXTerm*selectToClipboard: true
 UXTerm*cursorBlink:		false
 UXTerm*fastScroll:		true
+UXTerm.termName:		xterm-256color
 
 URxvt.font:				xft:FiraCode Nerd Font Mono:style=Regular:size=11
 URxvt.boldFont:			xft:FiraCode Nerd Font Mono:style=Bold:size=11
