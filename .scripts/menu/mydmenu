@@ -1,4 +1,9 @@
 #!/bin/sh
 
-exec dmenu -nb '#1d2021' -nf '#ebdbb2' -sb '#fb4934' -sf '#1d2021' -fn 'FiraCode Nerd Font:size=10' "$@"
+if [ "$1" = "--link" ]; then
+    ln -s "$0" /usr/local/bin/dmenu
+    exit
+fi
+
+exec /usr/bin/dmenu -nb '#1d2021' -nf '#ebdbb2' -sb '#fb4934' -sf '#1d2021' -fn 'FiraCode Nerd Font:size=10' "$@"
 

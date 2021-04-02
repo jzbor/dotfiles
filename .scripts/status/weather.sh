@@ -12,6 +12,6 @@ if [ "$1" = "notify" ]; then
 	printf "Not available\nPlease try turning on some sort of internet connection"
     fi
 else
-    location="$(mydmenu -p Location:)"
+    location="$(dmenu -p Location:)"
     alacritty -e "/usr/bin/sh" "-c" "clear; curl \"v2.wttr.in/$location\"; read"
 fi

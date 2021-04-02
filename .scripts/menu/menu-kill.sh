@@ -1,5 +1,5 @@
 #!/bin/sh
-# Dependencies: dunstify ps xprop mydmenu
+# Dependencies: dunstify ps xprop dmenu
 
 
 if [ "$1" = "visual" ]; then
@@ -9,7 +9,7 @@ if [ "$1" = "visual" ]; then
     input="$(printf "Kill $kill_pid ($kill_name)?\n\nYes\nNo\n" | xmenu)"
     [ "$input" != "Yes" ] && exit
 else
-    kill_pid="$(ps -xo pid=,cmd= | mydmenu -i -p Kill -l 10 | awk '{ print $1 }')"
+    kill_pid="$(ps -xo pid=,cmd= | dmenu -i -p Kill -l 10 | awk '{ print $1 }')"
     kill_name="$(ps axo pid,args | grep "^$kill_pid " | cut -d' ' -f2)"
 fi
 

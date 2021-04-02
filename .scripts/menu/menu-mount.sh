@@ -1,6 +1,6 @@
 #! /bin/sh
 # @TODO Use findmnt for unmounting
-# Dependencies: dunstify lsblk udiskctl mydmenu
+# Dependencies: dunstify lsblk udiskctl dmenu
 
 
 case $1 in
@@ -19,7 +19,7 @@ case $1 in
 esac
 
 device=$(lsblk -pln -o SIZE,LABEL,NAME | \
-    mydmenu -i -p "$title" -l 10 | \
+    dmenu -i -p "$title" -l 10 | \
     sed 's/.*\s\w*//g')
 
 response="$(udisksctl "$operation" --block-device "$device" 2>&1)"

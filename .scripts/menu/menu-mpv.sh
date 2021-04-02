@@ -1,10 +1,10 @@
 #!/bin/sh
-# Dependencies: dunstify gawk mpv youtube-dl mydmenu
+# Dependencies: dunstify gawk mpv youtube-dl dmenu
 
 
 dunstify_id="6661"
 hist_file="/tmp/menu-mpv-history"
-input="$(cat ~/.config/assets/mpv-bookmarks.txt "$hist_file" | mydmenu -p "URL: " -l 10)"
+input="$(cat ~/.config/assets/mpv-bookmarks.txt "$hist_file" | dmenu -p "URL: " -l 10)"
 [ -z "$input" ] && exit
 
 # clipboard implementation
@@ -37,7 +37,7 @@ else
 		grep -oP "\"videoRenderer\":{\"videoId\":\"...........\".+?\"text\":\".+?(?=\")" | \
 		awk -F\" '{ print $6 " " $NF}')"
 	input="$(echo "$videoids" | cut -d' ' -f1 --complement |
-		mydmenu -p " " -l 15)"
+		dmenu -p " " -l 15)"
 	[ -z "$input" ] && exit
 	videoid="$(echo "$videoids" | grep -F "$input" | cut -d' ' -f1 | head -n 1)"
 	echo videoid: $videoid input: $input
