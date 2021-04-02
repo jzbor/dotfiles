@@ -21,6 +21,7 @@ new_password () {
     name="$(echo | dmenu -p Name:)"
     password="$(random_password | dmenu -p Password)"
     echo "$password" | pass insert -m "$name"
+    pass show -c "$name"
 }
 
 copy_password () {
@@ -37,7 +38,7 @@ show_password () {
 }
 
 edit_password () {
-    echo Edit password
+    $TERMINAL -e "pass" edit "$password"
 }
 
 
@@ -47,7 +48,7 @@ case $1 in
         shift
         ;;
     *)
-        action="$(echo "$menu" | dmenu -i "$@")" ;;
+        action="$(echo "$menu" | dmenu -i -p pass "$@")" ;;
 esac
 
 
