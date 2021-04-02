@@ -22,6 +22,7 @@ if [ -n "$1" ]; then
     #xdotool search --name WhatsApp key BackSpace
     #xdotool search --name WhatsApp key Right
 else
+    echo "$chosen" | tr -d '\n' | xclip -selection primary
     echo "$chosen" | tr -d '\n' | xclip -selection clipboard
     dunstify "'$chosen' copied to clipboard." &
 fi
