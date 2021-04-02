@@ -71,7 +71,7 @@ elif ! (command -v lightdm > /dev/null || command -v gdm > /dev/null) \
     if command -v gnome-session > /dev/null; then
         exec startx ~/.xinitrc gnome
     elif command -v moonwm > /dev/null; then
-        exec startx ~/.xinitrc dwm
+        exec startx ~/.xinitrc moonwm
     elif command -v dwm > /dev/null; then
         exec startx ~/.xinitrc dwm
     elif command -v i3 > /dev/null; then
