@@ -15,8 +15,8 @@
 
 ### USER MAPPINGS ###
     # Clipboard management mappings
-    map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i -selection clipboard<ret>"
-    map -docstring "paste the clipboard" global user p "<a-!> xclip -o -selection clipboard<ret>"
+    map -docstring "yank the selection into the clipboard" global user y "<a-|> xclip -i <ret>"
+    map -docstring "paste the clipboard" global user p "<a-!> xclip -o <ret>"
 
     # Commenting
     map -docstring "line comment" global user c ":comment-line<ret>"
