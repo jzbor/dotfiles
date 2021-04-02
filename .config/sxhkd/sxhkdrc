@@ -4,11 +4,11 @@ super + shift + w
 super + ctrl + w
 	surf
 
-super + p
+super + v
 	mpv
-super + shift + p
-	mpv "$(xclip -o)" --idle=no
-super + ctrl + p
+super + shift + v
+	mpv "$(xclip -o --selection clipboard)" --idle=no
+super + ctrl + v
 	menu-mpv.sh
 
 super + s
@@ -18,9 +18,6 @@ super + n
 	notes.sh view
 super + shift + n
 	$TERMINAL -e notes.sh
-
-super + a
-    xdotool windowactivate "$(wmctrl -lx | mydmenu -p Windows -l 15 -i | cut -f1 -d' ')" 2> /dev/null
 
 # super + Escape
 # 	keyboard.sh toggle
@@ -39,7 +36,10 @@ super + {minus, equal}
 super + shift + d
 	menu-windows.sh
 super + ctrl + d
-	rofi -show run
+	moonwm-util run
+
+super + a
+    xdotool windowactivate "$(wmctrl -lx | mydmenu -p Windows -l 15 -i | cut -f1 -d' ')" 2> /dev/null
 
 super + Home
 	menu.sh
@@ -60,6 +60,9 @@ super + {shift, ctrl} + m
 
 super + ctrl + space
 	menu-windows.sh
+
+super + {_, shift, ctrl} + p
+    passmenu.sh {_, paste, copy}
 
 ### OTHER SCRIPTS ###
 super + control + r
@@ -101,7 +104,7 @@ super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
 super + ctrl + {bracketleft, bracketright}
-	moonwm-util brightness {-dec,-inc} 10
+	moonwm-util brightness {-,+}10
 
 # XF86Audio{Raise,Lower}Volume + {_,shift}
 # 	volume.sh {-i,-d} {_,1}
