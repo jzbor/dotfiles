@@ -34,8 +34,8 @@
     define-command -docstring "save and quit" x "write-all; quit"
 
     # Make <tab> indent with spaces instead of tab
-    map global insert <tab> '<a-;><gt>'
-    map global insert <s-tab> '<a-;><lt>'
+    map global insert <tab> '<tab><tab><tab><tab>'
+    map global insert <s-tab> '<backspace><backspace><backspace><backspace>'
 
     # increase/decrease
     map global normal <c-a> ':inc %val{count} +<ret>'
@@ -129,5 +129,10 @@
         set-option buffer filetype kak
     }
     try %{ source .kakrc.local }
+
+    hook global BufWritePost .* %{
+        evaluate-commands %sh{sed -i 's/[[:blank:]]*$//' "$kak_buffile"}
+        # execute-keys \%|sed<space><'>s/[[:blank:]]*$//<'><ret>
+    }
 
 ### LANGUAGES ###
