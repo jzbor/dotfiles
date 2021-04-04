@@ -13,5 +13,6 @@ if [ "$1" = "notify" ]; then
     fi
 else
     location="$(dmenu -p Location:)"
-    alacritty -e "/usr/bin/sh" "-c" "clear; curl \"v2.wttr.in/$location\"; read"
+    alacritty -e "/usr/bin/sh" "-c" "clear; curl \"v2.wttr.in/$location\";\
+moonie togglefloating; xdotool getactivewindow windowsize 680 880; xdotool getactivewindow windowmove 100 100; read"
 fi
