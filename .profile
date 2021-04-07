@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export EDITOR="kak"
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
 export BROWSER="firefox"
 export READER="zathura"
@@ -21,6 +21,7 @@ export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option
 export MOONWM_NOPICOM=1
 export MOONWM_NONOTIFYD=1
 export MOONWM_NOSTATUS=1
+export TOUCHEGG_THRESHOLDS="750 750"
 
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome
