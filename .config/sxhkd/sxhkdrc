@@ -68,6 +68,9 @@ super + {_, shift, ctrl} + p
 super + control + r
 	setup_displays.sh
 
+super + shift + F3
+    setxkbmap de $(echo $MOONWM_KEYMAP | grep -o -- '-option.*')
+
 super + F6
 	weather.sh
 

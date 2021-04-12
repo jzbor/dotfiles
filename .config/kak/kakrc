@@ -34,7 +34,7 @@
     define-command -docstring "save and quit" x "write-all; quit"
 
     # Make <tab> indent with spaces instead of tab
-    map global insert <tab> '<tab><tab><tab><tab>'
+    map global insert <tab> '<space><space><space><space>'
     map global insert <s-tab> '<backspace><backspace><backspace><backspace>'
 
     # increase/decrease

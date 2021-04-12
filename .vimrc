@@ -325,8 +325,8 @@ autocmd BufRead * :call GoYCM()
     command! -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
 " Git shortcuts
-    nnoremap Gn :GitGutterNextHunk<CR>
-    nnoremap Gp :GitGutterPrevHunk<CR>
+    nnoremap <C-n> :GitGutterNextHunk<CR>
+    nnoremap <C-p> :GitGutterPrevHunk<CR>
 
 " Indents and tabs
     set autoindent	" Auto-indent new lines
