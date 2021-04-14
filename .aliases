@@ -4,6 +4,7 @@
 alias :q="exit"
 alias df="df -h"
 alias du="du -sh"
+alias faucip="ssh faucip"
 alias fucking="sudo"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
 alias rgrep="grep -RHIni"

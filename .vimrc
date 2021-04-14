@@ -95,10 +95,10 @@ let ycm_types = {
 " Coloring
     if &t_Co > 255
 		" Disable background coloring
-		autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+		" autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 		colorscheme gruvbox-material
 		let g:gruvbox_material_palette = 'original'
-		let g:gruvbox_material_transparent_background = 1
+		" let g:gruvbox_material_transparent_background = 1
 		set background=dark
 		let g:lightline = {'colorscheme' : 'gruvbox_material'}
     endif
@@ -324,6 +324,12 @@ autocmd BufRead * :call GoYCM()
     command! -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
     command! -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
+" Kakoune style page navigation
+    nnoremap gh 0
+    nnoremap gj G
+    nnoremap gk gg
+    nnoremap gl $
+
 " Git shortcuts
     nnoremap <C-n> :GitGutterNextHunk<CR>
     nnoremap <C-p> :GitGutterPrevHunk<CR>
@@ -341,6 +347,14 @@ autocmd BufRead * :call GoYCM()
 	command! Ddate execute 'read !date' | norm I####<Space>
 	command! Week execute 'read !date -d "monday" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
 	command! -nargs=1 Weekn execute 'read !date -d "monday +<q-args> weeks" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
+
+" Neovide
+    let g:neovide_refresh_rate=30
+    let g:neovide_transparency=1
+    let g:neovide_cursor_animation_length=0.13
+    let g:neovide_cursor_trail_length=0.8
+    let g:neovide_cursor_antialiasing=v:false
+
 
 " Python:
     "au BufNewFile,BufRead *.py
