@@ -1,5 +1,17 @@
 #!/bin/bash
-# Adding my own aliases
+
+# Ansi color code variables
+red="\e[0;91m"
+blue="\e[0;94m"
+expand_bg="\e[K"
+blue_bg="\e[0;104m${expand_bg}"
+red_bg="\e[0;101m${expand_bg}"
+green_bg="\e[0;102m${expand_bg}"
+green="\e[0;92m"
+white="\e[0;97m"
+bold="\e[1m"
+uline="\e[4m"
+reset="\e[0m"
 
 alias :q="exit"
 alias df="df -h"
@@ -41,11 +53,19 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
 "
 
 update-all () {
+    echo "$blue=== Pulling dotfiles ===$reset"
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull
-    cd ~/Programming/C/moonwm/ && git pull && sudo make install install-scripts clean
-    cd
+    echo "$blue=== Cleaning up dotfiles repo ===$reset"
+    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME gc
+    echo "$blue=== Updating moonwm ===$reset"
+    if pacman -Qsq | grep -v '^moonwm' > /dev/null; then
+        cd ~/Programming/C/moonwm/ && git pull && sudo make install install-scripts clean
+        cd -
+    fi
+    echo "$blue=== Pulling pass ===$reset"
     command -v pass > /dev/null && pass git pull
-    yay -Syu
+    echo "$blue=== Update system ===$reset"
+    command -v yay > /dev/null && yay -Syu
 }
 
 pkgbuild-gitver () {

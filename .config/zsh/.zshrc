@@ -139,6 +139,8 @@ else
     PROMPT='[%n@%M] %~ '
 fi
 
+uname -v | grep Debian > /dev/null && PROMPT="$PROMPT "
+
 # Necessary to align input properly
 ZLE_RPROMPT_INDENT=0
 
