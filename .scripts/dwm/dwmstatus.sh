@@ -53,6 +53,7 @@ get_status () {
 }
 
 action () {
+    # notify-send "$STATUSCMDN $BUTTON"
     case "$STATUSCMDN" in
         0) tray-options.sh $BUTTON;;
         2) dwmmusic.sh $BUTTON;;

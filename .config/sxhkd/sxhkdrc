@@ -13,6 +13,7 @@ super + ctrl + v
 
 super + s
 	sh -c "if pidof spotify; then moonie toggleview 7; else  spotify; fi"
+	# sh -c "if pidof spotify; then xdotool search --class spotify windowactivate; else  spotify; fi"
 
 super + e
     neovide

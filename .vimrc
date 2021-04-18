@@ -41,7 +41,7 @@ let ycm_types = {
 	" Distraction free writing
 	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 	" Nice color scheme
-	Plug 'junegunn/seoul256.vim'
+	"Plug 'junegunn/seoul256.vim'
 	" Vim folding
 	"Plug 'matze/vim-tex-fold'
 	" Color scheme
@@ -55,7 +55,7 @@ let ycm_types = {
 	" Asynchronous compiling
 	Plug 'tpope/vim-dispatch'
 	" Git wrapper
-	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-fugitive', { 'on': 'Git'}
 	" Surround
 	Plug 'tpope/vim-surround'
 	" Autocomplete
@@ -66,7 +66,7 @@ let ycm_types = {
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
 	" Markdown and notes
-   	Plug 'vimwiki/vimwiki'
+   	Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
 
 	" Look into
 	" jiangmiao/auto-pairs
