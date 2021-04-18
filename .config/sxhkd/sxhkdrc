@@ -1,4 +1,7 @@
 ### APPS ###
+super + shift + Return
+    alacritty -e ssh faucip
+
 super + shift + w
 	firefox --private-window
 super + ctrl + w

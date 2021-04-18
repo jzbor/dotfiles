@@ -44,6 +44,7 @@ update-all () {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull
     cd ~/Programming/C/moonwm/ && git pull && sudo make install install-scripts clean
     cd
+    command -v pass > /dev/null && pass git pull
     yay -Syu
 }
 
