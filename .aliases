@@ -17,7 +17,9 @@ alias :q="exit"
 alias df="df -h"
 alias du="du -sh"
 alias faucip="ssh faucip"
+alias fuck="sudo !!"
 alias fucking="sudo"
+alias gccsp="gcc -std=c11 -pedantic -Wall -Werror -D_XOPEN_SOURCE=700 -g"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
 alias rgrep="grep -RHIni --color"
 alias icat="swallow sxiv"
@@ -40,6 +42,7 @@ alias trash="gio trash"
 alias trash-list="gio list trash://"
 alias trash-clean="gio trash --empty"
 alias v="$EDITOR"
+alias valgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes"
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias yay_no_integ="yay --mflags --skipinteg"
@@ -51,6 +54,18 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'profdel file *' \
     -c 'qa!'
 "
+
+
+screencast () {
+    dest="$XDG_VIDEOS_DIR/"
+    [ -d "$dest" ] || dest="$HOME/Videos/"
+    [ -d "$dest" ] || dest="$HOME/"
+    dest="${dest}Screencasts/"
+    [ -d "$dest" ] || mkdir -vp "$dest"
+
+    filename="$(date +'Screencast_%Y-%m-%d_%H-%M-%S.mp4')"
+    ffmpeg -f x11grab -y -r 60 -s 1920x1080 -i :0.0 -vcodec h264 -pix_fmt yuv420p "$dest$filename"
+}
 
 update-all () {
     echo "$blue=== Pulling dotfiles ===$reset"

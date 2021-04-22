@@ -6,7 +6,6 @@
 " YCM filetypes (has to be before plug hooks)
 let ycm_types = {
 	\ 'python': 1,
-	\ 'c': 1,
 	\ 'cpp': 1,
 	\ 'cs': 1,
 	\ 'rust': 1,
@@ -46,6 +45,7 @@ let ycm_types = {
 	"Plug 'matze/vim-tex-fold'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
+    " Plug 'srcery-colors/srcery-vim'
 	" File browsing
    	Plug 'scrooloose/nerdtree'
 	" Languages
@@ -324,11 +324,11 @@ autocmd BufRead * :call GoYCM()
     command! -bang Dotfiles call fzf#vim#files('~/.config', <bang>0)
     command! -bang Scripts call fzf#vim#files('~/.scripts', <bang>0)
 
-" Kakoune style page navigation
-    nnoremap gh 0
-    nnoremap gj G
-    nnoremap gk gg
-    nnoremap gl $
+" " Kakoune style page navigation
+"     nnoremap gh 0
+"     nnoremap gj G
+"     nnoremap gk gg
+"     nnoremap gl $
 
 " Git shortcuts
     nnoremap <C-n> :GitGutterNextHunk<CR>
