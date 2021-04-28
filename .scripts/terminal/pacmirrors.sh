@@ -19,7 +19,11 @@ regular () {
     printf "$praefix Ranking mirrors $suffix"
     echo "This may take some while..."
     echo
-    rankmirrors -v "$TEMP_MIRRORLIST" | tee "$TEMP_MIRRORLIST.fastest" || exit 1
+    if [ "$DISTRO" = "Artix (Arch mirrors)" ]; then
+        rankmirrors-arch -v "$TEMP_MIRRORLIST" | tee "$TEMP_MIRRORLIST.fastest" || exit 1
+    else
+        rankmirrors -v "$TEMP_MIRRORLIST" | tee "$TEMP_MIRRORLIST.fastest" || exit 1
+    fi
 
     printf "$praefix Replace current mirrorlist? $suffix"
     read -p "(y/N) " answer
@@ -38,12 +42,12 @@ elif grep -q 'artixlinux' /proc/version; then
     MIRRORURL="https://gitea.artixlinux.org/packagesA/artix-mirrorlist/raw/branch/master/trunk/mirrorlist"
     regular
     DISTRO="Artix (Arch mirrors)"
-    MIRRORURL="https://archlinux.org/mirrorlist/all/"
+    MIRRORURL="https://archlinux.org/mirrorlist/all/https/"
     DEST="${DEST:-/etc/pacman.d/mirrorlist}-arch"
     regular
 elif grep -q 'archlinux' /proc/version; then
     DISTRO="Arch"
-    MIRRORURL="https://archlinux.org/mirrorlist/all/"
+    MIRRORURL="https://archlinux.org/mirrorlist/all/https/"
     regular
 else
     echo "Your distro seems to not be supported"
