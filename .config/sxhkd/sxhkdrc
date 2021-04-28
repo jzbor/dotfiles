@@ -8,9 +8,9 @@ super + ctrl + w
 	surf
 
 super + v
-	mpv
+	mpv-wrapper
 super + shift + v
-	mpv "$(xclip -o --selection clipboard)" --idle=no
+	mpv-wrapper "$(xclip -o)"
 super + ctrl + v
 	menu-mpv.sh
 

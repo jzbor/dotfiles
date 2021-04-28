@@ -54,6 +54,7 @@ get_session(){
 		deepin) dbus_args+=(startdde) ;;
 		dwm) dbus_args+=(dwm) ;;
 		moonwm) dbus_args+=(moonwm-util launch) ;;
+		moonwm-valgrind) dbus_args+=(moonwm-util launch-valgrind) ;;
 		enlightenment) dbus_args+=(enlightenment_start) ;;
 		fluxbox) dbus_args+=(startfluxbox) ;;
 		gnome) dbus_args+=(gnome-session) ;;

@@ -54,8 +54,13 @@ get_status () {
 
 action () {
     # notify-send "$STATUSCMDN $BUTTON"
+    case $BUTTON in
+        8) mpv-wrapper; return;;
+        9) spotify; return;;
+    esac
     case "$STATUSCMDN" in
         0) tray-options.sh $BUTTON;;
+        1) moonwm-util setup-keyboard;;
         2) dwmmusic.sh $BUTTON;;
         3) dwmvolume.sh $BUTTON;;
         4) dwmnetwork.sh $BUTTON;;

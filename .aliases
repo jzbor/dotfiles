@@ -21,7 +21,7 @@ alias fuck="sudo !!"
 alias fucking="sudo"
 alias gccsp="gcc -std=c11 -pedantic -Wall -Werror -D_XOPEN_SOURCE=700 -g"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
-alias rgrep="grep -RHIni --color"
+alias rgrep="grep -RHIni --exclude-dir .git --exclude tags --color"
 alias icat="swallow sxiv"
 alias kcc=kdeconnect-cli
 alias ip='ip -c'

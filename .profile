@@ -21,6 +21,7 @@ export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option
 export MOONWM_NOPICOM=1
 export MOONWM_NONOTIFYD=1
 export MOONWM_NOSTATUS=1
+export MOONWM_MODKEY="Super"
 export TOUCHEGG_THRESHOLDS="750 750"
 
 # For compatibility between gtk icon themes and qt
@@ -67,16 +68,4 @@ export HOSTCC_ZSH="$(printf "%s" \
 if [ -f "$HOME/.config/session" ] \
         && [ -z $DISPLAY ] && [ $TTY = /dev/tty1 ]; then
     exec startx ~/.xinitrc "$(cat $HOME/.config/session)"
-elif ! (command -v lightdm > /dev/null || command -v gdm > /dev/null) \
-	&& [ -z $DISPLAY ] && [ $TTY = /dev/tty1 ]; then
-    if command -v gnome-session > /dev/null; then
-        exec startx ~/.xinitrc gnome
-    elif command -v moonwm > /dev/null; then
-        exec startx ~/.xinitrc moonwm
-    elif command -v dwm > /dev/null; then
-        exec startx ~/.xinitrc dwm
-    elif command -v i3 > /dev/null; then
-        exec startx ~/.xinitrc i3
-    fi
 fi
-

@@ -66,7 +66,8 @@ let ycm_types = {
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
 	" Markdown and notes
-   	Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
+   	" Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
+   	Plug 'vimwiki/vimwiki'
 
 	" Look into
 	" jiangmiao/auto-pairs
