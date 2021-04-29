@@ -15,15 +15,6 @@ else
 	export TERMINAL="uxterm"
 fi
 
-export MOONWM_WALLPAPER="$(readlink -f ~/.config/assets/background)"
-export MOONWM_STATUSCMD="dwmstatus.sh"
-export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
-export MOONWM_NOPICOM=1
-export MOONWM_NONOTIFYD=1
-export MOONWM_NOSTATUS=1
-export MOONWM_MODKEY="Super"
-export TOUCHEGG_THRESHOLDS="750 750"
-
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome
 
