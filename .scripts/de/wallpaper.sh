@@ -5,8 +5,6 @@
 
 BG_DIR="$HOME/.config/assets"
 BG_SYMLN="$BG_DIR/background"
-alias config=
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 case $1 in
     '')
@@ -20,8 +18,7 @@ case $1 in
         [ -f $1 ] || (echo "There is no such file: $1"; exit 1)
 
         echo "Cleaning up old background"
-        config rm -f "$(readlink -f $BG_SYMLN)" && echo "    -> Removed files from config repository" \
-            || rm "$(readlink -f $BG_SYMLN)"
+        rm "$(readlink -f $BG_SYMLN)"
         echo "Creating copy of new background: $BG_DIR/$(basename $1)"
         cp $1 $BG_DIR/$(basename $1)
         echo "Resetting symlink"
@@ -30,8 +27,6 @@ case $1 in
         xwallpaper --zoom $BG_SYMLN
         echo "Pre-generating lock image"
         lock.sh pre-gen > /dev/null
-        echo "Adding changes to config repo (staging)"
-        config add $BG_SYMLN $(readlink -f $BG_SYMLN)
         ;;
 esac
 
