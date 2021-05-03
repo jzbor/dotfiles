@@ -6,6 +6,7 @@ export BROWSER="firefox"
 export READER="zathura"
 export FILEMANAGER="pcmanfm"
 export DMENUCMD="moonwm-util drun"
+export LANG="en_US.UTF-8"
 
 if command -v alacritty > /dev/null; then
 	export TERM="alacritty"
