@@ -296,7 +296,8 @@ autocmd BufRead * :call GoYCM()
 	vnoremap = =gv
 
 " Compile document, be it groff/LaTeX/markdown/etc.
-    map <leader>c :w! \| !compiler.sh <c-r>%<CR>
+    map <leader>c :w! \| !compiler.sh %<CR>
+    map <leader>C :w! \| !docconv.sh % pdf<CR>
 
 " Open corresponding .pdf/.html or preview
     map <leader>p :!opout.sh <c-r>%<CR><CR>
