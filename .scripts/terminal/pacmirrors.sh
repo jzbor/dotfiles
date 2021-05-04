@@ -11,7 +11,7 @@ manjaro () {
 }
 
 regular () {
-    printf "$praefix Downloading mirrorlist [$NAME: $REPOSITORY] $suffix"
+    printf "$praefix Downloading mirrorlist [$REPOSITORY] $suffix"
     echo "Downloading from $MIRRORURL"
     curl -o "$TEMP_MIRRORLIST" "$MIRRORURL" || exit 1
     sed -i 's/#S/S/g' "$TEMP_MIRRORLIST" || exit 1
