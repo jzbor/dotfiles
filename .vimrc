@@ -297,13 +297,13 @@ autocmd BufRead * :call GoYCM()
 
 " Compile document, be it groff/LaTeX/markdown/etc.
     map <leader>c :w! \| !compiler.sh %<CR>
-    map <leader>C :w! \| !docconv.sh % pdf<CR>
+    map <leader>C :w! \| !docconv % pdf<CR>
 
 " Open corresponding .pdf/.html or preview
     map <leader>p :!opout.sh <c-r>%<CR><CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
-    autocmd VimLeave *.tex !texclear.sh %
+    autocmd VimLeave *.tex !texcleanup %
 
 " Edit/source vimrc
 	command! Rc :source $MYVIMRC
