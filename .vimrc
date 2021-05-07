@@ -300,7 +300,7 @@ autocmd BufRead * :call GoYCM()
     map <leader>C :w! \| !docconv % pdf<CR>
 
 " Open corresponding .pdf/.html or preview
-    map <leader>p :!opout.sh <c-r>%<CR><CR>
+    map <leader>p :!setsid open -o %<CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
     autocmd VimLeave *.tex !texcleanup %

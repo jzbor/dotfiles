@@ -77,6 +77,11 @@ update-all () {
         cd ~/Programming/C/moonwm/ && git pull && sudo make install install-scripts clean
         cd -
     fi
+    echo "$blue=== Updating mashup ===$reset"
+    if pacman -Qsq | grep -v '^mashup' > /dev/null; then
+        cd ~/Programming/Shell/mashup/ && git pull && ./install.sh -a
+        cd -
+    fi
     echo "$blue=== Pulling pass ===$reset"
     command -v pass > /dev/null && pass git pull
     echo "$blue=== Update system ===$reset"

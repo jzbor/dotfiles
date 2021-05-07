@@ -57,21 +57,21 @@ Xft.lcdfilter: lcddefault
 
 
 !! MoonWM values
-moonwm.vacantTagFg:        #7c6f64
-moonwm.vacantTagBg:        myBackground
-moonwm.unfocusedTitleFg:   #7c6f64
-moonwm.unfocusedTitleBg:   myBackground
-moonwm.statusFg:           myForeground
-moonwm.statusBg:           myBackground
-moonwm.menuFg:             myBackground
-moonwm.menuBg:             myUrgent
-moonwm.occupiedTagFg:      myForeground
-moonwm.occupiedTagBg:      myBackground
-moonwm.focusedTitleFg:     myForeground
-moonwm.focusedTitleBg:     myBackground
-moonwm.unfocusedBorder:    myBackground
-/* moonwm.focusedBorder:      myBackgroundLight */
-moonwm.focusedBorder:      myForeground
+/* moonwm.vacantTagFg:        #7c6f64 */
+/* moonwm.vacantTagBg:        myBackground */
+/* moonwm.unfocusedTitleFg:   #7c6f64 */
+/* moonwm.unfocusedTitleBg:   myBackground */
+/* moonwm.statusFg:           myForeground */
+/* moonwm.statusBg:           myBackground */
+/* moonwm.menuFg:             myBackground */
+/* moonwm.menuBg:             myUrgent */
+/* moonwm.occupiedTagFg:      myForeground */
+/* moonwm.occupiedTagBg:      myBackground */
+/* moonwm.focusedTitleFg:     myForeground */
+/* moonwm.focusedTitleBg:     myBackground */
+/* moonwm.unfocusedBorder:    myBackground */
+/* /1* moonwm.focusedBorder:      myBackgroundLight *1/ */
+/* moonwm.focusedBorder:      myForeground */
 
 !! X clock
 Clock*Background:		myBackground
