@@ -19,7 +19,8 @@ alias du="du -sh"
 alias faucip="ssh faucip"
 alias fuck="sudo !!"
 alias fucking="sudo"
-alias gccsp="gcc -std=c11 -pedantic -Wall -Werror -D_XOPEN_SOURCE=700 -g"
+alias gccsp="gcc -std=c11 -pedantic -Wall -D_XOPEN_SOURCE=700 -g"
+alias gccsp-nodbg="gcc -std=c11 -pedantic -Wall -D_XOPEN_SOURCE=700"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
 alias rgrep="grep -RHIni --exclude-dir .git --exclude tags --color"
 alias icat="swallow sxiv"
@@ -55,16 +56,9 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'qa!'
 "
 
-
-screencast () {
-    dest="$XDG_VIDEOS_DIR/"
-    [ -d "$dest" ] || dest="$HOME/Videos/"
-    [ -d "$dest" ] || dest="$HOME/"
-    dest="${dest}Screencasts/"
-    [ -d "$dest" ] || mkdir -vp "$dest"
-
-    filename="$(date +'Screencast_%Y-%m-%d_%H-%M-%S.mp4')"
-    ffmpeg -f x11grab -y -r 60 -s 1920x1080 -i :0.0 -vcodec h264 -pix_fmt yuv420p "$dest$filename"
+mkcd () {
+    mkdir -pv "$1"
+    cd "$1"
 }
 
 update-all () {

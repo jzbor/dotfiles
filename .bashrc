@@ -126,8 +126,6 @@ shopt -s histappend
 
 source $HOME/.aliases
 
-eval "$(thefuck --alias)"
-
 alias eth_off="sudo ip link set enp0s25 down"
 alias eth_on="sudo ip link set enp0s25 up"
 
@@ -138,4 +136,6 @@ alias config-pull='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fet
 set -o vi
 shopt -s autocd cdspell
 
-echo $USER@$(hostname)  $(uname -srm) $(lsb_release -rcs)
+echo $USER@$HOST  $(uname -srm) $(lsb_release -rcs 2> /dev/null)
+
+

@@ -37,11 +37,12 @@ get_status () {
     statusline=""
 
     add_block "$(extra-tray.sh)" 1
-    add_block " $(setxkbmap -query | grep '^layout:' | sed 's/.* //')" 2 " us,de"
-    add_block "$(music.sh status-small)" 3
-    add_block "$(volume.sh)%" 4
-    add_block "$(ethernet.sh) $(wifi.sh) $(bluetooth.sh)" 5
-    add_block " $(date +%R)" 6
+    add_block "$(pgrep screencast > /dev/null 2>&1 && echo "雷")" 2
+    add_block " $(setxkbmap -query | grep '^layout:' | sed 's/.* //')" 3 " us,de"
+    add_block "$(music.sh status-small)" 4
+    add_block "$(volume.sh)%" 5
+    add_block "$(ethernet.sh) $(wifi.sh) $(bluetooth.sh)" 6
+    add_block " $(date +%R)" 7
 
 	if [ -d /proc/acpi/button/lid ]; then
     	device=" "
@@ -60,11 +61,12 @@ action () {
     esac
     case "$STATUSCMDN" in
         0) tray-options.sh $BUTTON;;
-        1) moonwm-util setup-keyboard;;
-        2) dwmmusic.sh $BUTTON;;
-        3) dwmvolume.sh $BUTTON;;
-        4) dwmnetwork.sh $BUTTON;;
-        5) dwmdate.sh $BUTTON;;
+        1) killall -2 -g screencast ;;
+        2) moonwm-util setup-keyboard;;
+        3) dwmmusic.sh $BUTTON;;
+        4) dwmvolume.sh $BUTTON;;
+        5) dwmnetwork.sh $BUTTON;;
+        6) dwmdate.sh $BUTTON;;
         *) notify-send "out of range ($STATUSCMDN)"
     esac
 }

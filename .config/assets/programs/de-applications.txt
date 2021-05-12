@@ -1,3 +1,4 @@
+alacritty
 firefox
 firefox-extension-https-everywhere
 firefox-extension-privacybadger
