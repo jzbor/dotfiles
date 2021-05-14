@@ -84,7 +84,7 @@ let ycm_types = {
     set mouse=a		" Enable mouse
     let mapleader = " "
 	set scrolloff=5 " Margin at the top and bottom when scrolling
-	set autochdir	" Always set the cwd to the current files parent dir
+	" set autochdir	" Always set the cwd to the current files parent dir
 
 " alacritty workaround
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
@@ -308,6 +308,10 @@ autocmd BufRead * :call GoYCM()
 " Edit/source vimrc
 	command! Rc :source $MYVIMRC
 	command! Config :e ~/.vimrc
+
+" GitGutter aliases
+	command! GGundo :GitGutterUndoHunk
+	command! GGstage :GitGutterStageHunk
 
 " Navigating with guides
     "inoremap <leader>. <Esc>/<++><Enter>"_c4l
