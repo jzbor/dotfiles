@@ -38,6 +38,7 @@ alias ping="ping -c 5"
 alias please="sudo"
 alias saidar="saidar -c"
 alias se="sudoedit"
+alias tar="tar -czvf"
 alias todo="$EDITOR ~/Documents/Notes/todo.md"
 alias trash="gio trash"
 alias trash-list="gio list trash://"
@@ -174,7 +175,7 @@ cfg () {
     [ -f "$file" ] && $EDITOR "$file"
 }
 browse () {
-    selection="$(printf "..\n%s" "$(ls -t)" | fzf --prompt "$(pwd)/")"
+    selection="$(printf "..\n%s" "$(ls -t)" | fzf -1 --prompt "$(pwd)/")"
     if [ "$selection" = "" ]; then
         return
     else

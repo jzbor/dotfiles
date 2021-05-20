@@ -8,7 +8,11 @@ super + ctrl + w
 	surf
 
 super + v
-	mpv-wrapper
+    if [ -S "/tmp/mpv-wrapper/$USER/socket" ]; then \
+        mpv-menu; \
+    else \
+        mpv-wrapper; \
+    fi
 super + shift + v
 	mpv-wrapper "$(xclip -o)"
 super + ctrl + v

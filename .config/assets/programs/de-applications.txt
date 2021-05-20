@@ -6,7 +6,6 @@ firefox-ublock-origin
 gparted
 gthumb
 mpv
-nextcloud-client
 pcmanfm
 polkit
 polkit-gnome
