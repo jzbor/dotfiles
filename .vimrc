@@ -353,6 +353,7 @@ autocmd BufRead * :call GoYCM()
 	command! Ddate execute 'read !date' | norm I####<Space>
 	command! Week execute 'read !date -d "monday" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
 	command! -nargs=1 Weekn execute 'read !date -d "monday +<q-args> weeks" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
+    command! Term execute '!setsid $TERMINAL'
 
 " Neovide
     let g:neovide_refresh_rate=30
