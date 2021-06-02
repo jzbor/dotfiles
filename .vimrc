@@ -84,7 +84,7 @@ let ycm_types = {
     set mouse=a		" Enable mouse
     let mapleader = " "
 	set scrolloff=5 " Margin at the top and bottom when scrolling
-	set autochdir	" Always set the cwd to the current files parent dir
+	" set autochdir	" Always set the cwd to the current files parent dir
 
 " alacritty workaround
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
@@ -309,6 +309,10 @@ autocmd BufRead * :call GoYCM()
 	command! Rc :source $MYVIMRC
 	command! Config :e ~/.vimrc
 
+" GitGutter aliases
+	command! GGundo :GitGutterUndoHunk
+	command! GGstage :GitGutterStageHunk
+
 " Navigating with guides
     "inoremap <leader>. <Esc>/<++><Enter>"_c4l
     "vnoremap <leader>. <Esc>/<++><Enter>"_c4l
@@ -349,6 +353,7 @@ autocmd BufRead * :call GoYCM()
 	command! Ddate execute 'read !date' | norm I####<Space>
 	command! Week execute 'read !date -d "monday" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
 	command! -nargs=1 Weekn execute 'read !date -d "monday +<q-args> weeks" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
+    command! Term execute '!setsid $TERMINAL'
 
 " Neovide
     let g:neovide_refresh_rate=30
