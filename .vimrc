@@ -84,7 +84,7 @@ let ycm_types = {
     set mouse=a		" Enable mouse
     let mapleader = " "
 	set scrolloff=5 " Margin at the top and bottom when scrolling
-	" set autochdir	" Always set the cwd to the current files parent dir
+	set autochdir	" Always set the cwd to the current files parent dir
 
 " alacritty workaround
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"

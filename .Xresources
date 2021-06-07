@@ -124,26 +124,31 @@ URxvt.italicFont:		xft:FiraCode Nerd Font Mono:style=Italic:size=11
 URxvt.boldItalicFont:	xft:FiraCode Nerd Font Mono:style=Bold Italic:size=11
 URxvt.lineSpace: 0
 URxvt.letterSpace: -1
-URxvt.geometry: 92x24
-URxvt.internalBorder: 24
+URxvt.geometry: 100x32
+URxvt.internalBorder: 5
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.saveline: 2048
 URxvt.scrollBar: false
 URxvt.scrollBar_right: true
+URxvt.scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
 URxvt.urgentOnBell: true
 URxvt.depth: 24
-URxvt.iso14755: false
+URxvt.iso14755: true
 
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-u: perl:url-select:select_next
+/* URxvt.keysym.M-c: perl:clipboard:copy */
+/* URxvt.keysym.M-v: perl:clipboard:paste */
+/* URxvt.keysym.M-C-v: perl:clipboard:paste_escaped */
+/* URxvt.keysym.M-Escape: perl:keyboard-select:activate */
+/* URxvt.keysym.M-s: perl:keyboard-select:search */
+/* URxvt.keysym.M-u: perl:url-select:select_next */
 URxvt.urlLauncher: xdg-open
 URxvt.underlineURLs: true
 URxvt.urlButton: 1

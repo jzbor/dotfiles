@@ -8,15 +8,12 @@ export FILEMANAGER="pcmanfm"
 export DMENUCMD="moonwm-util drun"
 # export LANG="en_US.UTF-8"
 
-# if command -v alacritty > /dev/null; then
-# 	export TERM="alacritty"
-# 	export TERMINAL="alacritty"
-# else
-# 	export TERM="xterm-256color"
-# 	export TERMINAL="uxterm"
-# fi
-export TERM="xterm-256color"
-export TERMINAL="uxterm"
+if command -v alacritty > /dev/null; then
+	export TERMINAL="alacritty"
+else
+	export TERMINAL="uxterm"
+fi
+export TERMINAL="urxvt"
 
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome

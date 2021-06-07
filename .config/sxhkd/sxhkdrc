@@ -1,3 +1,7 @@
+### MOONWM ###
+super + shift + {comma, period}
+    moonie incnmaster {-1, 1}
+
 ### APPS ###
 super + shift + Return
     alacritty -e ssh faucip
