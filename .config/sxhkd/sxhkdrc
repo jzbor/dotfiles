@@ -1,6 +1,6 @@
 ### MOONWM ###
 super + shift + {comma, period}
-    moonie incnmaster {-1, 1}
+    moonctl incnmaster {-1, 1}
 
 ### APPS ###
 super + shift + Return
@@ -23,7 +23,7 @@ super + ctrl + v
 	menu-mpv.sh
 
 super + s
-	sh -c "if pidof spotify; then moonie toggleview 7; else  spotify; fi"
+	sh -c "if pidof spotify; then moonctl toggleview $((1<<7)); else  spotify; fi"
 	# sh -c "if pidof spotify; then xdotool search --class spotify windowactivate; else  spotify; fi"
 
 super + e
@@ -90,9 +90,10 @@ super + F6
 	weather.sh
 
 super + x
-	lock.sh
+    moonwm-util lock
+	# lock.sh
 super + shift + x
-	music.sh pause && lock.sh
+	music.sh pause && moonwm-util lock
 
 super + F7
 	ethernet.sh toggle
@@ -109,14 +110,17 @@ super + {_, shift, ctrl} + @Print
 
 
 ### MEDIA AND BRIGHTNESS CONTROLL ###
-super + {bracketleft, bracketright} + {_, shift}
-	volume.sh {-d,-i} {_,1}
+super + {_, shift} + {bracketleft, bracketright}
+	{_, MOONWM_BOOST_AUDIO=1} moonwm-util volume {-,+}5
 
 super + shift + control + bracketright
 	volume.sh -b
 
-super + backslash + {_, shift, ctrl}
-	volume.sh -t {_,mic,mic-unmute}
+super + backslash + {shift, ctrl}
+	volume.sh -t {mic,mic-unmute}
+
+super + backslash
+    moonwm-util mute
 
 super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
