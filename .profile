@@ -54,6 +54,8 @@ export HOSTCC_ZSH="$(printf "%s" \
 	    "$(< /etc/hostname | md5sum | head -c 1)" \
     | bc | tail -n 1)")"
 
+[ -f "$HOME/.profile.local" ] && . .profile.local
+
 
 # Automatically start dwm
 if [ -f "$HOME/.config/session" ] \
