@@ -14,6 +14,6 @@ else
 fi
 
 if [ -n "$kill_pid" ]; then
-    kill -n 9 "$kill_pid"
+    kill -KILL "$kill_pid"
     dunstify -a "Process killed" "Successfully terminated process $kill_pid ($kill_name)."
 fi
