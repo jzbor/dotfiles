@@ -206,7 +206,7 @@ rofi.run-command:                    bash -c {cmd}
 ! DRUN format string. (Supports: generic,name,comment,exec,categories)
 rofi.drun-display-format:            {name} [<span weight='light' size='small'><i>({generic})</i></span>]
 ! Disable history in run/ssh
-rofi.disable-history:                true
+rofi.disable-history:                false
 ! Programs ignored for history
 rofi.ignored-prefixes: firefox-private
 ! Use sorting

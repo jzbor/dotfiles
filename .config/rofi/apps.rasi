@@ -70,7 +70,7 @@ listview {
     columns:                5;
     spacing:                2px;
     cycle:                  true;
-    dynamic:                true;
+    dynamic:                false;
     layout:                 vertical;
     border:			        0% 0% 0% 0%;
     margin:			        1% 0% 0% 0%;
