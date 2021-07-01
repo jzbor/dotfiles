@@ -2,6 +2,10 @@
 
 dunst.sh
 music.sh loop &
-(killall -9 picom-guardian.sh; picom-guardian.sh) &
+if [ "$REGULAR_PICOM" = 1 ]; then
+    picom --config ~/.config/picom-basic.conf
+else
+    (killall -9 picom-guardian.sh; picom-guardian.sh) &
+fi
 dwmstatus.sh &
 command -v rambox > /dev/null && rambox
