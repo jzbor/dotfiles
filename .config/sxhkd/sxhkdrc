@@ -73,8 +73,8 @@ super + shift + c
 super + {ctrl, shift} + s
 	menu-unicode.sh {_,insert}
 
-super + {shift, ctrl} + m
-	menu-mount.sh {mnt,umnt}
+# super + {shift, ctrl} + m
+# 	menu-mount.sh {mnt,umnt}
 
 super + ctrl + space
 	menu-windows.sh
