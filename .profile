@@ -13,7 +13,6 @@ if command -v alacritty > /dev/null; then
 else
 	export TERMINAL="uxterm"
 fi
-export TERMINAL="urxvt"
 
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome
