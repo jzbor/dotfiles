@@ -2,19 +2,20 @@
 font:
   size: 11.0
   normal:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Regular
 
   bold:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: SemiBold
 
   italic:
-    family: Fira Code
+    family: FiraCode Nerd Font
     style: Light
 
   bold_italic:
     family: Fira Code
+    family: FiraCode Nerd Font
     style: SemiBold
 
 
