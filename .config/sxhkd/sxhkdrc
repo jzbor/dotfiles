@@ -140,3 +140,5 @@ super + ctrl + {bracketleft, bracketright}
 # XF86Audio{Prev,Play,Pause,Next}
 # 	music.sh {previous,play,pause,next}
 
+# ctrl + button2
+#     moonwm-xdg-xmenu -a | grep 'Firefox\|Alacritty\|Spotify\|Discord\|PCManFM' | pmenu | sh

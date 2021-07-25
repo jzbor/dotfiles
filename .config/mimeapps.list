@@ -1,6 +1,6 @@
 [Added Associations]
 application/octet-stream=org.gnome.FileRoller.desktop;firefox.desktop;
-application/pdf=firefox.desktop;com.github.xournalpp.xournalpp.desktop;org.pwmt.zathura-pdf-poppler.desktop;epdfview.desktop;
+application/pdf=com.github.xournalpp.xournalpp.desktop;firefox.desktop;org.pwmt.zathura-pdf-poppler.desktop;epdfview.desktop;
 application/rtf=libreoffice-writer.desktop;
 application/vnd.oasis.opendocument.presentation=libreoffice-impress.desktop;org.pwmt.zathura.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop;libreoffice-writer.desktop;org.pwmt.zathura-pdf-poppler.desktop;

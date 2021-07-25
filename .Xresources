@@ -69,9 +69,11 @@ Xft.lcdfilter: lcddefault
 /* moonwm.occupiedTagBg:      myBackground */
 /* moonwm.focusedTitleFg:     myForeground */
 /* moonwm.focusedTitleBg:     myBackground */
+/* moonwm.focusedTitleBg:     myBackground */
 /* moonwm.unfocusedBorder:    myBackground */
 /* /1* moonwm.focusedBorder:      myBackgroundLight *1/ */
 /* moonwm.focusedBorder:      myForeground */
+/* moonwm.focusedTitleBg:     #ff0000 */
 
 !! X clock
 Clock*Background:		myBackground
