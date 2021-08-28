@@ -132,6 +132,8 @@ text/calendar=thunderbird.desktop;
 audio/midi=nvim.desktop;mpv.desktop;
 text/x-csrc=nvim.desktop;
 text/x-asm=nvim.desktop;
+image/webp=org.gnome.eog.desktop;
+text/csv=libreoffice-calc.desktop;neovide.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;

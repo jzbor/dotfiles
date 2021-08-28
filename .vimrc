@@ -204,6 +204,7 @@ autocmd BufRead * :call GoYCM()
     set incsearch	" Searches for strings incrementally
     set wildmode=longest,list,full  " Enables autocompletion
     set path+=**	" Add cwd to path
+    nmap <leader>/ :tselect<space>
 
 " Tab navigation
     set splitbelow splitright
@@ -380,7 +381,7 @@ autocmd BufRead * :call GoYCM()
 	au BufNewFile,BufRead /*.rasi setf css
 
 " .Xresources:
-    autocmd BufWritePost .Xresources !xrdb merge % && moonie xrdb
+    autocmd BufWritePost .Xresources !xrdb merge % && moonctl xrdb
 
 " LaTeX:
     " Word count (maybe replace with texcount):
