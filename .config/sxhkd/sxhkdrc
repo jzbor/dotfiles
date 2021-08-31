@@ -26,8 +26,7 @@ super + ctrl + v
 	menu-mpv.sh
 
 super + s
-	sh -c "if pidof spotify; then moonctl toggleview $((1<<7)); else  spotify; fi"
-	# sh -c "if pidof spotify; then xdotool search --class spotify windowactivate; else  spotify; fi"
+	spotify.sh
 
 super + e
     neovide
@@ -54,7 +53,7 @@ super + {minus, equal}
 super + shift + d
 	menu-windows.sh
 super + ctrl + d
-	moonwm-util run
+	wmc-utils run
 
 super + a
     xdotool windowactivate "$(wmctrl -lx | mydmenu -p Windows -l 15 -i | cut -f1 -d' ')" 2> /dev/null
@@ -93,10 +92,10 @@ super + F6
 	weather.sh
 
 super + x
-    moonwm-util lock
+    wmc-utils lock
 	# lock.sh
 super + shift + x
-	music.sh pause && moonwm-util lock
+	music.sh pause && wmc-utils lock
 
 super + F7
 	ethernet.sh toggle
@@ -114,7 +113,7 @@ super + {_, shift, ctrl} + @Print
 
 ### MEDIA AND BRIGHTNESS CONTROLL ###
 super + {_, shift} + {bracketleft, bracketright}
-	{_, MOONWM_BOOST_AUDIO=1} moonwm-util volume {-,+}5
+	{_, MOONWM_BOOST_AUDIO=1} wmc-utils volume {-,+}5
 
 super + shift + control + bracketright
 	volume.sh -b
@@ -123,13 +122,13 @@ super + backslash + {shift, ctrl}
 	volume.sh -t {mic,mic-unmute}
 
 super + backslash
-    moonwm-util mute
+    wmc-utils mute
 
 super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
 super + ctrl + {bracketleft, bracketright}
-	moonwm-util brightness {-,+}10
+	wmc-utils brightness {-,+}10
 
 # XF86Audio{Raise,Lower}Volume + {_,shift}
 # 	volume.sh {-i,-d} {_,1}

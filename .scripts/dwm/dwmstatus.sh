@@ -62,7 +62,7 @@ action () {
     case "$STATUSCMDN" in
         0) tray-options.sh $BUTTON;;
         1) killall -2 -g screencast ;;
-        2) moonwm-util setup-keyboard;;
+        2) wmc-utils setup-keyboard;;
         3) dwmmusic.sh $BUTTON;;
         4) dwmvolume.sh $BUTTON;;
         5) dwmnetwork.sh $BUTTON;;
