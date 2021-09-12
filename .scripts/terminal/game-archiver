@@ -1,0 +1,73 @@
+#!/bin/sh
+
+datapath="$HOME/bigdata/Games"
+
+check_external () {
+    if ! [ -d "$datapath/$library_name" ]; then
+        mkdir -v "$datapath/$library_name" || die "Unable to create external library"
+    fi
+}
+
+die () {
+    echo "$1"
+    exit 1
+}
+
+extern () {
+    check_external
+    [ -d "$library_path/$1" ] \
+        || die "Game not found in library ('$library_path/$1')"
+    [ -e "$datapath/$library_name/$1" ] \
+        && die "Game already in external library ('$datapath/$library_name/$1')"
+    slink push "$library_path/$1" "$datapath/$library_name/$1"
+}
+
+intern () {
+    check_external
+    [ -L "$library_path/$1" ] \
+        || die "Game not found in library ('$library_path/$1')"
+    slink resolve "$library_path/$1"
+}
+
+list () {
+    [ -d "$library_path" ] \
+        || die "Library empty/no library ('$library_name' - '$library_path')"
+    echo "Linked Games:"
+    find "$library_path" -mindepth 1 -maxdepth 1 -type l -exec du -sh {} \; \
+        | sed "s|$library_path/||" | sort -hr
+    echo
+    echo "Local Games:"
+    find "$library_path" -mindepth 1 -maxdepth 1 -type d -exec du -sh {} \; \
+        | sed "s|$library_path/||" | sort -hr
+    echo
+}
+
+case $1 in
+    Steam)
+        library_name="Steam"
+        library_path="$HOME/.local/share/Steam/steamapps/common"
+        shift
+        ;;
+    Home)
+        library_name="Home"
+        library_path="$HOME/Games"
+        shift
+        ;;
+    *)
+        echo "No valid library recognised - falling back to Steam"
+        library_name="Steam"
+        library_path="$HOME/.local/share/Steam/steamapps/common"
+        ;;
+esac
+
+case $1 in
+    list)
+        list ;;
+    extern) extern "$2" ;;
+    intern) intern "$2" ;;
+    '')
+        die "Please describe an action to take" '' ;;
+    *)
+        die "Unknown action '$1'" ;;
+esac
+
