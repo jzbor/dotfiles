@@ -45,7 +45,7 @@ let ycm_types = {
 	"Plug 'matze/vim-tex-fold'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
-    " Plug 'srcery-colors/srcery-vim'
+    "Plug 'srcery-colors/srcery-vim'
 	" File browsing
    	Plug 'scrooloose/nerdtree'
 	" Languages
@@ -59,14 +59,14 @@ let ycm_types = {
 	" Surround
 	Plug 'tpope/vim-surround'
 	" Autocomplete
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --rust-completer', 'for': keys(ycm_types)}
-	" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+	"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --rust-completer', 'for': keys(ycm_types)}
+	"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	" LateX Support
 	"Plug 'vim-latex/vim-latex'
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
 	" Markdown and notes
-   	" Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
+   	"Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
    	Plug 'vimwiki/vimwiki'
 
 	" Look into
@@ -115,7 +115,7 @@ let ycm_types = {
     set number		" Show line numbers
     set ruler		" Show row and column ruler information
     set norelativenumber	" Show line numbers relative to current position
-	set nocursorline
+	set cursorline
 
 " Char visualization
 	set lcs+=space:·
@@ -133,7 +133,7 @@ let ycm_types = {
 	vmap <C-c> "+y
 
 " Breaking and wrapping stuff
-    set wrap  " Disable line wrapping
+    set nowrap  " Disable line wrapping
     set linebreak	" Break lines at word (requires Wrap lines)
     set showbreak=>>>  	" Wrap-broken line prefix
     "set textwidth=	" Line wrap (number of cols)
@@ -204,7 +204,7 @@ autocmd BufRead * :call GoYCM()
     set incsearch	" Searches for strings incrementally
     set wildmode=longest,list,full  " Enables autocompletion
     set path+=**	" Add cwd to path
-    nmap <leader>/ :tselect<space>
+    nmap <leader>/ :tjump<space>
 
 " Tab navigation
     set splitbelow splitright
@@ -224,23 +224,6 @@ autocmd BufRead * :call GoYCM()
 	nmap <Leader>sh <esc>:tabnew<CR>:term<CR>i
     endif
 
-" Split navigation
-	nmap <C-h> :wincmd h<CR>
-	nmap <C-j> :wincmd j<CR>
-    nmap <C-k> :wincmd k<CR>
-    nmap <C-l> :wincmd l<CR>
-" Split resizing
-    nmap <C-Left> :vertical resize -5<CR>
-    nmap <C-Down> :resize -5<CR>
-    nmap <C-Up> :resize +5<CR>
-    nmap <C-Right> :vertical resize +5<CR>
-
-" NERDTree shortcuts and settings
-	let g:NERDTreeMinimalUI=1
-	"let g:NERDTreeQuitOnOpen=1
-    noremap <Leader>N <esc>:NERDTreeToggle<CR>
-    noremap <Leader>n <esc>:NERDTreeToggleVCS<CR>
-
 " Disabling arrow keys
     nnoremap <Up> <Nop>
     nnoremap <Down> <Nop>
@@ -256,6 +239,27 @@ autocmd BufRead * :call GoYCM()
     vnoremap <Down> <Nop>
     vnoremap <Left> <Nop>
     vnoremap <Right> <Nop>
+
+" Split navigation and resizing
+	nmap <C-h> :wincmd h<CR>
+	nmap <C-j> :wincmd j<CR>
+    nmap <C-k> :wincmd k<CR>
+    nmap <C-l> :wincmd l<CR>
+    nmap <C-Left> :vertical resize -5<CR>
+    nmap <C-Down> :resize -5<CR>
+    nmap <C-Up> :resize +5<CR>
+    nmap <C-Right> :vertical resize +5<CR>
+" Tab navigation and moving
+    nmap <Left> :tabprevious<CR>
+    nmap <Right> :tabnext<CR>
+    nmap <S-Left> :tabmove -1<CR>
+    nmap <S-Right> :tabmove +1<CR>
+
+" NERDTree shortcuts and settings
+	let g:NERDTreeMinimalUI=1
+	"let g:NERDTreeQuitOnOpen=1
+    noremap <Leader>N <esc>:NERDTreeToggle<CR>
+    noremap <Leader>n <esc>:NERDTreeToggleVCS<CR>
 
 " Undoing and deleting
     set undolevels=1000	" Number of undo levels
