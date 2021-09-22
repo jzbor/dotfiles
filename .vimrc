@@ -125,6 +125,7 @@ let ycm_types = {
 	nmap <F2> :set relativenumber!<CR>
 	nmap <F3> :set cursorline!<CR>
 	nmap <F4> :set list!<CR>
+	nmap <F5> :set wrap!<CR>
 
 " Goyo
 	map <leader>d :Goyo<CR>
@@ -184,6 +185,10 @@ let ycm_types = {
     endfun
 " Enable one or both
 autocmd BufRead * :call GoYCM()
+" Tags
+autocmd! BufRead *.cpp :Dispatch! genctags %:p:h
+autocmd! BufRead *.c   :Dispatch! genctags %:p:h
+autocmd! BufRead *.h   :Dispatch! genctags %:p:h
 
 
 " Spell-checking and syntax-checking
