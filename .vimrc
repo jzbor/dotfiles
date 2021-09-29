@@ -27,8 +27,11 @@ let ycm_types = {
 	" List of Plugins:
 	" Git sidebar
 	Plug 'airblade/vim-gitgutter'
+    " Open files with file:line syntax
+    Plug 'bogado/file-line'
+        " Plug 'wsdjeg/vim-fetch'
 	" LaTeX autocompiling
-	"Plug 'donRaphaco/neotex', { 'for': 'tex' }
+	    " Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	" Status line
    	Plug 'itchyny/lightline.vim'
 	" Manage ctags
@@ -40,12 +43,12 @@ let ycm_types = {
 	" Distraction free writing
 	Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 	" Nice color scheme
-	"Plug 'junegunn/seoul256.vim'
+        " Plug 'junegunn/seoul256.vim'
 	" Vim folding
-	"Plug 'matze/vim-tex-fold'
+        " Plug 'matze/vim-tex-fold'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
-    "Plug 'srcery-colors/srcery-vim'
+        " Plug 'srcery-colors/srcery-vim'
 	" File browsing
    	Plug 'scrooloose/nerdtree'
 	" Languages
@@ -59,14 +62,14 @@ let ycm_types = {
 	" Surround
 	Plug 'tpope/vim-surround'
 	" Autocomplete
-	"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --rust-completer', 'for': keys(ycm_types)}
-	"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+        " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --rust-completer', 'for': keys(ycm_types)}
+        " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	" LateX Support
-	"Plug 'vim-latex/vim-latex'
+        " Plug 'vim-latex/vim-latex'
 	" Syntax checking
 	Plug 'vim-syntastic/syntastic'
 	" Markdown and notes
-   	"Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
+        " Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
    	Plug 'vimwiki/vimwiki'
 
 	" Look into
