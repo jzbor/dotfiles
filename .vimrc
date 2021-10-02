@@ -392,8 +392,9 @@ autocmd! BufRead *.h   :Dispatch! genctags %:p:h
 " Web:
 	au BufNewFile,BufRead /*.rasi setf css
 
-" .Xresources:
+" Config auto reloads
     autocmd BufWritePost .Xresources !xrdb merge % && moonctl xrdb
+    autocmd BufWritePost config.xres !moonctl xrdb
 
 " LaTeX:
     " Word count (maybe replace with texcount):

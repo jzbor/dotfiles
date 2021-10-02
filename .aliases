@@ -33,6 +33,7 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias lsla="ls -lah"
 alias mkdir="mkdir -pv"
 alias mpg123="mpg123 --verbose"
+alias mpv_webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 alias nmc="nmtui-connect"
 alias notes="notes.sh"
 alias pacupdate="sudo pacman -Syu"
@@ -58,6 +59,11 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'profdel file *' \
     -c 'qa!'
 "
+
+fgit () {
+    [ -z "$1" ] && git help && return 1
+    git "$1" "$(git log --oneline --color=always | fzf --preview="git show --color=always {1}" | cut -f1 -d' ')"
+}
 
 fman () {
     selection="$(man -k . \

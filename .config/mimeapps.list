@@ -134,6 +134,7 @@ text/x-csrc=nvim.desktop;
 text/x-asm=nvim.desktop;
 image/webp=org.gnome.eog.desktop;
 text/csv=libreoffice-calc.desktop;neovide.desktop;
+application/vnd.apple.mpegurl=mpv.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;

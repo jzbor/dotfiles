@@ -15,11 +15,12 @@ super + ctrl + w
 	surf
 
 super + v
-    if [ -S "/tmp/mpv-wrapper/$USER/socket" ]; then \
-        mpv-menu; \
-    else \
-        mpv-wrapper; \
-    fi
+    mpv
+    # if [ -S "/tmp/mpv-wrapper/$USER/socket" ]; then \
+    #     mpv-menu; \
+    # else \
+    #     mpv-wrapper; \
+    # fi
 super + shift + v
 	mpv-wrapper "$(xclip -o)"
 super + ctrl + v
