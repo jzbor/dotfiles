@@ -15,9 +15,9 @@ else
 fi
 
 # monwm
-MOONWM_STATUSCMD="dwmstatus.sh"
-MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
-MOONWM_PICOM=0
+export MOONWM_STATUSCMD="dwmstatus.sh"
+export MOONWM_KEYMAP="us,de -option -option caps:escape_shifted_capslock -option altwin:swap_alt_win -option grp:lwin_switch"
+export MOONWM_PICOM=0
 
 # For compatibility between gtk icon themes and qt
 export DESKTOP_SESSION=gnome
