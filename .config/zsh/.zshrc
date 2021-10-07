@@ -183,7 +183,7 @@ parse_git_state() {
     if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
 	GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
     fi
-    if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    if [[ -n $(timeout 2s git ls-files --other --exclude-standard 2> /dev/null) ]]; then
 	GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED
     fi
     if ! git diff --quiet 2> /dev/null; then

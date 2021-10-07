@@ -3,7 +3,7 @@
 dunst.sh
 music.sh loop &
 if [ "$REGULAR_PICOM" = 1 ]; then
-    picom --config ~/.config/picom-basic.conf
+    picom --experimental-backends --config ~/.config/picom-basic.conf
 else
     (killall -9 picom-guardian.sh; picom-guardian.sh) &
 fi
