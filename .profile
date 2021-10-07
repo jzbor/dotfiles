@@ -11,7 +11,7 @@ export DMENUCMD="wmc-utils drun"
 if command -v alacritty > /dev/null; then
 	export TERMINAL="alacritty"
 else
-	export TERMINAL="uxterm"
+	export TERMINAL="xfce4-terminal"
 fi
 
 # monwm
