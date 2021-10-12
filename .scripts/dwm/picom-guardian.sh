@@ -3,7 +3,7 @@
 
 reloadpicom () {
     sleep 1
-    echo '' >> $XDG_CONFIG_HOME/picom.conf
+    printf '' >> $XDG_CONFIG_HOME/picom.conf
 }
 
 killall -9 picom; picom --experimental-backends 2> ~/.cache/picom.log
