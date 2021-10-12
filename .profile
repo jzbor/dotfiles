@@ -10,7 +10,7 @@ export DMENUCMD="wmc-utils drun"
 
 if command -v buttermilk > /dev/null; then
 	export TERMINAL="buttermilk"
-if command -v alacritty > /dev/null; then
+elif command -v alacritty > /dev/null; then
 	export TERMINAL="alacritty"
 else
 	export TERMINAL="xfce4-terminal"
