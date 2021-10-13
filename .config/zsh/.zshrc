@@ -239,3 +239,5 @@ if [[ "$TERM" == (alacritty*|gnome*|konsole*|putty*|rxvt*|screen*|tmux*|xterm*) 
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
+
+[ -f "/etc/profile.d/vte.sh" ] && . /etc/profile.d/vte.sh

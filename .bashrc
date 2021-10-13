@@ -139,3 +139,4 @@ shopt -s autocd cdspell
 echo $USER@$HOST  $(uname -srm) $(lsb_release -rcs 2> /dev/null)
 
 
+[ -f "/etc/profile.d/vte.sh" ] && . /etc/profile.d/vte.sh
