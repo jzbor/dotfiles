@@ -87,7 +87,7 @@ let ycm_types = {
     set mouse=a		" Enable mouse
     let mapleader = " "
 	set scrolloff=5 " Margin at the top and bottom when scrolling
-	set autochdir	" Always set the cwd to the current files parent dir
+	set noautochdir	" Always set the cwd to the current files parent dir
 
 " alacritty workaround
     autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
@@ -200,7 +200,7 @@ autocmd! BufRead *.h   :Dispatch! genctags %:p:h
     let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
     filetype plugin indent on " Enable filetype detection, plugin and indent at once
     syntax on		" Syntax highlighting
-    map <leader>o :setlocal spell! spelllang=en,de<CR>	" Trigger spellcheck
+    map <leader>s :setlocal spell! spelllang=en,de<CR>	" Trigger spellcheck
     autocmd BufWritePre * %s/\s\+$//e	" Automatically deletes all trailing whitespace on save
     hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE " Setting up the highlighting style to only underline
     autocmd ColorScheme * hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE " Setting up the highlighting style to only underline
@@ -332,6 +332,7 @@ autocmd! BufRead *.h   :Dispatch! genctags %:p:h
     "map <leader>. <Esc>/<++><Enter>"_c4l
 
 " FZF bindings
+    nnoremap <leader>o  :FZF<CR>
     nnoremap <leader>ff :Files<CR>
     nnoremap <leader>fc :Dotfiles<CR>
     nnoremap <leader>fs :Scripts<CR>
