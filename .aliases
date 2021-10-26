@@ -263,13 +263,13 @@ ex ()
 cd () {
     gitdir="$(git rev-parse --show-toplevel 2> /dev/null)"
     if [ "$#" -gt 0 ]; then
-	command cd "$@"
+        command cd "$@"
     elif [ "$gitdir" = "$(pwd)" ]; then
-	command cd "$HOME"
+        command cd "$HOME"
     elif [ "$gitdir" = "" ]; then
-	command cd "$HOME"
+        command cd "$HOME"
     else
-	command cd "$gitdir"
+        command cd "$gitdir"
     fi
 }
 
