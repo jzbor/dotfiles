@@ -273,13 +273,13 @@ rofi.line-padding:                   5
 ! New style theme file
 ! rofi.theme:
 ! Color scheme for normal row
-rofi.color-normal:	myBackground,    myForeground,	myBackground,    myForeground,	myBackground
+/* rofi.color-normal:	myBackground,    myForeground,	myBackground,    myForeground,	myBackground */
 ! Color scheme for urgent row
-rofi.color-urgent:	myBackground,    myUrgent,	myBackground,    myUrgent,	myBackground
+/* rofi.color-urgent:	myBackground,    myUrgent,	myBackground,    myUrgent,	myBackground */
 ! Color scheme for active row
-rofi.color-active:	myBackground,    mySelector,	myBackground,    mySelector,	myBackground
+/* rofi.color-active:	myBackground,    mySelector,	myBackground,    mySelector,	myBackground */
 ! Color scheme window
-rofi.color-window:	myBackground, myForeground, myBackground
+/* rofi.color-window:	myBackground, myForeground, myBackground */
 ! Max history size (WARNING: can cause slowdowns when set to high).
 ! rofi.max-history-size:               25
 ! Hide the prefix mode prefix on the combi view.
