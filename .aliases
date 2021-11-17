@@ -39,6 +39,8 @@ alias notes="notes.sh"
 alias pacupdate="sudo pacman -Syu"
 alias ping="ping -c 5"
 alias please="sudo"
+alias rona="curl -s https://www.corona-in-zahlen.de/landkreise/sk%20erlangen/ | \
+		grep \"Neuinfektionen pro 100.000 Einwohner gemeldet\" | sed 's/\s*//'"
 alias saidar="saidar -c"
 alias se="sudoedit"
 alias todo="$EDITOR ~/Documents/Notes/todo.md"
@@ -117,11 +119,6 @@ pkgbuild-gitver () {
     else
         cd - > /dev/null
     fi
-}
-
-rona () {
-	curl -s https://www.corona-in-zahlen.de/landkreise/sk%20erlangen/ | \
-		grep "Neuinfektionen pro 100.000 Einwohner gemeldet" | sed 's/\s*//'
 }
 
 funky-beat () {
