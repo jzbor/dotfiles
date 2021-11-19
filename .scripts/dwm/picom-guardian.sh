@@ -1,6 +1,8 @@
 #!/bin/sh
 # Dependencies: dunstify picom
 
+export PAN_MESA_DEBUG="gl3"
+
 reloadpicom () {
     sleep 1
     printf '' >> $XDG_CONFIG_HOME/picom.conf
