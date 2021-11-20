@@ -39,6 +39,8 @@ alias notes="notes.sh"
 alias pacupdate="sudo pacman -Syu"
 alias ping="ping -c 5"
 alias please="sudo"
+alias rona="curl -s https://www.corona-in-zahlen.de/landkreise/sk%20erlangen/ | \
+		grep \"Neuinfektionen pro 100.000 Einwohner gemeldet\" | sed 's/\s*//'"
 alias saidar="saidar -c"
 alias se="sudoedit"
 alias todo="$EDITOR ~/Documents/Notes/todo.md"
@@ -117,11 +119,6 @@ pkgbuild-gitver () {
     else
         cd - > /dev/null
     fi
-}
-
-rona () {
-	curl -s https://www.corona-in-zahlen.de/landkreise/sk%20erlangen/ | \
-		grep "Neuinfektionen pro 100.000 Einwohner gemeldet" | sed 's/\s*//'
 }
 
 funky-beat () {
@@ -276,9 +273,9 @@ cd () {
 
 # Youtube-dl
 yt_format="137+bestaudio/best[ext=mp4]/best"
-alias yt="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download link
-alias yta="youtube-dl --add-metadata --restrict-filenames -icx --audio-format mp3 --prefer-ffmpeg" # Download audio only
-alias ytl="youtube-dl --add-metadata --restrict-filenames -f '$yt_format' -ic -a" # Download list from file
+alias yt="yt-dlp --add-metadata --restrict-filenames -f '$yt_format' -ic" # Download link
+alias yta="yt-dlp --add-metadata --restrict-filenames -icx --audio-format mp3 --prefer-ffmpeg" # Download audio only
+alias ytl="yt-dlp --add-metadata --restrict-filenames -f '$yt_format' -ic -a" # Download list from file
 
 # Audio player
 # Source:https://unix.stackexchange.com/questions/132230/read-out-pulseaudio-volume-from-commandline-i-want-pactl-get-sink-volume#164740

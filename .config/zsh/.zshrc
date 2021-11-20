@@ -113,7 +113,7 @@ zle -N history-beginning-search-forward-end history-search-end
 . ~/.aliases
 setopt posixbuiltins	    # For compatibility with cd method
 # Adding thefuck alias
-command -v thefuck > /dev/null && eval $(thefuck --alias)
+#command -v thefuck > /dev/null && eval $(thefuck --alias)
 
 
 ## Colors

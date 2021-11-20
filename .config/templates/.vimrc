@@ -192,6 +192,22 @@ let ycm_types = {
     nnoremap <C-p> :GitGutterPrevHunk<CR>
     " Open file (in a nice way)
     nnoremap <leader>o  :FZF<CR>
+    " Split navigation
+	nmap <C-h> :wincmd h<CR>
+	nmap <C-j> :wincmd j<CR>
+    nmap <C-k> :wincmd k<CR>
+    nmap <C-l> :wincmd l<CR>
+    " Split resizing
+    nmap <C-Left> :vertical resize -5<CR>
+    nmap <C-Down> :resize -5<CR>
+    nmap <C-Up> :resize +5<CR>
+    nmap <C-Right> :vertical resize +5<CR>
+    " Tab navigation
+    nmap <Left> :tabprevious<CR>
+    nmap <Right> :tabnext<CR>
+    " Moving tabs
+    nmap <S-Left> :tabmove -1<CR>
+    nmap <S-Right> :tabmove +1<CR>
 
 " Fix common typos on the fly
     cnoreabbrev W! w!

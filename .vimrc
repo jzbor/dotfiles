@@ -313,7 +313,7 @@ autocmd! BufRead *.h   :Dispatch! genctags %:p:h
     map <leader>C :w! \| !docconv % pdf<CR>
 
 " Open corresponding .pdf/.html or preview
-    map <leader>p :!setsid open -o %<CR>
+    map <leader>p :!setsid open -o %:p<CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
     autocmd VimLeave *.tex !texcleanup %

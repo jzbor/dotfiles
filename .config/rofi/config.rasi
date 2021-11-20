@@ -16,8 +16,8 @@ configuration {
     drun-display-format:    "{name}";
     threads:                0;
     scroll-method:          0;
-    fullscreen:             false;
-    hide-scrollbar:		    true;
+    /* fullscreen:             false; */
+    /* hide-scrollbar:		    true; */
     sidebar-mode:		    false;
 }
 
@@ -120,6 +120,8 @@ element {
 element-icon {
     size:                   24;
     border:                 0px;
+    background-color:       inherit;
+    text-color:             inherit;
 }
 
 element-text {
@@ -128,6 +130,8 @@ element-text {
     vertical-align:         0.5;
     margin:                 0% 0% 0% 0%;
     padding:                1% 0% 1% 0%;
+    background-color:       inherit;
+    text-color:             inherit;
 }
 
 element normal.urgent,
@@ -156,5 +160,5 @@ element selected.urgent {
 
 element selected.active {
     background-color:       @background-alt;
-    color:                  @foreground;
+    text-color:             @foreground;
 }
