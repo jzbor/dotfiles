@@ -1,0 +1,15 @@
+moonwm.modkey:          Super
+moonwm.swallow:         0
+moonwm.wraparound:      1
+
+moonwm.framerate:				256
+
+/* moonwm.gaps:            0 */
+/* moonwm.borderwidth:     4 */
+
+moonwm.tagrules:        1
+
+/* moonwm.gaps:            5 */
+/* moonwm.focusedTitleBg:     #00cc00 */
+/* moonwm.focusedBorder:   #282828 */
+/* moonwm.areaSelection:   #282828 */
