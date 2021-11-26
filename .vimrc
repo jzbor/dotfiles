@@ -368,6 +368,8 @@ autocmd! BufRead *.h   :Dispatch! genctags %:p:h
 	command! Week execute 'read !date -d "monday" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
 	command! -nargs=1 Weekn execute 'read !date -d "monday +<q-args> weeks" "+Week \%W (starting \%a \%d.\%m)"' | norm kJ
     command! Term execute '!setsid $TERMINAL'
+    command! Cd cd %:p:h
+    command! CD cd %:p:h
 
 " Neovide
     let g:neovide_refresh_rate=30

@@ -61,6 +61,14 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'qa!'
 "
 
+fyay () {
+    temp="$(yay -Qsq | fzf --preview="yay -Qi {}; yay -Fl {}" | \
+        xargs -I '{}' sh -c "yay -Qi {}; yay -Fl {}")"
+    [ -z "$temp" ] && return
+    echo "$temp" | less
+    fyay
+}
+
 fgit () {
     [ -z "$1" ] && git help && return 1
     git "$1" "$(git log --oneline --color=always | fzf --preview="git show --color=always {1}" | cut -f1 -d' ')"
