@@ -77,7 +77,7 @@ case $1 in
         get_status;;
     update)
         set_status;;
-    loop)
+    loop | '')
         loop;;
     action)
         action;;
