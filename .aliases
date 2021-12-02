@@ -61,6 +61,10 @@ alias nvim-profile="vim --cmd 'profile start profile.log' \
     -c 'qa!'
 "
 
+vid_cat () {
+    yt-dlp -a "$1" -g | sed 's/^/file /' | ffmpeg -f concat -safe 0 -protocol_whitelist "file,http,https,tcp,tls" -i /dev/stdin -c copy "$(basename "$1" .txt).mp4"
+}
+
 fyay () {
     temp="$(yay -Qsq | fzf --preview="yay -Qi {}; yay -Fl {}" | \
         xargs -I '{}' sh -c "yay -Qi {}; yay -Fl {}")"

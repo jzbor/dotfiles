@@ -52,7 +52,7 @@ let ycm_types = {
 	" File browsing
    	Plug 'scrooloose/nerdtree'
 	" Languages
-   	Plug 'sheerun/vim-polyglot'
+    "Plug 'sheerun/vim-polyglot'
 	" Commenting/Uncommenting
 	Plug 'tpope/vim-commentary'
 	" Asynchronous compiling
@@ -71,6 +71,13 @@ let ycm_types = {
 	" Markdown and notes
         " Plug 'vimwiki/vimwiki', { 'for': ['vimwiki', 'markdown']}
    	Plug 'vimwiki/vimwiki'
+
+    " Nvim plugins
+    if has('nvim')
+        Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    " else
+    "     syntax on		" Syntax highlighting
+    endif
 
 	" Look into
 	" jiangmiao/auto-pairs
@@ -154,52 +161,43 @@ let ycm_types = {
     "inoremap ' ''<left>
 
 " Autocomplete
-" YCM
-    let g:ycm_autoclose_preview_window_after_completion=1
-    let g:ycm_filetype_whitelist = ycm_types
-    fun! GoYCM()
-	" map <leader>ygd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-	" map <leader>yf :YcmCompleter Format<CR>
-        nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
-        nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-        nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
-    endfun
-" Coc
-    function! s:check_back_space() abort
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
-
-    fun! GoCoc()
-        inoremap <buffer> <silent><expr> <TAB>
-                    \ pumvisible() ? "\<C-n>" :
-                    \ <SID>check_back_space() ? "\<TAB>" :
-                    \ coc#refresh()
-
-        inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-        inoremap <buffer> <silent><expr> <C-space> coc#refresh()
-
-        " GoTo code navigation.
-        nmap <buffer> <leader>gd <Plug>(coc-definition)
-        nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-        nmap <buffer> <leader>gi <Plug>(coc-implementation)
-        nmap <buffer> <leader>gr <Plug>(coc-references)
-        nnoremap <buffer> <leader>cr :CocRestart
-    endfun
-" Enable one or both
-autocmd BufRead * :call GoYCM()
 " Tags
 autocmd! BufRead *.cpp :Dispatch! genctags %:p:h
 autocmd! BufRead *.c   :Dispatch! genctags %:p:h
 autocmd! BufRead *.h   :Dispatch! genctags %:p:h
 
+" Treesitter
+" https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
+    "if has('nvim')
+    "    require'nvim-treesitter.configs'.setup {
+    "            highlight = {
+    "            enable = true,
+    "            disable = {},
+    "        },
+    "        indent = {
+    "            enable = false,
+    "            disable = {},
+    "        },
+    "        ensure_installed = {
+    "            "bash",
+    "            "c",
+    "            "html",
+    "            "json",
+    "            "vim",
+    "            "yaml",
+    "        },
+    "    }
+
+    "    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    "    parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
+    "endif
 
 " Spell-checking and syntax-checking
     set spelllang=en,de " Set spell-checking language
     set spell		" Enable spell-checking
     let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
     filetype plugin indent on " Enable filetype detection, plugin and indent at once
-    syntax on		" Syntax highlighting
+
     map <leader>s :setlocal spell! spelllang=en,de<CR>	" Trigger spellcheck
     autocmd BufWritePre * %s/\s\+$//e	" Automatically deletes all trailing whitespace on save
     hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE " Setting up the highlighting style to only underline

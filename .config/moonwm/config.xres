@@ -4,12 +4,13 @@ moonwm.wraparound:      1
 
 moonwm.framerate:				256
 
-/* moonwm.gaps:            0 */
-/* moonwm.borderwidth:     4 */
+moonwm.gaps:            25
+moonwm.smartgaps:       0
+moonwm.borderwidth:     3
 
 moonwm.tagrules:        1
 
 /* moonwm.gaps:            5 */
 /* moonwm.focusedTitleBg:     #00cc00 */
-/* moonwm.focusedBorder:   #282828 */
+moonwm.focusedBorder:   #a89984
 /* moonwm.areaSelection:   #282828 */
