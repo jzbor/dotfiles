@@ -5,7 +5,7 @@ moonwm.wraparound:      1
 moonwm.framerate:				256
 
 moonwm.gaps:            8
-moonwm.smartgaps:       0
+moonwm.smartgaps:       1
 moonwm.borderwidth:     3
 
 moonwm.tagrules:        1
