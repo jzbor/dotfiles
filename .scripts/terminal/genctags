@@ -1,0 +1,12 @@
+#!/bin/sh
+
+directory="$(realpath $1)"
+
+while [ "$(echo "$directory" | tr -dc '/' | wc -c)" -gt 1 ] && [ -d "$directory" ]; do
+    if [ -f "$directory/tags" ]; then
+        echo "Generating tags for $directory"
+        ctags -R -f "$directory/tags" "$directory"
+        break
+    fi
+    directory="$(dirname "$directory")"
+done
