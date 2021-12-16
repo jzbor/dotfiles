@@ -1,28 +1,28 @@
 " ==== . V I M R C ====
 
 " Disable polyglot for md (vimwiki)
-    let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown']
 
 " YCM filetypes (has to be before plug hooks)
 let ycm_types = {
-    \ 'python': 1,
-    \ 'cpp': 1,
-    \ 'cs': 1,
-    \}
+            \ 'python': 1,
+            \ 'cpp': 1,
+            \ 'cs': 1,
+            \}
 
 " On first install you should run :PlugInstall
 " And then restart the application or reload the config file
 " PLUG Plugin manager
-    " Auto-install plugin manager
-    if empty(glob('~/.vim/autoload/plug.vim'))
+" Auto-install plugin manager
+if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     "autocmd VimEnter * PlugUpdate --sync | source $MYVIMRC
     " Call 'PlugUpdate' to update/install the packages
     echom "Call 'PlugUpdate' to update/install the packages"
-    endif
+endif
 
-    " Plugins to install
+" Plugins to install
     call plug#begin('~/.vim/plugged')
 
     " List of Plugins:
@@ -31,7 +31,7 @@ let ycm_types = {
     " Open files with file:line syntax
     Plug 'bogado/file-line'
     " Status line
-       Plug 'itchyny/lightline.vim'
+    Plug 'itchyny/lightline.vim'
     " Manage ctags (only if you want to use ctags)
     "if executable('ctags')
     "    Plug 'jsfaint/gen_tags.vim'
@@ -41,9 +41,9 @@ let ycm_types = {
     " Color scheme
     Plug 'sainnhe/gruvbox-material'
     " File browsing
-       Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdtree'
     " Languages
-       Plug 'sheerun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot'
     " Commenting/Uncommenting
     Plug 'tpope/vim-commentary'
     " Asynchronous compiling
@@ -54,12 +54,12 @@ let ycm_types = {
     Plug 'tpope/vim-surround'
     " Autocomplete (may require libclang for --clang-completer (support for C, CPP)
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': keys(ycm_types)}
-        " Alternative to YCM
-        " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    " Alternative to YCM
+    " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
     " Syntax checking
     Plug 'vim-syntastic/syntastic'
     " Markdown and notes
-       Plug 'vimwiki/vimwiki'
+    Plug 'vimwiki/vimwiki'
 
     " Look into
     " jiangmiao/auto-pairs
@@ -193,8 +193,8 @@ let ycm_types = {
     " Open file (in a nice way)
     nnoremap <leader>o  :FZF<CR>
     " Split navigation
-	nmap <C-h> :wincmd h<CR>
-	nmap <C-j> :wincmd j<CR>
+    nmap <C-h> :wincmd h<CR>
+    nmap <C-j> :wincmd j<CR>
     nmap <C-k> :wincmd k<CR>
     nmap <C-l> :wincmd l<CR>
     " Split resizing
