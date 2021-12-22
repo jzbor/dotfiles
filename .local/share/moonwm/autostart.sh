@@ -8,3 +8,4 @@ elif [ "$NOPICOM" != 1 ]; then
     (killall -9 picom-guardian.sh; picom-guardian.sh) &
 fi
 command -v rambox > /dev/null && rambox
+command -v solaar > /dev/null && solaar -w hide &
