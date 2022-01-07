@@ -1,0 +1,7 @@
+[moonwm-status-local]
+name = MoonWM's Status Script (locally installed)
+description = Periodically pushes a status to WM_NAME
+category = status
+command = /usr/local/bin/moonwm-status
+test = test -x /usr/local/bin/moonwm-status
+default = False

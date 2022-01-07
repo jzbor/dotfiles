@@ -4,6 +4,14 @@
 
 boost_overwrite_file="/tmp/pa-overwrite-boost"
 
+play () {
+    if command -v pw-play > /dev/null; then
+        pw-play "$1" &
+    else
+        ffplay -nodisp -autoexit "$1" 2> /dev/null &
+    fi
+}
+
 case $1 in
 	"-i" | "--inc" | "inc" | "+")
 		if [ -f "$boost_overwrite_file" ]; then
@@ -11,7 +19,7 @@ case $1 in
 		else
 			pamixer -i "${2:-5}"
 		fi
-		ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+		play /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
         dwmstatus.sh update
 		;;
 	"-d" | "--dec" | "dec" | "-")
@@ -20,7 +28,7 @@ case $1 in
 		else
 			pamixer -d "${2:-5}"
 		fi
-		ffplay -nodisp -autoexit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+		play /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
         dwmstatus.sh update
 		;;
 	"-s" | "--set" | "set" | "=")

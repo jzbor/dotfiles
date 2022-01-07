@@ -5,6 +5,9 @@ super + shift + {comma, period}
 super + Escape
     moonwm-menu expose
 
+super + F9
+    $TERMINAL
+
 ### APPS ###
 super + shift + Return
     alacritty -e ssh faucip
