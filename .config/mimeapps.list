@@ -1,6 +1,6 @@
 [Added Associations]
 application/octet-stream=org.gnome.FileRoller.desktop;firefox.desktop;
-application/pdf=okularApplication_pdf.desktop;firefox.desktop;com.github.xournalpp.xournalpp.desktop;org.pwmt.zathura-pdf-poppler.desktop;epdfview.desktop;
+application/pdf=firefox.desktop;okularApplication_pdf.desktop;com.github.xournalpp.xournalpp.desktop;org.pwmt.zathura-pdf-poppler.desktop;epdfview.desktop;
 application/rtf=libreoffice-writer.desktop;
 application/vnd.oasis.opendocument.presentation=libreoffice-impress.desktop;org.pwmt.zathura.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice-desktopeditors.desktop;libreoffice-writer.desktop;org.pwmt.zathura-pdf-poppler.desktop;
@@ -24,7 +24,7 @@ image/svg+xml=org.gnome.gThumb.desktop;
 inode/directory=pcmanfm.desktop;engrampa.desktop;myphone.desktop;
 message/rfc822=org.gnome.Evolution.desktop;
 text/html=firefox.desktop;
-text/plain=nvim.desktop;mousepad.desktop;
+text/plain=firefox.desktop;nvim.desktop;mousepad.desktop;
 text/x-shellscript=nvim.desktop;
 video/mp4=vlc.desktop;org.gnome.gThumb.desktop;mpv.desktop;
 video/x-msvideo=vlc.desktop;mpv.desktop;
@@ -135,6 +135,10 @@ text/x-asm=nvim.desktop;
 image/webp=org.gnome.eog.desktop;
 text/csv=libreoffice-calc.desktop;neovide.desktop;
 application/vnd.apple.mpegurl=mpv.desktop;
+application/x-xz=engrampa.desktop;nvim.desktop;
+application/internet-shortcut=firefox.desktop;
+application/rss+xml=thunderbird.desktop;
+text/x-chdr=nvim.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop;firefox.desktop;
