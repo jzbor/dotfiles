@@ -86,7 +86,7 @@ get_status () {
     add_block "$(pgrep screencast > /dev/null 2>&1 && echo "雷")" 2
     add_block " $(setxkbmap -query | grep '^layout:' | sed 's/.* //')" 3 " us,de"
     add_block "$(music.sh status-small)" 4
-    add_block "$(volume.sh)%" 5
+    add_block "$(volume)" 5
     add_block "$(ethernet.sh) $(wifi.sh) $(bluetooth.sh)" 6
     add_block " $(date +%R)" 7
 

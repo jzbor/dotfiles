@@ -118,29 +118,20 @@ super + {_, shift, ctrl} + @Print
 
 
 ### MEDIA AND BRIGHTNESS CONTROLL ###
-super + {_, shift} + {bracketleft, bracketright}
-	{_, MOONWM_BOOST_AUDIO=1} wmc-utils volume {-,+}5
-
-super + shift + control + bracketright
-	volume.sh -b
+super + {bracketleft, bracketright}
+    pademelon-tools volume {--dec,--inc} 5
 
 super + backslash + {shift, ctrl}
-	volume.sh -t {mic,mic-unmute}
+    pademelon-tools volume --mute-input {toggle,0}
 
 super + backslash
-    wmc-utils mute
+    pademelon-tools volume --mute toggle
 
 super + {_, shift} + {u,i,o}
 	{music.sh,playerctl -p firefox} {previous,play-pause,next}
 
 super + ctrl + {bracketleft, bracketright}
 	wmc-utils brightness {-,+}10
-
-# XF86Audio{Raise,Lower}Volume + {_,shift}
-# 	volume.sh {-i,-d} {_,1}
-
-# XF86Audio{Mute,MicMute}
-# 	volume.sh -t {_,mic}
 
 # XF86Audio{Prev,Play,Pause,Next}
 # 	music.sh {previous,play,pause,next}
