@@ -23,10 +23,56 @@ help () {
 }
 
 loop () {
+    (pa_loop) &
+
     while true; do
         set_status
-        sleep 2 2> /dev/null
+        sleep 5 2> /dev/null
     done
+}
+
+### BLOCK FUNCTIONS
+
+pa_volume () {
+    pactl get-sink-volume @DEFAULT_SINK@ | grep "Volume" | sed 's/.*\/\s*\(.*\) \s*\/.*/\1/;'
+}
+
+pa_muted () {
+    if pactl get-sink-mute @DEFAULT_SINK@ | grep no > /dev/null; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+pa_loop () {
+    volume="$(pa_volume)"
+    pactl subscribe | grep --line-buffered "Event 'change' on sink" | while read line; do
+        temp="$(pa_volume)"
+        if [ "$volume" != "$temp" ]; then
+            set_status
+        fi
+    done
+}
+
+volume () {
+    if [ "$MOONWM_NERDFONT" = "0" ]; then
+        icon=''
+    elif pa_muted; then
+        icon='婢 '
+    else
+        icon='墳 '
+    fi
+    printf "%s%s%%" "$icon" "$(pa_volume)"
+}
+
+timedate () {
+    if [ "$MOONWM_NERDFONT" = "0" ]; then
+        icon=''
+    else
+        icon=' '
+    fi
+    printf "%s%s" "$icon" "$(date +%R)"
 }
 
 set_status () {
@@ -56,8 +102,8 @@ get_status () {
 action () {
     # notify-send "$STATUSCMDN $BUTTON"
     case $BUTTON in
-        8) mpv-wrapper; return;;
-        9) spotify; return;;
+        8) mpv; return;;
+        9) spotify.sh; return;;
     esac
     case "$STATUSCMDN" in
         0) tray-options.sh $BUTTON;;
