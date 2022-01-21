@@ -1,7 +1,4 @@
 ### MOONWM ###
-super + shift + {comma, period}
-    moonctl incnmaster {-1, 1}
-
 super + Escape
     moonwm-menu expose
 
@@ -59,8 +56,8 @@ super + shift + d
 super + ctrl + d
 	wmc-utils run
 
-super + a
-    moonctl activate "$(moonctl windows | dmenu -p Windows -l 15 -i | cut -f1 -d' ')"
+# super + a
+#     moonctl activate "$(moonctl windows | dmenu -p Windows -l 15 -i | cut -f1 -d' ')"
 
 super + {shift,_} + grave
     moonctl {steal, borrow} "$(moonctl windows | dmenu -p Windows -l 15 -i | cut -f1 -d' ')"
