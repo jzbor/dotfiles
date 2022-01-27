@@ -53,7 +53,7 @@ colors:
 
 # Fancy decoration stuff
 # background_opacity: 0.875
-background_opacity: 1
+window.opacity: 1
 window:
   padding:
     x: 5

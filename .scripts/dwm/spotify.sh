@@ -8,9 +8,11 @@ if pidof spotify > /dev/null; then
 else
     spotify &
     while [ -z "$xid" ]; do
-        for xid in $(xdotool search --class spotify); do
-            moonctl activate "$xid" 200 && moonctl tag $((1<<7))
-        done
+        xid="$(xdotool search --class spotify)"
         sleep 0.2
+    done
+    sleep 0.5
+    for xid in $(xdotool search --class spotify); do
+        moonctl activate "$xid" 200 && moonctl tag $((1<<7))
     done
 fi

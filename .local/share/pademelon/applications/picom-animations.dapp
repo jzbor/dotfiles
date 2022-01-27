@@ -1,0 +1,7 @@
+[picom-animations]
+name = Picom (animation forks)
+description = X compositor that may fix tearing issues
+category = compositor
+command = picom --experimental-backends -f --config ~/.config/picom-animations.conf
+settings = config://picom.conf
+default = False

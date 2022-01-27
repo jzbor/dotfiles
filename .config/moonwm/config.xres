@@ -7,6 +7,7 @@ moonwm.framerate:		256
 moonwm.gaps:            8
 moonwm.smartgaps:       1
 moonwm.borderwidth:     3
+moonwm.topbar:          1
 /* moonwm.borderwidth:     1 */
 
 moonwm.tagrules:        1
