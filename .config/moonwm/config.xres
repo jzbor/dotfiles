@@ -16,3 +16,9 @@ moonwm.tagrules:        1
 /* moonwm.focusedTitleBg:     #00cc00 */
 moonwm.focusedBorder:   #a89984
 /* moonwm.areaSelection:   #282828 */
+
+moonwm.inset-top:       0
+moonwm.inset-bottom:    0
+moonwm.inset-left:      0
+moonwm.inset-right:     0
+

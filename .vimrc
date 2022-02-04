@@ -210,6 +210,7 @@ autocmd! BufRead *.h   :Dispatch! genctags %:p:h
     set incsearch	" Searches for strings incrementally
     set wildmode=longest,list,full  " Enables autocompletion
     set path+=**	" Add cwd to path
+    set complete+=.,t,w,b,u,i   " Built-in autocomplete
     nmap <leader>/ :tjump<space>
 
 " Tab navigation

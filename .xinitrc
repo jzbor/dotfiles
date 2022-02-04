@@ -4,6 +4,9 @@
 #
 # Executed by startx (run your window manager from here)
 
+buttermilk
+exit 0
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources

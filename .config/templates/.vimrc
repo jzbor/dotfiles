@@ -53,7 +53,7 @@ endif
     " Surround
     Plug 'tpope/vim-surround'
     " Autocomplete (may require libclang for --clang-completer (support for C, CPP)
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': keys(ycm_types)}
+    "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': keys(ycm_types)}
     " Alternative to YCM
     " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
     " Syntax checking
@@ -111,6 +111,7 @@ endif
     set incsearch    " Searches for strings incrementally
     set wildmode=longest,list,full  " Enables autocompletion
     set path+=**    " Add cwd to path
+    set complete+=.,t,w,b,u,i   " Built-in autocomplete
     " Search mappings: These will make it so that going to the next one in a
     " search will center on the line it's found in.
     nnoremap n nzzzv
