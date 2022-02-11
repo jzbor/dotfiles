@@ -10,14 +10,15 @@
  */
 
 configuration {
-    font:                   "FiraCode Nerd Font 11";
+    font:                   "FiraCode Nerd Font 14";
     show-icons:             true;
     icon-theme: 		    "Numix-Circle";
-    drun-display-format:    "{name}";
+    drun-display-format:    "{name} \n<span weight='light' size='small'><i>{comment}</i></span>";
     threads:                0;
     scroll-method:          0;
     /* fullscreen:             false; */
     /* hide-scrollbar:		    true; */
+    disable-history:        true;
     sidebar-mode:		    false;
 }
 
