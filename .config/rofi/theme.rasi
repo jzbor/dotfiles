@@ -1,0 +1,139 @@
+* {
+    background-alt:		    @background;
+    border:			        @urgent;
+    border-alt:			    @foreground;
+}
+
+window {
+    transparency:           "real";
+    background-color:       @background;
+    text-color:             @foreground;
+    border:			        3px 3px 3px 3px;
+    border-color:		    @border;
+    border-radius:          0% 0% 0% 0%;
+    height:                 50%;
+    width:                  50%;
+    location:               center;
+    anchor:                 center;
+    x-offset:               0;
+    y-offset:               0;
+}
+
+prompt {
+    enabled:			    false;
+    padding:			    0.7%;
+    background-color:		@border-alt;
+    text-color:			    @background;
+    font:			        "FiraCode Nerd Font 13";
+}
+
+
+entry {
+    background-color:       @background;
+    blink:                  true;
+    border-color:		    @border-alt;
+    border-radius:          0% 0% 0% 0%;
+    border:			        0px 0px 2px 0px;
+    expand:                 true;
+    font:			        "FiraCode Nerd Font 12";
+    padding:                0.2% 0% 0.2% 0.5%;
+    placeholder-color:      @foreground;
+    placeholder:            "";
+    text-color:             @foreground;
+    vertical-align:			1;
+}
+
+case-indicator {
+    background-color:       @background;
+    text-color:             @foreground;
+    spacing:                0;
+}
+
+
+listview {
+    background-color:       @background;
+    columns:                2;
+    spacing:                2px;
+    cycle:                  true;
+    dynamic:                true;
+    layout:                 vertical;
+    border:			        0% 0% 0% 0%;
+    margin:			        1% 0% 0% 0%;
+    border-color:		    @foreground;
+}
+
+inputbar {
+    background-color:       @background;
+    text-color:             @foreground;
+    expand:                 false;
+    border:			        0px;
+    border-color:		    @border-alt;
+    border-radius:          0% 0% 0% 0%;
+    margin:                 0% 0% 0% 0%;
+    padding:                3px;
+	spacing:				0%;
+    position:               center;
+}
+
+
+mainbox {
+    background-color:       @background;
+    border-color:		    @border-alt;
+    children:               [ inputbar, listview ];
+    spacing:			    0%;
+    padding:                2%;
+}
+
+element {
+    background-color:       @background;
+    text-color:             @foreground;
+    orientation:            horizontal;
+    padding:                0% 1% 0% 1%;
+    border-radius:          2px;
+}
+
+element-icon {
+    size:                   24;
+    border:                 0px;
+    background-color:       inherit;
+    text-color:             inherit;
+}
+
+element-text {
+    expand:                 true;
+    horizontal-align:       0;
+    vertical-align:         0.5;
+    margin:                 0% 0% 0% 0%;
+    padding:                1% 0% 1% 0%;
+    background-color:       inherit;
+    text-color:             inherit;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:       @urgent;
+    text-color:             @foreground;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:       @background-alt;
+    text-color:             @foreground;
+}
+
+element selected {
+    background-color:       @backgroundlight;
+    text-color:             @foreground;
+    border:			        0% 0% 0% 0%;
+    border-color:		    @selected;
+}
+
+element selected.urgent {
+    background-color:       @urgent;
+    text-color:             @foreground;
+}
+
+element selected.active {
+    background-color:       @background-alt;
+    text-color:             @foreground;
+}

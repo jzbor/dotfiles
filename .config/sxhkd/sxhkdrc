@@ -30,7 +30,7 @@ super + s
 	spotify.sh
 
 super + e
-    neovide
+    rofi -show window
 
 super + n
 	notes.sh view
