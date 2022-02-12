@@ -2,6 +2,6 @@
 name = MoonWM (locally installed)
 description = jzbor's dynamic window manager
 category = window-manager
-command = /usr/local/bin/moonwm-utils launch-minimal
-test = test -x /usr/local/bin/moonwm-utils
+command = /usr/local/bin/moonwm
+test = test -x /usr/local/bin/moonwm
 default = False
