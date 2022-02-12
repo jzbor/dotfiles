@@ -88,6 +88,15 @@ fman () {
     fi
 }
 
+fnotes () {
+    selection="$(find "$(notes.sh path)" -type f | fzf)"
+        # sed "s|$(notes path)||" | fzf)"
+    if [ -n "$selection" ]; then
+        $EDITOR "$selection"
+        fnotes
+    fi
+}
+
 mkcd () {
     mkdir -pv "$1"
     cd "$1"

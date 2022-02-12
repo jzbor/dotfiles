@@ -8,12 +8,20 @@ Xft.lcdfilter: lcddefault
 
 
 !! My theme
-#define myBackground			#1d2021
-#define myBackgroundTrans		#e01d2021
+#define myBackground			#1c1c1c
+#define myBackgroundTrans		#1c1c1c21
 #define myBackgroundLight		#282828
-#define myForeground			#ebdbb2
-#define mySelector			    #98971a
-#define myUrgent			    #fb4934
+#define myForeground			#d0d0d0
+#define mySelector			    #af5f5f
+#define myUrgent			    #ffafaf
+
+!! Gruvbox
+/* #define myBackground			#1d2021 */
+/* #define myBackgroundTrans		#e01d2021 */
+/* #define myBackgroundLight		#282828 */
+/* #define myForeground			#ebdbb2 */
+/* #define mySelector			    #98971a */
+/* #define myUrgent			    #fb4934 */
 
 *themeBackground:		  myBackground
 *themeBackgroundTrans:	  myBackgroundTrans
@@ -57,26 +65,30 @@ Xft.lcdfilter: lcddefault
 
 
 !! MoonWM values
-/* moonwm.vacantTagFg:        #7c6f64 */
-/* moonwm.vacantTagBg:        myBackground */
-/* moonwm.unfocusedTitleFg:   #7c6f64 */
-/* moonwm.unfocusedTitleBg:   myBackground */
-/* moonwm.statusFg:           myForeground */
-/* moonwm.statusBg:           myBackground */
-/* moonwm.menuFg:             myBackground */
-/* moonwm.menuBg:             myUrgent */
-/* moonwm.occupiedTagFg:      myForeground */
-/* moonwm.occupiedTagBg:      myBackground */
-/* moonwm.focusedTitleFg:     myForeground */
-/* moonwm.focusedTitleBg:     myBackground */
-/* moonwm.focusedTitleBg:     myBackground */
-/* moonwm.unfocusedBorder:    myBackground */
-/* /1* moonwm.focusedBorder:      myBackgroundLight *1/ */
-/* moonwm.focusedBorder:      myForeground */
+moonwm.vacantTagFg:        #7c6f64
+moonwm.vacantTagBg:        myBackground
+moonwm.unfocusedTitleFg:   #7c6f64
+moonwm.unfocusedTitleBg:   myBackground
+moonwm.statusFg:           myForeground
+moonwm.statusBg:           myBackground
+moonwm.menuFg:             myBackground
+moonwm.menuBg:             mySelector
+moonwm.occupiedTagFg:      myForeground
+moonwm.occupiedTagBg:      myBackground
+moonwm.focusedTitleFg:     myForeground
+moonwm.focusedTitleBg:     myBackground
+moonwm.focusedTitleBg:     myBackground
+moonwm.unfocusedBorder:    myBackground
+/* moonwm.focusedBorder:      myBackgroundLight */
+moonwm.focusedBorder:      myUrgent
 /* moonwm.unfocusedTitleBg:     #0000aa */
 /* moonwm.focusedTitleBg:     #ff0000 */
 /* moonwm.vacantTagFg:     #ffffff */
-moonwm.gaps: 2
+xmenu.background:         myBackground
+xmenu.foreground:         myForeground
+xmenu.selbackground:      mySelector
+xmenu.selforeground:      myBackground
+xmenu.borderWidth:        0
 
 !! X clock
 Clock*Background:		myBackground

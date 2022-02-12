@@ -48,6 +48,7 @@ let ycm_types = {
         " Plug 'matze/vim-tex-fold'
 	" Color scheme
 	Plug 'sainnhe/gruvbox-material'
+    Plug 'junegunn/seoul256.vim'
         " Plug 'srcery-colors/srcery-vim'
 	" File browsing
    	Plug 'scrooloose/nerdtree'
@@ -107,11 +108,19 @@ let ycm_types = {
     if &t_Co > 255
 		" Disable background coloring
 		" autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-		colorscheme gruvbox-material
+
+        " Gruvbox
 		let g:gruvbox_material_palette = 'original'
 		" let g:gruvbox_material_transparent_background = 1
 		set background=dark
 		let g:lightline = {'colorscheme' : 'gruvbox_material'}
+
+        " Seoul
+        let g:seoul256_background = 234
+        let g:seoul256_srgb = 1
+
+		" colorscheme gruvbox-material
+		colorscheme seoul256
     endif
     if &t_Co == 8
 		colorscheme default

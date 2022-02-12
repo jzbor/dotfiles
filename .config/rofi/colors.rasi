@@ -1,9 +1,9 @@
 * {
-	background:		#1d2021;
-	argbbackground:	#1d2021e0;
+	background:		#1c1c1c;
+	argbbackground:	#1c1c1ce0;
 	backgroundlight: #282828;
 	transparent:	#00000000;
-	foreground:		#ebdbb2;
-	urgent:			#fb4934;
-	selected:		#98971a;
+	foreground:		#d0d0d0;
+	urgent:			#ffafaf;
+	selected:		#af5f5f;
 }

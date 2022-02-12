@@ -14,7 +14,7 @@ moonwm.tagrules:        1
 
 /* moonwm.gaps:            5 */
 /* moonwm.focusedTitleBg:     #00cc00 */
-moonwm.focusedBorder:   #a89984
+/* moonwm.focusedBorder:   #a89984 */
 /* moonwm.areaSelection:   #282828 */
 
 moonwm.inset-top:       0
