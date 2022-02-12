@@ -13,7 +13,7 @@ Xft.lcdfilter: lcddefault
 #define myBackgroundLight		#282828
 #define myForeground			#d0d0d0
 #define mySelector			    #af5f5f
-#define myUrgent			    #ffafaf
+#define myUrgent			    #d7afaf
 
 !! Gruvbox
 /* #define myBackground			#1d2021 */
