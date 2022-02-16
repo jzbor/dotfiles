@@ -29,16 +29,16 @@ case "$1" in
 	;;
     "toggle")
 	if [ "$dev_state" = "UP" ]; then
-	    sudo ip link set "$dev_id" down
+	    pkexec ip link set "$dev_id" down
 	else
-	    sudo ip link set "$dev_id" up
+	    pkexec ip link set "$dev_id" up
 	fi
 	;;
     "on")
-	sudo ip link set "$dev_id" up
+	pkexec ip link set "$dev_id" up
 	;;
     "off")
-	sudo ip link set "$dev_id" down
+	pkexec ip link set "$dev_id" down
 	;;
     "status" | "")
 	if [ "$dev_state" = "UP" ]; then
