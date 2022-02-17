@@ -1,0 +1,6 @@
+	IMG:/home/jzbor/.cache/xdg-xmenu/spotify-client.png	Spotify (Music Player)	spotify 
+	IMG:/home/jzbor/.cache/xdg-xmenu/discord.png	Discord (Internet Messenger)	/usr/bin/discord
+	IMG:/home/jzbor/.cache/xdg-xmenu/firefox.png	Firefox (Web Browser)	/usr/lib/firefox/firefox 
+	IMG:/home/jzbor/.cache/xdg-xmenu/system-file-manager.png	File Manager PCManFM (File Manager)	pcmanfm 
+	IMG:/home/jzbor/.cache/xdg-xmenu/utilities-terminal.png	Buttermilk Terminal (Terminal)	buttermilk
+	IMG:/home/jzbor/.cache/xdg-xmenu/nvim.png	Neovim (Text Editor)	buttermilk -e nvim 
