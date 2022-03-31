@@ -52,6 +52,8 @@ alias valgrind="valgrind --leak-check=full --show-leak-kinds=all --track-origins
 alias vim="nvim"
 alias vimdiff="nvim -d"
 alias yay_no_integ="yay --mflags --skipinteg"
+alias yeet="paru -Rsnu"
+alias yoink="paru -S"
 
 alias nvim-profile="vim --cmd 'profile start profile.log' \
     --cmd 'profile func *' \
