@@ -1,150 +1,28 @@
+/*
+ *
+ * Original Author : Aditya Shakya (adi1090x)
+ *	    Mail : adi1090x@gmail.com
+ * 	    Github : @adi1090x
+ * 	    Reddit : @adi1090x
+ *
+ * Adjusted by: jzbor
+ *
+ */
+
 configuration {
-    font:                   "FiraCode Nerd Font 11";
+    font:                   "FiraCode Nerd Font 14";
     show-icons:             true;
     icon-theme: 		    "Numix-Circle";
     drun-display-format:    "{name}";
     threads:                0;
-    scroll-method:          1;
-    fullscreen:             false;
-    hide-scrollbar:		    false;
+    scroll-method:          0;
+    /* fullscreen:             false; */
+    /* hide-scrollbar:		    true; */
+    disable-history:        true;
     sidebar-mode:		    false;
-    window-format:          "{t}";
+    modi:                   "drun,window";
 }
 
+@theme "~/.config/rofi/apps-theme.rasi"
 @import "colors"
 
-* {
-    background-alt:		    @background;
-    border:			        @urgent;
-    border-alt:			    @urgent;
-}
-
-window {
-    transparency:           "real";
-    background-color:       @background;
-    text-color:             @foreground;
-    border:			        3px 3px 3px 3px;
-    border-color:		    @border;
-    border-radius:          0% 0% 0% 0%;
-    height:                 calc(100% - 20px);
-    width:                  100%;
-    location:               northwest;
-    anchor:                 northwest;
-    x-offset:               0;
-    y-offset:               20;
-}
-
-prompt {
-    enabled:			    true;
-    padding:			    0.7%;
-    background-color:		@border-alt;
-    text-color:			    @background;
-    font:			        "FiraCode Nerd Font 13";
-}
-
-
-entry {
-    background-color:       @background;
-    blink:                  true;
-    border-color:		    @border-alt;
-    border-radius:          0% 0% 0% 0%;
-    border:			        0px 0px 2px 0px;
-    expand:                 true;
-    font:			        "FiraCode Nerd Font 12";
-    padding:                0.2% 0% 0.2% 0.5%;
-    placeholder-color:      @foreground;
-    placeholder:            "";
-    text-color:             @foreground;
-    vertical-align:			1;
-}
-
-case-indicator {
-    background-color:       @background;
-    text-color:             @foreground;
-    spacing:                0;
-}
-
-
-listview {
-    background-color:       @background;
-    columns:                5;
-    spacing:                2px;
-    cycle:                  true;
-    dynamic:                false;
-    layout:                 vertical;
-    border:			        0% 0% 0% 0%;
-    margin:			        1% 0% 0% 0%;
-    border-color:		    @foreground;
-}
-
-inputbar {
-    background-color:       @background;
-    text-color:             @foreground;
-    expand:                 false;
-    border:			        0px;
-    border-color:		    @border-alt;
-    border-radius:          0% 0% 0% 0%;
-    margin:                 0% 0% 0% 0%;
-    padding:                0px;
-	spacing:				0%;
-    position:               center;
-}
-
-
-mainbox {
-    background-color:       @background;
-    border-color:		    @border-alt;
-    children:               [ inputbar, listview ];
-    spacing:			    5%;
-    padding:                60px;
-}
-
-element {
-    background-color:       @background;
-    text-color:             @foreground;
-    orientation:            vertical;
-    padding:                0% 1% 0% 1%;
-    border-radius:          2px;
-}
-
-element-icon {
-    size:                   64;
-    border:                 0px;
-}
-
-element-text {
-    expand:                 false;
-    horizontal-align:       0.5;
-    vertical-align:         0.5;
-    margin:                 0% 0% 0% 0%;
-    padding:                1% 0% 1% 0%;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:       @urgent;
-    text-color:             @foreground;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:       @background-alt;
-    text-color:             @foreground;
-}
-
-element selected {
-    background-color:       @backgroundlight;
-    text-color:             @foreground;
-    border:			        0% 0% 0% 0%;
-    border-color:		    @selected;
-}
-
-element selected.urgent {
-    background-color:       @urgent;
-    text-color:             @foreground;
-}
-
-element selected.active {
-    background-color:       @background-alt;
-    color:                  @foreground;
-}

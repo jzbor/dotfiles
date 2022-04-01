@@ -1,6 +1,6 @@
 * {
 	background:		#1c1c1c;
-	argbbackground:	#1c1c1ce0;
+	argbbackground:	#1c1c1c80;
 	backgroundlight: #282828;
 	transparent:	#00000000;
 	foreground:		#d0d0d0;

@@ -1,37 +1,25 @@
-configuration {
-    font:                   "FiraCode Nerd Font 11";
-    show-icons:             true;
-    icon-theme: 		    "Numix-Circle";
-    drun-display-format:    "{name}";
-    threads:                0;
-    scroll-method:          1;
-    fullscreen:             false;
-    hide-scrollbar:		    false;
-    sidebar-mode:		    false;
-    window-format:          "{t}";
-}
-
-@import "colors"
-
 * {
-    background-alt:		    @background;
+    background-alt:		    @argbbackground;
     border:			        @urgent;
-    border-alt:			    @urgent;
+    border-alt:			    @foreground;
+    itembg:                 #ffffff00;
+    selitembg:              #ffffff02;
 }
 
 window {
     transparency:           "real";
-    background-color:       @background;
+    background-color:       @argbbackground;
     text-color:             @foreground;
-    border:			        3px 3px 3px 3px;
+    border:			        0px;
     border-color:		    @border;
     border-radius:          0% 0% 0% 0%;
-    height:                 calc(100% - 20px);
+    height:                 100%;
     width:                  100%;
-    location:               northwest;
-    anchor:                 northwest;
+    padding:                5%;
+    location:               center;
+    anchor:                 center;
     x-offset:               0;
-    y-offset:               20;
+    y-offset:               0;
 }
 
 prompt {
@@ -44,80 +32,87 @@ prompt {
 
 
 entry {
-    background-color:       @background;
-    blink:                  true;
+    background-color:       @transparent;
+    blink:                  false;
     border-color:		    @border-alt;
     border-radius:          0% 0% 0% 0%;
     border:			        0px 0px 2px 0px;
     expand:                 true;
-    font:			        "FiraCode Nerd Font 12";
-    padding:                0.2% 0% 0.2% 0.5%;
+    /* font:			        "FiraCode Nerd Font 13"; */
+    padding:                0.5%;
     placeholder-color:      @foreground;
     placeholder:            "";
     text-color:             @foreground;
-    vertical-align:			1;
+    vertical-align:			0.5;
+    horizontal-align:	    0.5;
 }
 
 case-indicator {
-    background-color:       @background;
+    background-color:       @transparent;
     text-color:             @foreground;
     spacing:                0;
 }
 
 
 listview {
-    background-color:       @background;
-    columns:                5;
-    spacing:                2px;
+    background-color:       @transparent;
+    columns:                6;
+    spacing:                40px;
     cycle:                  true;
-    dynamic:                false;
+    dynamic:                true;
     layout:                 vertical;
     border:			        0% 0% 0% 0%;
-    margin:			        1% 0% 0% 0%;
+    margin:			        20px 0px 0px 0px;
     border-color:		    @foreground;
 }
 
 inputbar {
-    background-color:       @background;
+    background-color:       @transparent;
     text-color:             @foreground;
     expand:                 false;
     border:			        0px;
     border-color:		    @border-alt;
     border-radius:          0% 0% 0% 0%;
     margin:                 0% 0% 0% 0%;
-    padding:                0px;
+    padding:                20px;
 	spacing:				0%;
     position:               center;
 }
 
 
 mainbox {
-    background-color:       @background;
+    background-color:       @transparent;
     border-color:		    @border-alt;
     children:               [ inputbar, listview ];
-    spacing:			    5%;
-    padding:                60px;
+    spacing:			    3%;
+    padding:                2%;
 }
 
 element {
-    background-color:       @background;
+    expand:                 false;
+    background-color:       @itembg;
     text-color:             @foreground;
     orientation:            vertical;
-    padding:                0% 1% 0% 1%;
-    border-radius:          2px;
+    padding:                5px;
+    border-radius:          5px;
 }
 
 element-icon {
-    size:                   64;
+    size:                   88;
     border:                 0px;
+    background-color:       @transparent;
+    margin:                 10px;
+    text-color:             inherit;
 }
 
 element-text {
-    expand:                 false;
+    expand:                 true;
     horizontal-align:       0.5;
     vertical-align:         0.5;
     margin:                 0% 0% 0% 0%;
-    padding:                1% 0% 1% 0%;
+    padding:                5px;
+    background-color:       @transparent;
+    text-color:             inherit;
 }
 
 element normal.urgent,
@@ -133,7 +128,7 @@ element alternate.active {
 }
 
 element selected {
-    background-color:       @backgroundlight;
+    background-color:       @selitembg;
     text-color:             @foreground;
     border:			        0% 0% 0% 0%;
     border-color:		    @selected;
@@ -146,5 +141,5 @@ element selected.urgent {
 
 element selected.active {
     background-color:       @background-alt;
-    color:                  @foreground;
+    text-color:             @foreground;
 }
