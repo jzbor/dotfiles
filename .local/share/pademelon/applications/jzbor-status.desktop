@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Jzbor Status
+Comment=jzbor's personal status script
+Categories=Status
+Exec=/home/jzbor/.scripts/dwm/dwmstatus.sh
+TryExec=/home/jzbor/.scripts/dwm/dwmstatus.sh
