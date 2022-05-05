@@ -26,6 +26,7 @@ alias gccsp-nodbg="gcc -std=c11 -pedantic -Wall -D_XOPEN_SOURCE=700"
 alias git-cake="git log --date=format:'%d %b %Y' --diff-filter=A --name-only --pretty='%n%C(yellow bold)🎂️ %ad%Creset by (%C(blue bold)%h%Creset)'"
 alias rgrep="grep -RHIni --exclude-dir .git --exclude tags --color"
 alias icat="swallow sxiv"
+alias irc="ssh wa94tiju@ircbox.cs.fau.de -t tmux a"
 alias kcc=kdeconnect-cli
 alias ip='ip -c'
 alias la="ls -a"

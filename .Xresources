@@ -71,6 +71,7 @@ moonwm.unfocusedTitleFg:   #7c6f64
 moonwm.unfocusedTitleBg:   myBackground
 moonwm.statusFg:           myForeground
 moonwm.statusBg:           myBackground
+moonwm.trayBg:             #626262
 moonwm.menuFg:             myBackground
 moonwm.menuBg:             mySelector
 moonwm.occupiedTagFg:      myForeground
