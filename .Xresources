@@ -7,13 +7,29 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 
-!! My theme
+!! Apprentice
 #define myBackground			#1c1c1c
 #define myBackgroundTrans		#1c1c1c21
-#define myBackgroundLight		#282828
-#define myForeground			#d0d0d0
-#define mySelector			    #af5f5f
-#define myUrgent			    #d7afaf
+#define myBackgroundLight		#6c6c6c
+#define myForeground			#bcbcbc
+#define mySelector			#af5f5f
+#define myUrgent			#5f875f
+
+!! Sprayed
+/* #define myBackground			#1c1c1c */
+/* #define myBackgroundTrans		#1c1c1c21 */
+/* #define myBackgroundLight		#b18b3a */
+/* #define myForeground			#db9b2b */
+/* #define mySelector			    #07573b */
+/* #define myUrgent			    #0a5a7d */
+
+!! Seoul
+/* #define myBackground			#1c1c1c */
+/* #define myBackgroundTrans		#1c1c1c21 */
+/* #define myBackgroundLight		#282828 */
+/* #define myForeground			#d0d0d0 */
+/* #define mySelector			    #af5f5f */
+/* #define myUrgent			    #d7afaf */
 
 !! Gruvbox
 /* #define myBackground			#1d2021 */
