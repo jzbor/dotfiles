@@ -2,11 +2,11 @@
 --      https://tkg.codes/guide-to-modern-neovim-setup-2021/
 
 -- Dependencies
+require("plugins")
 require("autocmd")
 require("commands")
 require("keybindings")
 require("lsp")
-require("plugins")
 
 -- Plugin specific configs
 require("plugs.cmp")
