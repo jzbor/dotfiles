@@ -1,6 +1,6 @@
 ### MOONWM ###
 super + Escape
-    moonwm-menu expose
+    moonwm-utils windows
 
 super + F9
     $TERMINAL
