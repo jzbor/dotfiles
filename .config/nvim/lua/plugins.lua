@@ -40,6 +40,7 @@ require('packer').startup(function()
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin.
   use 'vimwiki/vimwiki'
+  use 'editorconfig/editorconfig-vim'
 end)
 
 -- luasnip setup (you can leave this here or move it to its own configuration file in `lua/plugs/luasnip.lua`.)

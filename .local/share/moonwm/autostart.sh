@@ -9,3 +9,4 @@ music.sh loop &
 # fi
 # command -v rambox > /dev/null && rambox
 # command -v solaar > /dev/null && solaar -w hide &
+light-locker --lock-on-suspend &

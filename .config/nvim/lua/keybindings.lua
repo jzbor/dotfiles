@@ -30,3 +30,6 @@ vim.api.nvim_set_keymap('n', '<Right>', ':tabnext<CR>', {})
 vim.api.nvim_set_keymap('n', '<S-Left>', ':tabmove -1<CR>', {})
 vim.api.nvim_set_keymap('n', '<S-Right>', ':tabmove +1<CR>', {})
 
+-- Custom scripts
+vim.api.nvim_set_keymap('n', '<Leader>r', ':belowright split term://run.sh %<CR>G', {})
+

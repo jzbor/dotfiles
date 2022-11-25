@@ -45,7 +45,7 @@ vim.o.foldmethod = 'indent'
 vim.o.scrolloff = 5
 
 -- Set highlight on search. This will remove the highlight after searching for text.
-vim.o.hlsearch = false
+--vim.o.hlsearch = false
 
 -- Configure ruler to the left and cursor highlight line
 vim.wo.number = true
